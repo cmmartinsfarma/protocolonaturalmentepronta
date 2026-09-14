@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
+  <script>document.documentElement.classList.remove('no-js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Protocolo Naturalmente Pronta | Dra. Carolina Martins</title>
-  <meta name="description" content="Chegue às festas de fim de ano com pele radiante e rejuvenescida. Conheça o Protocolo Naturalmente Pronta da Dra. Carolina Martins — Farmacêutica Esteta especializada em harmonização facial natural." />
+  <title>Pele radiante no fim de ano em Ribeirão Preto e São Joaquim da Barra | Dra. Carolina Martins</title>
+  <meta name="description" content="Planejamento de 3 meses para chegar às festas com pele radiante e natural. Avaliação gratuita em Ribeirão Preto e São Joaquim da Barra. Agende." />
+  <link rel="canonical" href="https://www.naturalmentepronta.com.br/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Protocolo Naturalmente Pronta | Dra. Carolina Martins" />
+  <meta property="og:description" content="Chegue às festas de fim de ano com pele radiante e natural. Farmacêutica Esteta em Ribeirão Preto e São Joaquim da Barra." />
+  <meta property="og:image" content="https://www.naturalmentepronta.com.br/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.naturalmentepronta.com.br/og-image.jpg" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -194,6 +206,27 @@
       background: #f7ebeb;
       padding-top: 68px;
       overflow: hidden;
+    }
+    .hero__headline {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 28px;
+      text-align: center;
+    }
+    .hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+    .hero__subtitle {
+      font-size: 1.05rem;
+      color: var(--charcoal-soft);
+      line-height: 1.65;
+      max-width: 560px;
+      margin: 0 auto;
     }
     .hero__banner-wrap {
       position: relative;
@@ -411,6 +444,8 @@
     }
     .price__installments strong { font-weight: 600; color: var(--rose-deep); }
     .price__or { font-size: .78rem; color: var(--text-muted); }
+    .price__save { color: var(--gold); font-weight: 600; }
+    .price__value { font-size: .78rem; color: var(--rose-deep); font-weight: 500; margin-top: 6px; }
     .protocolo-card__note { font-size: .73rem; color: var(--text-muted); margin-top: 12px; text-align: center; }
 
     /* ===== ADICIONAIS ===== */
@@ -453,6 +488,47 @@
       border-radius: 8px;
       padding: 6px 10px;
     }
+    .adicional-card__cta {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--rose) 0%, var(--rose-deep) 100%);
+      padding: 10px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .adicional-card__cta:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(196,149,122,.4); }
+
+    /* ===== DEPOIMENTOS ===== */
+    .depoimentos { padding: 96px 0; background: var(--white); text-align: center; }
+    .depoimentos__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .depoimento-card {
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: left;
+      transition: var(--transition);
+    }
+    .depoimento-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--blush); }
+    .depoimento-card blockquote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin: 0 0 20px;
+    }
+    .depoimento-card figcaption { display: flex; flex-direction: column; gap: 2px; }
+    .depoimento-card figcaption strong { color: var(--charcoal); font-size: .9rem; }
+    .depoimento-card figcaption span { color: var(--rose-deep); font-size: .8rem; }
 
     /* ===== SOBRE ===== */
     .sobre {
@@ -711,7 +787,140 @@
       .hero__ctas { flex-direction: column; align-items: flex-start; }
       .protocolos__grid { grid-template-columns: 1fr; }
     }
+
+    /* ===== ACCESSIBILITY ===== */
+    a:focus-visible,
+    .btn:focus-visible,
+    .faq__question:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(196,149,122,.55);
+      outline-offset: 2px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+    .no-js .reveal { opacity: 1; transform: none; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://www.naturalmentepronta.com.br/#dracarolina",
+        "name": "Dra. Carolina Martins",
+        "jobTitle": "Farmacêutica Esteta",
+        "description": "Farmacêutica esteta especializada em Gerenciamento de Pele e Harmonização Facial Natural.",
+        "image": "https://www.naturalmentepronta.com.br/fotocarol.webp",
+        "telephone": "+55-16-99213-3717",
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Registro Profissional",
+          "name": "CRF 125.459"
+        },
+        "knowsAbout": ["Gerenciamento de Pele", "Harmonização Facial Natural", "Toxina Botulínica", "Skinbooster", "Preenchimento Labial", "Microagulhamento", "Peeling Químico"],
+        "sameAs": ["https://www.instagram.com/cmmartinsfarma/"]
+      },
+      {
+        "@type": "MedicalClinic",
+        "@id": "https://www.naturalmentepronta.com.br/#clinica",
+        "name": "Dra. Carolina Martins — Farmacêutica Esteta",
+        "url": "https://www.naturalmentepronta.com.br/",
+        "image": "https://www.naturalmentepronta.com.br/hero.webp",
+        "description": "Protocolos estéticos personalizados de gerenciamento de pele e harmonização facial natural, com resultados planejados para as festas de fim de ano.",
+        "medicalSpecialty": "Dermatology",
+        "additionalType": "https://schema.org/HealthAndBeautyBusiness",
+        "telephone": "+55-16-99213-3717",
+        "priceRange": "R$ 250 - R$ 2.400",
+        "address": [
+          { "@type": "PostalAddress", "addressLocality": "Ribeirão Preto", "addressRegion": "SP", "addressCountry": "BR" },
+          { "@type": "PostalAddress", "addressLocality": "São Joaquim da Barra", "addressRegion": "SP", "addressCountry": "BR" }
+        ],
+        "founder": { "@id": "https://www.naturalmentepronta.com.br/#dracarolina" },
+        "sameAs": ["https://www.instagram.com/cmmartinsfarma/"]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.naturalmentepronta.com.br/#protocolo-glow",
+        "name": "Protocolo Glow",
+        "serviceType": "Gerenciamento de Pele",
+        "provider": { "@id": "https://www.naturalmentepronta.com.br/#clinica" },
+        "description": "7 sessões de gerenciamento de pele, alinhamento de skin care e suporte durante o tratamento.",
+        "offers": {
+          "@type": "Offer",
+          "price": "1750.00",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.naturalmentepronta.com.br/#protocolos"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.naturalmentepronta.com.br/#protocolo-glow-serenidade",
+        "name": "Protocolo Glow & Serenidade",
+        "serviceType": "Gerenciamento de Pele + Toxina Botulínica",
+        "provider": { "@id": "https://www.naturalmentepronta.com.br/#clinica" },
+        "description": "6 sessões de gerenciamento de pele + 1 aplicação de toxina botulínica com retorno.",
+        "offers": {
+          "@type": "Offer",
+          "price": "2400.00",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.naturalmentepronta.com.br/#protocolos"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.naturalmentepronta.com.br/#adicionais",
+        "name": "Procedimentos complementares",
+        "serviceType": "Estética avançada",
+        "provider": { "@id": "https://www.naturalmentepronta.com.br/#clinica" },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Adicionais",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preenchimento Labial" }, "price": "950.00", "priceCurrency": "BRL" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skinbooster" }, "price": "250.00", "priceCurrency": "BRL" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Secagem de Vasinhos" }, "price": "450.00", "priceCurrency": "BRL" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gordura Localizada" }, "price": "1200.00", "priceCurrency": "BRL" }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.naturalmentepronta.com.br/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Como funciona a consulta avaliativa?",
+            "acceptedAnswer": { "@type": "Answer", "text": "É o ponto de partida do protocolo: análise completa da pele, entendimento dos objetivos e definição dos procedimentos do planejamento personalizado. Nenhuma sessão é realizada antes dessa etapa." }
+          },
+          {
+            "@type": "Question",
+            "name": "Por que os procedimentos são definidos só na consulta?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Porque cada pele é única. O mix certo de limpeza, peeling, microagulhamento e mesoterapia é definido na avaliação para garantir o tratamento mais eficaz para cada tipo de pele e objetivo." }
+          },
+          {
+            "@type": "Question",
+            "name": "Onde acontecem os atendimentos?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Em Ribeirão Preto e São Joaquim da Barra. O local é confirmado no momento do agendamento." }
+          },
+          {
+            "@type": "Question",
+            "name": "Os resultados vão parecer que fiz alguma coisa?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Não. Naturalidade é um princípio inegociável: o objetivo é a sua melhor versão, mais descansada e radiante, sem exageros." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -722,22 +931,25 @@
         <span class="nav__brand-name">Dra. Carolina Martins</span>
         <span class="nav__brand-title">Farmacêutica Esteta · CRF 125.459</span>
       </div>
-      <a href="#contato" class="btn btn--nav" id="nav-cta">Agendar Avaliação</a>
+      <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="btn btn--nav" id="nav-cta" target="_blank" rel="noopener">Agendar Avaliação</a>
     </div>
   </nav>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
-    <h1 class="sr-only">Protocolo Naturalmente Pronta — Dra. Carolina Martins</h1>
+    <div class="hero__headline">
+      <h1 class="hero__title">Chegue às festas de fim de ano com a pele radiante, natural e cheia de vida</h1>
+      <p class="hero__subtitle">Um planejamento de 3 meses, guiado por ciência, para você se reconhecer no espelho na sua melhor versão. Consulta avaliativa gratuita.</p>
+    </div>
     <div class="hero__banner-wrap">
-      <img src="hero.jpg" alt="Protocolo Naturalmente Pronta - Dra. Carolina Martins" class="hero__img" />
+      <img src="hero.jpg" alt="Mulher com pele radiante e saudável sorrindo, conceito do Protocolo Naturalmente Pronta" class="hero__img" width="1920" height="1080" fetchpriority="high" decoding="async" />
       <div class="hero__cta-desktop">
-        <a href="#contato" class="btn btn--primary" id="hero-cta-primary">Quero minha avaliação gratuita</a>
+        <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="btn btn--primary" id="hero-cta-primary" target="_blank" rel="noopener">Quero minha avaliação gratuita</a>
         <a href="#protocolos" class="btn btn--outline" id="hero-cta-secondary">Ver protocolos →</a>
       </div>
     </div>
     <div class="hero__cta-mobile">
-      <a href="#contato" class="btn btn--primary btn--full" id="hero-cta-mobile">Quero minha avaliação gratuita</a>
+      <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="btn btn--primary btn--full" id="hero-cta-mobile" target="_blank" rel="noopener">Quero minha avaliação gratuita</a>
       <a href="#protocolos" class="btn btn--outline btn--full" id="hero-cta-mobile-sec">Ver protocolos →</a>
     </div>
   </section>
@@ -747,7 +959,7 @@
     <div class="container">
       <div class="section-tag">Por que começar agora?</div>
       <h2 class="section-title">Setembro é o <em>momento certo</em> para planejar dezembro</h2>
-      <p class="section-desc">A ciência tem seu ritmo. Com 3 meses de planejamento, a pele tem tempo para uma resposta fisiológica completa, o ácido hialurônico acomoda naturalmente e a toxina botulínica entrega o melhor resultado.</p>
+      <p class="section-desc">A pele tem o próprio ritmo. Com 3 meses de planejamento, ela responde de forma completa: o ácido hialurônico acomoda com naturalidade e a toxina botulínica entrega o resultado mais bonito, no tempo certo.</p>
       <div class="timeline__steps">
         <div class="timeline__step">
           <div class="timeline__icon">🍂</div>
@@ -770,7 +982,7 @@
         <div class="timeline__step active">
           <div class="timeline__icon">✨</div>
           <div class="timeline__month">Dezembro</div>
-          <div class="timeline__desc">Você no <strong>auge do seu brilho</strong> — pronta para as festas.</div>
+          <div class="timeline__desc">Você radiante e pronta para as festas.</div>
         </div>
       </div>
     </div>
@@ -781,16 +993,17 @@
     <div class="container">
       <div class="section-tag">Minha proposta</div>
       <h2 class="section-title">Por que realizar seu planejamento <em>comigo?</em></h2>
+      <p class="section-desc">Ciência para orientar cada decisão, naturalidade como limite. Nada de modismo: só o que faz sentido para a sua pele e os seus objetivos.</p>
       <div class="diferenciais__grid">
         <div class="diferencial-card reveal">
           <div class="diferencial-card__icon">🔬</div>
           <h3>Olhar Clínico de Farmacêutica</h3>
-          <p>Formação científica aplicada à estética para tratamentos baseados em evidências, não em modismos.</p>
+          <p>Formação científica aplicada à estética para tratamentos com base em evidências científicas.</p>
         </div>
         <div class="diferencial-card reveal">
           <div class="diferencial-card__icon">🌿</div>
           <h3>Naturalidade Inegociável</h3>
-          <p>Resultados que realçam a sua essência, sem exageros. Sua melhor versão — sempre reconhecível.</p>
+          <p>Resultados que realçam a sua essência, sem exageros. Sua melhor versão, sempre reconhecível.</p>
         </div>
         <div class="diferencial-card reveal">
           <div class="diferencial-card__icon">🛡️</div>
@@ -805,7 +1018,7 @@
         <div class="diferencial-card reveal">
           <div class="diferencial-card__icon">📍</div>
           <h3>Dois Locais de Atendimento</h3>
-          <p>Ribeirão Preto e São Joaquim da Barra — perto de você para facilitar sua jornada.</p>
+          <p>Ribeirão Preto e São Joaquim da Barra, perto de você para facilitar sua jornada.</p>
         </div>
         <div class="diferencial-card reveal">
           <div class="diferencial-card__icon">📲</div>
@@ -821,7 +1034,7 @@
     <div class="container">
       <div class="section-tag">Os Protocolos</div>
       <h2 class="section-title">Escolha o caminho para a <em>sua</em> melhor pele</h2>
-      <p class="section-desc">Dois protocolos para diferentes objetivos — ambos com resultados naturais e duradouros para dezembro.</p>
+      <p class="section-desc">Dois protocolos, um objetivo: resultado natural e bonito em dezembro.</p>
 
       <div class="protocolos__grid">
 
@@ -830,10 +1043,10 @@
           <div class="protocolo-card__header protocolo-card__header--glow">
             <div class="protocolo-card__tag">Protocolo</div>
             <h3 class="protocolo-card__title">Glow ✨</h3>
-            <p class="protocolo-card__tagline">Pele radiante, saudável e com viço dos sonhos</p>
+            <p class="protocolo-card__tagline">Pele radiante, saudável e com brilho natural</p>
           </div>
           <div class="protocolo-card__body">
-            <p class="protocolo-card__for"><strong>Para quem busca:</strong> pele radiante, melhora de textura e poros, tratamento de acne e manchas.</p>
+            <p class="protocolo-card__for"><strong>Para quem busca:</strong> pele com mais luminosidade, textura uniforme, poros refinados e melhora de acne e manchas.</p>
             <ul class="protocolo-card__includes">
               <li>✔ Consulta avaliativa completa</li>
               <li>✔ Alinhamento do seu skin care</li>
@@ -845,10 +1058,11 @@
             <div class="protocolo-card__price">
               <span class="price__label">Investimento</span>
               <span class="price__installments">6x de <strong>R$ 310</strong></span>
-              <span class="price__or">ou <strong>R$ 1.750</strong> à vista</span>
+              <span class="price__or">ou <strong>R$ 1.750</strong> à vista <span class="price__save">(economize R$ 110)</span></span>
+              <span class="price__value">Cerca de R$ 250 por sessão</span>
             </div>
-            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Tenho%20interesse%20no%20Protocolo%20Glow%20%E2%9C%A8%20e%20gostaria%20de%20saber%20mais%21" class="btn btn--primary btn--full" id="cta-glow" target="_blank">Quero o Protocolo Glow</a>
-            <p class="protocolo-card__note">*Procedimentos definidos na consulta avaliativa</p>
+            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Tenho%20interesse%20no%20Protocolo%20Glow%20%E2%9C%A8%20e%20gostaria%20de%20saber%20mais%21" class="btn btn--primary btn--full" id="cta-glow" target="_blank">Começar pelo Glow</a>
+            <p class="protocolo-card__note">*Procedimentos definidos na consulta avaliativa gratuita e sem compromisso</p>
           </div>
         </div>
 
@@ -858,7 +1072,7 @@
           <div class="protocolo-card__header protocolo-card__header--serenidade">
             <div class="protocolo-card__tag">Protocolo</div>
             <h3 class="protocolo-card__title">Glow & Serenidade 🌙</h3>
-            <p class="protocolo-card__tagline">Brilho + suavização de expressões com toxina botulínica</p>
+            <p class="protocolo-card__tagline">Todo o brilho do Glow, com as expressões suavizadas pela toxina botulínica</p>
           </div>
           <div class="protocolo-card__body">
             <p class="protocolo-card__for"><strong>Para quem busca:</strong> todos os benefícios do Glow + suavização natural de rugas e linhas de expressão.</p>
@@ -874,10 +1088,11 @@
             <div class="protocolo-card__price">
               <span class="price__label">Investimento</span>
               <span class="price__installments">6x de <strong>R$ 440</strong></span>
-              <span class="price__or">ou <strong>R$ 2.400</strong> à vista</span>
+              <span class="price__or">ou <strong>R$ 2.400</strong> à vista <span class="price__save">(economize R$ 240)</span></span>
+              <span class="price__value">Toxina botulínica e retorno inclusos</span>
             </div>
-            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Tenho%20interesse%20no%20Protocolo%20Glow%20%26%20Serenidade%20%F0%9F%8C%99%20e%20gostaria%20de%20saber%20mais%21" class="btn btn--gold btn--full" id="cta-glow-serenidade" target="_blank">Quero o Glow & Serenidade</a>
-            <p class="protocolo-card__note">*Procedimentos definidos na consulta avaliativa</p>
+            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Tenho%20interesse%20no%20Protocolo%20Glow%20%26%20Serenidade%20%F0%9F%8C%99%20e%20gostaria%20de%20saber%20mais%21" class="btn btn--gold btn--full" id="cta-glow-serenidade" target="_blank">Começar pelo Glow & Serenidade</a>
+            <p class="protocolo-card__note">*Procedimentos definidos na consulta avaliativa gratuita e sem compromisso</p>
           </div>
         </div>
 
@@ -889,8 +1104,8 @@
   <section class="adicionais reveal" id="adicionais">
     <div class="container">
       <div class="section-tag">Complementos</div>
-      <h2 class="section-title">Potencialize seus <em>resultados</em></h2>
-      <p class="section-desc">Adicione tratamentos estratégicos ao seu protocolo e eleve ainda mais o resultado para dezembro.</p>
+      <h2 class="section-title">Eleve ainda mais o seu <em>resultado</em></h2>
+      <p class="section-desc">Tratamentos estratégicos para somar ao seu protocolo e chegar em dezembro ainda mais radiante.</p>
       <div class="adicionais__grid">
         <div class="adicional-card reveal">
           <div class="adicional-card__emoji">💉</div>
@@ -898,6 +1113,7 @@
           <p>Volume e definição naturais para o seu sorriso.</p>
           <div class="adicional-card__price">+ R$ 950</div>
           <div class="adicional-card__brinde">🎁 Ganha Gloss Volumizador da Bioage</div>
+          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20o%20Preenchimento%20Labial%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao meu protocolo</a>
         </div>
         <div class="adicional-card reveal">
           <div class="adicional-card__emoji">💧</div>
@@ -905,6 +1121,7 @@
           <p>Hidratação profunda e luminosidade de dentro para fora.</p>
           <div class="adicional-card__price">+ R$ 250</div>
           <div class="adicional-card__brinde">🎁 Ganha Hidragloss</div>
+          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20o%20Skinbooster%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao meu protocolo</a>
         </div>
         <div class="adicional-card reveal">
           <div class="adicional-card__emoji">🌸</div>
@@ -912,6 +1129,7 @@
           <p>Tratamento estético para secagem de vasinhos com segurança e eficácia.</p>
           <div class="adicional-card__price">+ R$ 450</div>
           <div class="adicional-card__brinde">🎁 Fechando 3 sessões, ganha a 4ª</div>
+          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20a%20Secagem%20de%20Vasinhos%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao meu protocolo</a>
         </div>
         <div class="adicional-card reveal">
           <div class="adicional-card__emoji">✨</div>
@@ -919,6 +1137,7 @@
           <p>Tratamento avançado para contorno e redução de gordura localizada.</p>
           <div class="adicional-card__price">+ R$ 1.200</div>
           <div class="adicional-card__brinde">🎁 Fechando 7 sessões, ganha 2 sessões de papada</div>
+          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20a%20Gordura%20Localizada%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao meu protocolo</a>
         </div>
       </div>
     </div>
@@ -929,7 +1148,7 @@
     <div class="container sobre__inner">
       <div class="sobre__visual reveal">
         <div class="sobre__photo-wrap">
-          <img src="fotocarol.png" alt="Dra. Carolina Martins — Farmacêutica Esteta" class="sobre__img" />
+          <img src="fotocarol.png" alt="Retrato da Dra. Carolina Martins, farmacêutica esteta, em ambiente clínico" class="sobre__img" width="800" height="1000" loading="lazy" decoding="async" />
         </div>
         <div class="sobre__credentials">
           <div class="credential">
@@ -950,12 +1169,36 @@
         <div class="section-tag">Quem é a Dra. Carolina</div>
         <h2 class="section-title">Ciência e individualidade para <em>realçar sua melhor versão</em></h2>
         <p>Sou farmacêutica esteta especializada em Gerenciamento de Pele e Harmonização Facial Natural. Minha missão é devolver sua autoconfiança no espelho com resultados naturais e sem excessos.</p>
-        <p>O olhar clínico de quem entende profundamente de substâncias e reações biológicas garante que cada procedimento seja preciso, seguro e completamente alinhado ao <em>seu</em> organismo.</p>
+        <p>O olhar clínico de quem entende de substâncias e reações biológicas torna cada procedimento mais seguro e sob medida para o <em>seu</em> organismo.</p>
         <blockquote class="sobre__quote">
-          "A verdadeira beleza resulta da externalização da saúde e de sua essência natural."
+          "Beleza de verdade vem de uma pele saudável, que parece sua desde sempre."
           <cite>— Dra. Carolina Martins, Farmacêutica Esteta</cite>
         </blockquote>
-        <a href="#contato" class="btn btn--primary" id="cta-sobre">Agendar minha avaliação gratuita</a>
+        <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="btn btn--primary" id="cta-sobre" target="_blank" rel="noopener">Agendar minha avaliação gratuita</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section class="depoimentos reveal" id="depoimentos">
+    <div class="container">
+      <div class="section-tag">Resultados reais</div>
+      <h2 class="section-title">Quem já chegou <em>radiante</em></h2>
+      <p class="section-desc">Histórias de quem planejou com antecedência e se reconheceu no espelho.</p>
+      <div class="depoimentos__grid">
+        <!-- Substituir os 3 depoimentos abaixo por depoimentos reais (nome + cidade + tratamento) com autorização LGPD -->
+        <figure class="depoimento-card reveal">
+          <blockquote>"Tinha medo de parecer artificial. No fim, saí mais eu, só que com a pele que eu achava que não tinha mais."</blockquote>
+          <figcaption><strong>[Nome da cliente]</strong><span>Ribeirão Preto · Protocolo Glow</span></figcaption>
+        </figure>
+        <figure class="depoimento-card reveal">
+          <blockquote>"Planejei em setembro e em dezembro recebi elogio até de quem eu não via há anos."</blockquote>
+          <figcaption><strong>[Nome da cliente]</strong><span>São Joaquim da Barra · Glow & Serenidade</span></figcaption>
+        </figure>
+        <figure class="depoimento-card reveal">
+          <blockquote>"A consulta gratuita já me devolveu a confiança. Saí com um plano claro, sem pressão."</blockquote>
+          <figcaption><strong>[Nome da cliente]</strong><span>Ribeirão Preto · Avaliação</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -969,7 +1212,7 @@
       <div class="faq__list">
         <details class="faq__item" id="faq-1">
           <summary class="faq__question">Como funciona a consulta avaliativa?</summary>
-          <div class="faq__answer">A consulta avaliativa é o ponto de partida de todo o protocolo. Nela, fazemos uma análise completa da sua pele, entendemos seus objetivos e definimos quais procedimentos farão parte do seu planejamento personalizado. Nenhuma sessão é realizada antes dessa etapa.</div>
+          <div class="faq__answer">A consulta avaliativa é gratuita e sem compromisso, e é o ponto de partida de todo o protocolo. Nela, fazemos uma análise completa da sua pele, entendemos seus objetivos e definimos quais procedimentos farão parte do seu planejamento personalizado. Nenhuma sessão é realizada antes dessa etapa.</div>
         </details>
         <details class="faq__item" id="faq-2">
           <summary class="faq__question">Por que os procedimentos são definidos só na consulta?</summary>
@@ -985,11 +1228,11 @@
         </details>
         <details class="faq__item" id="faq-5">
           <summary class="faq__question">Os resultados vão parecer que "fiz alguma coisa"?</summary>
-          <div class="faq__answer">Não! Naturalidade é um princípio inegociável no meu trabalho. O objetivo é sempre que você seja reconhecida pela sua melhor versão — mais descansada, mais radiante, mais você. Ciência aplicada com delicadeza e respeito à sua essência.</div>
+          <div class="faq__answer">Não! Naturalidade é um princípio inegociável no meu trabalho. O objetivo é sempre que você seja reconhecida pela sua melhor versão: mais descansada e mais radiante, sem deixar de ser você.</div>
         </details>
         <details class="faq__item" id="faq-6">
-          <summary class="faq__question">As vagas são limitadas?</summary>
-          <div class="faq__answer">Sim. Para garantir atenção individualizada a cada paciente, atendo um número limitado de protocolos por mês. Para chegar com resultado em dezembro, as vagas de setembro precisam ser preenchidas agora.</div>
+          <summary class="faq__question">Como funciona o pagamento?</summary>
+          <div class="faq__answer">Você pode parcelar em 6x no cartão ou pagar à vista, com condições melhores. Os detalhes são confirmados na consulta avaliativa, sem compromisso.</div>
         </details>
       </div>
     </div>
@@ -998,7 +1241,7 @@
   <!-- ===== CONTATO ===== -->
   <section class="contato" id="contato">
     <div class="container contato__inner">
-      <div class="section-tag">Vagas limitadas · Setembro 2026</div>
+      <div class="section-tag">Avaliação gratuita e sem compromisso</div>
       <h2 class="contato__title">Pronta para chegar em dezembro <em>radiante?</em></h2>
       <p class="contato__desc">Dê o primeiro passo agora. A consulta avaliativa é gratuita e sem compromisso. Você sai com um planejamento completo em mãos.</p>
       <div class="contato__cards">
@@ -1006,7 +1249,7 @@
           <div class="contato__option-icon">💬</div>
           <h3>Fale pelo WhatsApp</h3>
           <p>Tire dúvidas ou agende sua avaliação diretamente pelo WhatsApp:</p>
-          <p style="font-weight: 600; font-size: 1.15rem; color: var(--charcoal); margin-bottom: 16px;">(16) 99213-3717</p>
+          <p style="font-weight: 600; font-size: 1.15rem; color: var(--charcoal); margin-bottom: 16px;"><a href="tel:+5516992133717" style="color: var(--charcoal); text-decoration: none;">(16) 99213-3717</a></p>
           <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="btn btn--whatsapp btn--full" id="cta-whatsapp" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Agendar pelo WhatsApp
@@ -1039,7 +1282,7 @@
         <strong>Dra. Carolina Martins</strong>
         <span>Farmacêutica Esteta · CRF 125.459</span>
       </div>
-      <p class="footer__quote">"A verdadeira beleza resulta da externalização da saúde e de sua essência natural."</p>
+      <p class="footer__quote">"Beleza de verdade vem de uma pele saudável, que parece sua desde sempre."</p>
       <p class="footer__copy">© 2026 Dra. Carolina Martins. Todos os direitos reservados.</p>
     </div>
   </footer>
@@ -1073,6 +1316,32 @@
         child.style.transitionDelay = `${i * 0.1}s`;
       });
     });
+  </script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    (function () {
+      var map = {
+        'cta-glow': 'glow',
+        'cta-glow-serenidade': 'glow_serenidade',
+        'cta-whatsapp': 'avaliacao',
+        'whatsapp-float': 'float',
+        'hero-cta-primary': 'avaliacao',
+        'hero-cta-mobile': 'avaliacao',
+        'nav-cta': 'avaliacao',
+        'cta-sobre': 'avaliacao'
+      };
+      document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          window.dataLayer.push({ event: 'whatsapp_click', cta_id: a.id || a.className, protocol: map[a.id] || 'avaliacao' });
+        });
+      });
+      document.querySelectorAll('a[href*="instagram.com"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          window.dataLayer.push({ event: 'instagram_click', cta_id: a.id || 'instagram' });
+        });
+      });
+    })();
   </script>
 </body>
 </html>

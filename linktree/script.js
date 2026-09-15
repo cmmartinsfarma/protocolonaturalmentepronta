@@ -227,7 +227,22 @@ function agruparDados(rows) {
 }
 
 /**
- * Gera o HTML dos acordeões e injeta no DOM.
+ * Cria um link (âncora) no estilo de botão.
+ */
+function makeAnchor(link) {
+  const a = document.createElement('a');
+  a.className = 'linksgerais';
+  a.href = link.url;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  a.textContent = link.nome;
+  return a;
+}
+
+/**
+ * Gera o HTML dos links e injeta no DOM.
+ * Links sem subcategoria viram botões diretos (sem acordeão);
+ * categorias com subcategorias viram acordeões.
  */
 function buildAccordions(categorias) {
   const lista = document.getElementById('lista');
@@ -237,6 +252,25 @@ function buildAccordions(categorias) {
     .sort(([, a], [, b]) => a.ordem - b.ordem);
 
   catOrdenadas.forEach(([nomeCategoria, dadosCat]) => {
+    const subcatsOrdenadas = Object.entries(dadosCat.subcategorias)
+      .sort(([, a], [, b]) => a.ordem - b.ordem);
+
+    const temSubcategorias = subcatsOrdenadas.some(([chave]) => chave !== '__sem_subcategoria__');
+
+    // Sem subcategorias: botões diretos
+    if (!temSubcategorias) {
+      subcatsOrdenadas.forEach(([, dadosSubcat]) => {
+        dadosSubcat.links.forEach(link => {
+          const li = document.createElement('li');
+          li.className = 'lista';
+          li.appendChild(makeAnchor(link));
+          lista.appendChild(li);
+        });
+      });
+      return;
+    }
+
+    // Com subcategorias: acordeão
     const li = document.createElement('li');
     li.className = 'lista';
 
@@ -247,20 +281,9 @@ function buildAccordions(categorias) {
     const painel = document.createElement('div');
     painel.className = 'panel';
 
-    const subcatsOrdenadas = Object.entries(dadosCat.subcategorias)
-      .sort(([, a], [, b]) => a.ordem - b.ordem);
-
     subcatsOrdenadas.forEach(([chave, dadosSubcat]) => {
       if (chave === '__sem_subcategoria__') {
-        dadosSubcat.links.forEach(link => {
-          const a = document.createElement('a');
-          a.className = 'linksgerais';
-          a.href = link.url;
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-          a.textContent = link.nome;
-          painel.appendChild(a);
-        });
+        dadosSubcat.links.forEach(link => painel.appendChild(makeAnchor(link)));
       } else {
         const botaoInner = document.createElement('button');
         botaoInner.className = 'accordion-inner';
@@ -269,15 +292,7 @@ function buildAccordions(categorias) {
         const painelInner = document.createElement('div');
         painelInner.className = 'panel-inner';
 
-        dadosSubcat.links.forEach(link => {
-          const a = document.createElement('a');
-          a.className = 'linksgerais';
-          a.href = link.url;
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-          a.textContent = link.nome;
-          painelInner.appendChild(a);
-        });
+        dadosSubcat.links.forEach(link => painelInner.appendChild(makeAnchor(link)));
 
         botaoInner.addEventListener('click', function () {
           this.classList.toggle('active');

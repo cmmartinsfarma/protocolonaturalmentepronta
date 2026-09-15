@@ -41,6 +41,7 @@
       scroll-behavior: smooth;
       font-size: 16px;
       scroll-padding-top: 88px;
+      overflow-x: hidden;
     }
 
     /* ===== TOKENS ===== */
@@ -879,16 +880,19 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .credential {
-      flex: 1;
-      min-width: 100px;
+      flex: 1 1 80px;
+      min-width: 0;
       background: rgba(255, 255, 255, .07);
       border: 1px solid rgba(255, 255, 255, .12);
       border-radius: 12px;
       padding: 16px;
       text-align: center;
+      box-sizing: border-box;
     }
 
     .credential__num {
@@ -1055,8 +1059,10 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
       gap: 24px;
+      width: 100%;
       max-width: 700px;
       margin: 0 auto 40px;
+      box-sizing: border-box;
     }
 
     .contato__option {
@@ -1360,20 +1366,21 @@
       }
 
       .sobre__credentials {
-        gap: 10px;
+        gap: 8px;
       }
 
       .credential {
-        padding: 12px 8px;
-        min-width: 80px;
+        padding: 12px 6px;
+        min-width: 0;
+        flex: 1 1 70px;
       }
 
       .credential__num {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       .credential__label {
-        font-size: .7rem;
+        font-size: .65rem;
       }
 
       .sobre__content .section-title {
@@ -1411,6 +1418,7 @@
       .contato__cards {
         grid-template-columns: 1fr;
         gap: 16px;
+        max-width: 100%;
       }
 
       .contato__option {

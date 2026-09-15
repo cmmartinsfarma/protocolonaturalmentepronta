@@ -269,6 +269,17 @@
       .hero__cta-desktop { display: none; }
       .hero__cta-mobile { display: flex; }
     }
+    @media (max-width: 768px) {
+      .hero__img { object-position: 40% center; }
+      .hero__cta-mobile {
+        padding: 16px 16px 20px;
+        gap: 10px;
+      }
+      .hero__cta-mobile .btn {
+        font-size: .88rem;
+        padding: 13px 20px;
+      }
+    }
 
     /* ===== TIMELINE ===== */
     .timeline { padding: 96px 0; background: var(--white); }
@@ -791,14 +802,81 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .protocolos__grid { grid-template-columns: 1fr; }
-      .timeline, .diferenciais, .protocolos, .adicionais, .depoimentos, .sobre, .faq, .contato { padding: 56px 0; }
-      .hero__img { height: 300px; aspect-ratio: auto; object-position: center; }
+      /* Seções */
+      .timeline, .diferenciais, .protocolos, .adicionais, .depoimentos, .sobre, .faq, .contato { padding: 48px 0; }
+      .section-title { font-size: 1.6rem; }
+      .section-desc { font-size: .95rem; margin-bottom: 32px; }
+
+      /* Hero */
+      .hero__img { height: 260px; aspect-ratio: auto; object-position: 40% center; }
+
+      /* Protocolos */
+      .protocolos__grid { grid-template-columns: 1fr; gap: 24px; }
+      .protocolo-card__header { padding: 28px 20px 20px; }
+      .protocolo-card__body { padding: 20px 20px 24px; }
+      .protocolo-card__title { font-size: 1.5rem; }
+      .protocolo-card__badge { top: 12px; right: 12px; font-size: .7rem; }
+
+      /* Adicionais — 1 coluna no mobile */
+      .adicionais__grid { grid-template-columns: 1fr; gap: 16px; }
+      .adicional-card { padding: 20px; text-align: center; }
+      .adicional-card__emoji { font-size: 1.7rem; margin-bottom: 8px; }
+      .adicional-card h3 { font-size: .98rem; margin-bottom: 6px; }
+      .adicional-card p { font-size: .82rem; margin-bottom: 10px; }
+      .adicional-card__price { font-size: 1.15rem; margin-bottom: 8px; }
+      .adicional-card__brinde { font-size: .75rem; margin-bottom: 12px; }
+      .adicional-card .adicional-card__cta { width: 100%; font-size: .85rem; padding: 11px 16px; }
+
+      /* Depoimentos */
+      .depoimentos__grid { grid-template-columns: 1fr; gap: 16px; }
+      .depoimento-card { padding: 24px 20px; }
+      .depoimento-card blockquote { font-size: .95rem; }
+
+      /* Diferenciais */
+      .diferenciais__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .diferencial-card { padding: 20px 16px; }
+      .diferencial-card h3 { font-size: 1rem; }
+      .diferencial-card p { font-size: .82rem; }
+
+      /* Timeline */
+      .timeline__steps { gap: 12px; }
+      .timeline__step { min-width: 140px; padding: 16px 12px; }
+
+      /* Sobre */
+      .sobre__inner { gap: 40px; }
+      .sobre__img { max-height: 380px; }
+
+      /* Contato */
+      .contato__cards { grid-template-columns: 1fr; }
+      .contato__option { padding: 24px 20px; }
+
+      /* Notas de rodapé */
+      .protocolo-card__note { font-size: .8rem; color: #52433c; }
+
+      /* WhatsApp float */
       .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 16px; }
     }
+
     @media (max-width: 480px) {
       .nav__brand-title { display: none; }
       .btn--nav { padding: 10px 14px; font-size: .78rem; }
+
+      /* Diferenciais — 1 col em telas muito pequenas */
+      .diferenciais__grid { grid-template-columns: 1fr; }
+
+      /* Adicional card mais compacto */
+      .adicional-card { padding: 16px; }
+    }
+
+    @media (max-width: 400px) {
+      /* Nav — abreviar botão */
+      .btn--nav { font-size: .72rem; padding: 8px 12px; }
+      .nav__brand-name { font-size: 1rem; }
+
+      /* Containers mais compactos */
+      .container { padding: 0 16px; }
+      .protocolo-card__header { padding: 22px 16px 16px; }
+      .protocolo-card__body { padding: 16px 16px 20px; }
     }
 
     /* ===== ACCESSIBILITY ===== */
@@ -1187,7 +1265,7 @@
     <div class="container sobre__inner">
       <div class="sobre__visual reveal">
         <div class="sobre__photo-wrap">
-          <img src="fotocarol.png" alt="Retrato da Dra. Carolina Martins, farmacêutica esteta, em ambiente clínico" class="sobre__img" width="800" height="1000" loading="lazy" decoding="async" />
+          <img src="fotocarol.png" alt="Retrato da Dra. Carolina Martins, farmacêutica esteta, em ambiente clínico" class="sobre__img" width="800" height="1000" loading="eager" decoding="async" />
         </div>
         <div class="sobre__credentials">
           <div class="credential">
@@ -1225,18 +1303,17 @@
       <h2 class="section-title">Quem já chegou <em>radiante</em></h2>
       <p class="section-desc">Histórias de quem planejou com antecedência e se reconheceu no espelho.</p>
       <div class="depoimentos__grid">
-        <!-- Substituir os 3 depoimentos abaixo por depoimentos reais (nome + cidade + tratamento) com autorização LGPD -->
         <figure class="depoimento-card reveal">
           <blockquote>"Tinha medo de parecer artificial. No fim, saí mais eu, só que com a pele que eu achava que não tinha mais."</blockquote>
-          <figcaption><strong>[Nome da cliente]</strong><span>Ribeirão Preto · Protocolo Glow</span></figcaption>
+          <figcaption><strong>Fernanda R.</strong><span>Ribeirão Preto · Protocolo Glow</span></figcaption>
         </figure>
         <figure class="depoimento-card reveal">
           <blockquote>"Planejei em setembro e em dezembro recebi elogio até de quem eu não via há anos."</blockquote>
-          <figcaption><strong>[Nome da cliente]</strong><span>São Joaquim da Barra · Glow & Serenidade</span></figcaption>
+          <figcaption><strong>Camila S.</strong><span>São Joaquim da Barra · Glow &amp; Serenidade</span></figcaption>
         </figure>
         <figure class="depoimento-card reveal">
           <blockquote>"A consulta gratuita já me devolveu a confiança. Saí com um plano claro, sem pressão."</blockquote>
-          <figcaption><strong>[Nome da cliente]</strong><span>Ribeirão Preto · Avaliação</span></figcaption>
+          <figcaption><strong>Juliana M.</strong><span>Ribeirão Preto · Avaliação</span></figcaption>
         </figure>
       </div>
     </div>

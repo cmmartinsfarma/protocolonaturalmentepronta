@@ -12,7 +12,7 @@ const RANGE_CONFIG = typeof CONFIG !== 'undefined' ? CONFIG.RANGE_CONFIG : 'A:B'
 // ============================================================
 const MOCK_DATA = [
   // [categoria, ordem_cat, subcategoria, ordem_subcat, nome_link, url]
-  ['Atendimento', '1', '', '', 'Agendar avaliação gratuita', 'https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20link%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20%E2%9C%A8'],
+  ['Atendimento', '1', '', '', 'Agendar avaliação gratuita', 'https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20link%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20%E2%9C%A8'],
   ['Atendimento', '1', '', '', 'Site oficial', 'https://www.naturalmentepronta.com.br/'],
 ];
 

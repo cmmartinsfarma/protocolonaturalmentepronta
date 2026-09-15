@@ -1,11 +1,10 @@
 // Usa CONFIG de config.js (carregado antes deste script)
 // Se CONFIG não estiver definido, usa fallback silencioso para exibir dados mockados
-const PROXY_URL = typeof CONFIG !== 'undefined' ? CONFIG.PROXY_URL : '';
 const SPREADSHEET_ID = typeof CONFIG !== 'undefined' ? CONFIG.SHEET_ID : '';
 const SHEET_NAME = typeof CONFIG !== 'undefined' ? CONFIG.SHEET_LINKS : 'Sheet1';
 const SHEET_CONFIG = typeof CONFIG !== 'undefined' ? CONFIG.SHEET_CONFIG : 'Sheet2';
-const RANGE = typeof CONFIG !== 'undefined' ? CONFIG.RANGE_LINKS : 'Sheet1!A:F';
-const RANGE_CONFIG = typeof CONFIG !== 'undefined' ? CONFIG.RANGE_CONFIG : 'Sheet2!A:B';
+const RANGE = typeof CONFIG !== 'undefined' ? CONFIG.RANGE_LINKS : 'A:F';
+const RANGE_CONFIG = typeof CONFIG !== 'undefined' ? CONFIG.RANGE_CONFIG : 'A:B';
 
 // ============================================================
 // DADOS MOCKADOS — usados enquanto a planilha não for configurada
@@ -22,13 +21,38 @@ const MOCK_DATA = [
 // ============================================================
 
 /**
- * Busca os dados da planilha via proxy.
- * Espera um JSON no formato { values: [[...], [...]] }.
+ * Faz o parse da resposta JSONP do endpoint gviz do Google Sheets.
  */
-async function fetchSheet(range) {
-  const r = await fetch(`${PROXY_URL}?range=${encodeURIComponent(range)}`);
+function parseGviz(text) {
+  const start = text.indexOf('{');
+  const end = text.lastIndexOf('}');
+  if (start === -1 || end === -1) throw new Error('Resposta inválida da planilha');
+  return JSON.parse(text.substring(start, end + 1));
+}
+
+/**
+ * Converte o JSON do gviz para o formato { values: [[...], [...]] }.
+ */
+function gvizToValues(json) {
+  const rows = (json.table && json.table.rows) || [];
+  return {
+    values: rows.map(row => (row.c || []).map(cell => {
+      if (!cell) return null;
+      return (cell.v === undefined || cell.v === null) ? null : cell.v;
+    }))
+  };
+}
+
+/**
+ * Busca os dados da planilha direto pelo endpoint gviz (sem worker/proxy).
+ * A planilha precisa estar publicada na web (Arquivo > Publicar na Web).
+ */
+async function fetchSheet(sheetName, range) {
+  const url = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}&range=${encodeURIComponent(range)}`;
+  const r = await fetch(url);
   if (!r.ok) throw new Error(`Erro ao buscar planilha: ${r.status} ${r.statusText}`);
-  return r.json();
+  const text = await r.text();
+  return gvizToValues(parseGviz(text));
 }
 
 /**
@@ -39,13 +63,13 @@ async function fetchSheet(range) {
  */
 async function fetchConfig() {
   try {
-    const data = await fetchSheet(RANGE_CONFIG);
+    const data = await fetchSheet(SHEET_CONFIG, RANGE_CONFIG);
     const rows = data.values || [];
 
     const config = {};
     rows.forEach(row => {
-      const chave = (row[0] || '').trim().toLowerCase();
-      const valor = (row[1] || '').trim();
+      const chave = String(row[0] || '').trim().toLowerCase();
+      const valor = String(row[1] || '').trim();
       if (chave && chave !== 'chave') config[chave] = valor;
     });
     return config;
@@ -157,7 +181,7 @@ async function fetchLinks() {
     return MOCK_DATA;
   }
 
-  const data = await fetchSheet(RANGE);
+  const data = await fetchSheet(SHEET_NAME, RANGE);
   const rows = data.values || [];
 
   if (rows.length > 0 && isNaN(rows[0][1])) {
@@ -172,14 +196,15 @@ async function fetchLinks() {
  */
 function agruparDados(rows) {
   const categorias = {};
+  const toStr = (v) => (v === null || v === undefined) ? '' : String(v).trim();
 
   rows.forEach(row => {
-    const categoria = (row[0] || '').trim();
+    const categoria = toStr(row[0]);
     const ordemCat = parseInt(row[1]) || 99;
-    const subcategoria = (row[2] || '').trim();
+    const subcategoria = toStr(row[2]);
     const ordemSubcat = parseInt(row[3]) || 99;
-    const nomeLink = (row[4] || '').trim();
-    const url = (row[5] || '').trim();
+    const nomeLink = toStr(row[4]);
+    const url = toStr(row[5]);
 
     if (!categoria) return;
 

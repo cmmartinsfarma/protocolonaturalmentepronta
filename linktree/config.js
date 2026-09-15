@@ -1,11 +1,17 @@
+// ============================================================
+// CONFIGURAÇÃO — edite apenas este arquivo
+// ============================================================
+// Sem proxy/worker: os dados são lidos direto do Google Sheets
+// pelo endpoint "gviz" (publicado na web). Para isso:
+//   1. Abra a planilha e clique em Arquivo > Compartilhar >
+//      Publicar na Web (publicar como página da web / CSV).
+//   2. Cole abaixo o ID da planilha (trecho entre /d/ e /edit
+//      na URL do Google Sheets).
+// ============================================================
 const CONFIG = {
-    PROXY_URL: 'https://seu-proxy.workers.dev',
-    API_KEY: '',
     SHEET_ID: '',
-    SCOPES: 'https://www.googleapis.com/auth/spreadsheets profile email',
     SHEET_LINKS: 'Sheet1',
     SHEET_CONFIG: 'Sheet2',
-    RANGE_LINKS: 'Sheet1!A:F',
-    RANGE_CONFIG: 'Sheet2!A:B',
-    WIZARD_URL: '',
+    RANGE_LINKS: 'A:F',
+    RANGE_CONFIG: 'A:B',
 };

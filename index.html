@@ -15,7 +15,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://www.naturalmentepronta.com.br/og-image.jpg" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -122,6 +122,7 @@
       white-space: nowrap;
     }
     .btn--full { width: 100%; }
+    .protocolo-card .btn { white-space: normal; line-height: 1.3; }
     .btn:active { transform: translateY(0) scale(.98); transition-duration: .08s; }
 
     .btn--primary {
@@ -196,6 +197,7 @@
       font-weight: 600;
       color: var(--charcoal);
       line-height: 1.2;
+      white-space: nowrap;
     }
     .nav__brand-title {
       font-size: .75rem;
@@ -223,27 +225,6 @@
       padding-top: 68px;
       overflow: hidden;
     }
-    .hero__headline {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 40px 24px 28px;
-      text-align: center;
-    }
-    .hero__title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-      font-weight: 500;
-      line-height: 1.15;
-      color: var(--charcoal);
-      margin-bottom: 16px;
-    }
-    .hero__subtitle {
-      font-size: 1.05rem;
-      color: var(--charcoal-soft);
-      line-height: 1.65;
-      max-width: 560px;
-      margin: 0 auto;
-    }
     .hero__banner-wrap {
       position: relative;
       width: 100%;
@@ -258,17 +239,10 @@
       object-fit: cover;
       aspect-ratio: 16 / 9;
     }
-    .hero__banner-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(44,36,32,.28) 100%);
-      pointer-events: none;
-    }
     .hero__cta-desktop {
       position: absolute;
-      bottom: 7%;
-      right: 7%;
+      bottom: 10%;
+      right: 9%;
       display: flex;
       gap: 14px;
       z-index: 10;
@@ -387,7 +361,7 @@
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
       gap: 32px;
       margin-top: 0;
-      align-items: start;
+      align-items: stretch;
     }
     .protocolo-card {
       background: var(--white);
@@ -396,6 +370,8 @@
       box-shadow: var(--shadow);
       transition: var(--transition);
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
     .protocolo-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
     .protocolo-card--featured { border: 3px solid var(--gold); box-shadow: 0 0 0 4px rgba(184,150,90,.14), 0 18px 48px rgba(44,36,32,.18); }
@@ -435,7 +411,7 @@
       margin-bottom: 8px;
     }
     .protocolo-card__tagline { font-size: .9rem; color: var(--charcoal-soft); }
-    .protocolo-card__body { padding: 28px 32px 32px; text-align: left; }
+    .protocolo-card__body { padding: 28px 32px 32px; text-align: left; display: flex; flex-direction: column; flex: 1; }
     .protocolo-card__for { font-size: .9rem; color: var(--charcoal); margin-bottom: 20px; line-height: 1.6; }
     .protocolo-card__includes {
       list-style: none;
@@ -456,6 +432,7 @@
       background: var(--cream);
       border-radius: 12px;
       padding: 16px 20px;
+      margin-top: auto;
       margin-bottom: 20px;
     }
     .price__label { font-size: .72rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
@@ -469,7 +446,7 @@
     .price__or { font-size: .78rem; color: var(--text-muted); }
     .price__save { color: var(--gold-700); font-weight: 600; }
     .price__value { font-size: .78rem; color: var(--rose-700); font-weight: 500; margin-top: 6px; }
-    .protocolo-card__note { font-size: .8125rem; color: var(--text-muted); margin-top: 12px; text-align: center; }
+    .protocolo-card__note { font-size: .8125rem; color: var(--charcoal-soft); margin-top: 12px; text-align: center; }
 
     /* ===== ADICIONAIS ===== */
     .adicionais { padding: 96px 0; background: var(--white); text-align: center; }
@@ -485,6 +462,8 @@
       text-align: center;
       border: 1px solid var(--cream-dark);
       transition: var(--transition);
+      display: flex;
+      flex-direction: column;
     }
     .adicional-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--blush); }
     .adicional-card__emoji { font-size: 2rem; margin-bottom: 12px; }
@@ -515,8 +494,9 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      align-self: center;
       min-height: 44px;
-      margin-top: 14px;
+      margin-top: auto;
       font-size: .82rem;
       font-weight: 600;
       color: var(--white);
@@ -812,6 +792,13 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .protocolos__grid { grid-template-columns: 1fr; }
+      .timeline, .diferenciais, .protocolos, .adicionais, .depoimentos, .sobre, .faq, .contato { padding: 56px 0; }
+      .hero__img { height: 300px; aspect-ratio: auto; object-position: center; }
+      .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 16px; }
+    }
+    @media (max-width: 480px) {
+      .nav__brand-title { display: none; }
+      .btn--nav { padding: 10px 14px; font-size: .78rem; }
     }
 
     /* ===== ACCESSIBILITY ===== */
@@ -992,10 +979,7 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
-    <div class="hero__headline">
-      <h1 class="hero__title">Chegue às festas de fim de ano com a pele radiante, natural e cheia de vida</h1>
-      <p class="hero__subtitle">Um planejamento de 3 meses, guiado por ciência, para você se reconhecer no espelho na sua melhor versão. Consulta avaliativa gratuita.</p>
-    </div>
+    <h1 class="sr-only">Chegue às festas de fim de ano com a pele radiante, natural e cheia de vida — Protocolo Naturalmente Pronta</h1>
     <div class="hero__banner-wrap">
       <img src="hero.jpg" alt="Mulher com pele radiante e saudável sorrindo, conceito do Protocolo Naturalmente Pronta" class="hero__img" width="1920" height="1080" fetchpriority="high" decoding="async" />
       <div class="hero__cta-desktop">
@@ -1168,7 +1152,7 @@
           <p>Volume e definição naturais para o seu sorriso.</p>
           <div class="adicional-card__price">+ R$ 950</div>
           <div class="adicional-card__brinde">🎁 Ganha Gloss Volumizador da Bioage</div>
-          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20o%20Preenchimento%20Labial%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao meu protocolo</a>
+          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20o%20Preenchimento%20Labial%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
         </div>
         <div class="adicional-card reveal">
           <div class="adicional-card__emoji">💧</div>
@@ -1176,7 +1160,7 @@
           <p>Hidratação profunda e luminosidade de dentro para fora.</p>
           <div class="adicional-card__price">+ R$ 250</div>
           <div class="adicional-card__brinde">🎁 Ganha Hidragloss</div>
-          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20o%20Skinbooster%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao meu protocolo</a>
+          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20o%20Skinbooster%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
         </div>
         <div class="adicional-card reveal">
           <div class="adicional-card__emoji">🌸</div>
@@ -1184,7 +1168,7 @@
           <p>Tratamento estético para secagem de vasinhos com segurança e eficácia.</p>
           <div class="adicional-card__price">+ R$ 450</div>
           <div class="adicional-card__brinde">🎁 Fechando 3 sessões, ganha a 4ª</div>
-          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20a%20Secagem%20de%20Vasinhos%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao meu protocolo</a>
+          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20a%20Secagem%20de%20Vasinhos%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
         </div>
         <div class="adicional-card reveal">
           <div class="adicional-card__emoji">✨</div>
@@ -1192,7 +1176,7 @@
           <p>Tratamento avançado para contorno e redução de gordura localizada.</p>
           <div class="adicional-card__price">+ R$ 1.200</div>
           <div class="adicional-card__brinde">🎁 Fechando 7 sessões, ganha 2 sessões de papada</div>
-          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20a%20Gordura%20Localizada%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao meu protocolo</a>
+          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20a%20Gordura%20Localizada%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
         </div>
       </div>
     </div>

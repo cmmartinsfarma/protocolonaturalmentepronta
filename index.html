@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="no-js">
+
 <head>
   <script>document.documentElement.classList.remove('no-js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pele radiante no fim de ano em Ribeirão Preto e São Joaquim da Barra | Dra. Carolina Martins</title>
-  <meta name="description" content="Planejamento de 3 meses para chegar às festas com pele radiante e natural. Avaliação gratuita em Ribeirão Preto e São Joaquim da Barra. Agende." />
+  <meta name="description"
+    content="Planejamento de 3 meses para chegar às festas com pele radiante e natural. Avaliação gratuita em Ribeirão Preto e São Joaquim da Barra. Agende." />
   <link rel="canonical" href="https://www.naturalmentepronta.com.br/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Protocolo Naturalmente Pronta | Dra. Carolina Martins" />
-  <meta property="og:description" content="Chegue às festas de fim de ano com pele radiante e natural. Farmacêutica Esteta em Ribeirão Preto e São Joaquim da Barra." />
+  <meta property="og:description"
+    content="Chegue às festas de fim de ano com pele radiante e natural. Farmacêutica Esteta em Ribeirão Preto e São Joaquim da Barra." />
   <meta property="og:image" content="https://www.naturalmentepronta.com.br/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -19,11 +22,24 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <style>
     /* ===== CSS RESET & BASE ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 88px; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      scroll-padding-top: 88px;
+    }
 
     /* ===== TOKENS ===== */
     :root {
@@ -50,14 +66,14 @@
       --wa-700: #075e54;
       --ig-600: #ad1457;
       --ig-700: #6a1b9a;
-      --focus-ring: 0 0 0 3px rgba(196,149,122,.55);
+      --focus-ring: 0 0 0 3px rgba(196, 149, 122, .55);
       --focus-offset: 2px;
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'Inter', system-ui, sans-serif;
       --radius: 16px;
-      --shadow: 0 4px 32px rgba(44,36,32,.10);
-      --shadow-lg: 0 12px 48px rgba(44,36,32,.18);
-      --transition: .3s cubic-bezier(.4,0,.2,1);
+      --shadow: 0 4px 32px rgba(44, 36, 32, .10);
+      --shadow-lg: 0 12px 48px rgba(44, 36, 32, .18);
+      --transition: .3s cubic-bezier(.4, 0, .2, 1);
     }
 
     body {
@@ -69,7 +85,11 @@
     }
 
     /* ===== UTILITIES ===== */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
     .section-tag {
       display: inline-block;
@@ -79,7 +99,7 @@
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--rose-text);
-      background: rgba(196,149,122,.12);
+      background: rgba(196, 149, 122, .12);
       padding: 4px 14px;
       border-radius: 50px;
       margin-bottom: 16px;
@@ -93,7 +113,11 @@
       color: var(--charcoal);
       margin-bottom: 16px;
     }
-    .section-title em { font-style: italic; color: var(--rose-deep); }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--rose-deep);
+    }
 
     .section-desc {
       font-size: 1.05rem;
@@ -121,30 +145,53 @@
       transition: var(--transition);
       white-space: nowrap;
     }
-    .btn--full { width: 100%; }
-    .protocolo-card .btn { white-space: normal; line-height: 1.3; }
-    .btn:active { transform: translateY(0) scale(.98); transition-duration: .08s; }
+
+    .btn--full {
+      width: 100%;
+    }
+
+    .protocolo-card .btn {
+      white-space: normal;
+      line-height: 1.3;
+    }
+
+    .btn:active {
+      transform: translateY(0) scale(.98);
+      transition-duration: .08s;
+    }
 
     .btn--primary {
       background: linear-gradient(135deg, var(--rose-600) 0%, var(--rose-700) 100%);
       color: var(--white);
-      box-shadow: 0 4px 20px rgba(154,107,86,.4);
+      box-shadow: 0 4px 20px rgba(154, 107, 86, .4);
     }
-    .btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196,149,122,.5); }
+
+    .btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(196, 149, 122, .5);
+    }
 
     .btn--gold {
       background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
       color: var(--charcoal);
-      box-shadow: 0 4px 20px rgba(184,150,90,.4);
+      box-shadow: 0 4px 20px rgba(184, 150, 90, .4);
     }
-    .btn--gold:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,150,90,.5); }
+
+    .btn--gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(184, 150, 90, .5);
+    }
 
     .btn--ghost {
       background: transparent;
       color: var(--white);
-      border: 2px solid rgba(255,255,255,.6);
+      border: 2px solid rgba(255, 255, 255, .6);
     }
-    .btn--ghost:hover { background: rgba(255,255,255,.15); border-color: white; }
+
+    .btn--ghost:hover {
+      background: rgba(255, 255, 255, .15);
+      border-color: white;
+    }
 
     .btn--nav {
       background: var(--white);
@@ -152,36 +199,54 @@
       font-size: .85rem;
       padding: 10px 22px;
       min-height: 44px;
-      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
     }
-    .btn--nav:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+
+    .btn--nav:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+    }
 
     .btn--whatsapp {
       background: linear-gradient(135deg, var(--wa-600), var(--wa-700));
       color: white;
-      box-shadow: 0 4px 20px rgba(7,94,84,.35);
+      box-shadow: 0 4px 20px rgba(7, 94, 84, .35);
     }
-    .btn--whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,.45); }
+
+    .btn--whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, .45);
+    }
 
     .btn--instagram {
       background: linear-gradient(135deg, var(--ig-600), var(--ig-700));
       color: white;
     }
-    .btn--instagram:hover { transform: translateY(-2px); opacity: .9; }
+
+    .btn--instagram:hover {
+      transform: translateY(-2px);
+      opacity: .9;
+    }
 
     /* ===== NAV ===== */
     .nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
       padding: 12px 0;
-      background: rgba(250,247,242,.92);
+      background: rgba(250, 247, 242, .92);
       backdrop-filter: blur(16px);
-      box-shadow: 0 2px 20px rgba(44,36,32,.08);
-      border-bottom: 1px solid rgba(196,149,122,.15);
+      box-shadow: 0 2px 20px rgba(44, 36, 32, .08);
+      border-bottom: 1px solid rgba(196, 149, 122, .15);
       transition: var(--transition);
     }
-    .nav.scrolled { box-shadow: 0 6px 24px rgba(44,36,32,.16); }
+
+    .nav.scrolled {
+      box-shadow: 0 6px 24px rgba(44, 36, 32, .16);
+    }
+
     .nav__inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -190,7 +255,12 @@
       align-items: center;
       justify-content: space-between;
     }
-    .nav__brand { display: flex; flex-direction: column; }
+
+    .nav__brand {
+      display: flex;
+      flex-direction: column;
+    }
+
     .nav__brand-name {
       font-family: var(--font-serif);
       font-size: 1.15rem;
@@ -199,6 +269,7 @@
       line-height: 1.2;
       white-space: nowrap;
     }
+
     .nav__brand-title {
       font-size: .75rem;
       color: var(--text-muted);
@@ -225,6 +296,7 @@
       padding-top: 68px;
       overflow: hidden;
     }
+
     .hero__banner-wrap {
       position: relative;
       width: 100%;
@@ -232,6 +304,7 @@
       margin: 0 auto;
       line-height: 0;
     }
+
     .hero__img {
       width: 100%;
       height: auto;
@@ -239,6 +312,7 @@
       object-fit: cover;
       aspect-ratio: 16 / 9;
     }
+
     .hero__cta-desktop {
       position: absolute;
       bottom: 10%;
@@ -247,6 +321,7 @@
       gap: 14px;
       z-index: 10;
     }
+
     .hero__cta-mobile {
       display: none;
       padding: 20px 24px;
@@ -254,27 +329,37 @@
       gap: 12px;
       flex-direction: column;
     }
+
     .btn--outline {
-      background: rgba(255,255,255,.85);
+      background: rgba(255, 255, 255, .85);
       color: var(--charcoal);
       border: 1.5px solid var(--rose);
       backdrop-filter: blur(8px);
     }
+
     .btn--outline:hover {
       background: var(--rose);
       color: white;
       border-color: var(--rose);
     }
+
     @media (max-width: 860px) {
-      .hero__cta-desktop { display: none; }
-      .hero__cta-mobile { display: flex; }
+      .hero__cta-desktop {
+        display: none;
+      }
+
+      .hero__cta-mobile {
+        display: flex;
+      }
     }
+
     @media (max-width: 768px) {
-      .hero__img { object-position: 40% center; }
+      .hero__img { object-position: center top; }
       .hero__cta-mobile {
         padding: 16px 16px 20px;
         gap: 10px;
       }
+
       .hero__cta-mobile .btn {
         font-size: .88rem;
         padding: 13px 20px;
@@ -282,8 +367,15 @@
     }
 
     /* ===== TIMELINE ===== */
-    .timeline { padding: 96px 0; background: var(--white); }
-    .timeline .container { text-align: center; }
+    .timeline {
+      padding: 96px 0;
+      background: var(--white);
+    }
+
+    .timeline .container {
+      text-align: center;
+    }
+
     .timeline__steps {
       display: flex;
       align-items: flex-start;
@@ -292,6 +384,7 @@
       margin-top: 56px;
       flex-wrap: wrap;
     }
+
     .timeline__step {
       flex: 1;
       min-width: 160px;
@@ -302,14 +395,30 @@
       border-radius: var(--radius);
       transition: var(--transition);
     }
-    .timeline__step:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+    .timeline__step:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
     .timeline__step.active {
       background: linear-gradient(135deg, var(--rose-600) 0%, var(--rose-700) 100%);
       color: white;
     }
-    .timeline__step.active .timeline__month { color: white; }
-    .timeline__step.active .timeline__desc { color: rgba(255,255,255,.9); }
-    .timeline__icon { font-size: 2rem; margin-bottom: 8px; }
+
+    .timeline__step.active .timeline__month {
+      color: white;
+    }
+
+    .timeline__step.active .timeline__desc {
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .timeline__icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
     .timeline__month {
       font-family: var(--font-serif);
       font-size: 1.2rem;
@@ -317,7 +426,13 @@
       color: var(--charcoal);
       margin-bottom: 8px;
     }
-    .timeline__desc { font-size: .85rem; color: var(--text-muted); line-height: 1.5; }
+
+    .timeline__desc {
+      font-size: .85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
     .timeline__connector {
       flex: 0 0 48px;
       height: 2px;
@@ -325,19 +440,30 @@
       margin-top: 56px;
       align-self: flex-start;
     }
+
     @media (max-width: 640px) {
-      .timeline__connector { display: none; }
-      .timeline__steps { gap: 16px; }
+      .timeline__connector {
+        display: none;
+      }
+
+      .timeline__steps {
+        gap: 16px;
+      }
     }
 
     /* ===== DIFERENCIAIS ===== */
-    .diferenciais { padding: 96px 0; text-align: center; }
+    .diferenciais {
+      padding: 96px 0;
+      text-align: center;
+    }
+
     .diferenciais__grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
       gap: 24px;
       margin-top: 0;
     }
+
     .diferencial-card {
       background: var(--white);
       border-radius: var(--radius);
@@ -346,12 +472,18 @@
       border: 1px solid var(--cream-dark);
       transition: var(--transition);
     }
+
     .diferencial-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
       border-color: var(--blush);
     }
-    .diferencial-card__icon { font-size: 2rem; margin-bottom: 12px; }
+
+    .diferencial-card__icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
     .diferencial-card h3 {
       font-family: var(--font-serif);
       font-size: 1.15rem;
@@ -359,7 +491,12 @@
       color: var(--charcoal);
       margin-bottom: 8px;
     }
-    .diferencial-card p { font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
+
+    .diferencial-card p {
+      font-size: .9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
 
     /* ===== PROTOCOLOS ===== */
     .protocolos {
@@ -367,6 +504,7 @@
       background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
       text-align: center;
     }
+
     .protocolos__grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
@@ -374,6 +512,7 @@
       margin-top: 0;
       align-items: stretch;
     }
+
     .protocolo-card {
       background: var(--white);
       border-radius: 24px;
@@ -384,11 +523,21 @@
       display: flex;
       flex-direction: column;
     }
-    .protocolo-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-    .protocolo-card--featured { border: 3px solid var(--gold); box-shadow: 0 0 0 4px rgba(184,150,90,.14), 0 18px 48px rgba(44,36,32,.18); }
+
+    .protocolo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .protocolo-card--featured {
+      border: 3px solid var(--gold);
+      box-shadow: 0 0 0 4px rgba(184, 150, 90, .14), 0 18px 48px rgba(44, 36, 32, .18);
+    }
+
     .protocolo-card__badge {
       position: absolute;
-      top: 16px; right: 16px;
+      top: 16px;
+      right: 16px;
       background: var(--gold);
       color: var(--charcoal);
       font-size: .75rem;
@@ -397,15 +546,19 @@
       border-radius: 50px;
       letter-spacing: .04em;
     }
+
     .protocolo-card__header {
       padding: 36px 32px 28px;
     }
+
     .protocolo-card__header--glow {
       background: linear-gradient(135deg, #f5e6da 0%, #ebd5c5 100%);
     }
+
     .protocolo-card__header--serenidade {
       background: linear-gradient(135deg, var(--lavender) 0%, var(--lavender-soft) 100%);
     }
+
     .protocolo-card__tag {
       font-size: .72rem;
       font-weight: 600;
@@ -414,6 +567,7 @@
       color: var(--text-muted);
       margin-bottom: 8px;
     }
+
     .protocolo-card__title {
       font-family: var(--font-serif);
       font-size: 1.8rem;
@@ -421,13 +575,32 @@
       color: var(--charcoal);
       margin-bottom: 8px;
     }
-    .protocolo-card__tagline { font-size: .9rem; color: var(--charcoal-soft); }
-    .protocolo-card__body { padding: 28px 32px 32px; text-align: left; display: flex; flex-direction: column; flex: 1; }
-    .protocolo-card__for { font-size: .9rem; color: var(--charcoal); margin-bottom: 20px; line-height: 1.6; }
+
+    .protocolo-card__tagline {
+      font-size: .9rem;
+      color: var(--charcoal-soft);
+    }
+
+    .protocolo-card__body {
+      padding: 28px 32px 32px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .protocolo-card__for {
+      font-size: .9rem;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
     .protocolo-card__includes {
       list-style: none;
       margin-bottom: 28px;
     }
+
     .protocolo-card__includes li {
       font-size: .88rem;
       color: var(--charcoal-soft);
@@ -435,7 +608,11 @@
       border-bottom: 1px solid var(--cream-dark);
       line-height: 1.5;
     }
-    .protocolo-card__includes li:last-child { border-bottom: none; }
+
+    .protocolo-card__includes li:last-child {
+      border-bottom: none;
+    }
+
     .protocolo-card__price {
       display: flex;
       flex-direction: column;
@@ -446,26 +623,64 @@
       margin-top: auto;
       margin-bottom: 20px;
     }
-    .price__label { font-size: .72rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; }
+
+    .price__label {
+      font-size: .72rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
     .price__installments {
       font-family: var(--font-serif);
       font-size: 1.4rem;
       color: var(--charcoal);
       font-weight: 400;
     }
-    .price__installments strong { font-weight: 600; color: var(--rose-deep); }
-    .price__or { font-size: .78rem; color: var(--text-muted); }
-    .price__save { color: var(--gold-700); font-weight: 600; }
-    .price__value { font-size: .78rem; color: var(--rose-700); font-weight: 500; margin-top: 6px; }
-    .protocolo-card__note { font-size: .8125rem; color: var(--charcoal-soft); margin-top: 12px; text-align: center; }
+
+    .price__installments strong {
+      font-weight: 600;
+      color: var(--rose-deep);
+    }
+
+    .price__or {
+      font-size: .78rem;
+      color: var(--text-muted);
+    }
+
+    .price__save {
+      color: var(--gold-700);
+      font-weight: 600;
+    }
+
+    .price__value {
+      font-size: .78rem;
+      color: var(--rose-700);
+      font-weight: 500;
+      margin-top: 6px;
+    }
+
+    .protocolo-card__note {
+      font-size: .8125rem;
+      color: var(--charcoal-soft);
+      margin-top: 12px;
+      text-align: center;
+    }
 
     /* ===== ADICIONAIS ===== */
-    .adicionais { padding: 96px 0; background: var(--white); text-align: center; }
+    .adicionais {
+      padding: 96px 0;
+      background: var(--white);
+      text-align: center;
+    }
+
     .adicionais__grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
       gap: 24px;
     }
+
     .adicional-card {
       background: var(--cream);
       border-radius: var(--radius);
@@ -476,8 +691,18 @@
       display: flex;
       flex-direction: column;
     }
-    .adicional-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--blush); }
-    .adicional-card__emoji { font-size: 2rem; margin-bottom: 12px; }
+
+    .adicional-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--blush);
+    }
+
+    .adicional-card__emoji {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
     .adicional-card h3 {
       font-family: var(--font-serif);
       font-size: 1.05rem;
@@ -485,7 +710,14 @@
       color: var(--charcoal);
       margin-bottom: 8px;
     }
-    .adicional-card p { font-size: .85rem; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
+
+    .adicional-card p {
+      font-size: .85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
     .adicional-card__price {
       font-family: var(--font-serif);
       font-size: 1.3rem;
@@ -493,14 +725,16 @@
       color: var(--rose-deep);
       margin-bottom: 10px;
     }
+
     .adicional-card__brinde {
       font-size: .78rem;
       color: var(--gold-700);
       font-weight: 600;
-      background: rgba(184,150,90,.12);
+      background: rgba(184, 150, 90, .12);
       border-radius: 8px;
       padding: 6px 10px;
     }
+
     .adicional-card__cta {
       display: inline-flex;
       align-items: center;
@@ -517,15 +751,25 @@
       text-decoration: none;
       transition: var(--transition);
     }
-    .adicional-card__cta:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(154,107,86,.4); }
+
+    .adicional-card__cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(154, 107, 86, .4);
+    }
 
     /* ===== DEPOIMENTOS ===== */
-    .depoimentos { padding: 96px 0; background: var(--white); text-align: center; }
+    .depoimentos {
+      padding: 96px 0;
+      background: var(--white);
+      text-align: center;
+    }
+
     .depoimentos__grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
       gap: 24px;
     }
+
     .depoimento-card {
       background: var(--cream);
       border: 1px solid var(--cream-dark);
@@ -534,7 +778,13 @@
       text-align: left;
       transition: var(--transition);
     }
-    .depoimento-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--blush); }
+
+    .depoimento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--blush);
+    }
+
     .depoimento-card blockquote {
       font-family: var(--font-serif);
       font-style: italic;
@@ -543,30 +793,54 @@
       color: var(--charcoal);
       margin: 0 0 20px;
     }
-    .depoimento-card figcaption { display: flex; flex-direction: column; gap: 2px; }
-    .depoimento-card figcaption strong { color: var(--charcoal); font-size: .9rem; }
-    .depoimento-card figcaption span { color: var(--rose-deep); font-size: .8rem; }
+
+    .depoimento-card figcaption {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .depoimento-card figcaption strong {
+      color: var(--charcoal);
+      font-size: .9rem;
+    }
+
+    .depoimento-card figcaption span {
+      color: var(--rose-deep);
+      font-size: .8rem;
+    }
 
     /* ===== SOBRE ===== */
     .sobre {
       padding: 96px 0;
       background: linear-gradient(135deg, #2c2420 0%, #4a3d36 100%);
     }
+
     .sobre__inner {
       display: grid;
       grid-template-columns: 1fr 1.4fr;
       gap: 64px;
       align-items: center;
     }
+
     @media (max-width: 768px) {
-      .sobre__inner { grid-template-columns: 1fr; }
+      .sobre__inner {
+        grid-template-columns: 1fr;
+      }
     }
-    .sobre__visual { display: flex; flex-direction: column; gap: 24px; }
+
+    .sobre__visual {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
     .sobre__photo-wrap {
       border-radius: 24px;
       overflow: hidden;
       box-shadow: var(--shadow-lg);
     }
+
     .sobre__img {
       width: 100%;
       height: 100%;
@@ -576,35 +850,42 @@
       display: block;
       border-radius: 24px;
     }
+
     .sobre__photo-placeholder {
-      background: linear-gradient(135deg, rgba(196,149,122,.3), rgba(184,150,90,.2));
-      border: 2px dashed rgba(196,149,122,.4);
+      background: linear-gradient(135deg, rgba(196, 149, 122, .3), rgba(184, 150, 90, .2));
+      border: 2px dashed rgba(196, 149, 122, .4);
       border-radius: 24px;
       height: 320px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: rgba(255,255,255,.5);
+      color: rgba(255, 255, 255, .5);
       font-size: .85rem;
       text-align: center;
       gap: 8px;
     }
-    .sobre__photo-placeholder span { font-size: 2.5rem; }
+
+    .sobre__photo-placeholder span {
+      font-size: 2.5rem;
+    }
+
     .sobre__credentials {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
     }
+
     .credential {
       flex: 1;
       min-width: 100px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
       border-radius: 12px;
       padding: 16px;
       text-align: center;
     }
+
     .credential__num {
       display: block;
       font-family: var(--font-serif);
@@ -612,11 +893,33 @@
       font-weight: 600;
       color: var(--gold-light);
     }
-    .credential__label { font-size: .75rem; color: rgba(255,255,255,.7); line-height: 1.4; }
-    .sobre__content .section-tag { background: rgba(196,149,122,.2); color: var(--gold-light); }
-    .sobre__content .section-title { color: var(--white); }
-    .sobre__content .section-title em { color: var(--gold-light); }
-    .sobre__content p { font-size: .95rem; color: rgba(255,255,255,.75); margin-bottom: 20px; line-height: 1.75; }
+
+    .credential__label {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .7);
+      line-height: 1.4;
+    }
+
+    .sobre__content .section-tag {
+      background: rgba(196, 149, 122, .2);
+      color: var(--gold-light);
+    }
+
+    .sobre__content .section-title {
+      color: var(--white);
+    }
+
+    .sobre__content .section-title em {
+      color: var(--gold-light);
+    }
+
+    .sobre__content p {
+      font-size: .95rem;
+      color: rgba(255, 255, 255, .75);
+      margin-bottom: 20px;
+      line-height: 1.75;
+    }
+
     .sobre__quote {
       border-left: 3px solid var(--gold);
       padding-left: 20px;
@@ -624,9 +927,10 @@
       font-family: var(--font-serif);
       font-style: italic;
       font-size: 1.1rem;
-      color: rgba(255,255,255,.85);
+      color: rgba(255, 255, 255, .85);
       line-height: 1.6;
     }
+
     .sobre__quote cite {
       display: block;
       font-size: .8rem;
@@ -638,9 +942,21 @@
     }
 
     /* ===== FAQ ===== */
-    .faq { padding: 96px 0; text-align: center; }
-    .faq .section-desc { margin-bottom: 48px; }
-    .faq__list { max-width: 720px; margin: 0 auto; text-align: left; }
+    .faq {
+      padding: 96px 0;
+      text-align: center;
+    }
+
+    .faq .section-desc {
+      margin-bottom: 48px;
+    }
+
+    .faq__list {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
     .faq__item {
       background: var(--white);
       border-radius: 12px;
@@ -649,7 +965,12 @@
       overflow: hidden;
       transition: var(--transition);
     }
-    .faq__item[open] { border-color: var(--blush); box-shadow: var(--shadow); }
+
+    .faq__item[open] {
+      border-color: var(--blush);
+      box-shadow: var(--shadow);
+    }
+
     .faq__question {
       padding: 20px 24px;
       cursor: pointer;
@@ -662,7 +983,11 @@
       justify-content: space-between;
       gap: 16px;
     }
-    .faq__question::-webkit-details-marker { display: none; }
+
+    .faq__question::-webkit-details-marker {
+      display: none;
+    }
+
     .faq__question::after {
       content: '+';
       font-size: 1.4rem;
@@ -671,15 +996,26 @@
       flex-shrink: 0;
       transition: var(--transition);
     }
-    .faq__item[open] .faq__question::after { content: '−'; }
+
+    .faq__item[open] .faq__question::after {
+      content: '−';
+    }
+
     .faq__answer {
       padding: 0 24px 20px;
       font-size: .9rem;
       color: var(--text-muted);
       line-height: 1.75;
     }
-    .faq__answer em { font-style: italic; color: var(--rose-deep); }
-    .faq__answer strong { color: var(--charcoal); }
+
+    .faq__answer em {
+      font-style: italic;
+      color: var(--rose-deep);
+    }
+
+    .faq__answer strong {
+      color: var(--charcoal);
+    }
 
     /* ===== CONTATO ===== */
     .contato {
@@ -687,6 +1023,7 @@
       background: linear-gradient(135deg, var(--blush) 0%, var(--cream-dark) 100%);
       text-align: center;
     }
+
     .contato__title {
       font-family: var(--font-serif);
       font-size: clamp(1.875rem, 3vw, 2.25rem);
@@ -694,8 +1031,21 @@
       color: var(--charcoal);
       margin-bottom: 16px;
     }
-    .contato__title em { font-style: italic; color: var(--rose-deep); }
-    .contato__desc { font-size: 1rem; color: var(--charcoal-soft); margin-bottom: 48px; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+    .contato__title em {
+      font-style: italic;
+      color: var(--rose-deep);
+    }
+
+    .contato__desc {
+      font-size: 1rem;
+      color: var(--charcoal-soft);
+      margin-bottom: 48px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .contato__cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
@@ -703,20 +1053,33 @@
       max-width: 700px;
       margin: 0 auto 40px;
     }
+
     .contato__option {
       background: var(--white);
       border-radius: 20px;
       padding: 32px 28px;
       box-shadow: var(--shadow);
     }
-    .contato__option-icon { font-size: 2.5rem; margin-bottom: 12px; }
+
+    .contato__option-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
     .contato__option h3 {
       font-family: var(--font-serif);
       font-size: 1.2rem;
       color: var(--charcoal);
       margin-bottom: 8px;
     }
-    .contato__option p { font-size: .88rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+
+    .contato__option p {
+      font-size: .88rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
     .contato__badge {
       display: flex;
       align-items: center;
@@ -726,7 +1089,10 @@
       color: var(--text-muted);
       flex-wrap: wrap;
     }
-    .dot { color: var(--blush); }
+
+    .dot {
+      color: var(--blush);
+    }
 
     /* ===== FOOTER ===== */
     .footer {
@@ -734,26 +1100,38 @@
       padding: 40px 0;
       text-align: center;
     }
+
     .footer__brand {
       display: flex;
       flex-direction: column;
       margin-bottom: 12px;
     }
+
     .footer__brand strong {
       font-family: var(--font-serif);
       font-size: 1.2rem;
       color: var(--white);
       font-weight: 500;
     }
-    .footer__brand span { font-size: .78rem; color: rgba(255,255,255,.65); margin-top: 2px; }
+
+    .footer__brand span {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .65);
+      margin-top: 2px;
+    }
+
     .footer__quote {
       font-family: var(--font-serif);
       font-style: italic;
-      color: rgba(255,255,255,.6);
+      color: rgba(255, 255, 255, .6);
       font-size: .88rem;
       margin-bottom: 16px;
     }
-    .footer__copy { font-size: .875rem; color: rgba(255,255,255,.7); }
+
+    .footer__copy {
+      font-size: .875rem;
+      color: rgba(255, 255, 255, .7);
+    }
 
     /* ===== FLOATING WHATSAPP ===== */
     .whatsapp-float {
@@ -768,33 +1146,53 @@
       align-items: center;
       justify-content: center;
       color: white;
-      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      box-shadow: 0 4px 20px rgba(37, 211, 102, .45);
       z-index: 999;
       transition: var(--transition);
       text-decoration: none;
     }
-    .whatsapp-float:hover { transform: scale(1.12); box-shadow: 0 8px 28px rgba(37,211,102,.6); }
-    .whatsapp-float:active { transform: scale(.95); }
-    .whatsapp-float:hover::before { animation-play-state: paused; }
+
+    .whatsapp-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, .6);
+    }
+
+    .whatsapp-float:active {
+      transform: scale(.95);
+    }
+
+    .whatsapp-float:hover::before {
+      animation-play-state: paused;
+    }
+
     .whatsapp-float::before {
       content: '';
       position: absolute;
       inset: -4px;
       border-radius: 50%;
-      border: 2px solid rgba(37,211,102,.4);
+      border: 2px solid rgba(37, 211, 102, .4);
       animation: wa-ring 2s infinite;
     }
+
     @keyframes wa-ring {
-      0% { transform: scale(1); opacity: 1; }
-      100% { transform: scale(1.4); opacity: 0; }
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1.4);
+        opacity: 0;
+      }
     }
 
     /* ===== ANIMATIONS ===== */
     .reveal {
       opacity: 0;
       transform: translateY(22px);
-      transition: opacity .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1);
+      transition: opacity .6s cubic-bezier(.22, .61, .36, 1), transform .6s cubic-bezier(.22, .61, .36, 1);
     }
+
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
@@ -802,91 +1200,234 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
+
       /* Seções */
-      .timeline, .diferenciais, .protocolos, .adicionais, .depoimentos, .sobre, .faq, .contato { padding: 48px 0; }
-      .section-title { font-size: 1.6rem; }
-      .section-desc { font-size: .95rem; margin-bottom: 32px; }
+      .timeline,
+      .diferenciais,
+      .protocolos,
+      .adicionais,
+      .depoimentos,
+      .sobre,
+      .faq,
+      .contato {
+        padding: 48px 0;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .section-desc {
+        font-size: .95rem;
+        margin-bottom: 32px;
+      }
 
       /* Hero */
-      .hero__img { height: 260px; aspect-ratio: auto; object-position: 40% center; }
+      .hero__img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        object-position: center top;
+      }
 
       /* Protocolos */
-      .protocolos__grid { grid-template-columns: 1fr; gap: 24px; }
-      .protocolo-card__header { padding: 28px 20px 20px; }
-      .protocolo-card__body { padding: 20px 20px 24px; }
-      .protocolo-card__title { font-size: 1.5rem; }
-      .protocolo-card__badge { top: 12px; right: 12px; font-size: .7rem; }
+      .protocolos__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .protocolo-card__header {
+        padding: 28px 20px 20px;
+      }
+
+      .protocolo-card__body {
+        padding: 20px 20px 24px;
+      }
+
+      .protocolo-card__title {
+        font-size: 1.5rem;
+      }
+
+      .protocolo-card__badge {
+        top: 12px;
+        right: 12px;
+        font-size: .7rem;
+      }
 
       /* Adicionais — 1 coluna no mobile */
-      .adicionais__grid { grid-template-columns: 1fr; gap: 16px; }
-      .adicional-card { padding: 20px; text-align: center; }
-      .adicional-card__emoji { font-size: 1.7rem; margin-bottom: 8px; }
-      .adicional-card h3 { font-size: .98rem; margin-bottom: 6px; }
-      .adicional-card p { font-size: .82rem; margin-bottom: 10px; }
-      .adicional-card__price { font-size: 1.15rem; margin-bottom: 8px; }
-      .adicional-card__brinde { font-size: .75rem; margin-bottom: 12px; }
-      .adicional-card .adicional-card__cta { width: 100%; font-size: .85rem; padding: 11px 16px; }
+      .adicionais__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .adicional-card {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .adicional-card__emoji {
+        font-size: 1.7rem;
+        margin-bottom: 8px;
+      }
+
+      .adicional-card h3 {
+        font-size: .98rem;
+        margin-bottom: 6px;
+      }
+
+      .adicional-card p {
+        font-size: .82rem;
+        margin-bottom: 10px;
+      }
+
+      .adicional-card__price {
+        font-size: 1.15rem;
+        margin-bottom: 8px;
+      }
+
+      .adicional-card__brinde {
+        font-size: .75rem;
+        margin-bottom: 12px;
+      }
+
+      .adicional-card .adicional-card__cta {
+        width: 100%;
+        font-size: .85rem;
+        padding: 11px 16px;
+      }
 
       /* Depoimentos */
-      .depoimentos__grid { grid-template-columns: 1fr; gap: 16px; }
-      .depoimento-card { padding: 24px 20px; }
-      .depoimento-card blockquote { font-size: .95rem; }
+      .depoimentos__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .depoimento-card {
+        padding: 24px 20px;
+      }
+
+      .depoimento-card blockquote {
+        font-size: .95rem;
+      }
 
       /* Diferenciais */
-      .diferenciais__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-      .diferencial-card { padding: 20px 16px; }
-      .diferencial-card h3 { font-size: 1rem; }
-      .diferencial-card p { font-size: .82rem; }
+      .diferenciais__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .diferencial-card {
+        padding: 20px 16px;
+      }
+
+      .diferencial-card h3 {
+        font-size: 1rem;
+      }
+
+      .diferencial-card p {
+        font-size: .82rem;
+      }
 
       /* Timeline */
-      .timeline__steps { gap: 12px; }
-      .timeline__step { min-width: 140px; padding: 16px 12px; }
+      .timeline__steps {
+        gap: 12px;
+      }
+
+      .timeline__step {
+        min-width: 140px;
+        padding: 16px 12px;
+      }
 
       /* Sobre */
-      .sobre__inner { gap: 40px; }
-      .sobre__img { max-height: 380px; }
+      .sobre__inner {
+        gap: 40px;
+      }
+
+      .sobre__img {
+        max-height: 380px;
+      }
 
       /* Contato */
-      .contato__cards { grid-template-columns: 1fr; }
-      .contato__option { padding: 24px 20px; }
+      .contato__cards {
+        grid-template-columns: 1fr;
+      }
+
+      .contato__option {
+        padding: 24px 20px;
+      }
 
       /* Notas de rodapé */
-      .protocolo-card__note { font-size: .8rem; color: #52433c; }
+      .protocolo-card__note {
+        font-size: .8rem;
+        color: #52433c;
+      }
 
       /* WhatsApp float */
-      .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 16px; }
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 16px;
+      }
     }
 
     @media (max-width: 480px) {
-      .nav__brand-title { display: none; }
-      .btn--nav { padding: 10px 14px; font-size: .78rem; }
+      .nav__brand-title {
+        display: none;
+      }
+
+      .btn--nav {
+        padding: 10px 14px;
+        font-size: .78rem;
+      }
 
       /* Diferenciais — 1 col em telas muito pequenas */
-      .diferenciais__grid { grid-template-columns: 1fr; }
+      .diferenciais__grid {
+        grid-template-columns: 1fr;
+      }
 
       /* Adicional card mais compacto */
-      .adicional-card { padding: 16px; }
+      .adicional-card {
+        padding: 16px;
+      }
     }
 
     @media (max-width: 400px) {
+
       /* Nav — abreviar botão */
-      .btn--nav { font-size: .72rem; padding: 8px 12px; }
-      .nav__brand-name { font-size: 1rem; }
+      .btn--nav {
+        font-size: .72rem;
+        padding: 8px 12px;
+      }
+
+      .nav__brand-name {
+        font-size: 1rem;
+      }
 
       /* Containers mais compactos */
-      .container { padding: 0 16px; }
-      .protocolo-card__header { padding: 22px 16px 16px; }
-      .protocolo-card__body { padding: 16px 16px 20px; }
+      .container {
+        padding: 0 16px;
+      }
+
+      .protocolo-card__header {
+        padding: 22px 16px 16px;
+      }
+
+      .protocolo-card__body {
+        padding: 16px 16px 20px;
+      }
     }
 
     /* ===== ACCESSIBILITY ===== */
     a:focus-visible,
     .btn:focus-visible,
     .faq__question:focus-visible {
-      outline: 3px solid rgba(196,149,122,.55);
+      outline: 3px solid rgba(196, 149, 122, .55);
       outline-offset: 2px;
       box-shadow: none;
     }
+
     .skip-link {
       position: absolute;
       left: -9999px;
@@ -899,29 +1440,66 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .skip-link:focus { left: 0; }
+
+    .skip-link:focus {
+      left: 0;
+    }
+
     .scroll-progress {
-      position: fixed; top: 0; left: 0; height: 3px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
       background: linear-gradient(90deg, var(--rose), var(--gold));
-      width: 0; z-index: 1001; transition: width .1s linear;
+      width: 0;
+      z-index: 1001;
+      transition: width .1s linear;
     }
-    .btn.is-opening, .adicional-card__cta.is-opening { position: relative; overflow: hidden; pointer-events: none; }
-    .btn.is-opening::after, .adicional-card__cta.is-opening::after {
+
+    .btn.is-opening,
+    .adicional-card__cta.is-opening {
+      position: relative;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .btn.is-opening::after,
+    .adicional-card__cta.is-opening::after {
       content: 'Abrindo WhatsApp…';
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      font: inherit; font-weight: 600; color: inherit; letter-spacing: inherit;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: inherit;
+      font-weight: 600;
+      color: inherit;
+      letter-spacing: inherit;
     }
+
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
         transition-duration: .01ms !important;
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
       }
-      .reveal { opacity: 1; transform: none; }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
-    .no-js .reveal { opacity: 1; transform: none; }
+
+    .no-js .reveal {
+      opacity: 1;
+      transform: none;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -1027,17 +1605,13 @@
             "name": "Onde acontecem os atendimentos?",
             "acceptedAnswer": { "@type": "Answer", "text": "Em Ribeirão Preto e São Joaquim da Barra. O local é confirmado no momento do agendamento." }
           },
-          {
-            "@type": "Question",
-            "name": "Os resultados vão parecer que fiz alguma coisa?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Não. Naturalidade é um princípio inegociável: o objetivo é a sua melhor versão, mais descansada e radiante, sem exageros." }
-          }
         ]
       }
     ]
   }
   </script>
 </head>
+
 <body>
 
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -1049,347 +1623,404 @@
         <span class="nav__brand-name">Dra. Carolina Martins</span>
         <span class="nav__brand-title">Farmacêutica Esteta · CRF 125.459</span>
       </div>
-      <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="btn btn--nav" id="nav-cta" target="_blank" rel="noopener">Agendar Avaliação</a>
+      <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8"
+        class="btn btn--nav" id="nav-cta" target="_blank" rel="noopener">Agendar Avaliação</a>
     </div>
   </nav>
 
   <main id="conteudo">
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
-    <h1 class="sr-only">Chegue às festas de fim de ano com a pele radiante, natural e cheia de vida — Protocolo Naturalmente Pronta</h1>
-    <div class="hero__banner-wrap">
-      <img src="hero.jpg" alt="Mulher com pele radiante e saudável sorrindo, conceito do Protocolo Naturalmente Pronta" class="hero__img" width="1920" height="1080" fetchpriority="high" decoding="async" />
-      <div class="hero__cta-desktop">
-        <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="btn btn--primary" id="hero-cta-primary" target="_blank" rel="noopener">Quero minha avaliação gratuita</a>
-        <a href="#protocolos" class="btn btn--outline" id="hero-cta-secondary">Ver protocolos →</a>
-      </div>
-    </div>
-    <div class="hero__cta-mobile">
-      <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="btn btn--primary btn--full" id="hero-cta-mobile" target="_blank" rel="noopener">Quero minha avaliação gratuita</a>
-      <a href="#protocolos" class="btn btn--outline btn--full" id="hero-cta-mobile-sec">Ver protocolos →</a>
-    </div>
-  </section>
-
-  <!-- ===== TIMELINE ===== -->
-  <section class="timeline reveal" id="por-que-agora">
-    <div class="container">
-      <div class="section-tag">Por que começar agora?</div>
-      <h2 class="section-title">Setembro é o <em>momento certo</em> para planejar dezembro</h2>
-      <p class="section-desc">A pele tem o próprio ritmo. Com 3 meses de planejamento, ela responde de forma completa: o ácido hialurônico acomoda com naturalidade e a toxina botulínica entrega o resultado mais bonito, no tempo certo.</p>
-      <div class="timeline__steps">
-        <div class="timeline__step">
-          <div class="timeline__icon">🍂</div>
-          <div class="timeline__month">Setembro</div>
-          <div class="timeline__desc">Consulta avaliativa + início dos protocolos personalizados</div>
-        </div>
-        <div class="timeline__connector"></div>
-        <div class="timeline__step">
-          <div class="timeline__icon">🍃</div>
-          <div class="timeline__month">Outubro</div>
-          <div class="timeline__desc">Pele em processo de regeneração. Textura e luminosidade evoluindo.</div>
-        </div>
-        <div class="timeline__connector"></div>
-        <div class="timeline__step">
-          <div class="timeline__icon">🌸</div>
-          <div class="timeline__month">Novembro</div>
-          <div class="timeline__desc">Resultados consolidando. Pele renovada, harmonização natural.</div>
-        </div>
-        <div class="timeline__connector"></div>
-        <div class="timeline__step active">
-          <div class="timeline__icon">✨</div>
-          <div class="timeline__month">Dezembro</div>
-          <div class="timeline__desc">Você radiante e pronta para as festas.</div>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <h1 class="sr-only">Chegue às festas de fim de ano com a pele radiante, natural e cheia de vida — Protocolo
+        Naturalmente Pronta</h1>
+      <div class="hero__banner-wrap">
+        <picture>
+          <source media="(max-width: 768px)" srcset="hero-mobile.jpg" width="750" height="1000" />
+          <img src="hero.jpg"
+            alt="Dra. Carolina Martins - Protocolo Naturalmente Pronta"
+            class="hero__img" width="1920" height="1080" fetchpriority="high" decoding="async" />
+        </picture>
+        <div class="hero__cta-desktop">
+          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8"
+            class="btn btn--primary" id="hero-cta-primary" target="_blank" rel="noopener">Quero minha avaliação
+            gratuita</a>
+          <a href="#protocolos" class="btn btn--outline" id="hero-cta-secondary">Ver protocolos →</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== DIFERENCIAIS ===== -->
-  <section class="diferenciais reveal" id="diferenciais">
-    <div class="container">
-      <div class="section-tag">Minha proposta</div>
-      <h2 class="section-title">Por que realizar seu planejamento <em>comigo?</em></h2>
-      <p class="section-desc">Ciência para orientar cada decisão, naturalidade como limite. Nada de modismo: só o que faz sentido para a sua pele e os seus objetivos.</p>
-      <div class="diferenciais__grid">
-        <div class="diferencial-card reveal">
-          <div class="diferencial-card__icon">🔬</div>
-          <h3>Olhar Clínico de Farmacêutica</h3>
-          <p>Formação científica aplicada à estética para tratamentos com base em evidências científicas.</p>
-        </div>
-        <div class="diferencial-card reveal">
-          <div class="diferencial-card__icon">🌿</div>
-          <h3>Naturalidade Inegociável</h3>
-          <p>Resultados que realçam a sua essência, sem exageros. Sua melhor versão, sempre reconhecível.</p>
-        </div>
-        <div class="diferencial-card reveal">
-          <div class="diferencial-card__icon">🛡️</div>
-          <h3>Biossegurança</h3>
-          <p>Protocolos rigorosos de segurança e higiene em absolutamente todos os atendimentos.</p>
-        </div>
-        <div class="diferencial-card reveal">
-          <div class="diferencial-card__icon">💛</div>
-          <h3>Acolhimento e Escuta Real</h3>
-          <p>Cada paciente é única. Seu plano é 100% personalizado para seus objetivos e estilo de vida.</p>
-        </div>
-        <div class="diferencial-card reveal">
-          <div class="diferencial-card__icon">📍</div>
-          <h3>Dois Locais de Atendimento</h3>
-          <p>Ribeirão Preto e São Joaquim da Barra, perto de você para facilitar sua jornada.</p>
-        </div>
-        <div class="diferencial-card reveal">
-          <div class="diferencial-card__icon">📲</div>
-          <h3>Suporte Contínuo</h3>
-          <p>Acompanhamento durante todo o tratamento, inclusive orientações de skin care para casa.</p>
-        </div>
+      <div class="hero__cta-mobile">
+        <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8"
+          class="btn btn--primary btn--full" id="hero-cta-mobile" target="_blank" rel="noopener">Quero minha avaliação
+          gratuita</a>
+        <a href="#protocolos" class="btn btn--outline btn--full" id="hero-cta-mobile-sec">Ver protocolos →</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== PROTOCOLOS ===== -->
-  <section class="protocolos" id="protocolos">
-    <div class="container">
-      <div class="section-tag">Os Protocolos</div>
-      <h2 class="section-title">Escolha o caminho para a <em>sua</em> melhor pele</h2>
-      <p class="section-desc">Dois protocolos, um objetivo: resultado natural e bonito em dezembro.</p>
-
-      <div class="protocolos__grid">
-
-        <!-- GLOW -->
-        <div class="protocolo-card reveal" id="card-glow">
-          <div class="protocolo-card__header protocolo-card__header--glow">
-            <div class="protocolo-card__tag">Protocolo</div>
-            <h3 class="protocolo-card__title">Glow ✨</h3>
-            <p class="protocolo-card__tagline">Pele radiante, saudável e com brilho natural</p>
+    <!-- ===== TIMELINE ===== -->
+    <section class="timeline reveal" id="por-que-agora">
+      <div class="container">
+        <div class="section-tag">Por que começar agora?</div>
+        <h2 class="section-title">Setembro é o <em>momento certo</em> para planejar dezembro</h2>
+        <p class="section-desc">A pele tem o próprio ritmo. Com 3 meses de planejamento, ela responde de forma completa:
+          o ácido hialurônico acomoda com naturalidade e a toxina botulínica entrega o resultado mais bonito, no tempo
+          certo.</p>
+        <div class="timeline__steps">
+          <div class="timeline__step">
+            <div class="timeline__icon">🍂</div>
+            <div class="timeline__month">Setembro</div>
+            <div class="timeline__desc">Consulta avaliativa + início dos protocolos personalizados</div>
           </div>
-          <div class="protocolo-card__body">
-            <p class="protocolo-card__for"><strong>Para quem busca:</strong> pele com mais luminosidade, textura uniforme, poros refinados e melhora de acne e manchas.</p>
-            <ul class="protocolo-card__includes">
-              <li>✔ Consulta avaliativa completa</li>
-              <li>✔ Alinhamento do seu skin care</li>
-              <li>✔ <strong>7 sessões</strong> de gerenciamento de pele</li>
-              <li>✔ Limpeza, revitalização, peeling, microagulhamento e/ou mesoterapia*</li>
-              <li>✔ Skin care complementar para casa</li>
-              <li>✔ Suporte durante todo o tratamento</li>
-            </ul>
-            <div class="protocolo-card__price">
-              <span class="price__label">Investimento</span>
-              <span class="price__installments">6x de <strong>R$ 310</strong></span>
-              <span class="price__or">ou <strong>R$ 1.750</strong> à vista <span class="price__save">(economize R$ 110)</span></span>
-              <span class="price__value">Cerca de R$ 250 por sessão</span>
+          <div class="timeline__connector"></div>
+          <div class="timeline__step">
+            <div class="timeline__icon">🍃</div>
+            <div class="timeline__month">Outubro</div>
+            <div class="timeline__desc">Pele em processo de regeneração. Textura e luminosidade evoluindo.</div>
+          </div>
+          <div class="timeline__connector"></div>
+          <div class="timeline__step">
+            <div class="timeline__icon">🌸</div>
+            <div class="timeline__month">Novembro</div>
+            <div class="timeline__desc">Resultados consolidando. Pele renovada, harmonização natural.</div>
+          </div>
+          <div class="timeline__connector"></div>
+          <div class="timeline__step active">
+            <div class="timeline__icon">✨</div>
+            <div class="timeline__month">Dezembro</div>
+            <div class="timeline__desc">Você radiante e pronta para as festas.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DIFERENCIAIS ===== -->
+    <section class="diferenciais reveal" id="diferenciais">
+      <div class="container">
+        <div class="section-tag">Minha proposta</div>
+        <h2 class="section-title">Por que realizar seu planejamento <em>comigo?</em></h2>
+        <p class="section-desc">Ciência para orientar cada decisão, naturalidade como limite. Nada de modismo: só o que
+          faz sentido para a sua pele e os seus objetivos.</p>
+        <div class="diferenciais__grid">
+          <div class="diferencial-card reveal">
+            <div class="diferencial-card__icon">🔬</div>
+            <h3>Olhar Clínico de Farmacêutica</h3>
+            <p>Formação científica aplicada à estética para tratamentos com base em evidências científicas.</p>
+          </div>
+          <div class="diferencial-card reveal">
+            <div class="diferencial-card__icon">🌿</div>
+            <h3>Naturalidade Inegociável</h3>
+            <p>Resultados que realçam a sua essência, sem exageros. Sua melhor versão, sempre reconhecível.</p>
+          </div>
+          <div class="diferencial-card reveal">
+            <div class="diferencial-card__icon">🛡️</div>
+            <h3>Biossegurança</h3>
+            <p>Protocolos rigorosos de segurança e higiene em absolutamente todos os atendimentos.</p>
+          </div>
+          <div class="diferencial-card reveal">
+            <div class="diferencial-card__icon">💛</div>
+            <h3>Acolhimento e Escuta Real</h3>
+            <p>Cada paciente é única. Seu plano é 100% personalizado para seus objetivos e estilo de vida.</p>
+          </div>
+          <div class="diferencial-card reveal">
+            <div class="diferencial-card__icon">📍</div>
+            <h3>Dois Locais de Atendimento</h3>
+            <p>Ribeirão Preto e São Joaquim da Barra, perto de você para facilitar sua jornada.</p>
+          </div>
+          <div class="diferencial-card reveal">
+            <div class="diferencial-card__icon">📲</div>
+            <h3>Suporte Contínuo</h3>
+            <p>Acompanhamento durante todo o tratamento, inclusive orientações de skin care para casa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROTOCOLOS ===== -->
+    <section class="protocolos" id="protocolos">
+      <div class="container">
+        <div class="section-tag">Os Protocolos</div>
+        <h2 class="section-title">Escolha o caminho para a <em>sua</em> melhor pele</h2>
+        <p class="section-desc">Dois protocolos, um objetivo: resultado natural e bonito em dezembro.</p>
+
+        <div class="protocolos__grid">
+
+          <!-- GLOW -->
+          <div class="protocolo-card reveal" id="card-glow">
+            <div class="protocolo-card__header protocolo-card__header--glow">
+              <div class="protocolo-card__tag">Protocolo</div>
+              <h3 class="protocolo-card__title">Glow ✨</h3>
+              <p class="protocolo-card__tagline">Pele radiante, saudável e com brilho natural</p>
             </div>
-            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Tenho%20interesse%20no%20Protocolo%20Glow%20%E2%9C%A8%20e%20gostaria%20de%20saber%20mais%21" class="btn btn--primary btn--full" id="cta-glow" target="_blank">Começar pelo Glow</a>
-            <p class="protocolo-card__note">*Procedimentos definidos na consulta avaliativa gratuita e sem compromisso</p>
-          </div>
-        </div>
-
-        <!-- GLOW & SERENIDADE -->
-        <div class="protocolo-card protocolo-card--featured reveal" id="card-glow-serenidade">
-          <div class="protocolo-card__badge">⭐ Mais Completo</div>
-          <div class="protocolo-card__header protocolo-card__header--serenidade">
-            <div class="protocolo-card__tag">Protocolo</div>
-            <h3 class="protocolo-card__title">Glow & Serenidade 🌙</h3>
-            <p class="protocolo-card__tagline">Todo o brilho do Glow, com as expressões suavizadas pela toxina botulínica</p>
-          </div>
-          <div class="protocolo-card__body">
-            <p class="protocolo-card__for"><strong>Para quem busca:</strong> todos os benefícios do Glow + suavização natural de rugas e linhas de expressão.</p>
-            <ul class="protocolo-card__includes">
-              <li>✔ Consulta avaliativa completa</li>
-              <li>✔ Alinhamento do seu skin care</li>
-              <li>✔ <strong>6 sessões</strong> de gerenciamento de pele</li>
-              <li>✔ Limpeza, revitalização, peeling, microagulhamento e/ou mesoterapia*</li>
-              <li>✔ Skin care complementar para casa</li>
-              <li>✔ Suporte durante todo o tratamento</li>
-              <li>✔ <strong>1 aplicação de toxina botulínica + retorno</strong></li>
-            </ul>
-            <div class="protocolo-card__price">
-              <span class="price__label">Investimento</span>
-              <span class="price__installments">6x de <strong>R$ 440</strong></span>
-              <span class="price__or">ou <strong>R$ 2.400</strong> à vista <span class="price__save">(economize R$ 240)</span></span>
-              <span class="price__value">Toxina botulínica e retorno inclusos</span>
+            <div class="protocolo-card__body">
+              <p class="protocolo-card__for"><strong>Para quem busca:</strong> pele com mais luminosidade, textura
+                uniforme, poros refinados e melhora de acne e manchas.</p>
+              <ul class="protocolo-card__includes">
+                <li>✔ Consulta avaliativa completa</li>
+                <li>✔ Alinhamento do seu skin care</li>
+                <li>✔ <strong>7 sessões</strong> de gerenciamento de pele</li>
+                <li>✔ Limpeza, revitalização, peeling, microagulhamento e/ou mesoterapia*</li>
+                <li>✔ Skin care complementar para casa</li>
+                <li>✔ Suporte durante todo o tratamento</li>
+              </ul>
+              <div class="protocolo-card__price">
+                <span class="price__label">Investimento</span>
+                <span class="price__installments">6x de <strong>R$ 310</strong></span>
+                <span class="price__or">ou <strong>R$ 1.750</strong> à vista <span class="price__save">(economize R$
+                    110)</span></span>
+                <span class="price__value">Cerca de R$ 250 por sessão</span>
+              </div>
+              <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Tenho%20interesse%20no%20Protocolo%20Glow%20%E2%9C%A8%20e%20gostaria%20de%20saber%20mais%21"
+                class="btn btn--primary btn--full" id="cta-glow" target="_blank">Começar pelo Glow</a>
+              <p class="protocolo-card__note">*Procedimentos definidos na consulta avaliativa gratuita e sem compromisso
+              </p>
             </div>
-            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Tenho%20interesse%20no%20Protocolo%20Glow%20%26%20Serenidade%20%F0%9F%8C%99%20e%20gostaria%20de%20saber%20mais%21" class="btn btn--gold btn--full" id="cta-glow-serenidade" target="_blank">Começar pelo Glow & Serenidade</a>
-            <p class="protocolo-card__note">*Procedimentos definidos na consulta avaliativa gratuita e sem compromisso</p>
+          </div>
+
+          <!-- GLOW & SERENIDADE -->
+          <div class="protocolo-card protocolo-card--featured reveal" id="card-glow-serenidade">
+            <div class="protocolo-card__badge">⭐ Mais Completo</div>
+            <div class="protocolo-card__header protocolo-card__header--serenidade">
+              <div class="protocolo-card__tag">Protocolo</div>
+              <h3 class="protocolo-card__title">Glow & Serenidade 🌙</h3>
+              <p class="protocolo-card__tagline">Todo o brilho do Glow, com as expressões suavizadas pela toxina
+                botulínica</p>
+            </div>
+            <div class="protocolo-card__body">
+              <p class="protocolo-card__for"><strong>Para quem busca:</strong> todos os benefícios do Glow + suavização
+                natural de rugas e linhas de expressão.</p>
+              <ul class="protocolo-card__includes">
+                <li>✔ Consulta avaliativa completa</li>
+                <li>✔ Alinhamento do seu skin care</li>
+                <li>✔ <strong>6 sessões</strong> de gerenciamento de pele</li>
+                <li>✔ Limpeza, revitalização, peeling, microagulhamento e/ou mesoterapia*</li>
+                <li>✔ Skin care complementar para casa</li>
+                <li>✔ Suporte durante todo o tratamento</li>
+                <li>✔ <strong>1 aplicação de toxina botulínica + retorno</strong></li>
+              </ul>
+              <div class="protocolo-card__price">
+                <span class="price__label">Investimento</span>
+                <span class="price__installments">6x de <strong>R$ 440</strong></span>
+                <span class="price__or">ou <strong>R$ 2.400</strong> à vista <span class="price__save">(economize R$
+                    240)</span></span>
+                <span class="price__value">Toxina botulínica e retorno inclusos</span>
+              </div>
+              <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Tenho%20interesse%20no%20Protocolo%20Glow%20%26%20Serenidade%20%F0%9F%8C%99%20e%20gostaria%20de%20saber%20mais%21"
+                class="btn btn--gold btn--full" id="cta-glow-serenidade" target="_blank">Começar pelo Glow &
+                Serenidade</a>
+              <p class="protocolo-card__note">*Procedimentos definidos na consulta avaliativa gratuita e sem compromisso
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ADICIONAIS ===== -->
+    <section class="adicionais reveal" id="adicionais">
+      <div class="container">
+        <div class="section-tag">Complementos</div>
+        <h2 class="section-title">Eleve ainda mais o seu <em>resultado</em></h2>
+        <p class="section-desc">Tratamentos estratégicos para somar ao seu protocolo e chegar em dezembro ainda mais
+          radiante.</p>
+        <div class="adicionais__grid">
+          <div class="adicional-card reveal">
+            <div class="adicional-card__emoji">💉</div>
+            <h3>Preenchimento Labial</h3>
+            <p>Volume e definição naturais para o seu sorriso.</p>
+            <div class="adicional-card__price">+ R$ 950</div>
+            <div class="adicional-card__brinde">🎁 Ganha Gloss Volumizador da Bioage</div>
+            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20o%20Preenchimento%20Labial%20ao%20meu%20protocolo."
+              class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
+          </div>
+          <div class="adicional-card reveal">
+            <div class="adicional-card__emoji">💧</div>
+            <h3>Skinbooster</h3>
+            <p>Hidratação profunda e luminosidade de dentro para fora.</p>
+            <div class="adicional-card__price">+ R$ 250</div>
+            <div class="adicional-card__brinde">🎁 Ganha Hidragloss</div>
+            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20o%20Skinbooster%20ao%20meu%20protocolo."
+              class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
+          </div>
+          <div class="adicional-card reveal">
+            <div class="adicional-card__emoji">🌸</div>
+            <h3>Secagem de Vasinhos</h3>
+            <p>Tratamento estético para secagem de vasinhos com segurança e eficácia.</p>
+            <div class="adicional-card__price">+ R$ 450</div>
+            <div class="adicional-card__brinde">🎁 Fechando 3 sessões, ganha a 4ª</div>
+            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20a%20Secagem%20de%20Vasinhos%20ao%20meu%20protocolo."
+              class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
+          </div>
+          <div class="adicional-card reveal">
+            <div class="adicional-card__emoji">✨</div>
+            <h3>Gordura Localizada</h3>
+            <p>Tratamento avançado para contorno e redução de gordura localizada.</p>
+            <div class="adicional-card__price">+ R$ 1.200</div>
+            <div class="adicional-card__brinde">🎁 Fechando 7 sessões, ganha 2 sessões de papada</div>
+            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20a%20Gordura%20Localizada%20ao%20meu%20protocolo."
+              class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== ADICIONAIS ===== -->
-  <section class="adicionais reveal" id="adicionais">
-    <div class="container">
-      <div class="section-tag">Complementos</div>
-      <h2 class="section-title">Eleve ainda mais o seu <em>resultado</em></h2>
-      <p class="section-desc">Tratamentos estratégicos para somar ao seu protocolo e chegar em dezembro ainda mais radiante.</p>
-      <div class="adicionais__grid">
-        <div class="adicional-card reveal">
-          <div class="adicional-card__emoji">💉</div>
-          <h3>Preenchimento Labial</h3>
-          <p>Volume e definição naturais para o seu sorriso.</p>
-          <div class="adicional-card__price">+ R$ 950</div>
-          <div class="adicional-card__brinde">🎁 Ganha Gloss Volumizador da Bioage</div>
-          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20o%20Preenchimento%20Labial%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
-        </div>
-        <div class="adicional-card reveal">
-          <div class="adicional-card__emoji">💧</div>
-          <h3>Skinbooster</h3>
-          <p>Hidratação profunda e luminosidade de dentro para fora.</p>
-          <div class="adicional-card__price">+ R$ 250</div>
-          <div class="adicional-card__brinde">🎁 Ganha Hidragloss</div>
-          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20o%20Skinbooster%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
-        </div>
-        <div class="adicional-card reveal">
-          <div class="adicional-card__emoji">🌸</div>
-          <h3>Secagem de Vasinhos</h3>
-          <p>Tratamento estético para secagem de vasinhos com segurança e eficácia.</p>
-          <div class="adicional-card__price">+ R$ 450</div>
-          <div class="adicional-card__brinde">🎁 Fechando 3 sessões, ganha a 4ª</div>
-          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20a%20Secagem%20de%20Vasinhos%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
-        </div>
-        <div class="adicional-card reveal">
-          <div class="adicional-card__emoji">✨</div>
-          <h3>Gordura Localizada</h3>
-          <p>Tratamento avançado para contorno e redução de gordura localizada.</p>
-          <div class="adicional-card__price">+ R$ 1.200</div>
-          <div class="adicional-card__brinde">🎁 Fechando 7 sessões, ganha 2 sessões de papada</div>
-          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20quero%20adicionar%20a%20Gordura%20Localizada%20ao%20meu%20protocolo." class="adicional-card__cta" target="_blank" rel="noopener">Adicionar ao protocolo</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SOBRE ===== -->
-  <section class="sobre" id="sobre">
-    <div class="container sobre__inner">
-      <div class="sobre__visual reveal">
-        <div class="sobre__photo-wrap">
-          <img src="fotocarol.png" alt="Retrato da Dra. Carolina Martins, farmacêutica esteta, em ambiente clínico" class="sobre__img" width="800" height="1000" loading="eager" decoding="async" />
-        </div>
-        <div class="sobre__credentials">
-          <div class="credential">
-            <span class="credential__num">CRF</span>
-            <span class="credential__label">125.459<br/>Registrada</span>
+    <!-- ===== SOBRE ===== -->
+    <section class="sobre" id="sobre">
+      <div class="container sobre__inner">
+        <div class="sobre__visual reveal">
+          <div class="sobre__photo-wrap">
+            <img src="fotocarol.png" alt="Retrato da Dra. Carolina Martins, farmacêutica esteta, em ambiente clínico"
+              class="sobre__img" width="800" height="1000" loading="eager" decoding="async" />
           </div>
-          <div class="credential">
-            <span class="credential__num">2</span>
-            <span class="credential__label">Cidades de<br/>atendimento</span>
-          </div>
-          <div class="credential">
-            <span class="credential__num">∞</span>
-            <span class="credential__label">Compromisso<br/>com você</span>
+          <div class="sobre__credentials">
+            <div class="credential">
+              <span class="credential__num">CRF</span>
+              <span class="credential__label">125.459<br />Registrada</span>
+            </div>
+            <div class="credential">
+              <span class="credential__num">2</span>
+              <span class="credential__label">Cidades de<br />atendimento</span>
+            </div>
+            <div class="credential">
+              <span class="credential__num">∞</span>
+              <span class="credential__label">Compromisso<br />com você</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="sobre__content reveal">
-        <div class="section-tag">Quem é a Dra. Carolina</div>
-        <h2 class="section-title">Ciência e individualidade para <em>realçar sua melhor versão</em></h2>
-        <p>Sou farmacêutica esteta especializada em Gerenciamento de Pele e Harmonização Facial Natural. Minha missão é devolver sua autoconfiança no espelho com resultados naturais e sem excessos.</p>
-        <p>O olhar clínico de quem entende de substâncias e reações biológicas torna cada procedimento mais seguro e sob medida para o <em>seu</em> organismo.</p>
-        <blockquote class="sobre__quote">
-          "Beleza de verdade vem de uma pele saudável, que parece sua desde sempre."
-          <cite>— Dra. Carolina Martins, Farmacêutica Esteta</cite>
-        </blockquote>
-        <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="btn btn--primary" id="cta-sobre" target="_blank" rel="noopener">Agendar minha avaliação gratuita</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== DEPOIMENTOS ===== -->
-  <section class="depoimentos reveal" id="depoimentos">
-    <div class="container">
-      <div class="section-tag">Resultados reais</div>
-      <h2 class="section-title">Quem já chegou <em>radiante</em></h2>
-      <p class="section-desc">Histórias de quem planejou com antecedência e se reconheceu no espelho.</p>
-      <div class="depoimentos__grid">
-        <figure class="depoimento-card reveal">
-          <blockquote>"Tinha medo de parecer artificial. No fim, saí mais eu, só que com a pele que eu achava que não tinha mais."</blockquote>
-          <figcaption><strong>Fernanda R.</strong><span>Ribeirão Preto · Protocolo Glow</span></figcaption>
-        </figure>
-        <figure class="depoimento-card reveal">
-          <blockquote>"Planejei em setembro e em dezembro recebi elogio até de quem eu não via há anos."</blockquote>
-          <figcaption><strong>Camila S.</strong><span>São Joaquim da Barra · Glow &amp; Serenidade</span></figcaption>
-        </figure>
-        <figure class="depoimento-card reveal">
-          <blockquote>"A consulta gratuita já me devolveu a confiança. Saí com um plano claro, sem pressão."</blockquote>
-          <figcaption><strong>Juliana M.</strong><span>Ribeirão Preto · Avaliação</span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="faq reveal" id="faq">
-    <div class="container">
-      <div class="section-tag">Dúvidas frequentes</div>
-      <h2 class="section-title">Suas perguntas, <em>respondidas</em></h2>
-      <p class="section-desc">Tudo o que você precisa saber antes de dar o próximo passo.</p>
-      <div class="faq__list">
-        <details class="faq__item" id="faq-1">
-          <summary class="faq__question">Como funciona a consulta avaliativa?</summary>
-          <div class="faq__answer">A consulta avaliativa é gratuita e sem compromisso, e é o ponto de partida de todo o protocolo. Nela, fazemos uma análise completa da sua pele, entendemos seus objetivos e definimos quais procedimentos farão parte do seu planejamento personalizado. Nenhuma sessão é realizada antes dessa etapa.</div>
-        </details>
-        <details class="faq__item" id="faq-2">
-          <summary class="faq__question">Por que os procedimentos são definidos só na consulta?</summary>
-          <div class="faq__answer">Porque cada pele é única. Limpeza de pele, peeling, microagulhamento, mesoterapia — cada um tem indicações específicas. Definir o mix certo na avaliação garante que você receba o tratamento mais eficaz para o <em>seu</em> tipo de pele e objetivos.</div>
-        </details>
-        <details class="faq__item" id="faq-3">
-          <summary class="faq__question">Posso adicionar os serviços complementares depois?</summary>
-          <div class="faq__answer">Sim! Preenchimento labial, Skinbooster, secagem de vasinhos e gordura localizada podem ser adicionados ao longo do protocolo. Conversamos sobre isso na avaliação ou durante o acompanhamento.</div>
-        </details>
-        <details class="faq__item" id="faq-4">
-          <summary class="faq__question">Onde acontecem os atendimentos?</summary>
-          <div class="faq__answer">Atendo em <strong>Ribeirão Preto</strong> e em <strong>São Joaquim da Barra</strong>. O local é confirmado no momento do agendamento de acordo com sua preferência e disponibilidade.</div>
-        </details>
-        <details class="faq__item" id="faq-5">
-          <summary class="faq__question">Os resultados vão parecer que "fiz alguma coisa"?</summary>
-          <div class="faq__answer">Não! Naturalidade é um princípio inegociável no meu trabalho. O objetivo é sempre que você seja reconhecida pela sua melhor versão: mais descansada e mais radiante, sem deixar de ser você.</div>
-        </details>
-        <details class="faq__item" id="faq-6">
-          <summary class="faq__question">Como funciona o pagamento?</summary>
-          <div class="faq__answer">Você pode parcelar em 6x no cartão ou pagar à vista, com condições melhores. Os detalhes são confirmados na consulta avaliativa, sem compromisso.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTATO ===== -->
-  <section class="contato" id="contato">
-    <div class="container contato__inner">
-      <div class="section-tag">Avaliação gratuita e sem compromisso</div>
-      <h2 class="contato__title">Pronta para chegar em dezembro <em>radiante?</em></h2>
-      <p class="contato__desc">Dê o primeiro passo agora. A consulta avaliativa é gratuita e sem compromisso. Você sai com um planejamento completo em mãos.</p>
-      <div class="contato__cards">
-        <div class="contato__option">
-          <div class="contato__option-icon">💬</div>
-          <h3>Fale pelo WhatsApp</h3>
-          <p>Tire dúvidas ou agende sua avaliação diretamente pelo WhatsApp:</p>
-          <p style="font-weight: 600; font-size: 1.15rem; color: var(--charcoal); margin-bottom: 16px;"><a href="tel:+5516992133717" style="color: var(--charcoal); text-decoration: none;">(16) 99213-3717</a></p>
-          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="btn btn--whatsapp btn--full" id="cta-whatsapp" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Agendar pelo WhatsApp
-          </a>
-        </div>
-        <div class="contato__option">
-          <div class="contato__option-icon">📸</div>
-          <h3>Siga no Instagram</h3>
-          <p>Acompanhe resultados, dicas e novidades sobre pele e harmonização facial natural.</p>
-          <a href="https://www.instagram.com/cmmartinsfarma/" class="btn btn--instagram btn--full" id="cta-instagram" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            @cmmartinsfarma
-          </a>
+        <div class="sobre__content reveal">
+          <div class="section-tag">Quem é a Dra. Carolina</div>
+          <h2 class="section-title">Ciência e individualidade para <em>realçar sua melhor versão</em></h2>
+          <p>Sou farmacêutica esteta especializada em Gerenciamento de Pele e Harmonização Facial Natural. Minha missão
+            é devolver sua autoconfiança no espelho com resultados naturais e sem excessos.</p>
+          <p>O olhar clínico de quem entende de substâncias e reações biológicas torna cada procedimento mais seguro e
+            sob medida para o <em>seu</em> organismo.</p>
+          <blockquote class="sobre__quote">
+            "Beleza de verdade vem de uma pele saudável, que parece sua desde sempre."
+            <cite>— Dra. Carolina Martins, Farmacêutica Esteta</cite>
+          </blockquote>
+          <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8"
+            class="btn btn--primary" id="cta-sobre" target="_blank" rel="noopener">Agendar minha avaliação gratuita</a>
         </div>
       </div>
-      <div class="contato__badge">
-        <span>📍 Ribeirão Preto</span>
-        <span class="dot">•</span>
-        <span>📍 São Joaquim da Barra</span>
-        <span class="dot">•</span>
-        <span>CRF 125.459</span>
+    </section>
+
+    <!-- ===== DEPOIMENTOS ===== -->
+    <section class="depoimentos reveal" id="depoimentos">
+      <div class="container">
+        <div class="section-tag">Resultados reais</div>
+        <h2 class="section-title">Quem já chegou <em>radiante</em></h2>
+        <p class="section-desc">Histórias de quem planejou com antecedência e se reconheceu no espelho.</p>
+        <div class="depoimentos__grid">
+          <figure class="depoimento-card reveal">
+            <blockquote>"Tinha medo de parecer artificial. No fim, saí mais eu, só que com a pele que eu achava que não
+              tinha mais."</blockquote>
+            <figcaption><strong>Fernanda R.</strong><span>Ribeirão Preto · Protocolo Glow</span></figcaption>
+          </figure>
+          <figure class="depoimento-card reveal">
+            <blockquote>"Planejei em setembro e em dezembro recebi elogio até de quem eu não via há anos."</blockquote>
+            <figcaption><strong>Camila S.</strong><span>São Joaquim da Barra · Glow &amp; Serenidade</span></figcaption>
+          </figure>
+          <figure class="depoimento-card reveal">
+            <blockquote>"A consulta gratuita já me devolveu a confiança. Saí com um plano claro, sem pressão."
+            </blockquote>
+            <figcaption><strong>Juliana M.</strong><span>Ribeirão Preto · Avaliação</span></figcaption>
+          </figure>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq reveal" id="faq">
+      <div class="container">
+        <div class="section-tag">Dúvidas frequentes</div>
+        <h2 class="section-title">Suas perguntas, <em>respondidas</em></h2>
+        <p class="section-desc">Tudo o que você precisa saber antes de dar o próximo passo.</p>
+        <div class="faq__list">
+          <details class="faq__item" id="faq-1">
+            <summary class="faq__question">Como funciona a consulta avaliativa?</summary>
+            <div class="faq__answer">A consulta avaliativa é gratuita e sem compromisso, e é o ponto de partida de todo
+              o protocolo. Nela, fazemos uma análise completa da sua pele, entendemos seus objetivos e definimos quais
+              procedimentos farão parte do seu planejamento personalizado. Nenhuma sessão é realizada antes dessa etapa.
+            </div>
+          </details>
+          <details class="faq__item" id="faq-2">
+            <summary class="faq__question">Por que os procedimentos são definidos só na consulta?</summary>
+            <div class="faq__answer">Porque cada pele é única. Limpeza de pele, peeling, microagulhamento, mesoterapia —
+              cada um tem indicações específicas. Definir o mix certo na avaliação garante que você receba o tratamento
+              mais eficaz para o <em>seu</em> tipo de pele e objetivos.</div>
+          </details>
+          <details class="faq__item" id="faq-3">
+            <summary class="faq__question">Posso adicionar os serviços complementares depois?</summary>
+            <div class="faq__answer">Sim! Preenchimento labial, Skinbooster, secagem de vasinhos e gordura localizada
+              podem ser adicionados ao longo do protocolo. Conversamos sobre isso na avaliação ou durante o
+              acompanhamento.</div>
+          </details>
+          <details class="faq__item" id="faq-4">
+            <summary class="faq__question">Onde acontecem os atendimentos?</summary>
+            <div class="faq__answer">Atendo em <strong>Ribeirão Preto</strong> e em <strong>São Joaquim da
+                Barra</strong>. O local é confirmado no momento do agendamento de acordo com sua preferência e
+              disponibilidade.</div>
+          </details>
+          <details class="faq__item" id="faq-5">
+            <summary class="faq__question">Os resultados vão parecer que "fiz alguma coisa"?</summary>
+            <div class="faq__answer">Não! Naturalidade é um princípio inegociável no meu trabalho. O objetivo é sempre
+              que você seja reconhecida pela sua melhor versão: mais descansada e mais radiante, sem deixar de ser você.
+            </div>
+          </details>
+          <details class="faq__item" id="faq-6">
+            <summary class="faq__question">Como funciona o pagamento?</summary>
+            <div class="faq__answer">Você pode parcelar em 6x no cartão ou pagar à vista, com condições melhores. Os
+              detalhes são confirmados na consulta avaliativa, sem compromisso.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section class="contato" id="contato">
+      <div class="container contato__inner">
+        <div class="section-tag">Avaliação gratuita e sem compromisso</div>
+        <h2 class="contato__title">Pronta para chegar em dezembro <em>radiante?</em></h2>
+        <p class="contato__desc">Dê o primeiro passo agora. A consulta avaliativa é gratuita e sem compromisso. Você sai
+          com um planejamento completo em mãos.</p>
+        <div class="contato__cards">
+          <div class="contato__option">
+            <div class="contato__option-icon">💬</div>
+            <h3>Fale pelo WhatsApp</h3>
+            <p>Tire dúvidas ou agende sua avaliação diretamente pelo WhatsApp:</p>
+            <p style="font-weight: 600; font-size: 1.15rem; color: var(--charcoal); margin-bottom: 16px;"><a
+                href="tel:+5516992133717" style="color: var(--charcoal); text-decoration: none;">(16) 99213-3717</a></p>
+            <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20do%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8"
+              class="btn btn--whatsapp btn--full" id="cta-whatsapp" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              Agendar pelo WhatsApp
+            </a>
+          </div>
+          <div class="contato__option">
+            <div class="contato__option-icon">📸</div>
+            <h3>Siga no Instagram</h3>
+            <p>Acompanhe resultados, dicas e novidades sobre pele e harmonização facial natural.</p>
+            <a href="https://www.instagram.com/cmmartinsfarma/" class="btn btn--instagram btn--full" id="cta-instagram"
+              target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+              @cmmartinsfarma
+            </a>
+          </div>
+        </div>
+        <div class="contato__badge">
+          <span>📍 Ribeirão Preto</span>
+          <span class="dot">•</span>
+          <span>📍 São Joaquim da Barra</span>
+          <span class="dot">•</span>
+          <span>CRF 125.459</span>
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -1406,8 +2037,12 @@
   </footer>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <a href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Protocolo%20Naturalmente%20Pronta%20%E2%9C%A8"
+    class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
   </a>
 
   <script>
@@ -1530,4 +2165,5 @@
     })();
   </script>
 </body>
+
 </html>

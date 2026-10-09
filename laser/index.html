@@ -1047,45 +1047,69 @@
     .tratamentos__grid {
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
-      gap: 18px;
-      max-width: 960px;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 20px;
+      max-width: 1040px;
       margin: 0 auto;
-      text-align: center;
+      text-align: left;
     }
 
     .tratamentos__grid li {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+      position: relative;
+      background: var(--white);
       border: 1px solid var(--cream-dark);
-      border-radius: 18px;
-      padding: 26px 20px;
-      font-size: .92rem;
-      font-weight: 500;
-      color: var(--charcoal-soft);
-      line-height: 1.45;
-      box-shadow: 0 2px 14px rgba(43, 34, 36, .05);
+      border-radius: 20px;
+      padding: 28px 24px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .tratamentos__grid li::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--rose-600), var(--gold));
+      opacity: 0;
       transition: var(--transition);
     }
 
     .tratamentos__grid li:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
       border-color: var(--blush);
+    }
+
+    .tratamentos__grid li:hover::before {
+      opacity: 1;
     }
 
     .tratamento__icone {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
       font-size: 1.5rem;
-      background: rgba(169, 75, 66, .10);
+      background: linear-gradient(135deg, rgba(169, 75, 66, .12), rgba(216, 160, 140, .20));
+      margin-bottom: 16px;
+    }
+
+    .tratamento__titulo {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .tratamento__desc {
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
     /* ===== CONTRAINDICAÇÕES ===== */
@@ -1772,17 +1796,63 @@
       <div class="container">
         <div class="section-tag">O que dá para tratar</div>
         <h2 class="section-title">Opções de <em>tratamento</em></h2>
-        <p class="section-desc">Com o Infinity Duos, no mesmo dia você pode cuidar de muito mais do que a epilação.</p>
+        <p class="section-desc">Com o Infinity Duos, no mesmo dia você pode cuidar de muito mais do que a epilação. Veja
+          o que cada procedimento resolve.</p>
         <ul class="tratamentos__grid">
-          <li><span class="tratamento__icone">✨</span>Epilação</li>
-          <li><span class="tratamento__icone">💫</span>Epilação + clareamento</li>
-          <li><span class="tratamento__icone">🎨</span>Remoção de tatuagem escura, colorida e cosmético (micropigmentação)</li>
-          <li><span class="tratamento__icone">🌑</span>Black peel</li>
-          <li><span class="tratamento__icone">☀️</span>Hipercromia solar, senil ou pós-inflamatória</li>
-          <li><span class="tratamento__icone">🌗</span>Melasma</li>
-          <li><span class="tratamento__icone">💅</span>Onicomicose (micose de unha)</li>
-          <li><span class="tratamento__icone">👁️</span>Olheira</li>
-          <li><span class="tratamento__icone">🌟</span>Rejuvenescimento leve</li>
+          <li>
+            <span class="tratamento__icone">✨</span>
+            <h3 class="tratamento__titulo">Epilação</h3>
+            <p class="tratamento__desc">Laser de diodo que enfraquece o folículo na fase de crescimento. Pele lisa por
+              muito mais tempo, com resultado progressivo a cada sessão.</p>
+          </li>
+          <li>
+            <span class="tratamento__icone">💫</span>
+            <h3 class="tratamento__titulo">Epilação + clareamento</h3>
+            <p class="tratamento__desc">Depilação e clareamento na mesma sessão: ideal para regiões escurecidas pelo
+              atrito ou pelo uso de lâmina e cera, como axilas e virilha.</p>
+          </li>
+          <li>
+            <span class="tratamento__icone">🎨</span>
+            <h3 class="tratamento__titulo">Remoção de tatuagem</h3>
+            <p class="tratamento__desc">Pulsos ultracurtos do laser Q-switched fragmentam a tinta para o corpo eliminar.
+              Escura, colorida e micropigmentação.</p>
+          </li>
+          <li>
+            <span class="tratamento__icone">🌑</span>
+            <h3 class="tratamento__titulo">Black peel</h3>
+            <p class="tratamento__desc">O "peeling de Hollywood": carvão ativado + laser para reduzir oleosidade, refinar
+              poros, atenuar manchas e estimular colágeno.</p>
+          </li>
+          <li>
+            <span class="tratamento__icone">☀️</span>
+            <h3 class="tratamento__titulo">Hipercromia</h3>
+            <p class="tratamento__desc">Manchas solares, senis ou pós-inflamatórias: o laser age no pigmento em excesso,
+              clareando e uniformizando o tom da pele.</p>
+          </li>
+          <li>
+            <span class="tratamento__icone">🌗</span>
+            <h3 class="tratamento__titulo">Melasma</h3>
+            <p class="tratamento__desc">Mancha hormonal e crônica. O laser de baixa fluência clareia aos poucos e com
+              segurança, junto da fotoproteção e dos cuidados diários.</p>
+          </li>
+          <li>
+            <span class="tratamento__icone">💅</span>
+            <h3 class="tratamento__titulo">Onicomicose</h3>
+            <p class="tratamento__desc">Micose de unha: a laserterapia aquece o leito da unha e ajuda a inativar o fungo
+              — alternativa aos antifúngicos orais.</p>
+          </li>
+          <li>
+            <span class="tratamento__icone">👁️</span>
+            <h3 class="tratamento__titulo">Olheira</h3>
+            <p class="tratamento__desc">Estímulo de colágeno e melhora da pigmentação e da circulação na área dos olhos,
+              atenuando o aspecto escuro e cansado.</p>
+          </li>
+          <li>
+            <span class="tratamento__icone">🌟</span>
+            <h3 class="tratamento__titulo">Rejuvenescimento leve</h3>
+            <p class="tratamento__desc">Estímulo de colágeno para melhorar textura, firmeza, poros e viço — resultado
+              natural e recuperação rápida.</p>
+          </li>
         </ul>
       </div>
     </section>

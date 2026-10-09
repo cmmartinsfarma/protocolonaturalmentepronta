@@ -5,14 +5,14 @@
   <script>document.documentElement.classList.remove('no-js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Led Day — Depilação a LED em Ribeirão Preto · 17/10 | Carolina Martins & Júlia Franco</title>
+  <title>Laser Day — Uma nova tecnologia para sua segurança e conforto · 17/10 | Ribeirão Preto</title>
   <meta name="description"
-    content="Led Day: dia da depilação a LED em 17/10, em Ribeirão Preto, com até 15% OFF no feminino e 10% OFF no masculino em pacotes e combos. Atendimento com Carolina Martins e Júlia Franco. Vagas limitadas." />
+    content="Laser Day em 17/10, em Ribeirão Preto: epilação a laser, clareamento, remoção de tatuagem e tratamentos de pele com o aparelho Infinity Duos. Vagas limitadas com duas especialistas." />
   <link rel="canonical" href="https://www.naturalmentepronta.com.br/laser/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Led Day — Depilação a LED em Ribeirão Preto · 17/10 | Vagas limitadas" />
+  <meta property="og:title" content="Laser Day — 17/10 em Ribeirão Preto | Infinity Duos" />
   <meta property="og:description"
-    content="Um único dia com preços especiais para começar (ou retomar) sua depilação a LED. Atendimento com duas especialistas. Garanta sua vaga no 17/10." />
+    content="A primeira edição do Laser Day: condições especiais para começar (ou retomar) sua epilação e cuidar da pele com o Infinity Duos. Garanta sua vaga no 17/10." />
   <meta property="og:image" content="https://www.naturalmentepronta.com.br/hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="ico.ico" sizes="any" />
@@ -1017,6 +1017,132 @@
       font-weight: 700;
     }
 
+    /* ===== TÍTULOS DE BLOCO DE PREÇOS ===== */
+    .price-block {
+      margin-bottom: 48px;
+    }
+
+    .price-block__title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+
+    .price-empty {
+      text-align: center !important;
+      font-weight: 500 !important;
+      color: var(--text-muted) !important;
+      white-space: normal !important;
+    }
+
+    /* ===== OPÇÕES DE TRATAMENTO ===== */
+    .tratamentos {
+      padding: 96px 0;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .tratamentos__grid {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: 14px;
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .tratamentos__grid li {
+      position: relative;
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+      border-radius: 14px;
+      padding: 16px 20px 16px 44px;
+      font-size: .92rem;
+      color: var(--charcoal-soft);
+    }
+
+    .tratamentos__grid li::before {
+      content: '✓';
+      position: absolute;
+      left: 18px;
+      top: 15px;
+      color: var(--rose-deep);
+      font-weight: 700;
+    }
+
+    /* ===== CONTRAINDICAÇÕES ===== */
+    .contra {
+      padding: 96px 0;
+      background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+      text-align: center;
+    }
+
+    .contra__grid {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: 12px;
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .contra__grid li {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 12px;
+      padding: 13px 18px 13px 40px;
+      font-size: .9rem;
+      color: var(--charcoal-soft);
+    }
+
+    .contra__grid li::before {
+      content: '⚠';
+      position: absolute;
+      left: 16px;
+      top: 12px;
+      color: var(--rose-deep);
+      font-size: .95rem;
+    }
+
+    /* ===== PRÓXIMAS EDIÇÕES ===== */
+    .proximas {
+      padding: 72px 0;
+      text-align: center;
+      background: var(--white);
+    }
+
+    .hero__next {
+      font-size: .82rem;
+      color: var(--rose-text);
+      margin-top: 10px;
+    }
+
+    /* ===== INSTAGRAM DA JÚLIA (card) ===== */
+    .pro-card__ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--white);
+      background: rgba(255, 255, 255, .16);
+      border: 1px solid rgba(255, 255, 255, .35);
+      padding: 8px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .pro-card__ig:hover {
+      background: rgba(255, 255, 255, .28);
+    }
+
     /* ===== FAQ ===== */
     .faq {
       padding: 96px 0;
@@ -1309,6 +1435,8 @@
       .precos,
       .como,
       .tech,
+      .tratamentos,
+      .contra,
       .pros,
       .faq,
       .contato {
@@ -1433,7 +1561,7 @@
       {
         "@type": "MedicalClinic",
         "@id": "https://www.naturalmentepronta.com.br/laser/#clinica",
-        "name": "Carolina Martins & Júlia Franco — Estética e Depilação a LED",
+        "name": "Carolina Martins & Júlia Franco — Estética e Laser",
         "telephone": "+55-16-99213-3717",
         "priceRange": "R$ 50 - R$ 1.200",
         "address": {
@@ -1465,7 +1593,7 @@
       {
         "@type": "Event",
         "@id": "https://www.naturalmentepronta.com.br/laser/#evento",
-        "name": "Led Day — Depilação a LED",
+        "name": "Laser Day",
         "startDate": "2026-10-17T09:00:00-03:00",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "eventStatus": "https://schema.org/EventScheduled",
@@ -1479,7 +1607,7 @@
             "addressCountry": "BR"
           }
         },
-        "description": "Dia dedicado à depilação a LED com condições especiais: 15% OFF no feminino e 10% OFF no masculino em pacotes de 3 sessões e combos. Atendimento com Carolina Martins e Júlia Franco.",
+        "description": "A primeira edição do Laser Day: epilação a laser, clareamento, remoção de tatuagem e tratamentos de pele com o aparelho Infinity Duos, em Ribeirão Preto. Atendimento com Carolina Martins e Júlia Franco.",
         "organizer": { "@id": "https://www.naturalmentepronta.com.br/laser/#clinica" }
       }
     ]
@@ -1496,9 +1624,9 @@
     <div class="nav__inner">
       <div class="nav__brand">
         <span class="nav__brand-name">Carolina Martins &amp; Júlia Franco</span>
-        <span class="nav__brand-title">Led Day · Ribeirão Preto</span>
+        <span class="nav__brand-title">Laser Day · Ribeirão Preto</span>
       </div>
-      <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20garantir%20minha%20vaga%20no%20Led%20Day%20%2817%2F10%29%20%E2%9C%A8"
+      <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20garantir%20minha%20vaga%20no%20Laser%20Day%20%2817%2F10%29%20%E2%9C%A8"
         class="btn btn--nav" id="nav-cta" target="_blank" rel="noopener">Garantir vaga</a>
     </div>
   </nav>
@@ -1510,15 +1638,14 @@
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__content">
-          <span class="hero__event-tag">✨ Led Day · Evento exclusivo · Só no dia 17/10</span>
-          <h1 class="hero__title">Led <em>Day</em></h1>
-          <p class="hero__subtitle">O dia da Depilação a LED em Ribeirão Preto</p>
+          <span class="hero__event-tag">✨ Laser Day · Uma nova tecnologia para sua segurança e conforto · 17/10</span>
+          <h1 class="hero__title">Laser <em>Day</em></h1>
+          <p class="hero__subtitle">Epilação a laser e tratamentos de pele com o Infinity Duos</p>
           <p class="hero__date">17 de outubro · <strong>Ribeirão Preto / SP</strong></p>
-          <p class="hero__desc">Um único dia com condições especiais para começar (ou retomar) sua depilação a LED:
-            <strong>até 15% OFF</strong> em pacotes e combos, com o cuidado de duas especialistas. As vagas são
-            limitadas e costumam esgotar rápido.</p>
+          <p class="hero__desc">A primeira edição com condições especiais para começar (ou retomar) sua epilação e
+            garantir sua vaga até o final do ano, com o cuidado de duas especialistas.</p>
           <div class="hero__ctas">
-            <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Led%20Day%20%2817%2F10%29%20%E2%9C%A8"
+            <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Laser%20Day%20%2817%2F10%29%20%E2%9C%A8"
               class="btn btn--gold" id="hero-cta-primary" target="_blank" rel="noopener">Quero garantir minha vaga</a>
             <a href="#precos" class="btn btn--ghost" id="hero-cta-secondary">Ver tabela de preços</a>
           </div>
@@ -1526,9 +1653,9 @@
         <div class="hero__media">
           <span class="hero__device-badge">Aparelho oficial</span>
           <img src="infinity-duos.png" class="hero__device"
-            alt="Aparelho Infinity Duos, da Domench Technologies, utilizado no Led Day" width="1080" height="1080"
+            alt="Aparelho Infinity Duos, da Cromatics, utilizado no Laser Day" width="1080" height="1080"
             fetchpriority="high" decoding="async" />
-          <p class="hero__device-name">Infinity Duos<span>Domench Technologies</span></p>
+          <p class="hero__device-name">Infinity Duos<span>Cromatics</span></p>
         </div>
       </div>
       <div class="container hero__count-block">
@@ -1552,13 +1679,14 @@
           </div>
         </div>
         <p class="hero__note">✅ Sem compromisso · Resposta rápida pelo WhatsApp · Vagas limitadas</p>
+        <p class="hero__next">📅 Próximas edições do Laser Day em breve — novas datas serão divulgadas aqui.</p>
       </div>
     </header>
 
     <!-- ===== STRIP ===== -->
     <div class="strip reveal">
-      <span>✅ <b>15% OFF</b> Feminino</span>
-      <span>✅ <b>10% OFF</b> Masculino</span>
+      <span>✅ <b>Infinity Duos</b> · 3 tipos de laser</span>
+      <span>✅ Segurança para <b>todos os fototipos</b></span>
       <span>✅ <b>2 especialistas</b> no mesmo dia</span>
       <span>✅ <b>17/10</b> · Ribeirão Preto</span>
     </div>
@@ -1567,31 +1695,39 @@
     <section class="beneficios reveal" id="por-que">
       <div class="container">
         <div class="section-tag">Por que participar</div>
-        <h2 class="section-title">Sua pele lisa com <em>preço especial</em></h2>
-        <p class="section-desc">No dia 17/10 você aproveita descontos que não se repetem — com o mesmo cuidado,
-          biossegurança e avaliação personalizada de sempre. Veja o que muda para você:</p>
+        <h2 class="section-title">Muito além da <em>epilação</em></h2>
+        <p class="section-desc">No dia 17/10 você encontra condições especiais com tecnologia de ponta e o cuidado de
+          duas especialistas. Veja o que você leva:</p>
         <div class="beneficios__grid">
           <div class="beneficio-card reveal">
-            <div class="beneficio-card__icon">💰</div>
-            <h3>Preço que não volta</h3>
-            <p>Até 15% OFF no feminino e 10% no masculino nos pacotes de 3 sessões e nos combos de áreas. É o melhor
-              momento para começar.</p>
+            <div class="beneficio-card__icon">✨</div>
+            <h3>Condições especiais</h3>
+            <p>Só no Laser Day você garante os valores da primeira edição. Depois, os preços voltam ao normal.</p>
           </div>
           <div class="beneficio-card reveal">
             <div class="beneficio-card__icon">🫧</div>
-            <h3>Sessão confortável</h3>
-            <p>Tecnologia segura e protocolo ajustado ao seu tipo de pele para uma sessão rápida, tranquila e eficaz.</p>
+            <h3>Conforto absoluto</h3>
+            <p>O Infinity Duos tem sistema de resfriamento estável, garantindo sessões muito mais confortáveis.</p>
+          </div>
+          <div class="beneficio-card reveal">
+            <div class="beneficio-card__icon">🛡️</div>
+            <h3>Segurança para todos os fototipos</h3>
+            <p>Da pele albina à pele negra, com parâmetros ajustados para a sua segurança.</p>
+          </div>
+          <div class="beneficio-card reveal">
+            <div class="beneficio-card__icon">⚡</div>
+            <h3>Eficácia desde a primeira sessão</h3>
+            <p>Resultados progressivos e visíveis já nas primeiras aplicações, ao longo do tratamento.</p>
           </div>
           <div class="beneficio-card reveal">
             <div class="beneficio-card__icon">👩‍⚕️</div>
-            <h3>Duas especialistas</h3>
-            <p>Carolina Martins (farmacêutica esteta) e Júlia Franco (biomédica) unem experiência para cuidar de você
-              com atenção.</p>
+            <h3>Aplicação por 2 especialistas</h3>
+            <p>Carolina Martins e Júlia Franco cuidam de você com atenção e olhar individual.</p>
           </div>
           <div class="beneficio-card reveal">
-            <div class="beneficio-card__icon">⏳</div>
-            <h3>Só no dia 17/10</h3>
-            <p>O evento acontece uma única vez, com poucos horários. Garanta o seu antes que as vagas acabem.</p>
+            <div class="beneficio-card__icon">🌸</div>
+            <h3>Tudo em um só lugar</h3>
+            <p>Foliculite, manchas, rugas finas, epilação e remoção de tatuagem — no mesmo equipamento.</p>
           </div>
         </div>
       </div>
@@ -1603,21 +1739,46 @@
         <div class="tech__media reveal">
           <span class="tech__badge">Aparelho oficial</span>
           <img src="infinity-duos.png" class="tech__img"
-            alt="Aparelho Infinity Duos, da Domench Technologies, utilizado no Led Day" width="1080" height="1080"
+            alt="Aparelho Infinity Duos, da Cromatics, utilizado no Laser Day" width="1080" height="1080"
             loading="lazy" decoding="async" />
         </div>
         <div class="tech__content reveal">
-          <div class="section-tag">A tecnologia do Led Day</div>
-          <h2 class="section-title">Depilação a <em>LED</em> com o <strong>Infinity Duos</strong></h2>
-          <p>O Led Day é realizado com o <strong>Infinity Duos</strong>, aparelho da Domench Technologies. A depilação a
-            LED usa pulsos de luz de alta performance para reduzir os pelos de forma gradual, segura e confortável.</p>
+          <div class="section-tag">O aparelho oficial</div>
+          <h2 class="section-title">Conheça o <strong>Infinity Duos</strong></h2>
+          <p>O Infinity Duos é uma tecnologia da <strong>Cromatics</strong> que surpreende pelo conforto e pela
+            segurança. Conta com <strong>3 tipos de laser em 4 comprimentos de onda diferentes</strong>, garantindo
+            segurança desde a pele albina até a pele negra. Possui ainda um <strong>sistema de resfriamento
+              estável</strong> para maior conforto no momento da aplicação.</p>
+          <p>Outra vantagem é a associação do <strong>laser de diodo (depilação)</strong> com o
+            <strong>laser Q-switched (pigmento)</strong>, permitindo tratar regiões escurecidas pela depilação
+            tradicional, como lâminas e ceras, na mesma sessão.</p>
           <ul class="tech__features">
-            <li>Depilação a LED: tecnologia moderna, indicada por profissionais</li>
-            <li>Protocolo ajustado ao seu tipo de pele e à área tratada</li>
-            <li>Sessões rápidas e confortáveis, com acompanhamento das especialistas</li>
-            <li>Resultados progressivos e duradouros ao longo das sessões</li>
+            <li>3 tipos de laser em 4 comprimentos de onda</li>
+            <li>Segurança da pele albina à pele negra</li>
+            <li>Sistema de resfriamento estável</li>
+            <li>Diodo (depilação) + Q-switched (pigmento) na mesma sessão</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== OPÇÕES DE TRATAMENTO ===== -->
+    <section class="tratamentos reveal" id="tratamentos">
+      <div class="container">
+        <div class="section-tag">O que dá para tratar</div>
+        <h2 class="section-title">Opções de <em>tratamento</em></h2>
+        <p class="section-desc">Com o Infinity Duos, no mesmo dia você pode cuidar de muito mais do que a epilação.</p>
+        <ul class="tratamentos__grid">
+          <li>Epilação</li>
+          <li>Epilação + clareamento</li>
+          <li>Remoção de tatuagem escura, colorida e cosmético (micropigmentação)</li>
+          <li>Black peel</li>
+          <li>Hipercromia solar, senil ou pós-inflamatória</li>
+          <li>Melasma</li>
+          <li>Onicomicose (micose de unha)</li>
+          <li>Olheira</li>
+          <li>Rejuvenescimento leve</li>
+        </ul>
       </div>
     </section>
 
@@ -1625,112 +1786,126 @@
     <section class="precos" id="precos">
       <div class="container">
         <div class="section-tag">Tabela de preços</div>
-        <h2 class="section-title">Confira os valores do <em>dia 17/10</em></h2>
-        <p class="section-desc">Escolha sua tabela e compare: valor por sessão, pacote de 3 sessões com desconto e o
-          combo mensal com a sessão mais barata. Os valores são válidos apenas no dia do evento.</p>
+        <h2 class="section-title">Valores do <em>Laser Day</em></h2>
+        <p class="section-desc">Condições especiais do dia 17/10. Role cada tabela para ver todos os valores.</p>
 
-        <div class="tabs" role="tablist" aria-label="Tabela de preços">
-          <button class="tab is-active" id="tab-feminino" role="tab" aria-selected="true"
-            aria-controls="panel-feminino" data-tab="feminino">👩 Feminino</button>
-          <button class="tab" id="tab-masculino" role="tab" aria-selected="false" aria-controls="panel-masculino"
-            data-tab="masculino">👨 Masculino</button>
-        </div>
-
-        <!-- FEMININO -->
-        <div class="tab-panel is-active" id="panel-feminino" role="tabpanel" aria-labelledby="tab-feminino">
-          <p class="price-note">Pacote de <strong>3 sessões com 15% OFF</strong> ou <strong>combo de 3 meses</strong> com
-            valor por sessão reduzido. Quanto maior o conjunto de áreas, menor o valor da sessão.</p>
+        <div class="price-block reveal">
+          <h3 class="price-block__title">Depilação feminina</h3>
           <div class="table-scroll">
             <table class="price-table">
-              <colgroup>
-                <col />
-                <col class="hl" />
-                <col />
-                <col />
-                <col />
-              </colgroup>
+              <colgroup><col /><col class="hl" /><col /><col /></colgroup>
               <thead>
                 <tr>
                   <th scope="col">Área</th>
-                  <th scope="col" class="hl">3 sessões <span class="badge-off">15% OFF</span></th>
-                  <th scope="col">Combo (3 meses)</th>
-                  <th scope="col">Valor/sessão</th>
-                  <th scope="col">Preço avulso</th>
+                  <th scope="col" class="hl">Epilação</th>
+                  <th scope="col">Epilação + clareamento</th>
+                  <th scope="col">Clareamento · 3 sessões</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Buço</td><td class="price-cell-strong">R$ 127,50</td><td>R$ 130,00</td><td>R$ 43,33</td><td>R$ 50,00</td></tr>
-                <tr><td>Axila</td><td class="price-cell-strong">R$ 178,50</td><td>R$ 180,00</td><td>R$ 60,00</td><td>R$ 70,00</td></tr>
-                <tr><td>Rosto</td><td class="price-cell-strong">R$ 306,00</td><td>R$ 310,00</td><td>R$ 103,33</td><td>R$ 120,00</td></tr>
-                <tr><td>Antebraço</td><td class="price-cell-strong">R$ 204,00</td><td>R$ 200,00</td><td>R$ 66,67</td><td>R$ 80,00</td></tr>
-                <tr><td>Virilha</td><td class="price-cell-strong">R$ 165,75</td><td>R$ 170,00</td><td>R$ 56,67</td><td>R$ 65,00</td></tr>
-                <tr><td>Virilha completa + perianal</td><td class="price-cell-strong">R$ 255,00</td><td>R$ 260,00</td><td>R$ 86,67</td><td>R$ 100,00</td></tr>
-                <tr><td>Braço + antebraço</td><td class="price-cell-strong">R$ 357,00</td><td>R$ 360,00</td><td>R$ 120,00</td><td>R$ 140,00</td></tr>
-                <tr><td>Meia perna</td><td class="price-cell-strong">R$ 306,00</td><td>R$ 310,00</td><td>R$ 103,33</td><td>R$ 120,00</td></tr>
-                <tr><td>Perna completa</td><td class="price-cell-strong">R$ 408,00</td><td>R$ 400,00</td><td>R$ 133,33</td><td>R$ 160,00</td></tr>
-                <tr><td>Buço + axila</td><td class="price-cell-strong">R$ 204,00</td><td>R$ 210,00</td><td>R$ 70,00</td><td>R$ 80,00</td></tr>
-                <tr><td>Buço + axila + virilha</td><td class="price-cell-strong">R$ 433,50</td><td>R$ 450,00</td><td>R$ 150,00</td><td>R$ 170,00</td></tr>
-                <tr><td>Axila + meia perna</td><td class="price-cell-strong">R$ 382,50</td><td>R$ 380,00</td><td>R$ 126,67</td><td>R$ 150,00</td></tr>
-                <tr><td>Buço + axila + virilha + meia perna</td><td class="price-cell-strong">R$ 739,50</td><td>R$ 750,00</td><td>R$ 250,00</td><td>R$ 290,00</td></tr>
-                <tr><td>Buço + axila + virilha + perna completa</td><td class="price-cell-strong">R$ 892,50</td><td>R$ 900,00</td><td>R$ 300,00</td><td>R$ 350,00</td></tr>
+                <tr><td>Buço</td><td class="price-cell-strong">R$ 50</td><td>R$ 80</td><td>R$ 200</td></tr>
+                <tr><td>Axila</td><td class="price-cell-strong">R$ 70</td><td>R$ 110</td><td>R$ 280</td></tr>
+                <tr><td>Virilha</td><td class="price-cell-strong">R$ 65</td><td>R$ 100</td><td>R$ 260</td></tr>
+                <tr><td>Buço + axila</td><td class="price-cell-strong">R$ 80</td><td>R$ 130</td><td>R$ 330</td></tr>
+                <tr><td>Buço + axila + virilha</td><td class="price-cell-strong">R$ 170</td><td>R$ 250</td><td>R$ 650</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="table-hint">↔ Arraste a tabela para o lado para ver todos os valores. Vagas e condições válidas para o
-            dia 17/10.</p>
         </div>
 
-        <!-- MASCULINO -->
-        <div class="tab-panel" id="panel-masculino" role="tabpanel" aria-labelledby="tab-masculino">
-          <p class="price-note">Pacote de <strong>3 sessões com 10% OFF</strong> ou <strong>combo de 3 meses</strong> com
-            valor por sessão reduzido. Combos de áreas têm o melhor custo por sessão.</p>
+        <div class="price-block reveal">
+          <h3 class="price-block__title">Remoção de tatuagem</h3>
           <div class="table-scroll">
             <table class="price-table">
-              <colgroup>
-                <col />
-                <col class="hl" />
-                <col />
-                <col />
-                <col />
-              </colgroup>
+              <colgroup><col /><col class="hl" /></colgroup>
+              <thead>
+                <tr><th scope="col">Tamanho</th><th scope="col" class="hl">Por sessão</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Até 3 cm</td><td class="price-cell-strong">R$ 200</td></tr>
+                <tr><td>De 3 a 10 cm</td><td class="price-cell-strong">R$ 290</td></tr>
+                <tr><td>De 10 a 15 cm</td><td class="price-cell-strong">R$ 350</td></tr>
+                <tr><td>A partir de 15 cm</td><td class="price-cell-strong">A partir de R$ 420</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-hint">*Valor referente a uma sessão para uma tatuagem.</p>
+        </div>
+
+        <div class="price-block reveal">
+          <h3 class="price-block__title">Outros procedimentos</h3>
+          <div class="table-scroll">
+            <table class="price-table">
+              <colgroup><col /><col class="hl" /><col /></colgroup>
+              <thead>
+                <tr><th scope="col">Procedimento</th><th scope="col" class="hl">Sessão avulsa</th><th scope="col">3 sessões</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Black peel</td><td class="price-cell-strong">R$ 220</td><td>R$ 560</td></tr>
+                <tr><td>Peeling 3D</td><td class="price-cell-strong">R$ 300</td><td>R$ 765</td></tr>
+                <tr><td>Onicomicose (micose de unha)</td><td class="price-cell-strong">R$ 150</td><td>R$ 390</td></tr>
+                <tr><td>Olheiras</td><td class="price-cell-strong">R$ 120</td><td>R$ 300</td></tr>
+                <tr><td>Hipercromias (1 área)</td><td class="price-cell-strong">R$ 180</td><td>R$ 460</td></tr>
+                <tr><td>Hipercromias (2 áreas)</td><td class="price-cell-strong">R$ 300</td><td>R$ 770</td></tr>
+                <tr><td>Hipercromias (3 áreas)</td><td class="price-cell-strong">R$ 400</td><td>R$ 990</td></tr>
+                <tr><td>Micropigmentação</td><td class="price-cell-strong">R$ 220</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-hint">*Áreas para tratamento de hipercromia: risco, colo e mãos.</p>
+        </div>
+
+        <div class="price-block reveal">
+          <h3 class="price-block__title">Depilação masculina</h3>
+          <div class="table-scroll">
+            <table class="price-table">
+              <colgroup><col /><col class="hl" /><col /><col /></colgroup>
               <thead>
                 <tr>
                   <th scope="col">Área</th>
-                  <th scope="col" class="hl">3 sessões <span class="badge-off">10% OFF</span></th>
-                  <th scope="col">Combo (3 meses)</th>
-                  <th scope="col">Valor/sessão</th>
-                  <th scope="col">Preço avulso</th>
+                  <th scope="col" class="hl">Epilação</th>
+                  <th scope="col">Epilação + clareamento</th>
+                  <th scope="col">Clareamento · 3 sessões</th>
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Nuca</td><td class="price-cell-strong">R$ 189,00</td><td>R$ 190,00</td><td>R$ 63,33</td><td>R$ 70,00</td></tr>
-                <tr><td>Axila</td><td class="price-cell-strong">R$ 189,00</td><td>R$ 190,00</td><td>R$ 63,33</td><td>R$ 70,00</td></tr>
-                <tr><td>Contorno de barba</td><td class="price-cell-strong">R$ 243,00</td><td>R$ 250,00</td><td>R$ 83,33</td><td>R$ 90,00</td></tr>
-                <tr><td>Barba completa</td><td class="price-cell-strong">R$ 324,00</td><td>R$ 330,00</td><td>R$ 110,00</td><td>R$ 120,00</td></tr>
-                <tr><td>Abdômen</td><td class="price-cell-strong">R$ 351,00</td><td>R$ 350,00</td><td>R$ 116,67</td><td>R$ 130,00</td></tr>
-                <tr><td>Peitoral</td><td class="price-cell-strong">R$ 351,00</td><td>R$ 350,00</td><td>R$ 116,67</td><td>R$ 130,00</td></tr>
-                <tr><td>Meia perna</td><td class="price-cell-strong">R$ 351,00</td><td>R$ 350,00</td><td>R$ 116,67</td><td>R$ 130,00</td></tr>
-                <tr><td>Perna completa</td><td class="price-cell-strong">R$ 540,00</td><td>R$ 540,00</td><td>R$ 180,00</td><td>R$ 200,00</td></tr>
-                <tr><td>Braço + antebraço</td><td class="price-cell-strong">R$ 432,00</td><td>R$ 440,00</td><td>R$ 146,67</td><td>R$ 160,00</td></tr>
-                <tr><td>Peitoral + abdômen</td><td class="price-cell-strong">R$ 594,00</td><td>R$ 600,00</td><td>R$ 200,00</td><td>R$ 220,00</td></tr>
-                <tr><td>Costas completa</td><td class="price-cell-strong">R$ 594,00</td><td>R$ 600,00</td><td>R$ 200,00</td><td>R$ 220,00</td></tr>
-                <tr><td>Nuca + contorno de barba</td><td class="price-cell-strong">R$ 378,00</td><td>R$ 390,00</td><td>R$ 130,00</td><td>R$ 140,00</td></tr>
-                <tr><td>Nuca + contorno de barba + axila</td><td class="price-cell-strong">R$ 540,00</td><td>R$ 540,00</td><td>R$ 180,00</td><td>R$ 200,00</td></tr>
-                <tr><td>Nuca + contorno de barba + axila + abdômen + peitoral</td><td class="price-cell-strong">R$ 1.161,00</td><td>R$ 1.200,00</td><td>R$ 400,00</td><td>R$ 430,00</td></tr>
+                <tr><td colspan="4" class="price-empty">Valores em confirmação — fale no WhatsApp para saber mais.</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="table-hint">↔ Arraste a tabela para o lado para ver todos os valores. Vagas e condições válidas para o
-            dia 17/10.</p>
         </div>
 
         <div class="precos__cta reveal">
-          <p>Ficou na dúvida entre os pacotes? Me chama no WhatsApp: eu te ajudo a montar a melhor combinação de áreas
-            para o seu caso, sem compromisso.</p>
-          <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Vi%20a%20tabela%20do%20Led%20Day%20e%20quero%20escolher%20meu%20pacote%20%E2%9C%A8"
+          <p>Não sabe qual procedimento é ideal para você? Fale no WhatsApp que eu te ajudo a escolher, sem
+            compromisso.</p>
+          <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Vi%20a%20tabela%20do%20Laser%20Day%20e%20quero%20escolher%20meu%20tratamento%20%E2%9C%A8"
             class="btn btn--whatsapp btn--full" id="cta-precos" target="_blank" rel="noopener">Quero escolher meu
-            pacote</a>
+            tratamento</a>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTRAINDICAÇÕES ===== -->
+    <section class="contra reveal" id="contraindicacoes">
+      <div class="container">
+        <div class="section-tag">Importante</div>
+        <h2 class="section-title">Contraindicações</h2>
+        <p class="section-desc">Por segurança, o tratamento não é indicado em alguns casos. Na dúvida, fale com a gente
+          antes de agendar.</p>
+        <ul class="contra__grid">
+          <li>Gestante e lactante</li>
+          <li>Uso de roacutan (nos últimos 6 meses) ou outro medicamento fotossensibilizante</li>
+          <li>Herpes ativa</li>
+          <li>Rosácea</li>
+          <li>Lesão (na região da aplicação do laser)</li>
+          <li>Lúpus</li>
+          <li>Vitiligo, psoríase</li>
+          <li>Neoplasias (sem autorização médica)</li>
+          <li>Epilepsia</li>
+          <li>Cicatriz (na região da aplicação do laser)</li>
+          <li>Doença imunossupressora ou uso de imunossupressores</li>
+          <li>Doenças hemorrágicas ou em uso de anticoagulantes, alergia, ferida aberta ou ferida infecciosa</li>
+        </ul>
       </div>
     </section>
 
@@ -1759,7 +1934,7 @@
           </div>
           <div class="como__step reveal">
             <div class="como__num">4</div>
-            <h3>Sua sessão de LED</h3>
+            <h3>Sua sessão de laser</h3>
             <p>Aplicação rápida e confortável, com orientações de cuidado e o plano das próximas sessões.</p>
           </div>
         </div>
@@ -1798,9 +1973,12 @@
             <span class="pro-card__role">Biomédica · Pós-graduada em Estética</span>
             <p>Biomédica com pós-graduação pela mesma instituição da Dra. Carolina. Une técnica e um atendimento
               próximo para você se sentir segura em cada etapa.</p>
+            <!-- 🔗 INSTAGRAM DA JÚLIA: troque o href abaixo pelo perfil dela -->
+            <a class="pro-card__ig" href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram da
+              Júlia</a>
           </div>
         </div>
-        <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Led%20Day%20%2817%2F10%29%20%E2%9C%A8"
+        <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Laser%20Day%20%2817%2F10%29%20%E2%9C%A8"
           class="btn btn--gold" target="_blank" rel="noopener">Quero garantir minha vaga</a>
       </div>
     </section>
@@ -1809,47 +1987,43 @@
     <section class="faq reveal" id="faq">
       <div class="container">
         <div class="section-tag">Dúvidas frequentes</div>
-        <h2 class="section-title">Sobre a depilação a <em>LED</em></h2>
+        <h2 class="section-title">Sobre o <em>Laser Day</em></h2>
         <p class="section-desc">Tudo o que você precisa saber antes do dia 17/10.</p>
         <div class="faq__list">
           <details class="faq__item">
-            <summary class="faq__question">Onde acontece o Led Day?</summary>
+            <summary class="faq__question">Onde acontece o Laser Day?</summary>
             <div class="faq__answer">O evento acontece em <strong>Ribeirão Preto / SP</strong>, no dia 17 de outubro. O
               local e o horário exatos são confirmados no momento do agendamento, pelo WhatsApp.</div>
           </details>
           <details class="faq__item">
-            <summary class="faq__question">O desconto vale só no dia 17/10?</summary>
-            <div class="faq__answer">Sim. As condições especiais são válidas para agendamentos e fechamentos realizados no
-              <strong>Led Day</strong>, enquanto houver vagas. Depois disso, os valores voltam ao
-              normal.</div>
-          </details>
-          <details class="faq__item">
-            <summary class="faq__question">A depilação a LED dói?</summary>
-            <div class="faq__answer">A sensação é de um leve calor ou pequenos "estalinhos" na pele. A maioria das
-              pessoas tolera bem, e o protocolo é ajustado durante a avaliação para deixar a sessão mais confortável
-              possível.</div>
+            <summary class="faq__question">A depilação a laser dói?</summary>
+            <div class="faq__answer">Não! O Infinity Duos possui um sistema de resfriamento estável que garante conforto
+              máximo durante a aplicação. As aplicações para tratamento de manchas e rejuvenescimento também são muito
+              confortáveis (com exceção da remoção de tatuagem).</div>
           </details>
           <details class="faq__item">
             <summary class="faq__question">Quantas sessões eu preciso?</summary>
-            <div class="faq__answer">Depende da área, do tipo de pelo e das características da sua pele. Por isso
-              oferecemos pacotes de <strong>3 sessões</strong> e o combo de 3 meses — o ideal é definir o número de
-              sessões na avaliação.</div>
+            <div class="faq__answer">Para a <strong>depilação</strong>, a quantidade varia de <strong>6 a 12
+                sessões</strong>, a depender da quantidade e da espessura do pelo, além da resposta do seu corpo ao
+              laser. Para a <strong>tatuagem</strong>, é importante realizar uma primeira sessão antes de estimar o
+              total, dependendo do tipo e da profundidade do pigmento. Já para <strong>manchas e
+                rejuvenescimento</strong>, é indicado fechar inicialmente de 3 a 5 sessões.</div>
           </details>
           <details class="faq__item">
-            <summary class="faq__question">Funciona em todos os tipos de pele?</summary>
-            <div class="faq__answer">A tecnologia é segura para diferentes fototipos, mas alguns casos exigem cuidados
-              específicos. A avaliação prévia garante que o protocolo seja o mais adequado e seguro para
-              <strong>você</strong>.</div>
+            <summary class="faq__question">Funciona em todos os tipos de pele e de pelo?</summary>
+            <div class="faq__answer">Sim! Pele com fototipo mais alto pode apresentar uma eficácia um pouco mais
+              limitada, devido ao uso de parâmetros mais baixos para a segurança do próprio paciente. Pelos claros, como
+              loiro, ruivo e grisalho, também apresentam uma resposta mais lenta — mas ainda mostram resultado!</div>
           </details>
           <details class="faq__item">
             <summary class="faq__question">Como faço para garantir minha vaga?</summary>
             <div class="faq__answer">É simples: fale comigo pelo WhatsApp, escolha o horário disponível no dia 17/10 e
-              sua área de interesse. As vagas são limitadas e preenchidas por ordem de agendamento.</div>
+              seu tratamento de interesse. As vagas são limitadas e preenchidas por ordem de agendamento.</div>
           </details>
           <details class="faq__item">
             <summary class="faq__question">Posso pagar parcelado?</summary>
-            <div class="faq__answer">Sim! Os detalhes de pagamento e parcelamento são confirmados no momento do
-              agendamento, sem compromisso.</div>
+            <div class="faq__answer">Sim! Ao fechar o protocolo com <strong>3 sessões</strong>, você consegue parcelar em
+              <strong>3x sem juros</strong>.</div>
           </details>
         </div>
       </div>
@@ -1859,15 +2033,15 @@
     <section class="contato" id="contato">
       <div class="container">
         <h2 class="contato__title">Vagas limitadas no dia 17/10 — <em>garanta a sua</em></h2>
-        <p class="contato__desc">O evento acontece por um único dia, em Ribeirão Preto. Fale no WhatsApp, tire suas
-          dúvidas e reserve seu horário antes que acabe. Sem compromisso.</p>
+        <p class="contato__desc">Tire suas dúvidas e garanta sua vaga pelo WhatsApp. O Laser Day acontece por um único
+          dia, em Ribeirão Preto — reserve seu horário antes que acabe.</p>
         <div class="contato__cards">
           <div class="contato__option">
             <div class="contato__option-icon">💬</div>
             <h3>Fale pelo WhatsApp</h3>
             <p>Tire dúvidas ou agende sua vaga diretamente:</p>
             <p class="contato__phone"><a href="tel:+5516992133717">(16) 99213-3717</a></p>
-            <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Led%20Day%20%2817%2F10%29%20%E2%9C%A8"
+            <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Laser%20Day%20%2817%2F10%29%20%E2%9C%A8"
               class="btn btn--whatsapp btn--full" id="cta-whatsapp" target="_blank" rel="noopener">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
@@ -1907,15 +2081,15 @@
     <div class="container">
       <div class="footer__brand">
         <strong>Carolina Martins &amp; Júlia Franco</strong>
-        <span>Led Day · Ribeirão Preto / SP</span>
+        <span>Laser Day · Ribeirão Preto / SP</span>
       </div>
-      <p class="footer__quote">Led Day · 17 de outubro · Vagas limitadas</p>
+      <p class="footer__quote">Laser Day · 17 de outubro · Vagas limitadas</p>
       <p class="footer__copy">© <span id="ano"></span> Dra. Carolina Martins. Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <!-- Floating WhatsApp -->
-  <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Led%20Day%20%2817%2F10%29%20%E2%9C%A8"
+  <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Laser%20Day%20%2817%2F10%29%20%E2%9C%A8"
     class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path
@@ -2006,21 +2180,6 @@
       const timer = setInterval(tick, 1000);
     })();
 
-    // Abas Feminino / Masculino
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        const key = tab.dataset.tab;
-        document.querySelectorAll('.tab').forEach(t => {
-          const active = t === tab;
-          t.classList.toggle('is-active', active);
-          t.setAttribute('aria-selected', active ? 'true' : 'false');
-        });
-        document.querySelectorAll('.tab-panel').forEach(p => {
-          p.classList.toggle('is-active', p.id === 'panel-' + key);
-        });
-      });
-    });
-
     // FAQ smooth height animation
     document.querySelectorAll('.faq__item').forEach(details => {
       const summary = details.querySelector('.faq__question');
@@ -2057,7 +2216,7 @@
     document.querySelectorAll('a[href*="whatsapp.com"]').forEach(btn => {
       btn.addEventListener('click', () => {
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'whatsapp_click', cta_id: btn.id || btn.className, campanha: 'led_17_10' });
+        window.dataLayer.push({ event: 'whatsapp_click', cta_id: btn.id || btn.className, campanha: 'laser_17_10' });
       });
     });
   </script>

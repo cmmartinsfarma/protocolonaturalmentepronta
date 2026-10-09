@@ -1047,30 +1047,45 @@
     .tratamentos__grid {
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-      gap: 14px;
-      max-width: 920px;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+      gap: 18px;
+      max-width: 960px;
       margin: 0 auto;
-      text-align: left;
+      text-align: center;
     }
 
     .tratamentos__grid li {
-      position: relative;
-      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
       border: 1px solid var(--cream-dark);
-      border-radius: 14px;
-      padding: 16px 20px 16px 44px;
+      border-radius: 18px;
+      padding: 26px 20px;
       font-size: .92rem;
+      font-weight: 500;
       color: var(--charcoal-soft);
+      line-height: 1.45;
+      box-shadow: 0 2px 14px rgba(43, 34, 36, .05);
+      transition: var(--transition);
     }
 
-    .tratamentos__grid li::before {
-      content: '✓';
-      position: absolute;
-      left: 18px;
-      top: 15px;
-      color: var(--rose-deep);
-      font-weight: 700;
+    .tratamentos__grid li:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--blush);
+    }
+
+    .tratamento__icone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      background: rgba(169, 75, 66, .10);
     }
 
     /* ===== CONTRAINDICAÇÕES ===== */
@@ -1638,7 +1653,7 @@
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__content">
-          <span class="hero__event-tag">✨ Laser Day · Uma nova tecnologia para sua segurança e conforto · 17/10</span>
+          <span class="hero__event-tag">✨ Laser Day · Uma nova tecnologia · 17/10</span>
           <h1 class="hero__title">Laser <em>Day</em></h1>
           <p class="hero__subtitle">Epilação a laser e tratamentos de pele com o Infinity Duos</p>
           <p class="hero__date">17 de outubro · <strong>Ribeirão Preto / SP</strong></p>
@@ -1700,11 +1715,6 @@
           duas especialistas. Veja o que você leva:</p>
         <div class="beneficios__grid">
           <div class="beneficio-card reveal">
-            <div class="beneficio-card__icon">✨</div>
-            <h3>Condições especiais</h3>
-            <p>Só no Laser Day você garante os valores da primeira edição. Depois, os preços voltam ao normal.</p>
-          </div>
-          <div class="beneficio-card reveal">
             <div class="beneficio-card__icon">🫧</div>
             <h3>Conforto absoluto</h3>
             <p>O Infinity Duos tem sistema de resfriamento estável, garantindo sessões muito mais confortáveis.</p>
@@ -1718,11 +1728,6 @@
             <div class="beneficio-card__icon">⚡</div>
             <h3>Eficácia desde a primeira sessão</h3>
             <p>Resultados progressivos e visíveis já nas primeiras aplicações, ao longo do tratamento.</p>
-          </div>
-          <div class="beneficio-card reveal">
-            <div class="beneficio-card__icon">👩‍⚕️</div>
-            <h3>Aplicação por 2 especialistas</h3>
-            <p>Carolina Martins e Júlia Franco cuidam de você com atenção e olhar individual.</p>
           </div>
           <div class="beneficio-card reveal">
             <div class="beneficio-card__icon">🌸</div>
@@ -1769,15 +1774,15 @@
         <h2 class="section-title">Opções de <em>tratamento</em></h2>
         <p class="section-desc">Com o Infinity Duos, no mesmo dia você pode cuidar de muito mais do que a epilação.</p>
         <ul class="tratamentos__grid">
-          <li>Epilação</li>
-          <li>Epilação + clareamento</li>
-          <li>Remoção de tatuagem escura, colorida e cosmético (micropigmentação)</li>
-          <li>Black peel</li>
-          <li>Hipercromia solar, senil ou pós-inflamatória</li>
-          <li>Melasma</li>
-          <li>Onicomicose (micose de unha)</li>
-          <li>Olheira</li>
-          <li>Rejuvenescimento leve</li>
+          <li><span class="tratamento__icone">✨</span>Epilação</li>
+          <li><span class="tratamento__icone">💫</span>Epilação + clareamento</li>
+          <li><span class="tratamento__icone">🎨</span>Remoção de tatuagem escura, colorida e cosmético (micropigmentação)</li>
+          <li><span class="tratamento__icone">🌑</span>Black peel</li>
+          <li><span class="tratamento__icone">☀️</span>Hipercromia solar, senil ou pós-inflamatória</li>
+          <li><span class="tratamento__icone">🌗</span>Melasma</li>
+          <li><span class="tratamento__icone">💅</span>Onicomicose (micose de unha)</li>
+          <li><span class="tratamento__icone">👁️</span>Olheira</li>
+          <li><span class="tratamento__icone">🌟</span>Rejuvenescimento leve</li>
         </ul>
       </div>
     </section>
@@ -1970,7 +1975,7 @@
                 onerror="this.remove()" />
             </div>
             <h3>Júlia Franco</h3>
-            <span class="pro-card__role">Biomédica · Pós-graduada em Estética</span>
+            <span class="pro-card__role">Biomédica Esteta</span>
             <p>Biomédica com pós-graduação pela mesma instituição da Dra. Carolina. Une técnica e um atendimento
               próximo para você se sentir segura em cada etapa.</p>
             <!-- 🔗 INSTAGRAM DA JÚLIA: troque o href abaixo pelo perfil dela -->

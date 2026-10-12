@@ -1249,6 +1249,22 @@
     }
 
     /* ===== CARDS DE PREÇOS ===== */
+    .price-disclaimer {
+      max-width: 680px;
+      margin: 0 auto 26px;
+      padding: 13px 18px;
+      background: rgba(169, 75, 66, .07);
+      border: 1px solid rgba(169, 75, 66, .18);
+      border-radius: 14px;
+      font-size: .84rem;
+      color: var(--charcoal-soft);
+      line-height: 1.5;
+    }
+
+    .price-disclaimer strong {
+      color: var(--rose-deep);
+    }
+
     .price-block {
       background: var(--white);
       border: 1px solid var(--cream-dark);
@@ -2357,6 +2373,9 @@
           </button>
         </div>
 
+        <p class="price-disclaimer">💳 Os valores em <strong>3x têm acréscimo de juros</strong> conforme as taxas da
+          operadora do cartão. O valor parcelado é confirmado no agendamento.</p>
+
         <!-- ===== FEMININO ===== -->
         <div class="pgender-panel is-active" data-gender-panel="feminino">
           <div class="tabs" role="tablist">
@@ -2889,10 +2908,8 @@
           </details>
           <details class="faq__item">
             <summary class="faq__question">Posso pagar parcelado?</summary>
-            <div class="faq__answer">Sim! Ao fechar o protocolo com <strong>3 sessões</strong>, você consegue parcelar
-              em
-              <strong>3x sem juros</strong>.
-            </div>
+            <div class="faq__answer">Sim! Ao fechar o protocolo com <strong>3 sessões</strong>, você consegue parcelar em
+              <strong>3x com acréscimo de juros</strong> conforme as taxas da operadora do cartão.</div>
           </details>
           <details class="faq__item">
             <summary class="faq__question">Quais são as contraindicações?</summary>

@@ -1983,38 +1983,7 @@
           <p class="hero__device-name">Infinity Duos<span>Cromatics</span></p>
         </div>
       </div>
-      <div class="container hero__count-block">
-        <p class="hero__count-label">Faltam para o dia 17/10:</p>
-        <div class="countdown" id="countdown" aria-label="Contagem regressiva para o evento">
-          <div class="countdown__unit">
-            <span class="countdown__num" id="cd-days">--</span>
-            <span class="countdown__label">Dias</span>
-          </div>
-          <div class="countdown__unit">
-            <span class="countdown__num" id="cd-hours">--</span>
-            <span class="countdown__label">Horas</span>
-          </div>
-          <div class="countdown__unit">
-            <span class="countdown__num" id="cd-minutes">--</span>
-            <span class="countdown__label">Min</span>
-          </div>
-          <div class="countdown__unit">
-            <span class="countdown__num" id="cd-seconds">--</span>
-            <span class="countdown__label">Seg</span>
-          </div>
-        </div>
-        <p class="hero__note">✅ Sem compromisso · Resposta rápida pelo WhatsApp · Vagas limitadas</p>
-        <p class="hero__next">📅 Próximas edições do Laser Day em breve — novas datas serão divulgadas aqui.</p>
-      </div>
     </header>
-
-    <!-- ===== STRIP ===== -->
-    <div class="strip reveal">
-      <span>✅ <b>Infinity Duos</b> · 3 tipos de laser</span>
-      <span>✅ Segurança para <b>todos os fototipos</b></span>
-      <span>✅ <b>2 especialistas</b> no mesmo dia</span>
-      <span>✅ <b>17/10</b> · Ribeirão Preto</span>
-    </div>
 
     <!-- ===== BENEFÍCIOS ===== -->
     <section class="beneficios reveal" id="por-que">
@@ -2699,38 +2668,6 @@
       </div>
     </section>
 
-    <!-- ===== COMO FUNCIONA ===== -->
-    <section class="como reveal" id="como-funciona">
-      <div class="container">
-        <div class="section-tag">Como funciona</div>
-        <h2 class="section-title">Garanta sua vaga em <em>4 passos</em></h2>
-        <p class="section-desc">Do primeiro contato à sessão, é simples e rápido — e você não fica perdida em nenhum
-          momento.</p>
-        <div class="como__steps">
-          <div class="como__step reveal">
-            <div class="como__num">1</div>
-            <h3>Fale no WhatsApp</h3>
-            <p>Envie uma mensagem e diga quais áreas quer tratar. Eu confirmo os horários disponíveis do dia 17/10.</p>
-          </div>
-          <div class="como__step reveal">
-            <div class="como__num">2</div>
-            <h3>Escolha seu horário</h3>
-            <p>As vagas são limitadas e reservadas por ordem de contato. Garanta a sua o quanto antes.</p>
-          </div>
-          <div class="como__step reveal">
-            <div class="como__num">3</div>
-            <h3>Avaliação no dia</h3>
-            <p>Analisamos sua pele e indicamos o protocolo ideal, com segurança e para o melhor resultado.</p>
-          </div>
-          <div class="como__step reveal">
-            <div class="como__num">4</div>
-            <h3>Sua sessão de laser</h3>
-            <p>Aplicação rápida e confortável, com orientações de cuidado e o plano das próximas sessões.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== PROFISSIONAIS ===== -->
     <section class="pros" id="profissionais">
       <div class="container">
@@ -2937,6 +2874,7 @@
     // Countdown para 17/10
     (function () {
       const el = document.getElementById('countdown');
+      if (!el) return;
       const days = document.getElementById('cd-days');
       const hours = document.getElementById('cd-hours');
       const minutes = document.getElementById('cd-minutes');

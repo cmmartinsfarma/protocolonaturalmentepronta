@@ -589,6 +589,61 @@
       text-align: center;
     }
 
+    .pgender {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 620px;
+      margin: 0 auto 24px;
+    }
+
+    .pgender__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 2px solid var(--cream-dark);
+      background: var(--white);
+      cursor: pointer;
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      transition: var(--transition);
+    }
+
+    .pgender__btn:hover {
+      border-color: var(--blush);
+    }
+
+    .pgender__btn.is-active {
+      border-color: var(--rose-deep);
+      background: linear-gradient(160deg, #fdeee9 0%, #f8ddd5 100%);
+      box-shadow: 0 10px 26px rgba(169, 75, 66, .16);
+    }
+
+    .pgender__svg {
+      width: 26px;
+      height: 54px;
+      fill: var(--rose);
+      transition: var(--transition);
+    }
+
+    .pgender__btn.is-active .pgender__svg {
+      fill: var(--rose-deep);
+    }
+
+    .pgender-panel {
+      display: none;
+    }
+
+    .pgender-panel.is-active {
+      display: block;
+      animation: fade .35s ease;
+    }
+
     .tabs {
       display: flex;
       flex-wrap: wrap;
@@ -1996,17 +2051,28 @@
       <div class="container">
         <div class="section-tag">Tabela de preços</div>
         <h2 class="section-title">Valores do <em>Laser Day</em></h2>
-        <p class="section-desc">Escolha o tratamento para ver a tabela. Role para o lado se precisar.</p>
+        <p class="section-desc">Escolha feminino ou masculino e depois o tratamento para ver a tabela.</p>
 
-        <div class="tabs" role="tablist" aria-label="Tabela de preços">
-          <button class="tab is-active" role="tab" aria-selected="true" data-tab="epilacao">Epilação</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="clareamento">Epilação + clareamento</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="tatuagem">Remoção de tatuagem</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="outros">Outros procedimentos</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="masculino">Masculino</button>
+        <div class="pgender" role="tablist" aria-label="Feminino ou masculino">
+          <button class="pgender__btn is-active" data-gender="feminino" aria-selected="true">
+            <svg class="pgender__svg" viewBox="0 0 64 128" aria-hidden="true"><circle cx="32" cy="15" r="10"></circle><path d="M32 27c-8 0-12 5-12 12l-6 55h36l-6-55c0-7-4-12-12-12z"></path><rect x="25" y="94" width="5" height="30" rx="2.5"></rect><rect x="34" y="94" width="5" height="30" rx="2.5"></rect></svg>
+            <span>Feminino</span>
+          </button>
+          <button class="pgender__btn" data-gender="masculino" aria-selected="false">
+            <svg class="pgender__svg" viewBox="0 0 64 128" aria-hidden="true"><circle cx="32" cy="15" r="10"></circle><path d="M32 27c-9 0-13 5-13 13v40h26V40c0-8-4-13-13-13z"></path><rect x="22" y="80" width="8" height="44" rx="3"></rect><rect x="34" y="80" width="8" height="44" rx="3"></rect></svg>
+            <span>Masculino</span>
+          </button>
         </div>
 
-        <div class="tab-panel is-active" id="panel-epilacao" role="tabpanel">
+        <!-- ===== FEMININO ===== -->
+        <div class="pgender-panel is-active" data-gender-panel="feminino">
+          <div class="tabs" role="tablist">
+            <button class="tab is-active" data-tab="f-epilacao" aria-selected="true">Epilação</button>
+            <button class="tab" data-tab="f-clareamento" aria-selected="false">Epilação + clareamento</button>
+            <button class="tab" data-tab="f-tatuagem" aria-selected="false">Remoção de tatuagem</button>
+            <button class="tab" data-tab="f-outros" aria-selected="false">Outros procedimentos</button>
+          </div>
+          <div class="tab-panel is-active" id="panel-f-epilacao">
           <div class="price-block">
             <div class="price-block__head">
               <h3 class="price-block__title">Epilação · feminino</h3>
@@ -2023,27 +2089,26 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>Buço</td><td>R$ 50,00</td><td>R$ 130,00</td></tr>
-                  <tr><td>Axila</td><td>R$ 70,00</td><td>R$ 180,00</td></tr>
-                  <tr><td>Rosto</td><td>R$ 120,00</td><td>R$ 310,00</td></tr>
-                  <tr><td>Antebraço</td><td>R$ 80,00</td><td>R$ 200,00</td></tr>
-                  <tr><td>Virilha</td><td>R$ 65,00</td><td>R$ 170,00</td></tr>
-                  <tr><td>Virilha completa + perianal</td><td>R$ 100,00</td><td>R$ 260,00</td></tr>
-                  <tr><td>Braço + antebraço</td><td>R$ 140,00</td><td>R$ 360,00</td></tr>
-                  <tr><td>Meia perna</td><td>R$ 120,00</td><td>R$ 310,00</td></tr>
-                  <tr><td>Perna completa</td><td>R$ 160,00</td><td>R$ 400,00</td></tr>
-                  <tr><td>Buço + axila</td><td>R$ 80,00</td><td>R$ 210,00</td></tr>
-                  <tr><td>Buço + axila + virilha</td><td>R$ 170,00</td><td>R$ 450,00</td></tr>
-                  <tr><td>Axila + meia perna</td><td>R$ 150,00</td><td>R$ 380,00</td></tr>
-                  <tr><td>Buço + axila + virilha + meia perna</td><td>R$ 290,00</td><td>R$ 750,00</td></tr>
-                  <tr><td>Buço + axila + virilha + perna completa</td><td>R$ 350,00</td><td>R$ 900,00</td></tr>
+                    <tr><td>Buço</td><td>R$ 50,00</td><td>R$ 130,00</td></tr>
+                    <tr><td>Axila</td><td>R$ 70,00</td><td>R$ 180,00</td></tr>
+                    <tr><td>Rosto</td><td>R$ 120,00</td><td>R$ 310,00</td></tr>
+                    <tr><td>Antebraço</td><td>R$ 80,00</td><td>R$ 200,00</td></tr>
+                    <tr><td>Virilha</td><td>R$ 65,00</td><td>R$ 170,00</td></tr>
+                    <tr><td>Virilha completa + perianal</td><td>R$ 100,00</td><td>R$ 260,00</td></tr>
+                    <tr><td>Braço + antebraço</td><td>R$ 140,00</td><td>R$ 360,00</td></tr>
+                    <tr><td>Meia perna</td><td>R$ 120,00</td><td>R$ 310,00</td></tr>
+                    <tr><td>Perna completa</td><td>R$ 160,00</td><td>R$ 400,00</td></tr>
+                    <tr><td>Buço + axila</td><td>R$ 80,00</td><td>R$ 210,00</td></tr>
+                    <tr><td>Buço + axila + virilha</td><td>R$ 170,00</td><td>R$ 450,00</td></tr>
+                    <tr><td>Axila + meia perna</td><td>R$ 150,00</td><td>R$ 380,00</td></tr>
+                    <tr><td>Buço + axila + virilha + meia perna</td><td>R$ 290,00</td><td>R$ 750,00</td></tr>
+                    <tr><td>Buço + axila + virilha + perna completa</td><td>R$ 350,00</td><td>R$ 900,00</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
-        </div>
-
-        <div class="tab-panel" id="panel-clareamento" role="tabpanel">
+          </div>
+          <div class="tab-panel" id="panel-f-clareamento">
           <div class="price-block">
             <div class="price-block__head">
               <h3 class="price-block__title">Epilação + clareamento · feminino</h3>
@@ -2060,18 +2125,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>Buço</td><td>R$ 80</td><td>R$ 200</td></tr>
-                  <tr><td>Axila</td><td>R$ 110</td><td>R$ 280</td></tr>
-                  <tr><td>Virilha</td><td>R$ 100</td><td>R$ 260</td></tr>
-                  <tr><td>Buço + axila</td><td>R$ 130</td><td>R$ 330</td></tr>
-                  <tr><td>Buço + axila + virilha</td><td>R$ 250</td><td>R$ 650</td></tr>
+                    <tr><td>Buço</td><td>R$ 80</td><td>R$ 200</td></tr>
+                    <tr><td>Axila</td><td>R$ 110</td><td>R$ 280</td></tr>
+                    <tr><td>Virilha</td><td>R$ 100</td><td>R$ 260</td></tr>
+                    <tr><td>Buço + axila</td><td>R$ 130</td><td>R$ 330</td></tr>
+                    <tr><td>Buço + axila + virilha</td><td>R$ 250</td><td>R$ 650</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
-        </div>
-
-        <div class="tab-panel" id="panel-tatuagem" role="tabpanel">
+          </div>
+          <div class="tab-panel" id="panel-f-tatuagem">
           <div class="price-block">
             <div class="price-block__head">
               <h3 class="price-block__title">Remoção de tatuagem</h3>
@@ -2096,9 +2160,8 @@
             </div>
             <p class="table-hint">*Valor referente a uma sessão para uma tatuagem.</p>
           </div>
-        </div>
-
-        <div class="tab-panel" id="panel-outros" role="tabpanel">
+          </div>
+          <div class="tab-panel" id="panel-f-outros">
           <div class="price-block">
             <div class="price-block__head">
               <h3 class="price-block__title">Outros procedimentos</h3>
@@ -2115,28 +2178,121 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>Black peel</td><td>R$ 220</td><td>R$ 560</td></tr>
-                  <tr><td>Peeling 3D</td><td>R$ 300</td><td>R$ 765</td></tr>
-                  <tr><td>Onicomicose (micose de unha)</td><td>R$ 150</td><td>R$ 390</td></tr>
-                  <tr><td>Olheiras</td><td>R$ 120</td><td>R$ 300</td></tr>
-                  <tr><td>Hipercromias (1 área)</td><td>R$ 180</td><td>R$ 460</td></tr>
-                  <tr><td>Hipercromias (2 áreas)</td><td>R$ 300</td><td>R$ 770</td></tr>
-                  <tr><td>Hipercromias (3 áreas)</td><td>R$ 400</td><td>R$ 990</td></tr>
-                  <tr><td>Micropigmentação</td><td>R$ 220</td><td>—</td></tr>
+                    <tr><td>Black peel</td><td>R$ 220</td><td>R$ 560</td></tr>
+                    <tr><td>Peeling 3D</td><td>R$ 300</td><td>R$ 765</td></tr>
+                    <tr><td>Onicomicose (micose de unha)</td><td>R$ 150</td><td>R$ 390</td></tr>
+                    <tr><td>Olheiras</td><td>R$ 120</td><td>R$ 300</td></tr>
+                    <tr><td>Hipercromias (1 área)</td><td>R$ 180</td><td>R$ 460</td></tr>
+                    <tr><td>Hipercromias (2 áreas)</td><td>R$ 300</td><td>R$ 770</td></tr>
+                    <tr><td>Hipercromias (3 áreas)</td><td>R$ 400</td><td>R$ 990</td></tr>
+                    <tr><td>Micropigmentação</td><td>R$ 220</td><td>—</td></tr>
                 </tbody>
               </table>
             </div>
             <p class="table-hint">*Áreas para tratamento de hipercromia: rosto, colo e mãos.</p>
           </div>
+          </div>
         </div>
 
-        <div class="tab-panel" id="panel-masculino" role="tabpanel">
-          <div class="price-callout">
-            <span class="price-callout__icon" aria-hidden="true">👨</span>
-            <p><strong>Depilação masculina:</strong> valores em confirmação. Fale no WhatsApp que a gente te passa
-              o valor das áreas que você quer tratar.</p>
-            <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20saber%20os%20valores%20da%20depila%C3%A7%C3%A3o%20masculina%20no%20Laser%20Day"
-              class="btn btn--whatsapp" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <!-- ===== MASCULINO ===== -->
+        <div class="pgender-panel" data-gender-panel="masculino">
+          <div class="tabs" role="tablist">
+            <button class="tab is-active" data-tab="m-depilacao" aria-selected="true">Depilação</button>
+            <button class="tab" data-tab="m-tatuagem" aria-selected="false">Remoção de tatuagem</button>
+            <button class="tab" data-tab="m-outros" aria-selected="false">Outros procedimentos</button>
+          </div>
+          <div class="tab-panel is-active" id="panel-m-depilacao">
+          <div class="price-block">
+            <div class="price-block__head">
+              <h3 class="price-block__title">Depilação · masculino</h3>
+              <span class="price-block__tag">Preço avulso e combo</span>
+            </div>
+            <div class="table-scroll">
+              <table class="price-table">
+                <colgroup><col /><col class="hl" /><col /></colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">Área</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Combo (3 meses)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Nuca</td><td>R$ 70,00</td><td>R$ 190,00</td></tr>
+                    <tr><td>Axila</td><td>R$ 70,00</td><td>R$ 190,00</td></tr>
+                    <tr><td>Contorno de barba</td><td>R$ 90,00</td><td>R$ 250,00</td></tr>
+                    <tr><td>Barba completa</td><td>R$ 120,00</td><td>R$ 330,00</td></tr>
+                    <tr><td>Abdômen</td><td>R$ 130,00</td><td>R$ 350,00</td></tr>
+                    <tr><td>Peitoral</td><td>R$ 130,00</td><td>R$ 350,00</td></tr>
+                    <tr><td>Meia perna</td><td>R$ 130,00</td><td>R$ 350,00</td></tr>
+                    <tr><td>Perna completa</td><td>R$ 200,00</td><td>R$ 540,00</td></tr>
+                    <tr><td>Braço + antebraço</td><td>R$ 160,00</td><td>R$ 440,00</td></tr>
+                    <tr><td>Peitoral + abdômen</td><td>R$ 220,00</td><td>R$ 600,00</td></tr>
+                    <tr><td>Costas completa</td><td>R$ 220,00</td><td>R$ 600,00</td></tr>
+                    <tr><td>Nuca + contorno de barba</td><td>R$ 140,00</td><td>R$ 390,00</td></tr>
+                    <tr><td>Nuca + contorno de barba + axila</td><td>R$ 200,00</td><td>R$ 540,00</td></tr>
+                    <tr><td>Nuca + contorno de barba + axila + abdômen + peitoral</td><td>R$ 430,00</td><td>R$ 1.200,00</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          </div>
+          <div class="tab-panel" id="panel-m-tatuagem">
+          <div class="price-block">
+            <div class="price-block__head">
+              <h3 class="price-block__title">Remoção de tatuagem</h3>
+              <span class="price-block__tag">Por sessão</span>
+            </div>
+            <div class="table-scroll">
+              <table class="price-table">
+                <colgroup><col /><col class="hl" /></colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">Tamanho</th>
+                    <th scope="col">Por sessão</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Até 3 cm</td><td>R$ 200</td></tr>
+                  <tr><td>De 3 a 10 cm</td><td>R$ 290</td></tr>
+                  <tr><td>De 10 a 15 cm</td><td>R$ 350</td></tr>
+                  <tr><td>A partir de 15 cm</td><td>A partir de R$ 420</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-hint">*Valor referente a uma sessão para uma tatuagem.</p>
+          </div>
+          </div>
+          <div class="tab-panel" id="panel-m-outros">
+          <div class="price-block">
+            <div class="price-block__head">
+              <h3 class="price-block__title">Outros procedimentos</h3>
+              <span class="price-block__tag">Avulsa ou 3 sessões</span>
+            </div>
+            <div class="table-scroll">
+              <table class="price-table">
+                <colgroup><col /><col class="hl" /><col /></colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">Procedimento</th>
+                    <th scope="col">Sessão avulsa</th>
+                    <th scope="col">3 sessões</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Black peel</td><td>R$ 220</td><td>R$ 560</td></tr>
+                    <tr><td>Peeling 3D</td><td>R$ 300</td><td>R$ 765</td></tr>
+                    <tr><td>Onicomicose (micose de unha)</td><td>R$ 150</td><td>R$ 390</td></tr>
+                    <tr><td>Olheiras</td><td>R$ 120</td><td>R$ 300</td></tr>
+                    <tr><td>Hipercromias (1 área)</td><td>R$ 180</td><td>R$ 460</td></tr>
+                    <tr><td>Hipercromias (2 áreas)</td><td>R$ 300</td><td>R$ 770</td></tr>
+                    <tr><td>Hipercromias (3 áreas)</td><td>R$ 400</td><td>R$ 990</td></tr>
+                    <tr><td>Micropigmentação</td><td>R$ 220</td><td>—</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-hint">*Áreas para tratamento de hipercromia: rosto, colo e mãos.</p>
+          </div>
           </div>
         </div>
 
@@ -2427,20 +2583,41 @@
       const timer = setInterval(tick, 1000);
     })();
 
-    // Abas da tabela de preços
-    document.querySelectorAll('#precos .tab').forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        const key = tab.dataset.tab;
-        document.querySelectorAll('#precos .tab').forEach(function (t) {
-          const active = t === tab;
-          t.classList.toggle('is-active', active);
-          t.setAttribute('aria-selected', active ? 'true' : 'false');
-        });
-        document.querySelectorAll('#precos .tab-panel').forEach(function (p) {
-          p.classList.toggle('is-active', p.id === 'panel-' + key);
+    // Tabelas de preços: gênero + categoria
+    (function () {
+      var precos = document.getElementById('precos');
+      if (!precos) return;
+
+      precos.querySelectorAll('.pgender__btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var g = btn.dataset.gender;
+          precos.querySelectorAll('.pgender__btn').forEach(function (b) {
+            var active = b === btn;
+            b.classList.toggle('is-active', active);
+            b.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          precos.querySelectorAll('.pgender-panel').forEach(function (panel) {
+            panel.classList.toggle('is-active', panel.dataset.genderPanel === g);
+          });
         });
       });
-    });
+
+      precos.querySelectorAll('.pgender-panel').forEach(function (group) {
+        group.querySelectorAll('.tab').forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            var key = tab.dataset.tab;
+            group.querySelectorAll('.tab').forEach(function (t) {
+              var active = t === tab;
+              t.classList.toggle('is-active', active);
+              t.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            group.querySelectorAll('.tab-panel').forEach(function (p) {
+              p.classList.toggle('is-active', p.id === 'panel-' + key);
+            });
+          });
+        });
+      });
+    })();
 
     // FAQ + acordeão: animação de altura
     document.querySelectorAll('.faq__item, .trat-item').forEach(details => {

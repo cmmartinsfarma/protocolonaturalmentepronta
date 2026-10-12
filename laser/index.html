@@ -544,18 +544,65 @@
       text-align: center;
     }
 
-    .beneficios__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-      gap: 24px;
+    .beneficios__slider {
+      position: relative;
+    }
+
+    .beneficios__track {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 6px 4px 14px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .beneficios__track::-webkit-scrollbar {
+      display: none;
     }
 
     .beneficio-card {
+      flex: 0 0 300px;
+      scroll-snap-align: start;
       background: var(--white);
       border-radius: var(--radius);
-      padding: 30px 24px;
+      padding: 28px 24px;
       border: 1px solid var(--cream-dark);
       transition: var(--transition);
+    }
+
+    .ben-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--cream-dark);
+      background: var(--white);
+      color: var(--rose-deep);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .ben-nav:hover {
+      background: var(--rose-deep);
+      color: var(--white);
+      border-color: var(--rose-deep);
+    }
+
+    .ben-nav--prev {
+      left: -10px;
+    }
+
+    .ben-nav--next {
+      right: -10px;
     }
 
     .beneficio-card:hover {
@@ -1194,7 +1241,7 @@
     }
 
     .pro-merged__content p {
-      font-size: .92rem;
+      font-size: .86rem;
       color: rgba(255, 255, 255, .82);
       line-height: 1.7;
       margin-top: 14px;
@@ -1790,7 +1837,15 @@
       }
 
       .pro-merged__media {
-        width: 80%;
+        width: 70%;
+      }
+
+      .beneficio-card {
+        flex: 0 0 78%;
+      }
+
+      .ben-nav {
+        display: none;
       }
 
       .trat__list {
@@ -2131,27 +2186,31 @@
         <h2 class="section-title">Muito além da <em>epilação</em></h2>
         <p class="section-desc">No dia 17/10 você encontra condições especiais com tecnologia de ponta e o cuidado de
           duas especialistas. Veja o que você leva:</p>
-        <div class="beneficios__grid">
-          <div class="beneficio-card reveal">
-            <div class="beneficio-card__icon">🫧</div>
-            <h3>Conforto absoluto</h3>
-            <p>O Infinity Duos tem sistema de resfriamento estável, garantindo sessões muito mais confortáveis.</p>
+        <div class="beneficios__slider">
+          <button class="ben-nav ben-nav--prev" type="button" aria-label="Anterior" data-ben="prev">&#8249;</button>
+          <div class="beneficios__track" id="ben-track">
+            <div class="beneficio-card">
+              <div class="beneficio-card__icon">🫧</div>
+              <h3>Conforto absoluto</h3>
+              <p>O Infinity Duos tem sistema de resfriamento estável, garantindo sessões muito mais confortáveis.</p>
+            </div>
+            <div class="beneficio-card">
+              <div class="beneficio-card__icon">🛡️</div>
+              <h3>Segurança para todos os fototipos</h3>
+              <p>Da pele albina à pele negra, com parâmetros ajustados para a sua segurança.</p>
+            </div>
+            <div class="beneficio-card">
+              <div class="beneficio-card__icon">⚡</div>
+              <h3>Eficácia desde a primeira sessão</h3>
+              <p>Resultados progressivos e visíveis já nas primeiras aplicações, ao longo do tratamento.</p>
+            </div>
+            <div class="beneficio-card">
+              <div class="beneficio-card__icon">🌸</div>
+              <h3>Tudo em um só lugar</h3>
+              <p>Foliculite, manchas, rugas finas, epilação e remoção de tatuagem — no mesmo equipamento.</p>
+            </div>
           </div>
-          <div class="beneficio-card reveal">
-            <div class="beneficio-card__icon">🛡️</div>
-            <h3>Segurança para todos os fototipos</h3>
-            <p>Da pele albina à pele negra, com parâmetros ajustados para a sua segurança.</p>
-          </div>
-          <div class="beneficio-card reveal">
-            <div class="beneficio-card__icon">⚡</div>
-            <h3>Eficácia desde a primeira sessão</h3>
-            <p>Resultados progressivos e visíveis já nas primeiras aplicações, ao longo do tratamento.</p>
-          </div>
-          <div class="beneficio-card reveal">
-            <div class="beneficio-card__icon">🌸</div>
-            <h3>Tudo em um só lugar</h3>
-            <p>Foliculite, manchas, rugas finas, epilação e remoção de tatuagem — no mesmo equipamento.</p>
-          </div>
+          <button class="ben-nav ben-nav--next" type="button" aria-label="Próximo" data-ben="next">&#8250;</button>
         </div>
       </div>
     </section>
@@ -2997,11 +3056,6 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
       reveals.forEach(el => observer.observe(el));
-      document.querySelectorAll('.beneficios__grid, .como__steps, .pros__grid').forEach(grid => {
-        grid.querySelectorAll('.reveal').forEach((child, i) => {
-          child.style.transitionDelay = `${i * 0.05}s`;
-        });
-      });
     }
 
     // Countdown para 17/10
@@ -3119,6 +3173,19 @@
       });
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      });
+    })();
+
+    // Slider: por que participar
+    (function () {
+      var track = document.getElementById('ben-track');
+      if (!track) return;
+      document.querySelectorAll('.ben-nav').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var card = track.querySelector('.beneficio-card');
+          var step = card ? card.offsetWidth + 20 : 320;
+          track.scrollBy({ left: btn.dataset.ben === 'next' ? step : -step, behavior: 'smooth' });
+        });
       });
     })();
 

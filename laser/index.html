@@ -606,6 +606,7 @@
       opacity: .055;
       pointer-events: none;
       z-index: 0;
+      transition: opacity .45s ease;
     }
 
     .precos__deco svg {
@@ -621,6 +622,14 @@
 
     .precos__deco--r {
       right: -80px;
+    }
+
+    .precos[data-active-gender="feminino"] .precos__deco--r {
+      opacity: 0;
+    }
+
+    .precos[data-active-gender="masculino"] .precos__deco--l {
+      opacity: 0;
     }
 
     .pgender {
@@ -659,8 +668,8 @@
     }
 
     .pgender__svg {
-      width: 26px;
-      height: 54px;
+      width: 22px;
+      height: 46px;
       fill: var(--rose);
       transition: var(--transition);
     }
@@ -1691,13 +1700,55 @@
         text-align: left;
       }
 
+      .countdown {
+        flex-wrap: nowrap;
+        gap: 8px;
+      }
+
       .countdown__unit {
-        min-width: 68px;
-        padding: 12px 6px;
+        min-width: 0;
+        padding: 10px 4px;
+        border-radius: 12px;
       }
 
       .countdown__num {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
+      }
+
+      .countdown__label {
+        font-size: .62rem;
+        letter-spacing: .08em;
+      }
+
+      .pgender {
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .pgender__btn {
+        gap: 8px;
+        padding: 12px 10px;
+        font-size: 1.05rem;
+        border-radius: 14px;
+      }
+
+      .pgender__svg {
+        width: 20px;
+        height: 42px;
+      }
+
+      table.price-table {
+        min-width: 0;
+      }
+
+      table.price-table thead th {
+        font-size: .62rem;
+        padding: 0 8px 8px;
+      }
+
+      table.price-table tbody td {
+        padding: 8px;
+        font-size: .82rem;
       }
 
       .tab {
@@ -1735,6 +1786,47 @@
 
       .hero__ctas .btn {
         width: 100%;
+      }
+
+      .countdown {
+        gap: 5px;
+      }
+
+      .countdown__num {
+        font-size: 1.3rem;
+      }
+
+      .countdown__unit {
+        padding: 8px 3px;
+      }
+
+      .countdown__label {
+        font-size: .56rem;
+        letter-spacing: .05em;
+      }
+
+      .pgender {
+        gap: 8px;
+      }
+
+      .pgender__btn {
+        gap: 6px;
+        padding: 10px 8px;
+        font-size: .95rem;
+      }
+
+      .pgender__svg {
+        width: 18px;
+        height: 38px;
+      }
+
+      table.price-table thead th {
+        padding: 0 6px 6px;
+      }
+
+      table.price-table tbody td {
+        padding: 7px 6px;
+        font-size: .78rem;
       }
     }
 
@@ -2081,7 +2173,7 @@
     </section>
 
     <!-- ===== PREÇOS ===== -->
-    <section class="precos" id="precos">
+    <section class="precos" id="precos" data-active-gender="feminino">
       <div class="precos__deco precos__deco--l" aria-hidden="true">
         <svg viewBox="0 0 64 128"><circle cx="32" cy="15" r="10"></circle><path d="M32 27c-8 0-12 5-12 12l-6 55h36l-6-55c0-7-4-12-12-12z"></path><rect x="25" y="94" width="5" height="30" rx="2.5"></rect><rect x="34" y="94" width="5" height="30" rx="2.5"></rect></svg>
       </div>
@@ -2631,13 +2723,28 @@
       precos.querySelectorAll('.pgender__btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
           var g = btn.dataset.gender;
+          precos.setAttribute('data-active-gender', g);
           precos.querySelectorAll('.pgender__btn').forEach(function (b) {
             var active = b === btn;
             b.classList.toggle('is-active', active);
             b.setAttribute('aria-selected', active ? 'true' : 'false');
           });
           precos.querySelectorAll('.pgender-panel').forEach(function (panel) {
-            panel.classList.toggle('is-active', panel.dataset.genderPanel === g);
+            var active = panel.dataset.genderPanel === g;
+            panel.classList.toggle('is-active', active);
+            if (!active) return;
+            // Garante que só o painel do gênero selecionado apareça e
+            // reabre sempre na primeira categoria daquele gênero.
+            var firstTab = panel.querySelector('.tab');
+            var firstName = firstTab ? firstTab.dataset.tab : null;
+            panel.querySelectorAll('.tab').forEach(function (t) {
+              var isFirst = t === firstTab;
+              t.classList.toggle('is-active', isFirst);
+              t.setAttribute('aria-selected', isFirst ? 'true' : 'false');
+            });
+            panel.querySelectorAll('.tab-panel').forEach(function (p) {
+              p.classList.toggle('is-active', p.id === 'panel-' + firstName);
+            });
           });
         });
       });

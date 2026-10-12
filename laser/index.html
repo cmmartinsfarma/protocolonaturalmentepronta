@@ -590,34 +590,38 @@
     }
 
     .tabs {
-      display: inline-flex;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 8px;
-      background: var(--white);
-      border: 1px solid var(--cream-dark);
-      padding: 6px;
-      border-radius: 50px;
-      margin-bottom: 40px;
-      box-shadow: var(--shadow);
+      max-width: 760px;
+      margin: 0 auto 34px;
     }
 
     .tab {
-      border: none;
-      background: transparent;
+      border: 1px solid var(--cream-dark);
+      background: var(--white);
       font-family: var(--font-sans);
       font-weight: 600;
-      font-size: .9rem;
-      color: var(--text-muted);
-      padding: 11px 28px;
+      font-size: .85rem;
+      color: var(--charcoal-soft);
+      padding: 10px 20px;
       border-radius: 50px;
       cursor: pointer;
       transition: var(--transition);
       min-height: 44px;
     }
 
+    .tab:hover {
+      border-color: var(--blush);
+      color: var(--rose-deep);
+    }
+
     .tab.is-active {
       background: linear-gradient(135deg, var(--rose-600) 0%, var(--rose-700) 100%);
       color: var(--white);
-      box-shadow: 0 4px 16px rgba(169, 75, 66, .35);
+      border-color: transparent;
+      box-shadow: 0 4px 16px rgba(169, 75, 66, .30);
     }
 
     .tab-panel {
@@ -1992,177 +1996,148 @@
       <div class="container">
         <div class="section-tag">Tabela de preços</div>
         <h2 class="section-title">Valores do <em>Laser Day</em></h2>
-        <p class="section-desc">Condições especiais do dia 17/10. Role cada tabela para ver todos os valores.</p>
+        <p class="section-desc">Escolha o tratamento para ver a tabela. Role para o lado se precisar.</p>
 
-        <div class="price-block reveal">
-          <div class="price-block__head">
-            <h3 class="price-block__title">Depilação feminina</h3>
-            <span class="price-block__tag">Inclui clareamento</span>
-          </div>
-          <div class="table-scroll">
-            <table class="price-table">
-              <colgroup>
-                <col />
-                <col class="hl" />
-                <col />
-                <col />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th scope="col">Área</th>
-                  <th scope="col" class="hl">Epilação</th>
-                  <th scope="col">Epilação + clareamento</th>
-                  <th scope="col">Clareamento · 3 sessões</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Buço</td>
-                  <td class="price-cell-strong">R$ 50</td>
-                  <td>R$ 80</td>
-                  <td>R$ 200</td>
-                </tr>
-                <tr>
-                  <td>Axila</td>
-                  <td class="price-cell-strong">R$ 70</td>
-                  <td>R$ 110</td>
-                  <td>R$ 280</td>
-                </tr>
-                <tr>
-                  <td>Virilha</td>
-                  <td class="price-cell-strong">R$ 65</td>
-                  <td>R$ 100</td>
-                  <td>R$ 260</td>
-                </tr>
-                <tr>
-                  <td>Buço + axila</td>
-                  <td class="price-cell-strong">R$ 80</td>
-                  <td>R$ 130</td>
-                  <td>R$ 330</td>
-                </tr>
-                <tr>
-                  <td>Buço + axila + virilha</td>
-                  <td class="price-cell-strong">R$ 170</td>
-                  <td>R$ 250</td>
-                  <td>R$ 650</td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="tabs" role="tablist" aria-label="Tabela de preços">
+          <button class="tab is-active" role="tab" aria-selected="true" data-tab="epilacao">Epilação</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="clareamento">Epilação + clareamento</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="tatuagem">Remoção de tatuagem</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="outros">Outros procedimentos</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="masculino">Masculino</button>
+        </div>
+
+        <div class="tab-panel is-active" id="panel-epilacao" role="tabpanel">
+          <div class="price-block">
+            <div class="price-block__head">
+              <h3 class="price-block__title">Epilação · feminino</h3>
+              <span class="price-block__tag">Preço avulso e combo</span>
+            </div>
+            <div class="table-scroll">
+              <table class="price-table">
+                <colgroup><col /><col class="hl" /><col /></colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">Área</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Combo (3 meses)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Buço</td><td>R$ 50,00</td><td>R$ 130,00</td></tr>
+                  <tr><td>Axila</td><td>R$ 70,00</td><td>R$ 180,00</td></tr>
+                  <tr><td>Rosto</td><td>R$ 120,00</td><td>R$ 310,00</td></tr>
+                  <tr><td>Antebraço</td><td>R$ 80,00</td><td>R$ 200,00</td></tr>
+                  <tr><td>Virilha</td><td>R$ 65,00</td><td>R$ 170,00</td></tr>
+                  <tr><td>Virilha completa + perianal</td><td>R$ 100,00</td><td>R$ 260,00</td></tr>
+                  <tr><td>Braço + antebraço</td><td>R$ 140,00</td><td>R$ 360,00</td></tr>
+                  <tr><td>Meia perna</td><td>R$ 120,00</td><td>R$ 310,00</td></tr>
+                  <tr><td>Perna completa</td><td>R$ 160,00</td><td>R$ 400,00</td></tr>
+                  <tr><td>Buço + axila</td><td>R$ 80,00</td><td>R$ 210,00</td></tr>
+                  <tr><td>Buço + axila + virilha</td><td>R$ 170,00</td><td>R$ 450,00</td></tr>
+                  <tr><td>Axila + meia perna</td><td>R$ 150,00</td><td>R$ 380,00</td></tr>
+                  <tr><td>Buço + axila + virilha + meia perna</td><td>R$ 290,00</td><td>R$ 750,00</td></tr>
+                  <tr><td>Buço + axila + virilha + perna completa</td><td>R$ 350,00</td><td>R$ 900,00</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
-        <div class="price-block reveal">
-          <div class="price-block__head">
-            <h3 class="price-block__title">Remoção de tatuagem</h3>
-            <span class="price-block__tag">Por sessão</span>
+        <div class="tab-panel" id="panel-clareamento" role="tabpanel">
+          <div class="price-block">
+            <div class="price-block__head">
+              <h3 class="price-block__title">Epilação + clareamento · feminino</h3>
+              <span class="price-block__tag">Na mesma sessão</span>
+            </div>
+            <div class="table-scroll">
+              <table class="price-table">
+                <colgroup><col /><col class="hl" /><col /></colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">Área</th>
+                    <th scope="col">Epilação + clareamento</th>
+                    <th scope="col">Clareamento · 3 sessões</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Buço</td><td>R$ 80</td><td>R$ 200</td></tr>
+                  <tr><td>Axila</td><td>R$ 110</td><td>R$ 280</td></tr>
+                  <tr><td>Virilha</td><td>R$ 100</td><td>R$ 260</td></tr>
+                  <tr><td>Buço + axila</td><td>R$ 130</td><td>R$ 330</td></tr>
+                  <tr><td>Buço + axila + virilha</td><td>R$ 250</td><td>R$ 650</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="table-scroll">
-            <table class="price-table">
-              <colgroup>
-                <col />
-                <col class="hl" />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th scope="col">Tamanho</th>
-                  <th scope="col" class="hl">Por sessão</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Até 3 cm</td>
-                  <td class="price-cell-strong">R$ 200</td>
-                </tr>
-                <tr>
-                  <td>De 3 a 10 cm</td>
-                  <td class="price-cell-strong">R$ 290</td>
-                </tr>
-                <tr>
-                  <td>De 10 a 15 cm</td>
-                  <td class="price-cell-strong">R$ 350</td>
-                </tr>
-                <tr>
-                  <td>A partir de 15 cm</td>
-                  <td class="price-cell-strong">A partir de R$ 420</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="table-hint">*Valor referente a uma sessão para uma tatuagem.</p>
         </div>
 
-        <div class="price-block reveal">
-          <div class="price-block__head">
-            <h3 class="price-block__title">Outros procedimentos</h3>
-            <span class="price-block__tag">Avulsa ou 3 sessões</span>
+        <div class="tab-panel" id="panel-tatuagem" role="tabpanel">
+          <div class="price-block">
+            <div class="price-block__head">
+              <h3 class="price-block__title">Remoção de tatuagem</h3>
+              <span class="price-block__tag">Por sessão</span>
+            </div>
+            <div class="table-scroll">
+              <table class="price-table">
+                <colgroup><col /><col class="hl" /></colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">Tamanho</th>
+                    <th scope="col">Por sessão</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Até 3 cm</td><td>R$ 200</td></tr>
+                  <tr><td>De 3 a 10 cm</td><td>R$ 290</td></tr>
+                  <tr><td>De 10 a 15 cm</td><td>R$ 350</td></tr>
+                  <tr><td>A partir de 15 cm</td><td>A partir de R$ 420</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-hint">*Valor referente a uma sessão para uma tatuagem.</p>
           </div>
-          <div class="table-scroll">
-            <table class="price-table">
-              <colgroup>
-                <col />
-                <col class="hl" />
-                <col />
-              </colgroup>
-              <thead>
-                <tr>
-                  <th scope="col">Procedimento</th>
-                  <th scope="col" class="hl">Sessão avulsa</th>
-                  <th scope="col">3 sessões</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Black peel</td>
-                  <td class="price-cell-strong">R$ 220</td>
-                  <td>R$ 560</td>
-                </tr>
-                <tr>
-                  <td>Peeling 3D</td>
-                  <td class="price-cell-strong">R$ 300</td>
-                  <td>R$ 765</td>
-                </tr>
-                <tr>
-                  <td>Onicomicose (micose de unha)</td>
-                  <td class="price-cell-strong">R$ 150</td>
-                  <td>R$ 390</td>
-                </tr>
-                <tr>
-                  <td>Olheiras</td>
-                  <td class="price-cell-strong">R$ 120</td>
-                  <td>R$ 300</td>
-                </tr>
-                <tr>
-                  <td>Hipercromias (1 área)</td>
-                  <td class="price-cell-strong">R$ 180</td>
-                  <td>R$ 460</td>
-                </tr>
-                <tr>
-                  <td>Hipercromias (2 áreas)</td>
-                  <td class="price-cell-strong">R$ 300</td>
-                  <td>R$ 770</td>
-                </tr>
-                <tr>
-                  <td>Hipercromias (3 áreas)</td>
-                  <td class="price-cell-strong">R$ 400</td>
-                  <td>R$ 990</td>
-                </tr>
-                <tr>
-                  <td>Micropigmentação</td>
-                  <td class="price-cell-strong">R$ 220</td>
-                  <td>—</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="table-hint">*Áreas para tratamento de hipercromia: rosto, colo e mãos.</p>
         </div>
 
-        <div class="price-callout reveal">
-          <span class="price-callout__icon" aria-hidden="true">👨</span>
-          <p><strong>Depilação masculina:</strong> valores em confirmação. Fale no WhatsApp que a gente te passa
-            o valor das áreas que você quer tratar.</p>
-          <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20saber%20os%20valores%20da%20depila%C3%A7%C3%A3o%20masculina%20no%20Laser%20Day"
-            class="btn btn--whatsapp" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <div class="tab-panel" id="panel-outros" role="tabpanel">
+          <div class="price-block">
+            <div class="price-block__head">
+              <h3 class="price-block__title">Outros procedimentos</h3>
+              <span class="price-block__tag">Avulsa ou 3 sessões</span>
+            </div>
+            <div class="table-scroll">
+              <table class="price-table">
+                <colgroup><col /><col class="hl" /><col /></colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">Procedimento</th>
+                    <th scope="col">Sessão avulsa</th>
+                    <th scope="col">3 sessões</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Black peel</td><td>R$ 220</td><td>R$ 560</td></tr>
+                  <tr><td>Peeling 3D</td><td>R$ 300</td><td>R$ 765</td></tr>
+                  <tr><td>Onicomicose (micose de unha)</td><td>R$ 150</td><td>R$ 390</td></tr>
+                  <tr><td>Olheiras</td><td>R$ 120</td><td>R$ 300</td></tr>
+                  <tr><td>Hipercromias (1 área)</td><td>R$ 180</td><td>R$ 460</td></tr>
+                  <tr><td>Hipercromias (2 áreas)</td><td>R$ 300</td><td>R$ 770</td></tr>
+                  <tr><td>Hipercromias (3 áreas)</td><td>R$ 400</td><td>R$ 990</td></tr>
+                  <tr><td>Micropigmentação</td><td>R$ 220</td><td>—</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-hint">*Áreas para tratamento de hipercromia: rosto, colo e mãos.</p>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-masculino" role="tabpanel">
+          <div class="price-callout">
+            <span class="price-callout__icon" aria-hidden="true">👨</span>
+            <p><strong>Depilação masculina:</strong> valores em confirmação. Fale no WhatsApp que a gente te passa
+              o valor das áreas que você quer tratar.</p>
+            <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20saber%20os%20valores%20da%20depila%C3%A7%C3%A3o%20masculina%20no%20Laser%20Day"
+              class="btn btn--whatsapp" target="_blank" rel="noopener">Falar no WhatsApp</a>
+          </div>
         </div>
 
         <div class="precos__cta reveal">
@@ -2172,30 +2147,6 @@
             class="btn btn--whatsapp btn--full" id="cta-precos" target="_blank" rel="noopener">Quero escolher meu
             tratamento</a>
         </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTRAINDICAÇÕES ===== -->
-    <section class="contra reveal" id="contraindicacoes">
-      <div class="container">
-        <div class="section-tag">Importante</div>
-        <h2 class="section-title">Contraindicações</h2>
-        <p class="section-desc">Por segurança, o tratamento não é indicado em alguns casos. Na dúvida, fale com a gente
-          antes de agendar.</p>
-        <ul class="contra__grid">
-          <li>Gestante e lactante</li>
-          <li>Uso de roacutan (nos últimos 6 meses) ou outro medicamento fotossensibilizante</li>
-          <li>Herpes ativa</li>
-          <li>Rosácea</li>
-          <li>Lesão (na região da aplicação do laser)</li>
-          <li>Lúpus</li>
-          <li>Vitiligo, psoríase</li>
-          <li>Neoplasias (sem autorização médica)</li>
-          <li>Epilepsia</li>
-          <li>Cicatriz (na região da aplicação do laser)</li>
-          <li>Doença imunossupressora ou uso de imunossupressores</li>
-          <li>Doenças hemorrágicas ou em uso de anticoagulantes, alergia, ferida aberta ou ferida infecciosa</li>
-        </ul>
       </div>
     </section>
 
@@ -2349,13 +2300,13 @@
                 <span>@dracarolmmartins</span>
               </a>
               <!-- 🔗 INSTAGRAM DA JÚLIA: troque o href e o @ abaixo pelo perfil dela -->
-              <a href="https://www.instagram.com/" class="contato__ig-item" target="_blank" rel="noopener">
+              <a href="https://www.instagram.com/juliafranco1" class="contato__ig-item" target="_blank" rel="noopener">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path
                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                 </svg>
                 <strong>Júlia Franco</strong>
-                <span>@julia.franco</span>
+                <span>@juliafranco1</span>
               </a>
             </div>
           </div>
@@ -2475,6 +2426,21 @@
       tick();
       const timer = setInterval(tick, 1000);
     })();
+
+    // Abas da tabela de preços
+    document.querySelectorAll('#precos .tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        const key = tab.dataset.tab;
+        document.querySelectorAll('#precos .tab').forEach(function (t) {
+          const active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        document.querySelectorAll('#precos .tab-panel').forEach(function (p) {
+          p.classList.toggle('is-active', p.id === 'panel-' + key);
+        });
+      });
+    });
 
     // FAQ + acordeão: animação de altura
     document.querySelectorAll('.faq__item, .trat-item').forEach(details => {

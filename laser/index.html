@@ -654,51 +654,44 @@
 
     .table-scroll {
       overflow-x: auto;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--cream-dark);
       -webkit-overflow-scrolling: touch;
-      margin-bottom: 12px;
+      border-radius: 14px;
     }
 
     table.price-table {
       width: 100%;
-      min-width: 640px;
+      min-width: 520px;
       border-collapse: collapse;
-      background: var(--white);
-      text-align: left;
+      background: transparent;
     }
 
     table.price-table thead th {
-      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-soft) 100%);
-      color: var(--white);
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .07em;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      padding: 17px 20px;
-      text-align: center;
+      color: var(--text-muted);
+      text-align: right;
+      padding: 0 16px 12px;
+      border-bottom: 1px solid var(--cream-dark);
       white-space: nowrap;
     }
 
     table.price-table thead th:first-child {
       text-align: left;
-      position: sticky;
-      left: 0;
-      z-index: 3;
+    }
+
+    table.price-table thead th:nth-child(2) {
+      color: var(--rose-deep);
     }
 
     table.price-table tbody td {
-      padding: 15px 20px;
-      font-size: .9rem;
-      border-bottom: 1px solid rgba(43, 34, 36, .07);
+      padding: 15px 16px;
+      font-size: .92rem;
       color: var(--charcoal-soft);
-      text-align: center;
+      text-align: right;
+      border-bottom: 1px solid var(--cream-dark);
       white-space: nowrap;
-    }
-
-    table.price-table tbody tr:last-child td {
-      border-bottom: none;
     }
 
     table.price-table tbody td:first-child {
@@ -706,70 +699,32 @@
       font-weight: 600;
       color: var(--charcoal);
       white-space: normal;
-      position: sticky;
-      left: 0;
-      z-index: 1;
-      background: var(--white);
-      box-shadow: 2px 0 8px rgba(43, 34, 36, .05);
+    }
+
+    table.price-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.price-table tbody tr:hover td {
+      background: rgba(169, 75, 66, .05);
     }
 
     table.price-table tbody td:nth-child(2) {
-      background: rgba(169, 75, 66, .07);
-      font-weight: 600;
-      color: var(--rose-700);
-    }
-
-    table.price-table tbody tr:nth-child(even) {
-      background: #f8f7fd;
-    }
-
-    table.price-table tbody tr:nth-child(even) td:first-child {
-      background: #f8f7fd;
-    }
-
-    table.price-table tbody tr:hover {
-      background: #f1eefe;
-    }
-
-    table.price-table tbody tr:hover td:first-child {
-      background: #f1eefe;
-    }
-
-    table.price-table tbody tr:hover td:nth-child(2) {
-      background: rgba(169, 75, 66, .14);
-    }
-
-    col.hl {
-      background: rgba(169, 75, 66, .07);
-    }
-
-    table.price-table thead th.hl {
-      background: linear-gradient(135deg, var(--rose-600) 0%, var(--rose-700) 100%);
-      color: var(--white);
-    }
-
-    .price-cell-strong {
-      font-weight: 600;
       color: var(--rose-deep);
+      font-weight: 700;
     }
 
-    .badge-off {
-      display: inline-block;
-      font-size: .66rem;
-      font-weight: 700;
-      letter-spacing: .04em;
-      background: var(--gold);
-      color: var(--charcoal);
-      border-radius: 50px;
-      padding: 1px 8px;
-      margin-left: 6px;
-      vertical-align: middle;
+    .price-empty {
+      text-align: center !important;
+      color: var(--text-muted) !important;
+      font-weight: 500 !important;
+      white-space: normal !important;
     }
 
     .table-hint {
-      font-size: .78rem;
+      font-size: .76rem;
       color: var(--text-muted);
-      margin-bottom: 28px;
+      margin-top: 12px;
     }
 
     .precos__cta {
@@ -1017,24 +972,79 @@
       font-weight: 700;
     }
 
-    /* ===== TÍTULOS DE BLOCO DE PREÇOS ===== */
+    /* ===== CARDS DE PREÇOS ===== */
     .price-block {
-      margin-bottom: 48px;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 26px 26px 20px;
+      margin-bottom: 26px;
+      text-align: left;
+    }
+
+    .price-block__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
     }
 
     .price-block__title {
       font-family: var(--font-serif);
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: var(--charcoal);
-      margin-bottom: 16px;
+    }
+
+    .price-block__tag {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--rose-deep);
+      background: rgba(169, 75, 66, .10);
+      padding: 5px 12px;
+      border-radius: 50px;
+      white-space: nowrap;
     }
 
     .price-empty {
       text-align: center !important;
-      font-weight: 500 !important;
       color: var(--text-muted) !important;
+      font-weight: 500 !important;
       white-space: normal !important;
+    }
+
+    .price-callout {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: rgba(169, 75, 66, .06);
+      border: 1px dashed rgba(169, 75, 66, .32);
+      border-radius: 18px;
+      padding: 20px 22px;
+      margin-bottom: 26px;
+      text-align: left;
+    }
+
+    .price-callout__icon {
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .price-callout p {
+      flex: 1 1 260px;
+      font-size: .92rem;
+      color: var(--charcoal-soft);
+      margin: 0;
+    }
+
+    .price-callout strong {
+      color: var(--charcoal);
     }
 
     /* ===== OPÇÕES DE TRATAMENTO ===== */
@@ -1044,72 +1054,98 @@
       text-align: center;
     }
 
-    .tratamentos__grid {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-      gap: 20px;
-      max-width: 1040px;
+    .trat__list {
+      max-width: 860px;
       margin: 0 auto;
       text-align: left;
     }
 
-    .tratamentos__grid li {
-      position: relative;
+    .trat-item {
       background: var(--white);
       border: 1px solid var(--cream-dark);
-      border-radius: 20px;
-      padding: 28px 24px;
+      border-radius: 16px;
+      margin-bottom: 12px;
       overflow: hidden;
       transition: var(--transition);
     }
 
-    .tratamentos__grid li::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--rose-600), var(--gold));
-      opacity: 0;
-      transition: var(--transition);
-    }
-
-    .tratamentos__grid li:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
+    .trat-item[open] {
       border-color: var(--blush);
+      box-shadow: var(--shadow);
     }
 
-    .tratamentos__grid li:hover::before {
-      opacity: 1;
+    .trat-item__q {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 22px;
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--charcoal);
     }
 
-    .tratamento__icone {
+    .trat-item__q::-webkit-details-marker {
+      display: none;
+    }
+
+    .trat-item__icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      font-size: 1.5rem;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      font-size: 1.15rem;
       background: linear-gradient(135deg, rgba(169, 75, 66, .12), rgba(216, 160, 140, .20));
-      margin-bottom: 16px;
     }
 
-    .tratamento__titulo {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--charcoal);
-      margin-bottom: 8px;
+    .trat-item__title {
+      flex: 1;
     }
 
-    .tratamento__desc {
-      font-size: .88rem;
+    .trat-item__plus {
+      position: relative;
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .trat-item__plus::before,
+    .trat-item__plus::after {
+      content: '';
+      position: absolute;
+      background: var(--rose);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .trat-item__plus::before {
+      top: 7px;
+      left: 0;
+      width: 16px;
+      height: 2px;
+    }
+
+    .trat-item__plus::after {
+      left: 7px;
+      top: 0;
+      width: 2px;
+      height: 16px;
+    }
+
+    .trat-item[open] .trat-item__plus::after {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+
+    .trat-item__a {
+      padding: 0 22px 20px 76px;
+      font-size: .9rem;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     /* ===== CONTRAINDICAÇÕES ===== */
@@ -1733,7 +1769,7 @@
     <!-- ===== BENEFÍCIOS ===== -->
     <section class="beneficios reveal" id="por-que">
       <div class="container">
-        <div class="section-tag">Por que participar</div>
+        <div class="section-tag">Por que participar?</div>
         <h2 class="section-title">Muito além da <em>epilação</em></h2>
         <p class="section-desc">No dia 17/10 você encontra condições especiais com tecnologia de ponta e o cuidado de
           duas especialistas. Veja o que você leva:</p>
@@ -1768,8 +1804,8 @@
         <div class="tech__media reveal">
           <span class="tech__badge">Aparelho oficial</span>
           <img src="infinity-duos.png" class="tech__img"
-            alt="Aparelho Infinity Duos, da Cromatics, utilizado no Laser Day" width="1080" height="1080"
-            loading="lazy" decoding="async" />
+            alt="Aparelho Infinity Duos, da Cromatics, utilizado no Laser Day" width="1080" height="1080" loading="lazy"
+            decoding="async" />
         </div>
         <div class="tech__content reveal">
           <div class="section-tag">O aparelho oficial</div>
@@ -1780,7 +1816,8 @@
               estável</strong> para maior conforto no momento da aplicação.</p>
           <p>Outra vantagem é a associação do <strong>laser de diodo (depilação)</strong> com o
             <strong>laser Q-switched (pigmento)</strong>, permitindo tratar regiões escurecidas pela depilação
-            tradicional, como lâminas e ceras, na mesma sessão.</p>
+            tradicional, como lâminas e ceras, na mesma sessão.
+          </p>
           <ul class="tech__features">
             <li>3 tipos de laser em 4 comprimentos de onda</li>
             <li>Segurança da pele albina à pele negra</li>
@@ -1796,64 +1833,73 @@
       <div class="container">
         <div class="section-tag">O que dá para tratar</div>
         <h2 class="section-title">Opções de <em>tratamento</em></h2>
-        <p class="section-desc">Com o Infinity Duos, no mesmo dia você pode cuidar de muito mais do que a epilação. Veja
-          o que cada procedimento resolve.</p>
-        <ul class="tratamentos__grid">
-          <li>
-            <span class="tratamento__icone">✨</span>
-            <h3 class="tratamento__titulo">Epilação</h3>
-            <p class="tratamento__desc">Laser de diodo que enfraquece o folículo na fase de crescimento. Pele lisa por
-              muito mais tempo, com resultado progressivo a cada sessão.</p>
-          </li>
-          <li>
-            <span class="tratamento__icone">💫</span>
-            <h3 class="tratamento__titulo">Epilação + clareamento</h3>
-            <p class="tratamento__desc">Depilação e clareamento na mesma sessão: ideal para regiões escurecidas pelo
-              atrito ou pelo uso de lâmina e cera, como axilas e virilha.</p>
-          </li>
-          <li>
-            <span class="tratamento__icone">🎨</span>
-            <h3 class="tratamento__titulo">Remoção de tatuagem</h3>
-            <p class="tratamento__desc">Pulsos ultracurtos do laser Q-switched fragmentam a tinta para o corpo eliminar.
-              Escura, colorida e micropigmentação.</p>
-          </li>
-          <li>
-            <span class="tratamento__icone">🌑</span>
-            <h3 class="tratamento__titulo">Black peel</h3>
-            <p class="tratamento__desc">O "peeling de Hollywood": carvão ativado + laser para reduzir oleosidade, refinar
-              poros, atenuar manchas e estimular colágeno.</p>
-          </li>
-          <li>
-            <span class="tratamento__icone">☀️</span>
-            <h3 class="tratamento__titulo">Hipercromia</h3>
-            <p class="tratamento__desc">Manchas solares, senis ou pós-inflamatórias: o laser age no pigmento em excesso,
-              clareando e uniformizando o tom da pele.</p>
-          </li>
-          <li>
-            <span class="tratamento__icone">🌗</span>
-            <h3 class="tratamento__titulo">Melasma</h3>
-            <p class="tratamento__desc">Mancha hormonal e crônica. O laser de baixa fluência clareia aos poucos e com
-              segurança, junto da fotoproteção e dos cuidados diários.</p>
-          </li>
-          <li>
-            <span class="tratamento__icone">💅</span>
-            <h3 class="tratamento__titulo">Onicomicose</h3>
-            <p class="tratamento__desc">Micose de unha: a laserterapia aquece o leito da unha e ajuda a inativar o fungo
-              — alternativa aos antifúngicos orais.</p>
-          </li>
-          <li>
-            <span class="tratamento__icone">👁️</span>
-            <h3 class="tratamento__titulo">Olheira</h3>
-            <p class="tratamento__desc">Estímulo de colágeno e melhora da pigmentação e da circulação na área dos olhos,
-              atenuando o aspecto escuro e cansado.</p>
-          </li>
-          <li>
-            <span class="tratamento__icone">🌟</span>
-            <h3 class="tratamento__titulo">Rejuvenescimento leve</h3>
-            <p class="tratamento__desc">Estímulo de colágeno para melhorar textura, firmeza, poros e viço — resultado
-              natural e recuperação rápida.</p>
-          </li>
-        </ul>
+        <p class="section-desc">Com o Infinity Duos, no mesmo dia você pode cuidar de muito mais do que a epilação. Toque
+          em cada procedimento para saber mais.</p>
+        <div class="trat__list">
+          <details class="trat-item">
+            <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">✨</span><span
+                class="trat-item__title">Epilação</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+            <div class="trat-item__a">
+              <p>Laser de diodo que enfraquece o folículo na fase de crescimento. Pele lisa por muito mais tempo, com resultado progressivo a cada sessão.</p>
+            </div>
+          </details>
+          <details class="trat-item">
+            <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">💫</span><span
+                class="trat-item__title">Epilação + clareamento</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+            <div class="trat-item__a">
+              <p>Depilação e clareamento na mesma sessão: ideal para regiões escurecidas pelo atrito ou pelo uso de lâmina e cera, como axilas e virilha.</p>
+            </div>
+          </details>
+          <details class="trat-item">
+            <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">🎨</span><span
+                class="trat-item__title">Remoção de tatuagem</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+            <div class="trat-item__a">
+              <p>Pulsos ultracurtos do laser Q-switched fragmentam a tinta para o corpo eliminar. Escura, colorida e micropigmentação.</p>
+            </div>
+          </details>
+          <details class="trat-item">
+            <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">🌑</span><span
+                class="trat-item__title">Black peel</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+            <div class="trat-item__a">
+              <p>O "peeling de Hollywood": carvão ativado + laser para reduzir oleosidade, refinar poros, atenuar manchas e estimular colágeno.</p>
+            </div>
+          </details>
+          <details class="trat-item">
+            <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">☀️</span><span
+                class="trat-item__title">Hipercromia</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+            <div class="trat-item__a">
+              <p>Manchas solares, senis ou pós-inflamatórias: o laser age no pigmento em excesso, clareando e uniformizando o tom da pele.</p>
+            </div>
+          </details>
+          <details class="trat-item">
+            <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">🌗</span><span
+                class="trat-item__title">Melasma</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+            <div class="trat-item__a">
+              <p>Mancha hormonal e crônica. O laser de baixa fluência clareia aos poucos e com segurança, junto da fotoproteção e dos cuidados diários.</p>
+            </div>
+          </details>
+          <details class="trat-item">
+            <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">💅</span><span
+                class="trat-item__title">Onicomicose</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+            <div class="trat-item__a">
+              <p>Micose de unha: a laserterapia aquece o leito da unha e ajuda a inativar o fungo — alternativa aos antifúngicos orais.</p>
+            </div>
+          </details>
+          <details class="trat-item">
+            <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">👁️</span><span
+                class="trat-item__title">Olheira</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+            <div class="trat-item__a">
+              <p>Estímulo de colágeno e melhora da pigmentação e da circulação na área dos olhos, atenuando o aspecto escuro e cansado.</p>
+            </div>
+          </details>
+          <details class="trat-item">
+            <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">🌟</span><span
+                class="trat-item__title">Rejuvenescimento leve</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+            <div class="trat-item__a">
+              <p>Estímulo de colágeno para melhorar textura, firmeza, poros e viço — resultado natural e recuperação rápida.</p>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -1865,10 +1911,18 @@
         <p class="section-desc">Condições especiais do dia 17/10. Role cada tabela para ver todos os valores.</p>
 
         <div class="price-block reveal">
-          <h3 class="price-block__title">Depilação feminina</h3>
+          <div class="price-block__head">
+            <h3 class="price-block__title">Depilação feminina</h3>
+            <span class="price-block__tag">Inclui clareamento</span>
+          </div>
           <div class="table-scroll">
             <table class="price-table">
-              <colgroup><col /><col class="hl" /><col /><col /></colgroup>
+              <colgroup>
+                <col />
+                <col class="hl" />
+                <col />
+                <col />
+              </colgroup>
               <thead>
                 <tr>
                   <th scope="col">Área</th>
@@ -1878,29 +1932,75 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Buço</td><td class="price-cell-strong">R$ 50</td><td>R$ 80</td><td>R$ 200</td></tr>
-                <tr><td>Axila</td><td class="price-cell-strong">R$ 70</td><td>R$ 110</td><td>R$ 280</td></tr>
-                <tr><td>Virilha</td><td class="price-cell-strong">R$ 65</td><td>R$ 100</td><td>R$ 260</td></tr>
-                <tr><td>Buço + axila</td><td class="price-cell-strong">R$ 80</td><td>R$ 130</td><td>R$ 330</td></tr>
-                <tr><td>Buço + axila + virilha</td><td class="price-cell-strong">R$ 170</td><td>R$ 250</td><td>R$ 650</td></tr>
+                <tr>
+                  <td>Buço</td>
+                  <td class="price-cell-strong">R$ 50</td>
+                  <td>R$ 80</td>
+                  <td>R$ 200</td>
+                </tr>
+                <tr>
+                  <td>Axila</td>
+                  <td class="price-cell-strong">R$ 70</td>
+                  <td>R$ 110</td>
+                  <td>R$ 280</td>
+                </tr>
+                <tr>
+                  <td>Virilha</td>
+                  <td class="price-cell-strong">R$ 65</td>
+                  <td>R$ 100</td>
+                  <td>R$ 260</td>
+                </tr>
+                <tr>
+                  <td>Buço + axila</td>
+                  <td class="price-cell-strong">R$ 80</td>
+                  <td>R$ 130</td>
+                  <td>R$ 330</td>
+                </tr>
+                <tr>
+                  <td>Buço + axila + virilha</td>
+                  <td class="price-cell-strong">R$ 170</td>
+                  <td>R$ 250</td>
+                  <td>R$ 650</td>
+                </tr>
               </tbody>
             </table>
           </div>
         </div>
 
         <div class="price-block reveal">
-          <h3 class="price-block__title">Remoção de tatuagem</h3>
+          <div class="price-block__head">
+            <h3 class="price-block__title">Remoção de tatuagem</h3>
+            <span class="price-block__tag">Por sessão</span>
+          </div>
           <div class="table-scroll">
             <table class="price-table">
-              <colgroup><col /><col class="hl" /></colgroup>
+              <colgroup>
+                <col />
+                <col class="hl" />
+              </colgroup>
               <thead>
-                <tr><th scope="col">Tamanho</th><th scope="col" class="hl">Por sessão</th></tr>
+                <tr>
+                  <th scope="col">Tamanho</th>
+                  <th scope="col" class="hl">Por sessão</th>
+                </tr>
               </thead>
               <tbody>
-                <tr><td>Até 3 cm</td><td class="price-cell-strong">R$ 200</td></tr>
-                <tr><td>De 3 a 10 cm</td><td class="price-cell-strong">R$ 290</td></tr>
-                <tr><td>De 10 a 15 cm</td><td class="price-cell-strong">R$ 350</td></tr>
-                <tr><td>A partir de 15 cm</td><td class="price-cell-strong">A partir de R$ 420</td></tr>
+                <tr>
+                  <td>Até 3 cm</td>
+                  <td class="price-cell-strong">R$ 200</td>
+                </tr>
+                <tr>
+                  <td>De 3 a 10 cm</td>
+                  <td class="price-cell-strong">R$ 290</td>
+                </tr>
+                <tr>
+                  <td>De 10 a 15 cm</td>
+                  <td class="price-cell-strong">R$ 350</td>
+                </tr>
+                <tr>
+                  <td>A partir de 15 cm</td>
+                  <td class="price-cell-strong">A partir de R$ 420</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1908,46 +2008,77 @@
         </div>
 
         <div class="price-block reveal">
-          <h3 class="price-block__title">Outros procedimentos</h3>
+          <div class="price-block__head">
+            <h3 class="price-block__title">Outros procedimentos</h3>
+            <span class="price-block__tag">Avulsa ou 3 sessões</span>
+          </div>
           <div class="table-scroll">
             <table class="price-table">
-              <colgroup><col /><col class="hl" /><col /></colgroup>
+              <colgroup>
+                <col />
+                <col class="hl" />
+                <col />
+              </colgroup>
               <thead>
-                <tr><th scope="col">Procedimento</th><th scope="col" class="hl">Sessão avulsa</th><th scope="col">3 sessões</th></tr>
+                <tr>
+                  <th scope="col">Procedimento</th>
+                  <th scope="col" class="hl">Sessão avulsa</th>
+                  <th scope="col">3 sessões</th>
+                </tr>
               </thead>
               <tbody>
-                <tr><td>Black peel</td><td class="price-cell-strong">R$ 220</td><td>R$ 560</td></tr>
-                <tr><td>Peeling 3D</td><td class="price-cell-strong">R$ 300</td><td>R$ 765</td></tr>
-                <tr><td>Onicomicose (micose de unha)</td><td class="price-cell-strong">R$ 150</td><td>R$ 390</td></tr>
-                <tr><td>Olheiras</td><td class="price-cell-strong">R$ 120</td><td>R$ 300</td></tr>
-                <tr><td>Hipercromias (1 área)</td><td class="price-cell-strong">R$ 180</td><td>R$ 460</td></tr>
-                <tr><td>Hipercromias (2 áreas)</td><td class="price-cell-strong">R$ 300</td><td>R$ 770</td></tr>
-                <tr><td>Hipercromias (3 áreas)</td><td class="price-cell-strong">R$ 400</td><td>R$ 990</td></tr>
-                <tr><td>Micropigmentação</td><td class="price-cell-strong">R$ 220</td><td>—</td></tr>
+                <tr>
+                  <td>Black peel</td>
+                  <td class="price-cell-strong">R$ 220</td>
+                  <td>R$ 560</td>
+                </tr>
+                <tr>
+                  <td>Peeling 3D</td>
+                  <td class="price-cell-strong">R$ 300</td>
+                  <td>R$ 765</td>
+                </tr>
+                <tr>
+                  <td>Onicomicose (micose de unha)</td>
+                  <td class="price-cell-strong">R$ 150</td>
+                  <td>R$ 390</td>
+                </tr>
+                <tr>
+                  <td>Olheiras</td>
+                  <td class="price-cell-strong">R$ 120</td>
+                  <td>R$ 300</td>
+                </tr>
+                <tr>
+                  <td>Hipercromias (1 área)</td>
+                  <td class="price-cell-strong">R$ 180</td>
+                  <td>R$ 460</td>
+                </tr>
+                <tr>
+                  <td>Hipercromias (2 áreas)</td>
+                  <td class="price-cell-strong">R$ 300</td>
+                  <td>R$ 770</td>
+                </tr>
+                <tr>
+                  <td>Hipercromias (3 áreas)</td>
+                  <td class="price-cell-strong">R$ 400</td>
+                  <td>R$ 990</td>
+                </tr>
+                <tr>
+                  <td>Micropigmentação</td>
+                  <td class="price-cell-strong">R$ 220</td>
+                  <td>—</td>
+                </tr>
               </tbody>
             </table>
           </div>
           <p class="table-hint">*Áreas para tratamento de hipercromia: risco, colo e mãos.</p>
         </div>
 
-        <div class="price-block reveal">
-          <h3 class="price-block__title">Depilação masculina</h3>
-          <div class="table-scroll">
-            <table class="price-table">
-              <colgroup><col /><col class="hl" /><col /><col /></colgroup>
-              <thead>
-                <tr>
-                  <th scope="col">Área</th>
-                  <th scope="col" class="hl">Epilação</th>
-                  <th scope="col">Epilação + clareamento</th>
-                  <th scope="col">Clareamento · 3 sessões</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td colspan="4" class="price-empty">Valores em confirmação — fale no WhatsApp para saber mais.</td></tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="price-callout reveal">
+          <span class="price-callout__icon" aria-hidden="true">👨</span>
+          <p><strong>Depilação masculina:</strong> valores em confirmação. Fale no WhatsApp que a gente te passa
+            o valor das áreas que você quer tratar.</p>
+          <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20saber%20os%20valores%20da%20depila%C3%A7%C3%A3o%20masculina%20no%20Laser%20Day"
+            class="btn btn--whatsapp" target="_blank" rel="noopener">Falar no WhatsApp</a>
         </div>
 
         <div class="precos__cta reveal">
@@ -2039,9 +2170,8 @@
                  Enquanto o arquivo não existir, o avatar "JF" aparece automaticamente. -->
             <div class="pro-card__media">
               <div class="pro-avatar" aria-hidden="true">JF</div>
-              <img class="pro-photo" src="julia-franco.jpg" alt="Júlia Franco, biomédica"
-                loading="lazy" decoding="async"
-                onload="this.closest('.pro-card__media').classList.add('has-photo')"
+              <img class="pro-photo" src="julia-franco.jpg" alt="Júlia Franco, biomédica" loading="lazy"
+                decoding="async" onload="this.closest('.pro-card__media').classList.add('has-photo')"
                 onerror="this.remove()" />
             </div>
             <h3>Júlia Franco</h3>
@@ -2097,8 +2227,10 @@
           </details>
           <details class="faq__item">
             <summary class="faq__question">Posso pagar parcelado?</summary>
-            <div class="faq__answer">Sim! Ao fechar o protocolo com <strong>3 sessões</strong>, você consegue parcelar em
-              <strong>3x sem juros</strong>.</div>
+            <div class="faq__answer">Sim! Ao fechar o protocolo com <strong>3 sessões</strong>, você consegue parcelar
+              em
+              <strong>3x sem juros</strong>.
+            </div>
           </details>
         </div>
       </div>
@@ -2255,10 +2387,10 @@
       const timer = setInterval(tick, 1000);
     })();
 
-    // FAQ smooth height animation
-    document.querySelectorAll('.faq__item').forEach(details => {
-      const summary = details.querySelector('.faq__question');
-      const answer = details.querySelector('.faq__answer');
+    // FAQ + acordeão: animação de altura
+    document.querySelectorAll('.faq__item, .trat-item').forEach(details => {
+      const summary = details.querySelector('summary');
+      const answer = details.querySelector('.faq__answer, .trat-item__a');
       if (!summary || !answer) return;
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       summary.addEventListener('click', (e) => {

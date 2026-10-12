@@ -584,9 +584,43 @@
 
     /* ===== PREÇOS ===== */
     .precos {
+      position: relative;
+      overflow: hidden;
       padding: 96px 0;
       background: linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
       text-align: center;
+    }
+
+    .precos .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .precos__deco {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 320px;
+      height: auto;
+      color: var(--rose-deep);
+      opacity: .055;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .precos__deco svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      fill: currentColor;
+    }
+
+    .precos__deco--l {
+      left: -80px;
+    }
+
+    .precos__deco--r {
+      right: -80px;
     }
 
     .pgender {
@@ -2048,6 +2082,12 @@
 
     <!-- ===== PREÇOS ===== -->
     <section class="precos" id="precos">
+      <div class="precos__deco precos__deco--l" aria-hidden="true">
+        <svg viewBox="0 0 64 128"><circle cx="32" cy="15" r="10"></circle><path d="M32 27c-8 0-12 5-12 12l-6 55h36l-6-55c0-7-4-12-12-12z"></path><rect x="25" y="94" width="5" height="30" rx="2.5"></rect><rect x="34" y="94" width="5" height="30" rx="2.5"></rect></svg>
+      </div>
+      <div class="precos__deco precos__deco--r" aria-hidden="true">
+        <svg viewBox="0 0 64 128"><circle cx="32" cy="15" r="10"></circle><path d="M32 27c-9 0-13 5-13 13v40h26V40c0-8-4-13-13-13z"></path><rect x="22" y="80" width="8" height="44" rx="3"></rect><rect x="34" y="80" width="8" height="44" rx="3"></rect></svg>
+      </div>
       <div class="container">
         <div class="section-tag">Tabela de preços</div>
         <h2 class="section-title">Valores do <em>Laser Day</em></h2>

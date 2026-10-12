@@ -844,6 +844,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center top;
+      display: block;
     }
 
     /* Foto opcional da Júlia: aparece quando julia-franco.jpg existir */
@@ -1684,7 +1685,12 @@
           {
             "@type": "Person",
             "name": "Júlia Franco",
-            "jobTitle": "Biomédica"
+            "jobTitle": "Biomédica Esteta",
+            "hasCredential": {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Registro Profissional",
+              "name": "CRBM 74312"
+            }
           }
         ],
         "sameAs": ["https://www.instagram.com/dracarolmmartins/"]
@@ -1857,70 +1863,89 @@
       <div class="container">
         <div class="section-tag">O que dá para tratar</div>
         <h2 class="section-title">Opções de <em>tratamento</em></h2>
-        <p class="section-desc">Com o Infinity Duos, no mesmo dia você pode cuidar de muito mais do que a epilação. Toque
+        <p class="section-desc">Com o Infinity Duos, no mesmo dia você pode cuidar de muito mais do que a epilação.
+          Toque
           em cada procedimento para saber mais.</p>
         <div class="trat__list">
           <details class="trat-item">
             <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">✨</span><span
-                class="trat-item__title">Epilação</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+                class="trat-item__title">Epilação</span><span class="trat-item__plus" aria-hidden="true"></span>
+            </summary>
             <div class="trat-item__a">
-              <p>Laser de diodo que enfraquece o folículo na fase de crescimento. Pele lisa por muito mais tempo, com resultado progressivo a cada sessão.</p>
+              <p>Laser de diodo que enfraquece o folículo na fase de crescimento. Pele lisa por muito mais tempo, com
+                resultado progressivo a cada sessão.</p>
             </div>
           </details>
           <details class="trat-item">
             <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">💫</span><span
-                class="trat-item__title">Epilação + clareamento</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+                class="trat-item__title">Epilação + clareamento</span><span class="trat-item__plus"
+                aria-hidden="true"></span></summary>
             <div class="trat-item__a">
-              <p>Depilação e clareamento na mesma sessão: ideal para regiões escurecidas pelo atrito ou pelo uso de lâmina e cera, como axilas e virilha.</p>
+              <p>Depilação e clareamento na mesma sessão: ideal para regiões escurecidas pelo atrito ou pelo uso de
+                lâmina e cera, como axilas e virilha.</p>
             </div>
           </details>
           <details class="trat-item">
             <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">🎨</span><span
-                class="trat-item__title">Remoção de tatuagem</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+                class="trat-item__title">Remoção de tatuagem</span><span class="trat-item__plus"
+                aria-hidden="true"></span></summary>
             <div class="trat-item__a">
-              <p>Pulsos ultracurtos do laser Q-switched fragmentam a tinta para o corpo eliminar. Escura, colorida e micropigmentação.</p>
+              <p>Pulsos ultracurtos do laser Q-switched fragmentam a tinta para o corpo eliminar. Escura, colorida e
+                micropigmentação.</p>
             </div>
           </details>
           <details class="trat-item">
             <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">🌑</span><span
-                class="trat-item__title">Black peel</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+                class="trat-item__title">Black peel</span><span class="trat-item__plus" aria-hidden="true"></span>
+            </summary>
             <div class="trat-item__a">
-              <p>O "peeling de Hollywood": carvão ativado + laser para reduzir oleosidade, refinar poros, atenuar manchas e estimular colágeno.</p>
+              <p>O "peeling de Hollywood": carvão ativado + laser para reduzir oleosidade, refinar poros, atenuar
+                manchas e estimular colágeno.</p>
             </div>
           </details>
           <details class="trat-item">
             <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">☀️</span><span
-                class="trat-item__title">Hipercromia</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+                class="trat-item__title">Hipercromia</span><span class="trat-item__plus" aria-hidden="true"></span>
+            </summary>
             <div class="trat-item__a">
-              <p>Manchas solares, senis ou pós-inflamatórias: o laser age no pigmento em excesso, clareando e uniformizando o tom da pele.</p>
+              <p>Manchas solares, senis ou pós-inflamatórias: o laser age no pigmento em excesso, clareando e
+                uniformizando o tom da pele.</p>
             </div>
           </details>
           <details class="trat-item">
             <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">🌗</span><span
-                class="trat-item__title">Melasma</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+                class="trat-item__title">Melasma</span><span class="trat-item__plus" aria-hidden="true"></span>
+            </summary>
             <div class="trat-item__a">
-              <p>Mancha hormonal e crônica. O laser de baixa fluência clareia aos poucos e com segurança, junto da fotoproteção e dos cuidados diários.</p>
+              <p>Mancha hormonal e crônica. O laser de baixa fluência clareia aos poucos e com segurança, junto da
+                fotoproteção e dos cuidados diários.</p>
             </div>
           </details>
           <details class="trat-item">
             <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">💅</span><span
-                class="trat-item__title">Onicomicose</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+                class="trat-item__title">Onicomicose</span><span class="trat-item__plus" aria-hidden="true"></span>
+            </summary>
             <div class="trat-item__a">
-              <p>Micose de unha: a laserterapia aquece o leito da unha e ajuda a inativar o fungo — alternativa aos antifúngicos orais.</p>
+              <p>Micose de unha: a laserterapia aquece o leito da unha e ajuda a inativar o fungo — alternativa aos
+                antifúngicos orais.</p>
             </div>
           </details>
           <details class="trat-item">
             <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">👁️</span><span
-                class="trat-item__title">Olheira</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+                class="trat-item__title">Olheira</span><span class="trat-item__plus" aria-hidden="true"></span>
+            </summary>
             <div class="trat-item__a">
-              <p>Estímulo de colágeno e melhora da pigmentação e da circulação na área dos olhos, atenuando o aspecto escuro e cansado.</p>
+              <p>Estímulo de colágeno e melhora da pigmentação e da circulação na área dos olhos, atenuando o aspecto
+                escuro e cansado.</p>
             </div>
           </details>
           <details class="trat-item">
             <summary class="trat-item__q"><span class="trat-item__icon" aria-hidden="true">🌟</span><span
-                class="trat-item__title">Rejuvenescimento leve</span><span class="trat-item__plus" aria-hidden="true"></span></summary>
+                class="trat-item__title">Rejuvenescimento leve</span><span class="trat-item__plus"
+                aria-hidden="true"></span></summary>
             <div class="trat-item__a">
-              <p>Estímulo de colágeno para melhorar textura, firmeza, poros e viço — resultado natural e recuperação rápida.</p>
+              <p>Estímulo de colágeno para melhorar textura, firmeza, poros e viço — resultado natural e recuperação
+                rápida.</p>
             </div>
           </details>
         </div>
@@ -2094,7 +2119,7 @@
               </tbody>
             </table>
           </div>
-          <p class="table-hint">*Áreas para tratamento de hipercromia: risco, colo e mãos.</p>
+          <p class="table-hint">*Áreas para tratamento de hipercromia: rosto, colo e mãos.</p>
         </div>
 
         <div class="price-callout reveal">
@@ -2190,18 +2215,14 @@
               diagnóstico ao resultado, sempre com naturalidade.</p>
           </div>
           <div class="pro-card reveal">
-            <!-- 📸 FOTO DA JÚLIA: salve a imagem como laser/julia-franco.jpg (retrato, ~600x600).
-                 Enquanto o arquivo não existir, o avatar "JF" aparece automaticamente. -->
             <div class="pro-card__media">
-              <div class="pro-avatar" aria-hidden="true">JF</div>
-              <img class="pro-photo" src="julia-franco.jpg" alt="Júlia Franco, biomédica" loading="lazy"
-                decoding="async" onload="this.closest('.pro-card__media').classList.add('has-photo')"
-                onerror="this.remove()" />
+              <img src="julia.png" alt="Júlia Franco, biomédica esteta" width="240" height="240" loading="lazy"
+                decoding="async" />
             </div>
             <h3>Júlia Franco</h3>
-            <span class="pro-card__role">Biomédica Esteta</span>
-            <p>Biomédica com pós-graduação pela mesma instituição da Dra. Carolina. Une técnica e um atendimento
-              próximo para você se sentir segura em cada etapa.</p>
+            <span class="pro-card__role">Biomédica Esteta · CRBM 74312</span>
+            <p>Especialista em estética avançada e saúde da pele, alia o rigor científico ao cuidado individualizado em
+              cada procedimento — da avaliação ao resultado, priorizando segurança e naturalidade.</p>
             <!-- 🔗 INSTAGRAM DA JÚLIA: troque o href abaixo pelo perfil dela -->
             <a class="pro-card__ig" href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram da
               Júlia</a>

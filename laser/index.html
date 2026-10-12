@@ -1075,6 +1075,130 @@
       font-weight: 700;
     }
 
+    /* ===== BOTÃO CONHEÇA A TECNOLOGIA ===== */
+    .hero__tech-btn {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: .85rem;
+      color: var(--rose-deep);
+      background: rgba(255, 255, 255, .8);
+      border: 1.5px solid var(--rose);
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .hero__tech-btn:hover {
+      background: var(--rose-deep);
+      color: var(--white);
+      border-color: var(--rose-deep);
+    }
+
+    /* ===== MODAL ===== */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.is-open {
+      display: flex;
+    }
+
+    .modal__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(43, 34, 36, .55);
+    }
+
+    .modal__dialog {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 880px;
+      max-height: 88vh;
+      overflow-y: auto;
+      background: var(--white);
+      border-radius: 22px;
+      box-shadow: var(--shadow-lg);
+      padding: 36px;
+      text-align: left;
+    }
+
+    .modal__close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: var(--cream-dark);
+      color: var(--charcoal);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .modal__close:hover {
+      background: var(--blush);
+    }
+
+    .modal__body {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    /* ===== ESPECIALISTAS (unificado) ===== */
+    .pro-merged {
+      max-width: 620px;
+      margin: 0 auto 40px;
+    }
+
+    .pro-merged__media {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 26px;
+    }
+
+    .pro-merged__media img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .pro-merged__content h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .pro-merged__content p {
+      font-size: .92rem;
+      color: rgba(255, 255, 255, .82);
+      line-height: 1.7;
+      margin-top: 14px;
+    }
+
     /* ===== CARDS DE PREÇOS ===== */
     .price-block {
       background: var(--white);
@@ -1755,6 +1879,15 @@
         padding: 10px 20px;
         font-size: .85rem;
       }
+
+      .modal__body {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .modal__dialog {
+        padding: 24px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1981,6 +2114,7 @@
             alt="Aparelho Infinity Duos, da Cromatics, utilizado no Laser Day" width="1080" height="1080"
             fetchpriority="high" decoding="async" />
           <p class="hero__device-name">Infinity Duos<span>Cromatics</span></p>
+          <button class="hero__tech-btn" id="open-tech" type="button">Conheça a tecnologia</button>
         </div>
       </div>
     </header>
@@ -2013,36 +2147,6 @@
             <h3>Tudo em um só lugar</h3>
             <p>Foliculite, manchas, rugas finas, epilação e remoção de tatuagem — no mesmo equipamento.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TECNOLOGIA / APARELHO ===== -->
-    <section class="tech reveal" id="tecnologia">
-      <div class="container tech__inner">
-        <div class="tech__media reveal">
-          <span class="tech__badge">Aparelho oficial</span>
-          <img src="infinity-duos.png" class="tech__img"
-            alt="Aparelho Infinity Duos, da Cromatics, utilizado no Laser Day" width="1080" height="1080" loading="lazy"
-            decoding="async" />
-        </div>
-        <div class="tech__content reveal">
-          <div class="section-tag">O aparelho oficial</div>
-          <h2 class="section-title">Conheça o <strong>Infinity Duos</strong></h2>
-          <p>O Infinity Duos é uma tecnologia da <strong>Cromatics</strong> que surpreende pelo conforto e pela
-            segurança. Conta com <strong>3 tipos de laser em 4 comprimentos de onda diferentes</strong>, garantindo
-            segurança desde a pele albina até a pele negra. Possui ainda um <strong>sistema de resfriamento
-              estável</strong> para maior conforto no momento da aplicação.</p>
-          <p>Outra vantagem é a associação do <strong>laser de diodo (epilação)</strong> com o
-            <strong>laser Q-switched (pigmento)</strong>, permitindo tratar regiões escurecidas pela epilação
-            tradicional, como lâminas e ceras, na mesma sessão.
-          </p>
-          <ul class="tech__features">
-            <li>3 tipos de laser em 4 comprimentos de onda</li>
-            <li>Segurança da pele albina à pele negra</li>
-            <li>Sistema de resfriamento estável</li>
-            <li>Diodo (epilação) + Q-switched (pigmento) na mesma sessão</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -2675,26 +2779,16 @@
         <h2 class="section-title">Duas especialistas, <em>o mesmo cuidado</em></h2>
         <p class="section-desc">No dia 17/10 você é atendida por duas profissionais com formação sólida e um olhar
           individual para a sua pele. Você está em boas mãos.</p>
-        <div class="pros__grid">
-          <div class="pro-card reveal">
-            <div class="pro-card__media">
-              <img src="fotocarol.png" alt="Dra. Carolina Martins, farmacêutica esteta" width="240" height="240"
-                loading="lazy" decoding="async" />
-            </div>
-            <h3>Dra. Carolina Martins</h3>
-            <span class="pro-card__role">Farmacêutica Esteta · CRF 125.459</span>
-            <p>Especialista em gerenciamento de pele e estética, aplica a formação científica em cada procedimento — do
-              diagnóstico ao resultado, sempre com naturalidade.</p>
+        <div class="pro-merged reveal">
+          <div class="pro-merged__media">
+            <img src="especialistas.png" alt="Dra. Carolina Martins e Júlia Franco, especialistas do Laser Day"
+              width="1464" height="900" loading="lazy" decoding="async" />
           </div>
-          <div class="pro-card reveal">
-            <div class="pro-card__media">
-              <img src="julia.png" alt="Júlia Franco, biomédica esteta" width="240" height="240" loading="lazy"
-                decoding="async" />
-            </div>
-            <h3>Dra. Júlia Franco</h3>
-            <span class="pro-card__role">Biomédica Esteta · CRBM 74312</span>
-            <p>Especialista em estética avançada e saúde da pele, alia o rigor científico ao cuidado individualizado em
-              cada procedimento — da avaliação ao resultado, priorizando segurança e naturalidade.</p>
+          <div class="pro-merged__content">
+            <h3>Dra. Carolina Martins &amp; Júlia Franco</h3>
+            <span class="pro-card__role">Farmacêutica Esteta (CRF 125.459) · Biomédica Esteta (CRBM 74312)</span>
+            <p>Especialistas em gerenciamento de pele e estética, aplicam a formação científica em cada procedimento —
+              do diagnóstico ao resultado, sempre com naturalidade.</p>
           </div>
         </div>
         <a href="https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%21%20Quero%20garantir%20minha%20vaga%20no%20Laser%20Day%20%2817%2F10%29%20%E2%9C%A8"
@@ -2830,6 +2924,39 @@
     </svg>
   </a>
 
+  <!-- ===== MODAL: TECNOLOGIA ===== -->
+  <div class="modal" id="tech-modal" aria-hidden="true">
+    <div class="modal__overlay" data-modal-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="tech-modal-title">
+      <button class="modal__close" type="button" data-modal-close aria-label="Fechar">&times;</button>
+      <div class="modal__body">
+        <div class="tech__media">
+          <span class="tech__badge">Aparelho oficial</span>
+          <img src="infinity-duos.png" class="tech__img"
+            alt="Aparelho Infinity Duos, da Cromatics, utilizado no Laser Day" width="1080" height="1080"
+            loading="lazy" decoding="async" />
+        </div>
+        <div class="tech__content">
+          <div class="section-tag">A tecnologia</div>
+          <h2 class="section-title" id="tech-modal-title">Conheça o <strong>Infinity Duos</strong></h2>
+          <p>O Infinity Duos é uma tecnologia da <strong>Cromatics</strong> que surpreende pelo conforto e pela
+            segurança. Conta com <strong>3 tipos de laser em 4 comprimentos de onda diferentes</strong>, garantindo
+            segurança desde a pele albina até a pele negra. Possui ainda um <strong>sistema de resfriamento
+              estável</strong> para maior conforto no momento da aplicação.</p>
+          <p>Outra vantagem é a associação do <strong>laser de diodo (epilação)</strong> com o
+            <strong>laser Q-switched (pigmento)</strong>, permitindo tratar regiões escurecidas pela epilação
+            tradicional, como lâminas e ceras, na mesma sessão.</p>
+          <ul class="tech__features">
+            <li>3 tipos de laser em 4 comprimentos de onda</li>
+            <li>Segurança da pele albina à pele negra</li>
+            <li>Sistema de resfriamento estável</li>
+            <li>Diodo (epilação) + Q-switched (pigmento) na mesma sessão</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Ano no rodapé
     document.getElementById('ano').textContent = new Date().getFullYear();
@@ -2962,6 +3089,30 @@
             });
           });
         });
+      });
+    })();
+
+    // Modal: conheça a tecnologia
+    (function () {
+      var modal = document.getElementById('tech-modal');
+      var btn = document.getElementById('open-tech');
+      if (!modal || !btn) return;
+      function openModal() {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+      }
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+      }
+      btn.addEventListener('click', openModal);
+      modal.querySelectorAll('[data-modal-close]').forEach(function (el) {
+        el.addEventListener('click', closeModal);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
       });
     })();
 

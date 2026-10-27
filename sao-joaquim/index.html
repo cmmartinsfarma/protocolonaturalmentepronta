@@ -1707,6 +1707,51 @@
       color: var(--blush);
     }
 
+    /* ===== MAPA ===== */
+    .mapa {
+      padding: 96px 0;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .mapa__card {
+      max-width: 900px;
+      margin: 0 auto 22px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--cream-dark);
+      box-shadow: var(--shadow);
+    }
+
+    .mapa__card iframe {
+      display: block;
+      width: 100%;
+      height: 420px;
+      border: 0;
+    }
+
+    .mapa__info {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    .mapa__info p {
+      font-size: .95rem;
+      color: var(--charcoal-soft);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .mapa__info strong {
+      color: var(--charcoal);
+    }
+
     /* ===== FOOTER ===== */
     .footer {
       background: var(--charcoal);
@@ -1850,8 +1895,18 @@
       .contra,
       .pros,
       .faq,
-      .contato {
+      .contato,
+      .mapa {
         padding: 56px 0;
+      }
+
+      .mapa__card iframe {
+        height: 320px;
+      }
+
+      .mapa__info {
+        justify-content: center;
+        text-align: center;
       }
 
       .pros__grid {
@@ -2949,6 +3004,26 @@
               imunossupressora; doenças hemorrágicas ou uso de anticoagulantes; alergia, ferida aberta ou infecciosa. Na
               dúvida, fale com a gente.</div>
           </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ONDE FICA ===== -->
+    <section class="mapa reveal" id="onde-fica">
+      <div class="container">
+        <div class="section-tag">Onde fica</div>
+        <h2 class="section-title">Venha nos <em>visitar</em></h2>
+        <p class="section-desc">Atendimento em São Joaquim da Barra / SP.</p>
+        <div class="mapa__card">
+          <iframe
+            title="Localização: Carolina Martins | Estética Avançada — Rua Amazonas, 130, São Joaquim da Barra"
+            src="https://www.google.com/maps?q=-20.5811364,-47.8560254&z=16&output=embed" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="mapa__info">
+          <p><strong>Carolina Martins | Estética Avançada</strong><br>Rua Amazonas, 130 — São Joaquim da Barra / SP</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=-20.5811364,-47.8560254" class="btn btn--outline"
+            target="_blank" rel="noopener">Abrir no Google Maps</a>
         </div>
       </div>
     </section>

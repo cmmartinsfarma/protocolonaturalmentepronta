@@ -72,10 +72,16 @@
   function renderTable(table, values) {
     if (!table || !values || !values.length) return;
 
+    // Procura a linha de cabeçalho (tolera uma linha de título acima).
+    var headerIndex = null;
+    for (var i = 0; i < Math.min(values.length, 4); i++) {
+      if (isHeaderRow(values[i])) { headerIndex = i; break; }
+    }
+
     var headers, rows;
-    if (isHeaderRow(values[0])) {
-      headers = values[0];
-      rows = values.slice(1);
+    if (headerIndex !== null) {
+      headers = values[headerIndex];
+      rows = values.slice(headerIndex + 1);
     } else {
       headers = Array.prototype.map.call(table.querySelectorAll('thead th'), function (th) {
         return th.textContent.trim();

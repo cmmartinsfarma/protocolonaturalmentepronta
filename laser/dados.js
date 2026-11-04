@@ -42,6 +42,22 @@
     });
   }
 
+  var MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+
+  function parseDateValue(v) {
+    var s = String(v || '').trim();
+    if (!s) return null;
+    var m = s.match(/^(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})$/); // DD/MM/AAAA
+    if (m) return { d: +m[1], m: +m[2], y: +m[3] };
+    m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/); // AAAA-MM-DD
+    if (m) return { d: +m[3], m: +m[2], y: +m[1] };
+    return null;
+  }
+
+  function pad2(n) {
+    return ('0' + n).slice(-2);
+  }
+
   function isHeaderRow(row) {
     var first = String((row && row[0]) || '').toLowerCase().trim();
     return /^(área|area|tamanho|procedimento|chave)$/.test(first);
@@ -97,6 +113,13 @@
     var local = cfg.local || '';
     var dataTexto = cfg.data_texto || '';
     var dataIso = cfg.data_iso || '';
+
+    // Fonte principal: "data" em DD/MM/AAAA. Formata para ISO e texto.
+    var parsed = parseDateValue(cfg.data) || parseDateValue(dataIso);
+    if (parsed && parsed.m >= 1 && parsed.m <= 12) {
+      dataIso = parsed.y + '-' + pad2(parsed.m) + '-' + pad2(parsed.d);
+      dataTexto = parsed.d + ' de ' + MESES[parsed.m - 1];
+    }
 
     var heroDate = document.querySelector('.hero__date');
     if (heroDate && (local || dataTexto)) {

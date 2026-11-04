@@ -809,37 +809,42 @@
 
     table.price-table {
       width: 100%;
-      min-width: 520px;
+      min-width: 640px;
       border-collapse: collapse;
-      background: transparent;
+      background: var(--white);
+      text-align: left;
     }
 
     table.price-table thead th {
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .08em;
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-soft) 100%);
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .07em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      text-align: right;
-      padding: 0 16px 12px;
-      border-bottom: 1px solid var(--cream-dark);
+      padding: 17px 20px;
+      text-align: center;
       white-space: nowrap;
     }
 
     table.price-table thead th:first-child {
       text-align: left;
+      position: sticky;
+      left: 0;
+      z-index: 3;
     }
 
     table.price-table thead th:nth-child(2) {
-      color: var(--rose-deep);
+      background: linear-gradient(135deg, var(--rose-600) 0%, var(--rose-700) 100%);
+      color: var(--white);
     }
 
     table.price-table tbody td {
-      padding: 15px 16px;
-      font-size: .92rem;
+      padding: 15px 20px;
+      font-size: .9rem;
+      border-bottom: 1px solid rgba(43, 34, 36, .07);
       color: var(--charcoal-soft);
-      text-align: right;
-      border-bottom: 1px solid var(--cream-dark);
+      text-align: center;
       white-space: nowrap;
     }
 
@@ -848,19 +853,41 @@
       font-weight: 600;
       color: var(--charcoal);
       white-space: normal;
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: var(--white);
+      box-shadow: 2px 0 8px rgba(43, 34, 36, .05);
     }
 
     table.price-table tbody tr:last-child td {
       border-bottom: none;
     }
 
-    table.price-table tbody tr:hover td {
-      background: rgba(169, 75, 66, .05);
+    table.price-table tbody td:nth-child(2) {
+      background: rgba(169, 75, 66, .07);
+      color: var(--rose-700);
+      font-weight: 600;
     }
 
-    table.price-table tbody td:nth-child(2) {
-      color: var(--rose-deep);
-      font-weight: 700;
+    table.price-table tbody tr:nth-child(even) {
+      background: #f8f7fd;
+    }
+
+    table.price-table tbody tr:nth-child(even) td:first-child {
+      background: #f8f7fd;
+    }
+
+    table.price-table tbody tr:hover {
+      background: #f1eefe;
+    }
+
+    table.price-table tbody tr:hover td:first-child {
+      background: #f1eefe;
+    }
+
+    table.price-table tbody tr:hover td:nth-child(2) {
+      background: rgba(169, 75, 66, .14);
     }
 
     .price-empty {

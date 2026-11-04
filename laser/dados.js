@@ -1,0 +1,180 @@
+// Carrega data/local e as tabelas de preço da planilha do linktree (abas com prefixo rp_).
+// Se SHEET_ID não estiver configurado (ou a planilha falhar), mantém o HTML estático.
+(function () {
+  'use strict';
+
+  var SITE = 'rp'; // abas: rp_config, rp_feminino, rp_masculino, rp_clareamento, rp_tatuagem, rp_outros
+  var SHEET_ID = (typeof CONFIG !== 'undefined' && CONFIG && CONFIG.SHEET_ID)
+    ? String(CONFIG.SHEET_ID).trim()
+    : '';
+
+  if (!SHEET_ID) {
+    console.info('[dados] SHEET_ID não configurado — mantendo conteúdo estático.');
+    return;
+  }
+
+  function parseGviz(text) {
+    var start = text.indexOf('{');
+    var end = text.lastIndexOf('}');
+    if (start === -1 || end === -1) throw new Error('Resposta inválida da planilha');
+    return JSON.parse(text.substring(start, end + 1));
+  }
+
+  function gvizToValues(json) {
+    var rows = (json.table && json.table.rows) || [];
+    return rows.map(function (row) {
+      return (row.c || []).map(function (cell) {
+        if (!cell) return '';
+        var v = (cell.f !== undefined && cell.f !== null) ? cell.f : cell.v;
+        return v === undefined || v === null ? '' : String(v).trim();
+      });
+    });
+  }
+
+  function fetchSheet(tab, range) {
+    var url = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(SHEET_ID) +
+      '/gviz/tq?tqx=out:json&sheet=' + encodeURIComponent(tab) + '&range=' + encodeURIComponent(range);
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error('Erro ao buscar aba ' + tab + ': ' + r.status);
+      return r.text();
+    }).then(function (text) {
+      return gvizToValues(parseGviz(text));
+    });
+  }
+
+  function isHeaderRow(row) {
+    var first = String((row && row[0]) || '').toLowerCase().trim();
+    return /^(área|area|tamanho|procedimento|chave)$/.test(first);
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function renderTable(table, values) {
+    if (!table || !values || !values.length) return;
+
+    var headers, rows;
+    if (isHeaderRow(values[0])) {
+      headers = values[0];
+      rows = values.slice(1);
+    } else {
+      headers = Array.prototype.map.call(table.querySelectorAll('thead th'), function (th) {
+        return th.textContent.trim();
+      });
+      rows = values;
+    }
+
+    rows = rows.filter(function (r) {
+      return r.some(function (c) { return String(c).trim() !== ''; });
+    });
+    if (!headers.length || !rows.length) return;
+
+    var thead = table.querySelector('thead');
+    var tbody = table.querySelector('tbody');
+    if (!thead || !tbody) return;
+
+    thead.innerHTML = '<tr>' + headers.map(function (h) {
+      return '<th scope="col">' + escapeHtml(h) + '</th>';
+    }).join('') + '</tr>';
+
+    tbody.innerHTML = rows.map(function (r) {
+      return '<tr>' + headers.map(function (_, i) {
+        return '<td>' + escapeHtml(r[i] === undefined ? '' : r[i]) + '</td>';
+      }).join('') + '</tr>';
+    }).join('');
+  }
+
+  function applyConfig(values) {
+    var cfg = {};
+    values.forEach(function (row) {
+      var key = String(row[0] || '').trim().toLowerCase();
+      if (key && key !== 'chave') cfg[key] = String(row[1] || '').trim();
+    });
+
+    var local = cfg.local || '';
+    var dataTexto = cfg.data_texto || '';
+    var dataIso = cfg.data_iso || '';
+
+    var heroDate = document.querySelector('.hero__date');
+    if (heroDate && (local || dataTexto)) {
+      heroDate.innerHTML = [dataTexto, local ? '<strong>' + escapeHtml(local) + '</strong>' : '']
+        .filter(Boolean).join(' · ');
+    }
+
+    var brandTitle = document.querySelector('.nav__brand-title');
+    if (brandTitle && local) brandTitle.textContent = 'Laser Day · ' + local;
+
+    if (dataTexto) {
+      var footerQuote = document.querySelector('.footer__quote');
+      if (footerQuote) footerQuote.textContent = 'Laser Day · ' + dataTexto + ' · Vagas limitadas';
+    }
+
+    var badge = document.querySelector('.contato__badge');
+    if (badge) {
+      var spans = badge.querySelectorAll('span');
+      if (spans[0] && local) spans[0].textContent = '📍 ' + local;
+      if (spans[2] && dataTexto) spans[2].textContent = '🗓️ ' + dataTexto;
+    }
+
+    if (local || dataTexto) {
+      document.querySelectorAll('.faq__item').forEach(function (item) {
+        var q = item.querySelector('.faq__question');
+        if (!q || !/onde acontece/i.test(q.textContent)) return;
+        var a = item.querySelector('.faq__answer');
+        if (!a) return;
+        a.innerHTML = 'O evento acontece em <strong>' + escapeHtml(local) + '</strong>' +
+          (dataTexto ? ', no dia ' + escapeHtml(dataTexto) : '') +
+          '. O local e o horário exatos são confirmados no momento do agendamento, pelo WhatsApp.';
+      });
+    }
+
+    if (dataIso) {
+      var parts = dataIso.split('-');
+      if (parts.length === 3) {
+        var tagEl = document.querySelector('.hero__event-tag');
+        if (tagEl) tagEl.textContent = tagEl.textContent.replace(/\d{2}\/\d{2}/g, parts[2] + '/' + parts[1]);
+      }
+    }
+
+    if (cfg.whatsapp) {
+      document.querySelectorAll('a[href*="whatsapp.com"]').forEach(function (a) {
+        a.href = a.href.replace(/phone=\d+/, 'phone=' + encodeURIComponent(cfg.whatsapp));
+      });
+    }
+  }
+
+  var TABLES = [
+    { tab: 'feminino', selectors: ['#panel-f-epilacao table.price-table'] },
+    { tab: 'clareamento', selectors: ['#panel-f-clareamento table.price-table'] },
+    { tab: 'tatuagem', selectors: ['#panel-f-tatuagem table.price-table', '#panel-m-tatuagem table.price-table'] },
+    { tab: 'outros', selectors: ['#panel-f-outros table.price-table', '#panel-m-outros table.price-table'] },
+    { tab: 'masculino', selectors: ['#panel-m-depilacao table.price-table'] }
+  ];
+
+  function run() {
+    fetchSheet(SITE + '_config', 'A:B').then(applyConfig).catch(function (e) {
+      console.warn('[dados] configuração:', e);
+    });
+
+    TABLES.forEach(function (item) {
+      fetchSheet(SITE + '_' + item.tab, 'A:E').then(function (values) {
+        item.selectors.forEach(function (sel) {
+          document.querySelectorAll(sel).forEach(function (t) {
+            renderTable(t, values);
+          });
+        });
+      }).catch(function (e) {
+        console.warn('[dados] aba ' + SITE + '_' + item.tab + ':', e);
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();

@@ -21,14 +21,18 @@
   }
 
   function gvizToValues(json) {
-    var rows = (json.table && json.table.rows) || [];
-    return rows.map(function (row) {
+    var table = (json && json.table) || {};
+    var labels = (table.cols || []).map(function (c) {
+      return c && c.label ? String(c.label).trim() : '';
+    });
+    var rows = (table.rows || []).map(function (row) {
       return (row.c || []).map(function (cell) {
         if (!cell) return '';
         var v = (cell.f !== undefined && cell.f !== null) ? cell.f : cell.v;
         return v === undefined || v === null ? '' : String(v).trim();
       });
     });
+    return { labels: labels, rows: rows };
   }
 
   function fetchSheet(tab, range) {
@@ -69,24 +73,35 @@
     });
   }
 
-  function renderTable(table, values) {
-    if (!table || !values || !values.length) return;
+  function renderTable(table, data) {
+    if (!table || !data) return;
+    var values = data.rows || [];
+    var labels = data.labels || [];
+    if (!values.length) return;
 
-    // Procura a linha de cabeçalho (tolera uma linha de título acima).
-    var headerIndex = null;
-    for (var i = 0; i < Math.min(values.length, 4); i++) {
-      if (isHeaderRow(values[i])) { headerIndex = i; break; }
-    }
+    var hasLabels = labels.some(function (l) { return l !== ''; });
 
     var headers, rows;
-    if (headerIndex !== null) {
-      headers = values[headerIndex];
-      rows = values.slice(headerIndex + 1);
-    } else {
-      headers = Array.prototype.map.call(table.querySelectorAll('thead th'), function (th) {
-        return th.textContent.trim();
-      });
+    if (hasLabels) {
+      // O gviz manda o cabeçalho em "cols[].label" (ex.: rp_outros).
+      headers = labels;
       rows = values;
+    } else {
+      // Senão, procura a linha de cabeçalho (tolera uma linha de título acima).
+      var headerIndex = null;
+      for (var i = 0; i < Math.min(values.length, 4); i++) {
+        if (isHeaderRow(values[i])) { headerIndex = i; break; }
+      }
+
+      if (headerIndex !== null) {
+        headers = values[headerIndex];
+        rows = values.slice(headerIndex + 1);
+      } else {
+        headers = Array.prototype.map.call(table.querySelectorAll('thead th'), function (th) {
+          return th.textContent.trim();
+        });
+        rows = values;
+      }
     }
 
     rows = rows.filter(function (r) {
@@ -216,15 +231,17 @@
   ];
 
   function run() {
-    fetchSheet(SITE + '_config', 'A:B').then(applyConfig).catch(function (e) {
+    fetchSheet(SITE + '_config', 'A:B').then(function (data) {
+      applyConfig(data.rows || []);
+    }).catch(function (e) {
       console.warn('[dados] configuração:', e);
     });
 
     TABLES.forEach(function (item) {
-      fetchSheet(SITE + '_' + item.tab, 'A:E').then(function (values) {
+      fetchSheet(SITE + '_' + item.tab, 'A:E').then(function (data) {
         item.selectors.forEach(function (sel) {
           document.querySelectorAll(sel).forEach(function (t) {
-            renderTable(t, values);
+            renderTable(t, data);
           });
         });
       }).catch(function (e) {

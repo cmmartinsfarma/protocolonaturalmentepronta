@@ -117,6 +117,10 @@
     });
 
     var local = cfg.local || '';
+    if (!local) {
+      var heroLocal = document.querySelector('.hero__date strong');
+      local = heroLocal ? heroLocal.textContent.trim() : '';
+    }
     var dataTexto = cfg.data_texto || '';
     var dataIso = cfg.data_iso || '';
 
@@ -163,8 +167,36 @@
     if (dataIso) {
       var parts = dataIso.split('-');
       if (parts.length === 3) {
+        var ddmm = parts[2] + '/' + parts[1];
         var tagEl = document.querySelector('.hero__event-tag');
-        if (tagEl) tagEl.textContent = tagEl.textContent.replace(/\d{2}\/\d{2}/g, parts[2] + '/' + parts[1]);
+        if (tagEl) tagEl.textContent = tagEl.textContent.replace(/\d{2}\/\d{2}/g, ddmm);
+
+        // Atualiza a data nas seções que ainda podem estar com a data fixa.
+        ['beneficios-desc', 'pros-desc', 'faq-desc', 'contato-title'].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.innerHTML = el.innerHTML.replace(/\d{2}\/\d{2}/g, ddmm);
+        });
+
+        if (document.title) document.title = document.title.replace(/\d{2}\/\d{2}/g, ddmm);
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          metaDesc.setAttribute('content', metaDesc.getAttribute('content').replace(/\d{2}\/\d{2}/g, ddmm));
+        }
+      }
+    }
+
+    var parcelas = (cfg.parcelas || cfg.qtd_max_parcelas || '').trim();
+    if (parcelas) {
+      var depend = /\bou\b/i.test(parcelas) ? ', dependendo da quantidade de sessões fechadas' : '';
+      var disc = document.getElementById('price-disclaimer');
+      if (disc) {
+        disc.innerHTML = '💳 Parcelamento em <strong>' + escapeHtml(parcelas) + 'x' + depend +
+          '</strong>, com acréscimo de juros conforme as taxas da operadora do cartão. O valor parcelado é confirmado no agendamento.';
+      }
+      var faqParcelado = document.getElementById('faq-parcelado');
+      if (faqParcelado) {
+        faqParcelado.innerHTML = 'Sim! O parcelamento é em <strong>' + escapeHtml(parcelas) + 'x' + depend +
+          '</strong>, com acréscimo de juros conforme as taxas da operadora do cartão.';
       }
     }
 

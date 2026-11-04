@@ -197,6 +197,27 @@
         if (metaDesc) {
           metaDesc.setAttribute('content', metaDesc.getAttribute('content').replace(/\d{2}\/\d{2}/g, ddmm));
         }
+
+        // Mantém os dados estruturados (JSON-LD) alinhados com a data da planilha.
+        var ld = document.querySelector('script[type="application/ld+json"]');
+        if (ld) {
+          try {
+            var json = JSON.parse(ld.textContent);
+            var changed = false;
+            var walk = function (obj) {
+              if (!obj || typeof obj !== 'object') return;
+              if (typeof obj.startDate === 'string') {
+                obj.startDate = dataIso + 'T09:00:00-03:00';
+                changed = true;
+              }
+              Object.keys(obj).forEach(function (k) { walk(obj[k]); });
+            };
+            walk(json);
+            if (changed) ld.textContent = JSON.stringify(json);
+          } catch (e) {
+            console.warn('[dados] JSON-LD:', e);
+          }
+        }
       }
     }
 

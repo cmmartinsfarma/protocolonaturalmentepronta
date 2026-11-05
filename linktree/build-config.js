@@ -21,4 +21,11 @@ const CONFIG = {
 `;
 
 fs.writeFileSync(path.join(__dirname, 'config.js'), content, 'utf8');
+
+// O linktree antigo continua disponível em /linktree durante a transição.
+const legacyDir = path.join(__dirname, 'site', 'linktree');
+if (fs.existsSync(legacyDir)) {
+  fs.writeFileSync(path.join(legacyDir, 'config.js'), content, 'utf8');
+}
+
 console.log('config.js gerado. SHEET_ID =', SHEET_ID || '(vazio — usando mock)');

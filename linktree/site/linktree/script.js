@@ -1,0 +1,402 @@
+// Usa CONFIG de config.js (carregado antes deste script)
+// Se CONFIG não estiver definido, usa fallback silencioso para exibir dados mockados
+const SPREADSHEET_ID = typeof CONFIG !== 'undefined' ? CONFIG.SHEET_ID : '';
+const SHEET_NAME = typeof CONFIG !== 'undefined' ? CONFIG.SHEET_LINKS : 'Sheet1';
+const SHEET_CONFIG = typeof CONFIG !== 'undefined' ? CONFIG.SHEET_CONFIG : 'Sheet2';
+const RANGE = typeof CONFIG !== 'undefined' ? CONFIG.RANGE_LINKS : 'A:F';
+const RANGE_CONFIG = typeof CONFIG !== 'undefined' ? CONFIG.RANGE_CONFIG : 'A:B';
+
+// ============================================================
+// DADOS MOCKADOS — usados enquanto a planilha não for configurada
+// Remova ou deixe vazio após configurar SHEET_ID no config.js
+// ============================================================
+const MOCK_DATA = [
+  // [categoria, ordem_cat, subcategoria, ordem_subcat, nome_link, url]
+  ['Atendimento', '1', '', '', 'Agendar avaliação gratuita', 'https://api.whatsapp.com/send?phone=5516992133717&text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20link%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20%E2%9C%A8'],
+  ['Atendimento', '1', '', '', 'Site oficial', 'https://www.naturalmentepronta.com.br/'],
+];
+
+// ============================================================
+// FUNÇÕES PRINCIPAIS
+// ============================================================
+
+/**
+ * Faz o parse da resposta JSONP do endpoint gviz do Google Sheets.
+ */
+function parseGviz(text) {
+  const start = text.indexOf('{');
+  const end = text.lastIndexOf('}');
+  if (start === -1 || end === -1) throw new Error('Resposta inválida da planilha');
+  return JSON.parse(text.substring(start, end + 1));
+}
+
+/**
+ * Converte o JSON do gviz para o formato { values: [[...], [...]] }.
+ */
+function gvizToValues(json) {
+  const rows = (json.table && json.table.rows) || [];
+  return {
+    values: rows.map(row => (row.c || []).map(cell => {
+      if (!cell) return null;
+      return (cell.v === undefined || cell.v === null) ? null : cell.v;
+    }))
+  };
+}
+
+/**
+ * Busca os dados da planilha direto pelo endpoint gviz (sem worker/proxy).
+ * A planilha precisa estar publicada na web (Arquivo > Publicar na Web).
+ */
+async function fetchSheet(sheetName, range) {
+  const url = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}&range=${encodeURIComponent(range)}`;
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`Erro ao buscar planilha: ${r.status} ${r.statusText}`);
+  const text = await r.text();
+  return gvizToValues(parseGviz(text));
+}
+
+/**
+ * Busca as configurações visuais da Sheet2.
+ * Espera linhas no formato: [ chave, valor ]
+ * Chaves esperadas: nome, descricao, handle, instagram, whatsapp,
+ * logo, subtitulo, cor_fundo, slide1..slideN
+ */
+async function fetchConfig() {
+  try {
+    const data = await fetchSheet(SHEET_CONFIG, RANGE_CONFIG);
+    const rows = data.values || [];
+
+    const config = {};
+    rows.forEach(row => {
+      const chave = String(row[0] || '').trim().toLowerCase();
+      const valor = String(row[1] || '').trim();
+      if (chave && chave !== 'chave') config[chave] = valor;
+    });
+    return config;
+  } catch (e) {
+    console.warn('Não foi possível carregar configurações da Sheet2:', e);
+    return {};
+  }
+}
+
+/**
+ * Converte um link de compartilhamento do Google Drive para URL direta de imagem.
+ */
+function converterUrlDrive(url) {
+  if (!url) return url;
+
+  const matchFile = url.match(/\/file\/d\/([^/?#]+)/);
+  if (matchFile) {
+    return `https://lh3.googleusercontent.com/d/${matchFile[1]}`;
+  }
+
+  const matchId = url.match(/[?&]id=([^&]+)/);
+  if (matchId && url.includes('drive.google.com')) {
+    return `https://lh3.googleusercontent.com/d/${matchId[1]}`;
+  }
+
+  return url;
+}
+
+/**
+ * Aplica as configurações visuais no DOM.
+ */
+function applyConfig(config) {
+  // Nome da organização — title + alt da logo
+  if (config.nome) {
+    document.title = config.nome;
+    const logoEl = document.getElementById('logo-img');
+    if (logoEl) logoEl.alt = config.nome;
+  }
+
+  // Meta description
+  if (config.descricao) {
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', config.descricao);
+  }
+
+  // Handle (@usuario) — oculta se vazio
+  const handleEl = document.getElementById('handle');
+  if (handleEl) {
+    if (config.handle) {
+      handleEl.textContent = '@' + config.handle.replace(/^@/, '');
+    } else {
+      handleEl.style.display = 'none';
+    }
+  }
+
+  // Subtítulo (ex.: "Farmacêutica Esteta · CRF 125.459") — oculta se vazio
+  const subtitleEl = document.getElementById('logo-subtitle');
+  if (subtitleEl) {
+    if (config.subtitulo) {
+      subtitleEl.textContent = config.subtitulo;
+    } else if (config.subtitulo === '') {
+      subtitleEl.style.display = 'none';
+    }
+  }
+
+  // Instagram — só exibe se tiver URL
+  const igEl = document.getElementById('link-instagram');
+  if (igEl && config.instagram) {
+    igEl.href = config.instagram;
+    igEl.style.display = 'flex';
+  }
+
+  // WhatsApp — só exibe se tiver URL
+  const waEl = document.getElementById('link-whatsapp');
+  if (waEl && config.whatsapp) {
+    waEl.href = config.whatsapp;
+    waEl.style.display = 'flex';
+  }
+
+  // Logo — converte link do Drive automaticamente se necessário
+  const logoImgEl = document.getElementById('logo-img');
+  if (logoImgEl && config.logo) {
+    logoImgEl.src = converterUrlDrive(config.logo);
+  }
+
+  // Slider — coleta campos slide1, slide2, ... slideN
+  const slides = [];
+  let i = 1;
+  while (config[`slide${i}`]) {
+    slides.push(converterUrlDrive(config[`slide${i}`]));
+    i++;
+  }
+  if (slides.length > 0) buildSlider(slides);
+
+  // Cor de fundo — degradê da cor customizada ao creme
+  if (config.cor_fundo) {
+    document.body.style.background = `linear-gradient(180deg, ${config.cor_fundo} 0%, var(--cream) 60%)`;
+    document.body.style.backgroundAttachment = 'fixed';
+  }
+}
+
+/**
+ * Busca dados da planilha via proxy.
+ * Se SHEET_ID não foi configurado, usa MOCK_DATA.
+ */
+async function fetchLinks() {
+  if (!SPREADSHEET_ID || SPREADSHEET_ID === 'COLE_O_ID_DA_PLANILHA_AQUI') {
+    console.info('Usando dados mockados. Configure SHEET_ID no config.js.');
+    return MOCK_DATA;
+  }
+
+  const data = await fetchSheet(SHEET_NAME, RANGE);
+  const rows = data.values || [];
+
+  if (rows.length > 0 && isNaN(rows[0][1])) {
+    rows.shift();
+  }
+
+  return rows;
+}
+
+/**
+ * Agrupa as linhas em estrutura: { categoria: { subcategoria: [links] } }
+ */
+function agruparDados(rows) {
+  const categorias = {};
+  const toStr = (v) => (v === null || v === undefined) ? '' : String(v).trim();
+
+  rows.forEach(row => {
+    const categoria = toStr(row[0]);
+    const ordemCat = parseInt(row[1]) || 99;
+    const subcategoria = toStr(row[2]);
+    const ordemSubcat = parseInt(row[3]) || 99;
+    const nomeLink = toStr(row[4]);
+    const url = toStr(row[5]);
+
+    if (!categoria) return;
+
+    if (!categorias[categoria]) {
+      categorias[categoria] = { ordem: ordemCat, subcategorias: {} };
+    }
+
+    const chaveSubcat = subcategoria || '__sem_subcategoria__';
+
+    if (!categorias[categoria].subcategorias[chaveSubcat]) {
+      categorias[categoria].subcategorias[chaveSubcat] = { ordem: ordemSubcat, links: [] };
+    }
+
+    if (nomeLink && url) {
+      categorias[categoria].subcategorias[chaveSubcat].links.push({ nome: nomeLink, url });
+    }
+  });
+
+  return categorias;
+}
+
+/**
+ * Cria um link (âncora) no estilo de botão.
+ */
+function makeAnchor(link) {
+  const a = document.createElement('a');
+  a.className = 'linksgerais';
+  a.href = link.url;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  a.textContent = link.nome;
+  return a;
+}
+
+/**
+ * Gera o HTML dos links e injeta no DOM.
+ * Links sem subcategoria viram botões diretos (sem acordeão);
+ * categorias com subcategorias viram acordeões.
+ */
+function buildAccordions(categorias) {
+  const lista = document.getElementById('lista');
+  lista.innerHTML = '';
+
+  const catOrdenadas = Object.entries(categorias)
+    .sort(([, a], [, b]) => a.ordem - b.ordem);
+
+  catOrdenadas.forEach(([nomeCategoria, dadosCat]) => {
+    const subcatsOrdenadas = Object.entries(dadosCat.subcategorias)
+      .sort(([, a], [, b]) => a.ordem - b.ordem);
+
+    const temSubcategorias = subcatsOrdenadas.some(([chave]) => chave !== '__sem_subcategoria__');
+
+    // Sem subcategorias: botões diretos
+    if (!temSubcategorias) {
+      subcatsOrdenadas.forEach(([, dadosSubcat]) => {
+        dadosSubcat.links.forEach(link => {
+          const li = document.createElement('li');
+          li.className = 'lista';
+          li.appendChild(makeAnchor(link));
+          lista.appendChild(li);
+        });
+      });
+      return;
+    }
+
+    // Com subcategorias: acordeão
+    const li = document.createElement('li');
+    li.className = 'lista';
+
+    const botao = document.createElement('button');
+    botao.className = 'accordion';
+    botao.innerHTML = `<big><b>${nomeCategoria}</b></big>`;
+
+    const painel = document.createElement('div');
+    painel.className = 'panel';
+
+    subcatsOrdenadas.forEach(([chave, dadosSubcat]) => {
+      if (chave === '__sem_subcategoria__') {
+        dadosSubcat.links.forEach(link => painel.appendChild(makeAnchor(link)));
+      } else {
+        const botaoInner = document.createElement('button');
+        botaoInner.className = 'accordion-inner';
+        botaoInner.textContent = chave;
+
+        const painelInner = document.createElement('div');
+        painelInner.className = 'panel-inner';
+
+        dadosSubcat.links.forEach(link => painelInner.appendChild(makeAnchor(link)));
+
+        botaoInner.addEventListener('click', function () {
+          this.classList.toggle('active');
+          painelInner.style.display = painelInner.style.display === 'block' ? 'none' : 'block';
+        });
+
+        painel.appendChild(botaoInner);
+        painel.appendChild(painelInner);
+      }
+    });
+
+    botao.addEventListener('click', function () {
+      this.classList.toggle('active');
+      painel.style.display = painel.style.display === 'block' ? 'none' : 'block';
+    });
+
+    li.appendChild(botao);
+    li.appendChild(painel);
+    lista.appendChild(li);
+  });
+}
+
+/**
+ * Inicializa o carregamento da página.
+ */
+async function init() {
+  const loading = document.getElementById('loading');
+  const erro = document.getElementById('erro');
+
+  const [config, rows] = await Promise.allSettled([
+    fetchConfig(),
+    fetchLinks()
+  ]);
+
+  if (config.status === 'fulfilled') {
+    applyConfig(config.value);
+  }
+
+  try {
+    const linhas = rows.status === 'fulfilled' ? rows.value : (() => { throw rows.reason; })();
+    const categorias = agruparDados(linhas);
+    buildAccordions(categorias);
+    loading.style.display = 'none';
+  } catch (e) {
+    console.error(e);
+    loading.style.display = 'none';
+    erro.style.display = 'block';
+  }
+}
+
+init();
+
+// ============================================================
+// SLIDER DE IMAGENS
+// ============================================================
+
+let sliderIndex = 0;
+
+function buildSlider(urls) {
+  const container = document.getElementById('slider-container');
+  const slider = document.getElementById('slider');
+  slider.innerHTML = '';
+
+  urls.forEach(url => {
+    const img = document.createElement('img');
+    img.src = url;
+    img.alt = 'Imagem do slider';
+    img.draggable = false;
+    img.addEventListener('click', () => openModal(img));
+    slider.appendChild(img);
+  });
+
+  sliderIndex = 0;
+  _updateSlider();
+  container.style.display = 'block';
+
+  if (urls.length <= 1) {
+    document.querySelector('.slider-prev').style.display = 'none';
+    document.querySelector('.slider-next').style.display = 'none';
+  }
+}
+
+function _updateSlider() {
+  const slider = document.getElementById('slider');
+  if (!slider) return;
+  slider.style.transform = `translateX(${-sliderIndex * 100}%)`;
+}
+
+function showSlide(n) {
+  const total = document.querySelectorAll('#slider img').length;
+  if (total === 0) return;
+  sliderIndex = (n + total) % total;
+  _updateSlider();
+}
+
+function nextSlide() { showSlide(sliderIndex + 1); }
+function prevSlide() { showSlide(sliderIndex - 1); }
+
+function openModal(img) {
+  document.getElementById('modalImage').src = img.src;
+  const modal = document.getElementById('imageModal');
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('imageModal').style.display = 'none';
+}

@@ -8,3 +8,5 @@ node_modules/
 # scroll-craft: builds e laboratório locais (o registro FINGERPRINTS.md fica versionável)
 scrollcraft/builds/
 scrollcraft/lab/
+scrollcraft/images/
+scrollcraft/videos/

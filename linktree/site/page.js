@@ -4,6 +4,13 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var clamp01 = function (x) { return x < 0 ? 0 : x > 1 ? 1 : x; };
 
+  if (reduce) {
+    Array.prototype.forEach.call(document.querySelectorAll('video'), function (v) {
+      v.pause();
+      v.removeAttribute('autoplay');
+    });
+  }
+
   /* ---------------------------------------------------------- o retrato --
      As três folhas são a assinatura da página. O engine publica --sc-p no
      ato; aqui ele vira três progressos defasados, um por folha. O atributo

@@ -415,6 +415,34 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
 .bio__text p + p { margin-top: 1.2rem; }
 .bio__sign { width: 150px; height: auto; margin-top: 2.4rem; opacity: 0.82; }
 
+.bio__band {
+  position: relative;
+  margin: clamp(3rem, 6vw, 5rem) 0 0;
+  height: clamp(220px, 40vh, 380px);
+  overflow: hidden;
+  background: var(--paper-2);
+}
+.bio__band img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+}
+.bio__band figcaption {
+  position: absolute;
+  left: var(--sc-gutter);
+  bottom: 1.4rem;
+  margin: 0;
+  padding: 0.5rem 0.9rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sc-ink);
+}
+
 .bio__meta {
   grid-column: 11 / 13;
   margin: 0;
@@ -576,6 +604,19 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
   flex-direction: column;
   justify-content: center;
 }
+.area__media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--sc-r-md);
+  margin-bottom: 1.5rem;
+  background: var(--paper-2);
+}
+.area__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .area__index {
   margin: 0 0 1.2rem;
   font-size: 0.6rem;
@@ -723,7 +764,28 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
   gap: 5rem;
 }
 
-.close__inner { max-width: 78rem; }
+.close__inner {
+  width: 100%;
+  max-width: 96rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 6vw, 5.5rem);
+  align-items: center;
+}
+.close__portrait {
+  margin: 0;
+  justify-self: end;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid color-mix(in oklab, var(--sc-ink) 22%, transparent);
+  border-radius: 46% 46% 0 0 / 20% 20% 0 0;
+  overflow: hidden;
+}
+.close__portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .close__title {
   margin: 1.6rem 0 1.4rem;
   max-width: 15ch;
@@ -871,6 +933,8 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
   .places__route { width: 80%; margin-top: 1.4rem; }
 
   .close { padding-bottom: 6rem; gap: 3.5rem; }
+  .close__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .close__portrait { justify-self: start; max-width: 320px; }
   .close__title { font-size: clamp(2.9rem, 10vw, 4.6rem); }
   .close__foot { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
   .close__meta { text-align: left; }

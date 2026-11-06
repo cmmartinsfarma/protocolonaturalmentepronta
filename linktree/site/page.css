@@ -168,27 +168,22 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
 
 .title-page__arch {
   position: absolute;
-  right: 7%;
-  top: 1%;
-  width: min(30vw, 410px);
-  height: min(68vh, 660px);
+  right: 6%;
+  top: 6%;
+  width: min(30vw, 400px);
+  height: min(56vh, 520px);
+  margin: 0;
   border: 1px solid var(--rule);
-  border-radius: 50% 50% 0 0 / 26% 26% 0 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  border-radius: 50% 50% 0 0 / 24% 24% 0 0;
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
 }
-.title-page__arch span {
-  font-family: var(--sc-font-display);
-  font-size: min(32vw, 30rem);
-  line-height: 0.68;
-  font-weight: 400;
-  color: transparent;
-  -webkit-text-stroke: 1px color-mix(in oklab, var(--sc-ink) 12%, transparent);
-  transform: translateY(7%);
+.title-page__arch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
 }
 
 .title-page__name {
@@ -547,6 +542,34 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
   color: var(--sc-ink);
 }
 
+.method__bastidor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+.bastidor-item { margin: 0; }
+.bastidor-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--sc-r-md);
+  background: var(--paper-2);
+}
+.bastidor-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bastidor-item figcaption {
+  margin: 0.7rem 0 0;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sc-ink-soft);
+}
+
 /* ----------------------------------------------------------------- frentes -- */
 
 .areas {
@@ -606,7 +629,7 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
 }
 .area__media {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: var(--sc-r-md);
   margin-bottom: 1.5rem;
@@ -675,7 +698,29 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
   background: var(--paper-2);
 }
 
-.places__head { max-width: 62rem; }
+.places__head {
+  max-width: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+.places__head-text { max-width: 62rem; }
+.places__photo {
+  margin: 0;
+  flex: 0 0 auto;
+  width: min(22vw, 240px);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--sc-r-md);
+  border: 1px solid var(--rule);
+}
+.places__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 .places__title {
   margin: 0 0 1.4rem;
   font-size: clamp(3rem, 6.4vw, 6rem);
@@ -764,28 +809,7 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
   gap: 5rem;
 }
 
-.close__inner {
-  width: 100%;
-  max-width: 96rem;
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(2rem, 6vw, 5.5rem);
-  align-items: center;
-}
-.close__portrait {
-  margin: 0;
-  justify-self: end;
-  width: 100%;
-  max-width: 400px;
-  border: 1px solid color-mix(in oklab, var(--sc-ink) 22%, transparent);
-  border-radius: 46% 46% 0 0 / 20% 20% 0 0;
-  overflow: hidden;
-}
-.close__portrait img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+.close__inner { max-width: 78rem; }
 .close__title {
   margin: 1.6rem 0 1.4rem;
   max-width: 15ch;
@@ -861,7 +885,14 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
     gap: 1.6rem;
     padding-bottom: 2.2rem;
   }
-  .title-page__arch { display: none; }
+  .title-page__arch {
+    position: static;
+    width: min(66vw, 280px);
+    height: auto;
+    aspect-ratio: 4 / 5;
+    margin: 0;
+    border-radius: 50% 50% 0 0 / 24% 24% 0 0;
+  }
   .title-page__name {
     grid-column: 1;
     font-size: clamp(4rem, 17vw, 6.4rem);
@@ -916,6 +947,7 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
     padding: 1.7rem 0;
   }
   .method__step p { grid-column: 2; }
+  .method__bastidor { grid-template-columns: 1fr; }
 
   .areas__rail { min-height: 72vh; }
   .areas__intro { width: 78vw; padding-right: 2rem; }
@@ -923,6 +955,8 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
   .areas__end { width: 78vw; padding: 1.6rem 1.5rem; }
 
   .places__stage { padding-top: 4.5rem; padding-bottom: 5rem; }
+  .places__head { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+  .places__photo { width: min(44vw, 180px); }
   .places__title { font-size: clamp(2.5rem, 8vw, 3.8rem); }
   .places__head .sc-body { font-size: 0.9rem; }
   .places__grid { grid-template-columns: 1fr 1fr; margin-top: 2rem; }
@@ -933,8 +967,6 @@ body.is-scrolled .folio { opacity: 1; visibility: visible; pointer-events: auto;
   .places__route { width: 80%; margin-top: 1.4rem; }
 
   .close { padding-bottom: 6rem; gap: 3.5rem; }
-  .close__inner { grid-template-columns: 1fr; gap: 2.5rem; }
-  .close__portrait { justify-self: start; max-width: 320px; }
   .close__title { font-size: clamp(2.9rem, 10vw, 4.6rem); }
   .close__foot { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
   .close__meta { text-align: left; }

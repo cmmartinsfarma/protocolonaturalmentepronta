@@ -5,14 +5,14 @@
   <script>document.documentElement.classList.remove('no-js');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laser Day — Uma nova tecnologia para sua segurança e conforto · 31/10 | São Joaquim da Barra</title>
+  <title>Laser Day — Epilação e tratamentos de pele em São Joaquim da Barra | Infinity Duos</title>
   <meta name="description"
-    content="Laser Day em 31/10, em São Joaquim da Barra: epilação a laser, clareamento, remoção de tatuagem e tratamentos de pele com o aparelho Infinity Duos. Atendimento com a Dra. Carolina Martins. Vagas limitadas." />
+    content="Laser Day em São Joaquim da Barra: epilação a laser, clareamento, remoção de tatuagem e tratamentos de pele com o aparelho Infinity Duos. Atendimento com a Dra. Carolina Martins. Vagas limitadas." />
   <link rel="canonical" href="https://www.naturalmentepronta.com.br/sao-joaquim/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Laser Day — 31/10 em São Joaquim da Barra | Infinity Duos" />
+  <meta property="og:title" content="Laser Day — Epilação e tratamentos de pele em São Joaquim da Barra | Infinity Duos" />
   <meta property="og:description"
-    content="A primeira edição do Laser Day: condições especiais para começar (ou retomar) sua epilação e cuidar da pele com o Infinity Duos. Garanta sua vaga no 31/10." />
+    content="A primeira edição do Laser Day: condições especiais para começar (ou retomar) sua epilação e cuidar da pele com o Infinity Duos. Garanta sua vaga." />
   <meta property="og:image" content="https://www.naturalmentepronta.com.br/hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="ico.ico" sizes="any" />
@@ -2249,7 +2249,7 @@
       <div class="container">
         <div class="section-tag">Por que participar?</div>
         <h2 class="section-title">Muito além da <em>epilação</em></h2>
-        <p class="section-desc">No dia 31/10 você encontra condições especiais com tecnologia de ponta e o cuidado da Dra. Carolina Martins. Veja o que você leva:</p>
+        <p class="section-desc" id="beneficios-desc">No dia 31/10 você encontra condições especiais com tecnologia de ponta e o cuidado da Dra. Carolina Martins. Veja o que você leva:</p>
         <div class="beneficios__slider">
           <button class="ben-nav ben-nav--prev" type="button" aria-label="Anterior" data-ben="prev">&#8249;</button>
           <div class="beneficios__track" id="ben-track">
@@ -2417,7 +2417,7 @@
           </button>
         </div>
 
-        <p class="price-disclaimer">💳 Parcelamento em <strong>6 ou 10x, dependendo da quantidade de sessões
+        <p class="price-disclaimer" id="price-disclaimer">💳 Parcelamento em <strong>6 ou 10x, dependendo da quantidade de sessões
             fechadas</strong>, com acréscimo de juros conforme as taxas da operadora do cartão. O valor parcelado é
           confirmado no agendamento.</p>
 
@@ -2947,7 +2947,7 @@
       <div class="container">
         <div class="section-tag">Quem vai cuidar de você</div>
         <h2 class="section-title">Sua pele em <em>boas mãos</em></h2>
-        <p class="section-desc">No dia 31/10 você é atendida pela Dra. Carolina Martins, com formação sólida e um olhar
+        <p class="section-desc" id="pros-desc">No dia 31/10 você é atendida pela Dra. Carolina Martins, com formação sólida e um olhar
           individual para a sua pele.</p>
         <div class="pro-merged reveal">
           <div class="pro-merged__media">
@@ -2969,7 +2969,7 @@
       <div class="container">
         <div class="section-tag">Dúvidas frequentes</div>
         <h2 class="section-title">Sobre o <em>Laser Day</em></h2>
-        <p class="section-desc">Tudo o que você precisa saber antes do dia 31/10.</p>
+        <p class="section-desc" id="faq-desc">Tudo o que você precisa saber antes do dia 31/10.</p>
         <div class="faq__list">
           <details class="faq__item">
             <summary class="faq__question">Onde acontece o Laser Day?</summary>
@@ -2992,7 +2992,7 @@
           </details>
           <details class="faq__item">
             <summary class="faq__question">Posso pagar parcelado?</summary>
-            <div class="faq__answer">Sim! O parcelamento é em <strong>6 ou 10x, dependendo da quantidade de sessões
+            <div class="faq__answer" id="faq-parcelado">Sim! O parcelamento é em <strong>6 ou 10x, dependendo da quantidade de sessões
                 fechadas</strong>, com acréscimo de juros conforme as taxas da operadora do cartão.</div>
           </details>
           <details class="faq__item">
@@ -3031,7 +3031,7 @@
     <!-- ===== CONTATO ===== -->
     <section class="contato" id="contato">
       <div class="container">
-        <h2 class="contato__title">Vagas limitadas no dia 31/10 — <em>garanta a sua</em></h2>
+        <h2 class="contato__title" id="contato-title">Vagas limitadas no dia 31/10 — <em>garanta a sua</em></h2>
         <p class="contato__desc">Tire suas dúvidas e garanta sua vaga pelo WhatsApp. O Laser Day acontece por um único
           dia, em São Joaquim da Barra — reserve seu horário antes que acabe.</p>
         <div class="contato__cards">
@@ -3334,7 +3334,7 @@
     document.querySelectorAll('a[href*="whatsapp.com"]').forEach(btn => {
       btn.addEventListener('click', () => {
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'whatsapp_click', cta_id: btn.id || btn.className, campanha: 'laser_17_10' });
+        window.dataLayer.push({ event: 'whatsapp_click', cta_id: btn.id || btn.className, campanha: 'laser_sjb' });
       });
     });
 
@@ -3342,10 +3342,13 @@
     document.querySelectorAll('a[href="#contato"]').forEach(btn => {
       btn.addEventListener('click', () => {
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'cta_contato', cta_id: btn.id || btn.className, campanha: 'laser_17_10' });
+        window.dataLayer.push({ event: 'cta_contato', cta_id: btn.id || btn.className, campanha: 'laser_sjb' });
       });
     });
   </script>
+
+  <script src="config.js"></script>
+  <script src="dados.js"></script>
 </body>
 
 </html>

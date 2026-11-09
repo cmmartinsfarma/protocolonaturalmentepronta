@@ -117,30 +117,4 @@
   }
 
   setActive('abertura');
-
-  /* ------------------------------------------------------------ o marquee --
-     As miniaturas rolam sem parar. O vídeo só toca sob o ponteiro (ou no
-     toque), o que mantém a página leve e evita baixar todos os clipes. */
-
-  Array.prototype.forEach.call(document.querySelectorAll('.marquee__item'), function (item) {
-    var video = item.querySelector('video');
-    if (!video) return;
-    var play = function () {
-      item.classList.add('is-playing');
-      video.play().catch(function () {});
-    };
-    var stop = function () {
-      item.classList.remove('is-playing');
-      video.pause();
-      video.currentTime = 0;
-    };
-    item.addEventListener('mouseenter', play);
-    item.addEventListener('mouseleave', stop);
-    item.addEventListener('focusin', play);
-    item.addEventListener('focusout', stop);
-    item.addEventListener('click', function () {
-      if (video.paused) play();
-      else stop();
-    });
-  });
 })();

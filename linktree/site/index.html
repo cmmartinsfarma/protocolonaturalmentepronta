@@ -78,19 +78,17 @@
       </header>
 
       <div class="title-page__main" data-sc-in data-sc-stagger="110">
-        <div class="signature">
-          <h1 class="sr-only" id="titulo-capa">Dra. Carolina Martins, farmacêutica esteta</h1>
-          <div class="signature__stack" aria-hidden="true">
-            <img class="signature__img" src="assets/logo.png" width="916" height="277" alt="">
-            <span class="mirror" style="--s:.90; --o:.52; --mt:-16px"><img src="assets/logo.png" alt=""></span>
-            <span class="mirror" style="--s:.80; --o:.36; --mt:-22px"><img src="assets/logo.png" alt=""></span>
-            <span class="mirror" style="--s:.70; --o:.24; --mt:-26px"><img src="assets/logo.png" alt=""></span>
-            <span class="mirror" style="--s:.60; --o:.15; --mt:-30px"><img src="assets/logo.png" alt=""></span>
-            <span class="mirror" style="--s:.50; --o:.09; --mt:-32px"><img src="assets/logo.png" alt=""></span>
-            <span class="mirror" style="--s:.40; --o:.05; --mt:-34px"><img src="assets/logo.png" alt=""></span>
-          </div>
-          <p class="signature__role">Farmacêutica Esteta · CRF 125.459</p>
-          <p class="signature__line">Gerenciamento de pele e harmonização facial natural, com olhar clínico e resultado natural.</p>
+        <h1 class="title-page__name" id="titulo-capa">
+          <span>Carolina</span>
+          <span class="is-italic">Martins</span>
+        </h1>
+        <figure class="title-page__arch">
+          <img src="assets/retrato-alt.webp" width="900" height="1200" alt="Dra. Carolina Martins sorrindo">
+        </figure>
+        <div class="title-page__aside">
+          <p class="kicker">Farmacêutica Esteta</p>
+          <p class="title-page__crf">CRF 125.459</p>
+          <p class="title-page__line">Gerenciamento de pele e harmonização facial natural, com olhar clínico e resultado natural.</p>
           <a class="link-cta" href="https://wa.me/5516992133717?text=Ol%C3%A1%2C%20Dra.%20Carolina%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a>
         </div>
       </div>
@@ -200,6 +198,21 @@
         </div>
 
         <p class="method__note">O resultado é construído com técnica, acompanhamento e respeito ao seu tempo.</p>
+
+        <div class="method__bastidor" data-sc-in data-sc-stagger="80">
+          <figure class="bastidor-item">
+            <div class="bastidor-media"><video src="assets/video/recepcao.mp4" poster="assets/video/recepcao.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+            <figcaption>Recepção</figcaption>
+          </figure>
+          <figure class="bastidor-item">
+            <div class="bastidor-media"><video src="assets/video/marcacoes.mp4" poster="assets/video/marcacoes.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+            <figcaption>Preparo</figcaption>
+          </figure>
+          <figure class="bastidor-item">
+            <div class="bastidor-media"><video src="assets/video/produtos.mp4" poster="assets/video/produtos.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+            <figcaption>Produtos</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -213,24 +226,36 @@
           </div>
 
           <article class="area">
+            <div class="area__media" aria-hidden="true">
+              <video src="assets/video/pele.mp4" poster="assets/video/pele.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
             <p class="area__index">Pele</p>
             <h3>Gerenciamento de pele</h3>
             <p>Acompanhamento clínico para a saúde da pele, com plano individual.</p>
           </article>
 
           <article class="area">
+            <div class="area__media" aria-hidden="true">
+              <video src="assets/video/harmonizacao.mp4" poster="assets/video/harmonizacao.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
             <p class="area__index">Expressão</p>
             <h3>Harmonização facial natural</h3>
             <p>Procedimentos que respeitam a sua expressão, a sua anatomia e o seu tempo.</p>
           </article>
 
           <article class="area">
+            <div class="area__media" aria-hidden="true">
+              <video src="assets/video/laser.mp4" poster="assets/video/laser.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
             <p class="area__index">Tecnologia</p>
             <h3>Laser e tecnologia</h3>
             <p>Epilação, clareamento e renovação de pele com tecnologia e protocolo adequados.</p>
           </article>
 
           <article class="area">
+            <div class="area__media" aria-hidden="true">
+              <video src="assets/video/protocolo.mp4" poster="assets/video/protocolo.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            </div>
             <p class="area__index">Protocolo</p>
             <h3>Protocolos personalizados</h3>
             <p>Combinações desenhadas para o seu objetivo, com acompanhamento em cada etapa.</p>
@@ -244,76 +269,17 @@
       </div>
     </section>
 
-    <!-- BASTIDOR · marquee infinito -->
-    <section class="marquee" aria-label="Bastidor em movimento">
-      <div class="marquee__band">
-        <div class="marquee__track">
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/pele.jpg" alt="" loading="lazy"><video src="assets/video/pele.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Limpeza de pele</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/harmonizacao.jpg" alt="" loading="lazy"><video src="assets/video/harmonizacao.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Harmonização</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/laser.jpg" alt="" loading="lazy"><video src="assets/video/laser.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Laser</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/protocolo.jpg" alt="" loading="lazy"><video src="assets/video/protocolo.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Intradermoterapia</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/recepcao.jpg" alt="" loading="lazy"><video src="assets/video/recepcao.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Recepção</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/produtos.jpg" alt="" loading="lazy"><video src="assets/video/produtos.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Produtos</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/marcacoes.jpg" alt="" loading="lazy"><video src="assets/video/marcacoes.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Preparo</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/pele.jpg" alt="" loading="lazy"><video src="assets/video/pele.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Limpeza de pele</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/harmonizacao.jpg" alt="" loading="lazy"><video src="assets/video/harmonizacao.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Harmonização</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/laser.jpg" alt="" loading="lazy"><video src="assets/video/laser.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Laser</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/protocolo.jpg" alt="" loading="lazy"><video src="assets/video/protocolo.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Intradermoterapia</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/recepcao.jpg" alt="" loading="lazy"><video src="assets/video/recepcao.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Recepção</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/produtos.jpg" alt="" loading="lazy"><video src="assets/video/produtos.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Produtos</figcaption>
-          </figure>
-          <figure class="marquee__item" tabindex="0">
-            <div class="marquee__media"><img src="assets/video/marcacoes.jpg" alt="" loading="lazy"><video src="assets/video/marcacoes.mp4" muted loop playsinline preload="none"></video></div>
-            <figcaption>Preparo</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <!-- VI · ONDE ATENDE -->
     <section class="places" id="onde" data-sc-act="pin" data-sc-span="1.5" aria-labelledby="titulo-onde">
       <div class="sc-stage places__stage" data-sc-stage>
         <div class="places__head">
-          <h2 class="sc-display places__title" id="titulo-onde">Dois lugares, <em>o mesmo cuidado.</em></h2>
-          <p class="sc-body">Atendimento com agendamento em Ribeirão Preto e São Joaquim da Barra. O horário e o endereço são confirmados no contato.</p>
+          <div class="places__head-text">
+            <h2 class="sc-display places__title" id="titulo-onde">Dois lugares, <em>o mesmo cuidado.</em></h2>
+            <p class="sc-body">Atendimento com agendamento em Ribeirão Preto e São Joaquim da Barra. O horário e o endereço são confirmados no contato.</p>
+          </div>
+          <figure class="places__photo">
+            <img src="assets/consultorio.webp" width="683" height="911" alt="Consultório da Dra. Carolina Martins">
+          </figure>
         </div>
 
         <div class="places__grid">

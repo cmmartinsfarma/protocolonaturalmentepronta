@@ -107,11 +107,52 @@
     rows = rows.filter(function (r) {
       return r.some(function (c) { return String(c).trim() !== ''; });
     });
+
+    // Remove colunas sem nenhum valor (ex.: combos removidos da planilha).
+    // Com isso a tabela passa a exibir apenas o valor unitário disponível.
+    var colCount = headers.length;
+    rows.forEach(function (r) {
+      if (r.length > colCount) colCount = r.length;
+    });
+
+    var keep = [];
+    for (var c = 0; c < colCount; c++) {
+      var hasData = rows.some(function (r) {
+        return String(r[c] === undefined ? '' : r[c]).trim() !== '';
+      });
+      if (hasData) keep.push(c);
+    }
+    if (!keep.length) return;
+
+    headers = keep.map(function (i) {
+      return headers[i] === undefined ? '' : headers[i];
+    });
+    rows = rows.map(function (r) {
+      return keep.map(function (i) {
+        return r[i] === undefined ? '' : r[i];
+      });
+    });
+
     if (!headers.length || !rows.length) return;
 
     var thead = table.querySelector('thead');
     var tbody = table.querySelector('tbody');
     if (!thead || !tbody) return;
+
+    // Ajusta o colgroup ao número real de colunas (sem combos, sem sobra).
+    var colgroup = table.querySelector('colgroup');
+    if (colgroup) {
+      colgroup.innerHTML = headers.map(function (_, i) {
+        return i === 1 ? '<col class="hl" />' : '<col />';
+      }).join('');
+    }
+
+    // Sem coluna de combo, o bloco passa a ser apresentado como valor unitário.
+    var block = table.closest ? table.closest('.price-block') : null;
+    var tag = block ? block.querySelector('.price-block__tag') : null;
+    if (tag && headers.length <= 2 && /combo/i.test(tag.textContent)) {
+      tag.textContent = 'Valor unitário';
+    }
 
     thead.innerHTML = '<tr>' + headers.map(function (h) {
       return '<th scope="col">' + escapeHtml(h) + '</th>';

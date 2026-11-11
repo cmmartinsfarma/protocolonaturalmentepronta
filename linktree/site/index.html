@@ -200,18 +200,9 @@
         <p class="method__note">O resultado é construído com técnica, acompanhamento e respeito ao seu tempo.</p>
 
         <div class="method__bastidor" data-sc-in data-sc-stagger="80">
-          <figure class="bastidor-item">
-            <div class="bastidor-media"><video src="assets/video/recepcao.mp4" poster="assets/video/recepcao.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
-            <figcaption>Recepção</figcaption>
-          </figure>
-          <figure class="bastidor-item">
-            <div class="bastidor-media"><video src="assets/video/marcacoes.mp4" poster="assets/video/marcacoes.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
-            <figcaption>Preparo</figcaption>
-          </figure>
-          <figure class="bastidor-item">
-            <div class="bastidor-media"><video src="assets/video/produtos.mp4" poster="assets/video/produtos.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
-            <figcaption>Produtos</figcaption>
-          </figure>
+          <figure class="bastidor-item" data-video></figure>
+          <figure class="bastidor-item" data-video></figure>
+          <figure class="bastidor-item" data-video></figure>
         </div>
       </div>
     </section>
@@ -226,36 +217,28 @@
           </div>
 
           <article class="area">
-            <div class="area__media" aria-hidden="true">
-              <video src="assets/video/pele.mp4" poster="assets/video/pele.jpg" autoplay muted loop playsinline preload="metadata"></video>
-            </div>
+            <div class="area__media" data-video aria-hidden="true"></div>
             <p class="area__index">Pele</p>
             <h3>Gerenciamento de pele</h3>
             <p>Acompanhamento clínico para a saúde da pele, com plano individual.</p>
           </article>
 
           <article class="area">
-            <div class="area__media" aria-hidden="true">
-              <video src="assets/video/harmonizacao.mp4" poster="assets/video/harmonizacao.jpg" autoplay muted loop playsinline preload="metadata"></video>
-            </div>
+            <div class="area__media" data-video aria-hidden="true"></div>
             <p class="area__index">Expressão</p>
             <h3>Harmonização facial natural</h3>
             <p>Procedimentos que respeitam a sua expressão, a sua anatomia e o seu tempo.</p>
           </article>
 
           <article class="area">
-            <div class="area__media" aria-hidden="true">
-              <video src="assets/video/laser.mp4" poster="assets/video/laser.jpg" autoplay muted loop playsinline preload="metadata"></video>
-            </div>
+            <div class="area__media" data-video aria-hidden="true"></div>
             <p class="area__index">Tecnologia</p>
             <h3>Laser e tecnologia</h3>
             <p>Epilação, clareamento e renovação de pele com tecnologia e protocolo adequados.</p>
           </article>
 
           <article class="area">
-            <div class="area__media" aria-hidden="true">
-              <video src="assets/video/protocolo.mp4" poster="assets/video/protocolo.jpg" autoplay muted loop playsinline preload="metadata"></video>
-            </div>
+            <div class="area__media" data-video aria-hidden="true"></div>
             <p class="area__index">Protocolo</p>
             <h3>Protocolos personalizados</h3>
             <p>Combinações desenhadas para o seu objetivo, com acompanhamento em cada etapa.</p>
@@ -323,6 +306,7 @@
   </main>
 
   <script src="scrollcraft.js"></script>
+  <script src="videos.js"></script>
   <script>ScrollCraft.mount(document.body);</script>
   <script src="page.js"></script>
 </body>

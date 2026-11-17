@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Páginas de procedimento · detalhe
+   Reaproveita os tokens de page.css. Layout simples, editorial.
+   ========================================================================== */
+
+.proc {
+  background: var(--paper);
+  color: var(--sc-ink);
+}
+
+.proc__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.2rem var(--sc-gutter);
+  border-bottom: 1px solid var(--rule);
+}
+.proc__brand img { width: clamp(130px, 14vw, 180px); height: auto; display: block; }
+.proc__back {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sc-ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.2rem;
+  transition: color 180ms var(--sc-ease-out);
+}
+.proc__back:hover,
+.proc__back:focus-visible { color: var(--sc-accent); }
+
+.proc__main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: clamp(3rem, 7vw, 6rem) var(--sc-gutter) clamp(3rem, 6vw, 5rem);
+}
+
+.proc__kicker {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sc-ink-soft);
+}
+.proc__title {
+  margin: 0.9rem 0 1.2rem;
+  max-width: 16ch;
+  font-family: var(--sc-font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  color: var(--sc-ink);
+  text-wrap: balance;
+}
+.proc__title em { font-style: italic; font-weight: 400; }
+.proc__lede {
+  max-width: 52ch;
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--sc-ink-soft);
+  text-wrap: pretty;
+}
+
+.proc__media {
+  margin: clamp(2.2rem, 4vw, 3.2rem) 0;
+  max-width: 58rem;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--sc-r-md);
+  background: var(--paper-2);
+}
+.proc__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.proc__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.6rem, 3vw, 2.6rem);
+  margin-top: clamp(2.4rem, 4vw, 3.4rem);
+  padding-top: clamp(1.6rem, 3vw, 2.4rem);
+  border-top: 1px solid var(--rule);
+}
+.proc__grid h2 {
+  margin: 0 0 0.7rem;
+  font-family: var(--sc-font-display);
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--sc-ink);
+}
+.proc__grid p,
+.proc__grid li {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--sc-ink-soft);
+}
+.proc__grid ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+}
+.proc__grid li + li { margin-top: 0.35rem; }
+
+.proc__cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: clamp(2.6rem, 5vw, 4rem);
+  padding-top: clamp(1.6rem, 3vw, 2.2rem);
+  border-top: 1px solid var(--rule);
+}
+.proc__cta p {
+  margin: 0;
+  max-width: 34ch;
+  font-family: var(--sc-font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  line-height: 1.15;
+  color: var(--sc-ink);
+}
+
+.proc__foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.8rem var(--sc-gutter);
+  border-top: 1px solid var(--rule);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sc-ink-soft);
+}
+.proc__foot p { margin: 0; }
+
+@media (max-width: 800px) {
+  .proc__grid { grid-template-columns: 1fr; }
+  .proc__cta { flex-direction: column; align-items: flex-start; }
+  .proc__foot { flex-direction: column; }
+}

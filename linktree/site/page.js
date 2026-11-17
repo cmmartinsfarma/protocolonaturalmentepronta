@@ -4,11 +4,73 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var clamp01 = function (x) { return x < 0 ? 0 : x > 1 ? 1 : x; };
 
+  /* ------------------------------------------------------------ os vídeos --
+     Montados a partir de videos.js, para você trocar e reordenar sem mexer
+     no HTML. Edite videos.js e dê F5. */
+
+  function mountVideos() {
+    var cfg = window.VIDEOS || {};
+
+    var tag = function (item) {
+      var pos = item.pos || '50% 50%';
+      var zoom = parseFloat(item.zoom) || 1;
+      var style = 'object-fit:cover;object-position:' + pos + ';';
+      if (zoom !== 1) {
+        style += 'transform:scale(' + zoom + ');transform-origin:' + pos + ';';
+      }
+      return '<video src="' + item.video + '" poster="' + item.poster +
+        '" autoplay muted loop playsinline preload="metadata" style="' + style + '"></video>';
+    };
+
+    var cards = document.querySelectorAll('.area__media[data-video]');
+    Array.prototype.forEach.call(cards, function (slot, i) {
+      var item = (cfg.frentes || [])[i];
+      if (item) {
+        slot.innerHTML = tag(item);
+        if (item.ratio) slot.style.aspectRatio = item.ratio;
+        if (item.w) slot.style.width = item.w + 'px';
+        if (item.h) slot.style.height = item.h + 'px';
+        if (item.w) slot.style.marginInline = 'auto';
+      } else {
+        slot.style.display = 'none';
+      }
+    });
+
+    var steps = document.querySelectorAll('.method__media[data-video]');
+    Array.prototype.forEach.call(steps, function (slot, i) {
+      var item = (cfg.metodo || [])[i];
+      if (item) {
+        slot.innerHTML = tag(item);
+        if (item.ratio) slot.style.aspectRatio = item.ratio;
+        if (item.w) slot.style.width = item.w + 'px';
+        if (item.h) slot.style.height = item.h + 'px';
+        if (item.w) slot.style.marginInline = 'auto';
+      } else {
+        slot.style.display = 'none';
+      }
+    });
+  }
+
+  mountVideos();
+
   if (reduce) {
     Array.prototype.forEach.call(document.querySelectorAll('video'), function (v) {
       v.pause();
       v.removeAttribute('autoplay');
     });
+  } else if ('IntersectionObserver' in window) {
+    /* As etapas do plano tocam quando entram na tela e pausam ao sair. */
+    var stepVideos = document.querySelectorAll('.method__media video');
+    if (stepVideos.length) {
+      var stepIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var v = entry.target;
+          if (entry.isIntersecting) v.play().catch(function () {});
+          else v.pause();
+        });
+      }, { threshold: 0.2 });
+      Array.prototype.forEach.call(stepVideos, function (v) { stepIO.observe(v); });
+    }
   }
 
   /* ---------------------------------------------------------- o retrato --
@@ -117,4 +179,22 @@
   }
 
   setActive('abertura');
+
+  /* ------------------------------------------------------- seções escuras --
+     Enquanto o hero ou o fecho (escuros) estão na tela, o folio e a barra de
+     progresso precisam de cor clara. */
+
+  var darkSections = [document.getElementById('abertura'), document.getElementById('contato')].filter(Boolean);
+  if ('IntersectionObserver' in window && darkSections.length) {
+    var darkSet = [];
+    var darkIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var i = darkSet.indexOf(entry.target);
+        if (entry.isIntersecting && i < 0) darkSet.push(entry.target);
+        if (!entry.isIntersecting && i >= 0) darkSet.splice(i, 1);
+      });
+      document.body.classList.toggle('dark-section', darkSet.length > 0);
+    }, { threshold: 0.15 });
+    darkSections.forEach(function (section) { darkIO.observe(section); });
+  }
 })();

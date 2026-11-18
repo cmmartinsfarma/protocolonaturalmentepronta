@@ -30,5 +30,16 @@ window.VIDEOS = {
     { video: 'assets/video/plano.mp4',     poster: 'assets/video/plano.jpg',     label: 'Plano individual',    pos: '50% 35%', zoom: 1, ratio: '16 / 9' },
     { video: 'assets/video/marcacoes.mp4', poster: 'assets/video/marcacoes.jpg', label: 'Sessões acompanhadas', pos: '42% 28%', zoom: 1, ratio: '16 / 9' },
     { video: 'assets/video/pele.mp4',      poster: 'assets/video/pele.jpg',      label: 'Manutenção',          pos: '56% 82%', zoom: 1, ratio: '16 / 9' }
+  ],
+
+  // Fotos de antes/depois da página de Harmonização.
+  // Ajuste pos/zoom de cada uma com ?edit.
+  resultados: [
+    { id: 'labio-antes-1',  src: 'assets/resultados/labio-antes-1.webp',  label: 'Labial 1 · antes',  pos: '50% 50%', zoom: 1 },
+    { id: 'labio-depois-1', src: 'assets/resultados/labio-depois-1.webp', label: 'Labial 1 · depois', pos: '50% 50%', zoom: 1 },
+    { id: 'labio-antes-2',  src: 'assets/resultados/labio-antes-2.webp',  label: 'Labial 2 · antes',  pos: '50% 50%', zoom: 1 },
+    { id: 'labio-depois-2', src: 'assets/resultados/labio-depois-2.webp', label: 'Labial 2 · depois', pos: '50% 50%', zoom: 1 },
+    { id: 'botox-antes',    src: 'assets/resultados/botox-antes.webp',    label: 'Botox · antes',     pos: '50% 50%', zoom: 1 },
+    { id: 'botox-depois',   src: 'assets/resultados/botox-depois.webp',   label: 'Botox · depois',    pos: '50% 50%', zoom: 1 }
   ]
 };

@@ -52,29 +52,36 @@
 
     <section class="res">
       <h2 class="res__h">Resultados</h2>
-      <p class="res__hint">Resultados reais, com autorização e sem identificação das pacientes. Cada resultado é individual e pode variar.</p>
+      <p class="res__hint">Resultados reais, com autorização e sem identificação das pacientes. Arraste as fotos para comparar. Cada resultado é individual e pode variar.</p>
 
       <h3 class="res__sub">Preenchimento labial</h3>
       <div class="res__grid">
         <figure class="res__card">
           <div class="res__media">
             <video src="../assets/video/resultado-labio.mp4" poster="../assets/video/resultado-labio.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            <span class="res__badge">Vídeo</span>
           </div>
-          <figcaption>Vídeo · preenchimento labial</figcaption>
+          <figcaption>Preenchimento labial · vídeo</figcaption>
         </figure>
         <figure class="res__card">
-          <div class="res__pair-imgs">
-            <figure><img src="../assets/resultados/labio-antes-1.webp" alt="Antes do preenchimento labial"><span>Antes</span></figure>
-            <figure><img src="../assets/resultados/labio-depois-1.webp" alt="Depois do preenchimento labial"><span>Depois</span></figure>
+          <div class="ba" data-ba>
+            <img class="ba__before" src="../assets/resultados/labio-antes-1.webp" alt="Antes do preenchimento labial">
+            <div class="ba__after"><img src="../assets/resultados/labio-depois-1.webp" alt="Depois do preenchimento labial"></div>
+            <span class="ba__label ba__label--before">Antes</span>
+            <span class="ba__label ba__label--after">Depois</span>
+            <button class="ba__handle" type="button" role="slider" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
           </div>
-          <figcaption>Fotos · preenchimento labial</figcaption>
+          <figcaption>Preenchimento labial · fotos</figcaption>
         </figure>
         <figure class="res__card">
-          <div class="res__pair-imgs">
-            <figure><img src="../assets/resultados/labio-antes-2.webp" alt="Antes do preenchimento labial"><span>Antes</span></figure>
-            <figure><img src="../assets/resultados/labio-depois-2.webp" alt="Depois do preenchimento labial"><span>Depois</span></figure>
+          <div class="ba" data-ba>
+            <img class="ba__before" src="../assets/resultados/labio-antes-2.webp" alt="Antes do preenchimento labial">
+            <div class="ba__after"><img src="../assets/resultados/labio-depois-2.webp" alt="Depois do preenchimento labial"></div>
+            <span class="ba__label ba__label--before">Antes</span>
+            <span class="ba__label ba__label--after">Depois</span>
+            <button class="ba__handle" type="button" role="slider" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
           </div>
-          <figcaption>Fotos · preenchimento labial</figcaption>
+          <figcaption>Preenchimento labial · fotos</figcaption>
         </figure>
       </div>
 
@@ -83,19 +90,23 @@
         <figure class="res__card">
           <div class="res__media">
             <video src="../assets/video/resultado-fullface.mp4" poster="../assets/video/resultado-fullface.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            <span class="res__badge">Vídeo</span>
           </div>
-          <figcaption>Vídeo · harmonização full face</figcaption>
+          <figcaption>Harmonização full face · vídeo</figcaption>
         </figure>
       </div>
 
       <h3 class="res__sub">Botox</h3>
       <div class="res__grid">
         <figure class="res__card">
-          <div class="res__pair-imgs">
-            <figure><img src="../assets/resultados/botox-antes.webp" alt="Antes do botox"><span>Antes</span></figure>
-            <figure><img src="../assets/resultados/botox-depois.webp" alt="Depois do botox"><span>Depois</span></figure>
+          <div class="ba" data-ba>
+            <img class="ba__before" src="../assets/resultados/botox-antes.webp" alt="Antes do botox">
+            <div class="ba__after"><img src="../assets/resultados/botox-depois.webp" alt="Depois do botox"></div>
+            <span class="ba__label ba__label--before">Antes</span>
+            <span class="ba__label ba__label--after">Depois</span>
+            <button class="ba__handle" type="button" role="slider" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></button>
           </div>
-          <figcaption>Fotos · toxina botulínica</figcaption>
+          <figcaption>Toxina botulínica · fotos</figcaption>
         </figure>
       </div>
     </section>
@@ -116,5 +127,6 @@
       document.querySelectorAll('video').forEach(function (v) { v.pause(); v.removeAttribute('autoplay'); });
     }
   </script>
+  <script src="../resultados.js"></script>
 </body>
 </html>

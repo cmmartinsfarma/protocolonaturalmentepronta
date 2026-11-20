@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <base href="/q/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Quebra-Nozes 2026 · Dra. Carolina Martins</title>
+  <meta name="description" content="Uma lembrança do Quebra-Nozes 2026 e um presente da Dra. Carolina Martins: 10% na sua primeira limpeza de pele.">
+  <meta name="theme-color" content="#7E2A30">
+  <meta name="apple-mobile-web-app-title" content="Quebra-Nozes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="robots" content="noindex,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Quebra-Nozes 2026 · Dra. Carolina Martins">
+  <meta property="og:description" content="Uma noite para lembrar. Um cuidado para continuar. 10% na sua primeira limpeza de pele.">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="icon" href="assets/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    /* ============================================================
+       Tokens
+       ============================================================ */
+    :root {
+      --paper: #F4F1EC;
+      --paper-2: #EBE6DE;
+      --ink: #211B18;
+      --ink-soft: #61564E;
+      --oxblood: #7E2A30;
+      --oxblood-deep: #5F1F24;
+      --rose: #C9B6B0;
+      --gold: #B08A4F;
+      --cream: #FFF8F3;
+      --line: color-mix(in oklab, var(--ink) 15%, transparent);
+      --line-strong: color-mix(in oklab, var(--ink) 30%, transparent);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Manrope", system-ui, sans-serif;
+      --wrap: min(1120px, calc(100vw - 48px));
+      --ease: cubic-bezier(.2, .7, .2, 1);
+    }
+
+    /* ============================================================
+       Base
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; }
+    ::selection { background: var(--oxblood); color: var(--cream); }
+    :focus-visible { outline: 2px solid var(--oxblood); outline-offset: 3px; }
+    .about :focus-visible { outline-color: var(--cream); }
+    section[id] { scroll-margin-top: 24px; }
+
+    .wrap { width: var(--wrap); margin-inline: auto; }
+    .skip {
+      position: absolute; left: 16px; top: -80px; z-index: 100;
+      background: var(--oxblood); color: var(--cream);
+      padding: 12px 18px; font-size: .8rem;
+      transition: top .2s var(--ease);
+    }
+    .skip:focus { top: 12px; }
+
+    .grain {
+      position: fixed; inset: 0; z-index: 90;
+      pointer-events: none; opacity: .028; mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+    }
+
+    /* ============================================================
+       Header
+       ============================================================ */
+    .top {
+      position: relative; z-index: 5;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .top__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .brand img { width: 148px; height: auto; }
+    .sponsor {
+      margin: 0; text-align: right;
+      font-size: .68rem; line-height: 1.8;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .sponsor span {
+      display: block;
+      color: var(--oxblood);
+      font-weight: 600;
+    }
+    .sponsor::before {
+      content: "";
+      display: block;
+      width: 30px; height: 1px;
+      margin: 0 0 7px auto;
+      background: var(--gold);
+    }
+
+    /* ============================================================
+       Hero
+       ============================================================ */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(36px, 7vw, 84px) 0 clamp(48px, 8vw, 100px);
+      min-height: calc(100svh - 91px);
+      display: flex;
+      align-items: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute; z-index: 0;
+      inset: auto -18% -38% 26%;
+      height: 84%;
+      background: radial-gradient(ellipse at 58% 58%, rgba(126, 42, 48, .13), transparent 66%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; z-index: 0;
+      top: 0; bottom: 0; right: clamp(18px, 6vw, 90px);
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--line-strong), transparent);
+      pointer-events: none;
+    }
+    .hero__grid {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+      gap: clamp(36px, 6vw, 84px);
+      align-items: center;
+    }
+    .kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin: 0;
+      font-size: .7rem; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--oxblood);
+    }
+    .kicker::before {
+      content: "";
+      width: 28px; height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      margin: 20px 0 24px;
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6.1vw, 5.1rem);
+      font-weight: 400;
+      line-height: .96;
+      letter-spacing: -.025em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--oxblood);
+    }
+    .lede {
+      max-width: 46ch;
+      margin: 0;
+      font-size: clamp(1rem, 1.25vw, 1.12rem);
+      line-height: 1.75;
+      color: var(--ink-soft);
+    }
+    .lede strong { font-weight: 600; color: var(--ink); }
+    .actions {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin: 30px 0 18px;
+    }
+    .fine {
+      margin: 0;
+      font-size: .76rem;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+    .fine strong { color: var(--ink); font-weight: 500; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      font-family: var(--sans);
+      font-size: .76rem; font-weight: 600;
+      letter-spacing: .09em; text-transform: uppercase;
+      cursor: pointer;
+      transition: background .25s var(--ease), color .25s var(--ease),
+                  border-color .25s var(--ease), transform .25s var(--ease);
+    }
+    .btn--primary {
+      background: var(--oxblood);
+      border-color: var(--oxblood);
+      color: var(--cream);
+    }
+    .btn--primary:hover {
+      background: var(--oxblood-deep);
+      border-color: var(--oxblood-deep);
+      transform: translateY(-1px);
+    }
+    .btn--ghost {
+      border-color: var(--line-strong);
+      color: var(--ink);
+    }
+    .btn--ghost:hover {
+      border-color: var(--ink);
+      background: rgba(33, 27, 24, .04);
+    }
+    .btn--sm { min-height: 44px; padding: 0 18px; font-size: .7rem; }
+
+    /* Hero art */
+    .hero__art {
+      position: relative;
+      justify-self: center;
+      width: min(100%, 390px);
+    }
+    .arch {
+      position: relative;
+      padding: 9px;
+      border: 1px solid var(--gold);
+      border-radius: 50% 50% 2px 2px / 38% 38% 2px 2px;
+      background: linear-gradient(180deg, rgba(176, 138, 79, .12), rgba(126, 42, 48, .05));
+      box-shadow: 0 34px 80px -44px rgba(33, 27, 24, .55);
+    }
+    .arch img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: 50% 28%;
+      border-radius: 50% 50% 0 0 / 38% 38% 0 0;
+      filter: saturate(.92) contrast(1.02);
+    }
+    .arch__star {
+      position: absolute; top: -17px; left: 50%;
+      transform: translateX(-50%);
+      padding: 0 12px;
+      background: var(--paper);
+      color: var(--gold);
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+    .seal {
+      position: absolute; right: -20px; bottom: 34px;
+      width: 106px; height: 106px;
+      display: grid; place-content: center;
+      text-align: center;
+      border-radius: 50%;
+      background: var(--oxblood);
+      color: var(--cream);
+      border: 1px solid rgba(255, 248, 243, .35);
+      box-shadow: 0 16px 34px -14px rgba(95, 31, 36, .65);
+      transform: rotate(-8deg);
+    }
+    .seal strong {
+      font-family: var(--serif);
+      font-size: 2.05rem; font-weight: 500; line-height: .9;
+    }
+    .seal span {
+      margin-top: 5px;
+      font-size: .6rem; font-weight: 600;
+      letter-spacing: .22em; text-transform: uppercase;
+    }
+    .art-caption {
+      margin: 18px 0 0;
+      text-align: center;
+      font-size: .66rem; font-weight: 500;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    /* ============================================================
+       Sections
+       ============================================================ */
+    .section {
+      padding: clamp(56px, 8vw, 100px) 0;
+      border-top: 1px solid var(--line);
+    }
+    .section__head {
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 6px 18px;
+      margin-bottom: clamp(30px, 5vw, 52px);
+    }
+    .num {
+      grid-row: span 2;
+      padding-top: 6px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--gold);
+    }
+    .section h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -.02em;
+    }
+    .section__head p {
+      max-width: 58ch;
+      margin: 8px 0 0;
+      color: var(--ink-soft);
+      font-size: .96rem;
+    }
+
+    /* Coupon */
+    .coupon {
+      position: relative; overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.32fr .88fr;
+      background: linear-gradient(135deg, #FBF8F3, #F0E9DF);
+      border: 1px solid var(--line-strong);
+    }
+    .coupon::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 18% 18%, rgba(176, 138, 79, .16), transparent 55%);
+      pointer-events: none;
+    }
+    .coupon__main {
+      position: relative;
+      padding: clamp(28px, 5vw, 54px);
+    }
+    .coupon__label {
+      margin: 0;
+      font-size: .66rem; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--oxblood);
+    }
+    .coupon__big {
+      margin: 10px 0 10px;
+      font-family: var(--serif);
+      font-size: clamp(4.4rem, 9vw, 7.4rem);
+      font-weight: 500;
+      line-height: .82;
+      letter-spacing: -.045em;
+      color: var(--oxblood);
+    }
+    .coupon__big small {
+      margin-left: 8px;
+      font-family: var(--sans);
+      font-size: .14em;
+      font-weight: 600;
+      letter-spacing: .2em;
+      vertical-align: super;
+      color: var(--oxblood);
+    }
+    .coupon__desc {
+      margin: 0;
+      max-width: 20ch;
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 2.4vw, 1.95rem);
+      line-height: 1.16;
+      color: var(--ink);
+    }
+    .coupon__stub {
+      position: relative;
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 8px;
+      padding: clamp(24px, 4vw, 38px);
+      border-left: 1px dashed var(--line-strong);
+      background: rgba(126, 42, 48, .045);
+    }
+    .coupon__stub p {
+      margin: 0;
+      font-size: .8rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+    .coupon__stub strong { color: var(--ink); font-weight: 600; }
+    .coupon__stub .btn { margin-top: 12px; align-self: flex-start; }
+    .coupon__stub .fine { margin-top: 4px; font-size: .68rem; }
+
+    /* Care */
+    .care__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(24px, 4vw, 46px);
+    }
+    .care__item {
+      padding-top: 18px;
+      border-top: 1px solid var(--line-strong);
+    }
+    .care__item span {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--gold);
+    }
+    .care__item h3 {
+      margin: 8px 0 8px;
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+    .care__item p {
+      margin: 0;
+      font-size: .9rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    .note {
+      max-width: 72ch;
+      margin: 36px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: .72rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    /* About (dark) */
+    .about {
+      background: var(--oxblood);
+      color: var(--cream);
+      border-top: 0;
+    }
+    .about .num { color: var(--gold); }
+    .about .section__head p { color: rgba(255, 248, 243, .72); }
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: clamp(32px, 6vw, 76px);
+      align-items: start;
+    }
+    .about blockquote {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 3.3vw, 2.75rem);
+      font-weight: 400;
+      line-height: 1.14;
+      letter-spacing: -.015em;
+    }
+    .about cite {
+      display: block;
+      margin-top: 18px;
+      font-style: normal;
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(255, 248, 243, .66);
+    }
+    .about__bio p {
+      margin: 0 0 14px;
+      font-size: .95rem;
+      line-height: 1.75;
+      color: rgba(255, 248, 243, .8);
+    }
+    .about__sig {
+      width: 148px; height: auto;
+      margin: 22px 0 24px;
+      filter: brightness(0) invert(1);
+      opacity: .88;
+    }
+    .link-cream {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(255, 248, 243, .5);
+      font-size: .72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+    }
+    .link-cream:hover { border-color: var(--cream); }
+
+    /* Night */
+    .night__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 6vw, 76px);
+      align-items: start;
+    }
+    .night__date {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.3rem, 4.8vw, 3.8rem);
+      font-weight: 400;
+      line-height: .95;
+      letter-spacing: -.02em;
+    }
+    .night__date em { color: var(--oxblood); font-style: italic; }
+    .sessions {
+      list-style: none;
+      margin: 30px 0 0;
+      padding: 0;
+    }
+    .sessions li {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+    .sessions li:last-child { border-bottom: 1px solid var(--line); }
+    .sessions strong {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 500;
+    }
+    .sessions span {
+      font-size: .66rem; font-weight: 500;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .night__text {
+      margin: 26px 0 0;
+      max-width: 40ch;
+      font-size: .92rem;
+      line-height: 1.75;
+      color: var(--ink-soft);
+    }
+    .photo {
+      position: relative; overflow: hidden;
+      aspect-ratio: 16 / 10;
+      display: grid; place-content: center;
+      text-align: center;
+      border: 1px solid rgba(33, 27, 24, .28);
+      background: linear-gradient(150deg, #2B2220 0%, #5C3A3C 46%, #8C2B31 100%);
+      color: rgba(255, 248, 243, .86);
+    }
+    .photo::after {
+      content: "✦";
+      position: absolute; top: 14px; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 248, 243, .55);
+      font-size: .85rem;
+      line-height: 1;
+    }
+    .photo::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255, 248, 243, .26), transparent 56%),
+        linear-gradient(180deg, transparent 55%, rgba(33, 27, 24, .32));
+    }
+    .photo span {
+      position: relative;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.45rem;
+    }
+    .photo small {
+      position: relative;
+      display: block;
+      margin-top: 8px;
+      font-size: .62rem; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: rgba(255, 248, 243, .62);
+    }
+    .photo-caption {
+      margin: 12px 0 0;
+      font-size: .72rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+    [data-after] { display: none; }
+    .is-after [data-after] { display: inline; }
+    .is-after [data-before] { display: none; }
+
+    /* Keep */
+    .keep__card {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: clamp(20px, 4vw, 40px);
+      padding: clamp(24px, 4vw, 38px);
+      border: 1px solid var(--line-strong);
+      background: linear-gradient(135deg, rgba(176, 138, 79, .09), rgba(126, 42, 48, .05));
+    }
+    .keep__mark {
+      font-family: var(--serif);
+      font-size: 3.4rem;
+      line-height: 1;
+      color: var(--gold);
+    }
+    .keep h2 {
+      margin: 0 0 6px;
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.7vw, 2.2rem);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+    .keep p {
+      margin: 0;
+      max-width: 52ch;
+      font-size: .88rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    .keep__hint {
+      margin-top: 8px !important;
+      font-size: .68rem !important;
+      letter-spacing: .02em;
+    }
+
+    /* ============================================================
+       Footer
+       ============================================================ */
+    .footer {
+      padding: 38px 0 54px;
+      border-top: 1px solid var(--line);
+      font-size: .74rem;
+      line-height: 1.8;
+      color: var(--ink-soft);
+    }
+    .footer__grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .footer p { margin: 0; }
+    .footer strong { color: var(--ink); font-weight: 600; }
+    .footer__links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer__links a {
+      border-bottom: 1px solid var(--line-strong);
+      padding-bottom: 2px;
+    }
+    .footer__links a:hover { border-color: var(--ink); }
+    .footer__legal {
+      margin-top: 26px !important;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-size: .66rem;
+      color: var(--ink-soft);
+    }
+
+    /* ============================================================
+       Sticky mobile CTA
+       ============================================================ */
+    .sticky {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+      display: none;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(244, 241, 236, .94);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      transform: translateY(110%);
+      transition: transform .35s var(--ease);
+    }
+    .sticky.is-on { transform: none; }
+    .sticky .btn { width: 100%; }
+
+    /* ============================================================
+       Dialog
+       ============================================================ */
+    dialog {
+      width: min(440px, calc(100vw - 32px));
+      max-width: 440px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+    dialog::backdrop {
+      background: rgba(33, 27, 24, .56);
+      backdrop-filter: blur(4px);
+    }
+    .dialog__card {
+      padding: 28px;
+      background: var(--paper);
+      border: 1px solid var(--line-strong);
+      box-shadow: 0 34px 90px -34px rgba(0, 0, 0, .55);
+    }
+    .dialog__head {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 20px;
+    }
+    .dialog__head h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.75rem;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+    .dialog__close {
+      display: grid; place-items: center;
+      width: 38px; height: 38px;
+      border: 1px solid var(--line-strong);
+      background: transparent;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .dialog__close:hover { border-color: var(--ink); }
+    .dialog__card ol {
+      margin: 20px 0 0;
+      padding-left: 20px;
+      color: var(--ink-soft);
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+    .dialog__card li { margin-bottom: 10px; }
+    .dialog__card strong { color: var(--ink); font-weight: 600; }
+    .dialog__note {
+      margin: 18px 0 0;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: .7rem;
+      color: var(--ink-soft);
+    }
+
+    /* ============================================================
+       Motion
+       ============================================================ */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero__copy > * { animation: rise .85s var(--ease) both; }
+      .hero__copy > *:nth-child(1) { animation-delay: .04s; }
+      .hero__copy > *:nth-child(2) { animation-delay: .1s; }
+      .hero__copy > *:nth-child(3) { animation-delay: .16s; }
+      .hero__copy > *:nth-child(4) { animation-delay: .22s; }
+      .hero__copy > *:nth-child(5) { animation-delay: .28s; }
+      .hero__art { animation: rise 1.05s .12s var(--ease) both; }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* ============================================================
+       Responsive
+       ============================================================ */
+    @media (max-width: 920px) {
+      .hero { min-height: 0; }
+      .hero__grid, .about__grid, .night__grid { grid-template-columns: 1fr; }
+      .hero__art { width: min(78vw, 340px); }
+      .care__grid { grid-template-columns: 1fr; gap: 26px; }
+      .coupon { grid-template-columns: 1fr; }
+      .coupon__stub {
+        border-left: 0;
+        border-top: 1px dashed var(--line-strong);
+      }
+      .coupon__stub .btn { width: 100%; }
+      .keep__card { grid-template-columns: 1fr; }
+      .keep__mark { font-size: 2.6rem; }
+      .about__sig { margin-top: 16px; }
+    }
+    @media (max-width: 720px) {
+      :root { --wrap: calc(100vw - 36px); }
+      .top { padding: 16px 0; }
+      .brand img { width: 122px; }
+      .sponsor { font-size: .58rem; }
+      .sponsor span { letter-spacing: .12em; }
+      .hero { padding-top: 34px; }
+      .hero h1 { margin-top: 16px; }
+      .actions { gap: 10px; }
+      .actions .btn { width: 100%; }
+      .seal {
+        right: -8px; bottom: 18px;
+        width: 88px; height: 88px;
+      }
+      .seal strong { font-size: 1.7rem; }
+      .seal span { font-size: .52rem; }
+      .section__head { grid-template-columns: 28px minmax(0, 1fr); }
+      .sticky { display: block; }
+      .footer__grid { flex-direction: column; }
+      .footer__links { gap: 16px; }
+    }
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 2.55rem; }
+      .coupon__big { font-size: 4.1rem; }
+      .night__date { font-size: 2.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="https://www.naturalmentepronta.com.br/" aria-label="Dra. Carolina Martins — site oficial">
+        <img src="assets/logo.png" width="916" height="277" alt="Carolina Martins, farmacêutica esteta">
+      </a>
+      <p class="sponsor">
+        <span>Patrocínio oficial</span>
+        Quebra-Nozes 2026 · 12/12
+      </p>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="titulo">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="kicker">12 de dezembro de 2026 · 17h e 20h</p>
+          <h1 id="titulo">Uma <em>noite</em><br>para lembrar.<br>Um <em>cuidado</em><br>para continuar.</h1>
+          <p class="lede">
+            A Dra. Carolina Martins patrocina o Quebra-Nozes 2026 e deixa um presente para quem esteve lá:
+            <strong><span data-bind="desconto">10%</span> na sua primeira limpeza de pele</strong>.
+          </p>
+          <div class="actions">
+            <a class="btn btn--primary" data-wa data-event="cta_hero"
+               href="https://wa.me/5516992133717?text=Ol%C3%A1!%20Estive%20no%20Quebra-Nozes%20e%20quero%20usar%20os%2010%25%20na%20limpeza%20de%20pele."
+               target="_blank" rel="noopener">
+              Quero meu cuidado <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn--ghost" href="#presente">Ver o que está incluído</a>
+          </div>
+          <p class="fine">
+            Apresente seu chaveiro na clínica · válido até <span data-bind="validade">31 de janeiro de 2027</span>
+          </p>
+        </div>
+
+        <div class="hero__art">
+          <div class="arch">
+            <span class="arch__star" aria-hidden="true">✦</span>
+            <img src="assets/carolina.webp" width="800" height="1000"
+                 alt="Dra. Carolina Martins, farmacêutica esteta, sorrindo">
+          </div>
+          <div class="seal" aria-hidden="true">
+            <strong><span data-bind="desconto">10%</span></strong>
+            <span>off</span>
+          </div>
+          <p class="art-caption">Dra. Carolina Martins · patrocinadora</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENTE -->
+    <section class="section gift" id="presente" aria-labelledby="titulo-presente">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="num">I</span>
+          <h2 id="titulo-presente">Seu presente</h2>
+          <p>Um cuidado para depois da noite. Válido para a primeira visita, com o chaveiro em mãos.</p>
+        </header>
+
+        <div class="coupon">
+          <div class="coupon__main">
+            <p class="coupon__label">Primeira visita</p>
+            <p class="coupon__big"><span data-bind="desconto">10%</span><small>off</small></p>
+            <p class="coupon__desc">na sua primeira limpeza de pele</p>
+          </div>
+          <div class="coupon__stub">
+            <p><strong>Apresente este chaveiro</strong> na clínica.</p>
+            <p>Válido até <strong data-bind="validadeCurta">31/01/2027</strong>.</p>
+            <p>Ribeirão Preto · São Joaquim da Barra</p>
+            <a class="btn btn--primary btn--sm" data-wa data-event="cta_coupon"
+               href="https://wa.me/5516992133717?text=Ol%C3%A1!%20Estive%20no%20Quebra-Nozes%20e%20quero%20usar%20os%2010%25%20na%20limpeza%20de%20pele."
+               target="_blank" rel="noopener">
+              Agendar minha limpeza
+            </a>
+            <p class="fine">Sujeito à avaliação individual.</p>
+          </div>
+        </div>
+
+        <p class="note">
+          A limpeza de pele é um procedimento estético e a indicação é individual, feita após avaliação.
+          O desconto não é cumulativo com outras promoções e não inclui procedimentos adicionais.
+        </p>
+      </div>
+    </section>
+
+    <!-- CUIDADO -->
+    <section class="section care" id="cuidado" aria-labelledby="titulo-cuidado">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="num">II</span>
+          <h2 id="titulo-cuidado">O cuidado</h2>
+          <p>Uma pele bem cuidada começa pelo básico — e pelo que faz sentido para você.</p>
+        </header>
+
+        <div class="care__grid">
+          <article class="care__item">
+            <span>01</span>
+            <h3>Avaliação</h3>
+            <p>Escuta, leitura da pele e indicação individual antes de qualquer procedimento.</p>
+          </article>
+          <article class="care__item">
+            <span>02</span>
+            <h3>Limpeza</h3>
+            <p>Remoção de impurezas com técnica e sem agressão à barreira da pele.</p>
+          </article>
+          <article class="care__item">
+            <span>03</span>
+            <h3>Próximo passo</h3>
+            <p>Se você quiser seguir, o plano é desenhado para a sua pele e o seu tempo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAROLINA -->
+    <section class="section about" id="carolina" aria-labelledby="titulo-carolina">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="num">III</span>
+          <h2 id="titulo-carolina">A Carolina</h2>
+          <p>Ciência e individualidade no cuidado da pele, com resultado natural e sem excessos.</p>
+        </header>
+
+        <div class="about__grid">
+          <div>
+            <blockquote>“Beleza de verdade vem de uma pele saudável, que parece sua desde sempre.”</blockquote>
+            <cite>Dra. Carolina Martins</cite>
+          </div>
+          <div class="about__bio">
+            <p>Farmacêutica esteta (CRF 125.459), especializada em gerenciamento de pele e harmonização facial natural.</p>
+            <p>Atende em Ribeirão Preto e São Joaquim da Barra, com um olhar clínico que começa pela escuta e termina no espelho.</p>
+            <img class="about__sig" src="assets/logo.png" width="916" height="277" alt="" aria-hidden="true">
+            <a class="link-cream" href="https://www.naturalmentepronta.com.br/" target="_blank" rel="noopener">
+              Conhecer o trabalho <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A NOITE -->
+    <section class="section night" id="noite" aria-labelledby="titulo-noite">
+      <div class="wrap">
+        <header class="section__head">
+          <span class="num">IV</span>
+          <h2 id="titulo-noite">A noite</h2>
+          <p>Uma lembrança do Quebra-Nozes 2026, guardada neste chaveiro.</p>
+        </header>
+
+        <div class="night__grid">
+          <div>
+            <p class="night__date">Sábado,<br><em>12 de dezembro</em></p>
+            <ul class="sessions">
+              <li><strong>17h</strong><span>primeira sessão</span></li>
+              <li><strong>20h</strong><span>segunda sessão</span></li>
+            </ul>
+            <p class="night__text">
+              <span data-before>As fotos oficiais chegam aqui depois do espetáculo. Volte a este chaveiro para reviver a noite.</span>
+              <span data-after>Obrigada por essa noite. As fotos oficiais chegam em breve — volte a este chaveiro para reviver o espetáculo.</span>
+            </p>
+          </div>
+          <div>
+            <div class="photo" role="img" aria-label="Espaço reservado para as fotos oficiais do espetáculo">
+              <span>Fotos oficiais</span>
+              <small>em breve</small>
+            </div>
+            <p class="photo-caption">O arquivo da noite está sendo preparado. Este é o lugar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUARDAR -->
+    <section class="section keep" id="guardar" aria-labelledby="titulo-guardar">
+      <div class="wrap">
+        <div class="keep__card">
+          <div class="keep__mark" aria-hidden="true">✦</div>
+          <div>
+            <h2 id="titulo-guardar">Guarde esta página</h2>
+            <p>Este chaveiro é seu. Deixe a lembrança na tela inicial do celular e volte quando quiser.</p>
+            <p class="keep__hint">A oferta fica aqui até 31 de janeiro de 2027.</p>
+          </div>
+          <button class="btn btn--primary" type="button" data-install data-event="add_home">
+            Adicionar à tela inicial
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <p><strong>Dra. Carolina Martins</strong><br>Farmacêutica Esteta · CRF 125.459</p>
+          <p>Ribeirão Preto · São Joaquim da Barra</p>
+        </div>
+        <div class="footer__links">
+          <a href="https://www.instagram.com/dracarolmmartins/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.naturalmentepronta.com.br/" target="_blank" rel="noopener">Site oficial</a>
+          <a data-wa data-event="cta_footer"
+             href="https://wa.me/5516992133717?text=Ol%C3%A1!%20Estive%20no%20Quebra-Nozes%20e%20quero%20usar%20os%2010%25%20na%20limpeza%20de%20pele."
+             target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <p class="footer__legal">
+        Esta página não coleta dados pessoais. As imagens do espetáculo serão publicadas apenas com autorização.
+      </p>
+    </div>
+  </footer>
+
+  <div class="sticky" aria-hidden="true">
+    <a class="btn btn--primary" data-wa data-event="cta_sticky"
+       href="https://wa.me/5516992133717?text=Ol%C3%A1!%20Estive%20no%20Quebra-Nozes%20e%20quero%20usar%20os%2010%25%20na%20limpeza%20de%20pele."
+       target="_blank" rel="noopener" tabindex="-1">
+      Agendar minha limpeza
+    </a>
+  </div>
+
+  <dialog id="install-dialog" aria-labelledby="install-title">
+    <div class="dialog__card">
+      <div class="dialog__head">
+        <h2 id="install-title">Guardar na tela inicial</h2>
+        <button class="dialog__close" type="button" data-close aria-label="Fechar">×</button>
+      </div>
+      <div id="install-steps"></div>
+      <p class="dialog__note">Depois de adicionar, a página abre como um app, sem precisar do chaveiro.</p>
+    </div>
+  </dialog>
+
+  <script>
+    /* ============================================================
+       Configuração rápida
+       ============================================================ */
+    const CONFIG = {
+      desconto: "10%",
+      validade: "31 de janeiro de 2027",
+      validadeCurta: "31/01/2027",
+      whatsapp: "5516992133717",
+      instagram: "https://www.instagram.com/dracarolmmartins/",
+      site: "https://www.naturalmentepronta.com.br/",
+      eventoFim: "2026-12-13T00:00:00-03:00"
+    };
+
+    const WA_MSG = `Olá! Estive no Quebra-Nozes e quero usar os ${CONFIG.desconto} na limpeza de pele.`;
+    const WA_URL = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(WA_MSG)}`;
+
+    // Textos que seguem o CONFIG
+    document.querySelectorAll("[data-bind]").forEach((el) => {
+      const key = el.dataset.bind;
+      if (CONFIG[key] != null) el.textContent = CONFIG[key];
+    });
+
+    // Numerais são decorativos
+    document.querySelectorAll(".num, .care__item > span").forEach((el) => {
+      el.setAttribute("aria-hidden", "true");
+    });
+
+    // Links de WhatsApp (com fallback estático no HTML)
+    document.querySelectorAll("[data-wa]").forEach((el) => {
+      el.href = WA_URL;
+    });
+
+    // Estado pós-evento
+    if (Date.now() >= new Date(CONFIG.eventoFim).getTime()) {
+      document.body.classList.add("is-after");
+    }
+
+    // Analytics (Vercel). Silencioso se não estiver disponível.
+    function track(name) {
+      try {
+        if (window.va) window.va("event", { name });
+      } catch (_) {}
+    }
+    document.querySelectorAll("[data-event]").forEach((el) => {
+      el.addEventListener("click", () => track(el.dataset.event));
+    });
+
+    /* ============================================================
+       Adicionar à tela inicial
+       ============================================================ */
+    const dialog = document.getElementById("install-dialog");
+    const steps = document.getElementById("install-steps");
+    const installButtons = document.querySelectorAll("[data-install]");
+
+    const isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    const isStandalone =
+      window.matchMedia("(display-mode: standalone)").matches ||
+      navigator.standalone === true;
+
+    const stepsHTML = isIOS
+      ? `<ol>
+           <li>Toque no ícone <strong>Compartilhar</strong> (o quadrado com a seta para cima).</li>
+           <li>Role a lista e toque em <strong>Adicionar à Tela de Início</strong>.</li>
+           <li>Confirme em <strong>Adicionar</strong>.</li>
+         </ol>`
+      : `<ol>
+           <li>Abra o menu do navegador (três pontos).</li>
+           <li>Toque em <strong>Adicionar à tela inicial</strong> ou <strong>Instalar app</strong>.</li>
+           <li>Confirme.</li>
+         </ol>`;
+
+    let deferredPrompt = null;
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault();
+      deferredPrompt = event;
+    });
+
+    if (isStandalone) {
+      installButtons.forEach((btn) => {
+        btn.textContent = "Página já guardada";
+        btn.disabled = true;
+        btn.style.opacity = ".55";
+        btn.style.cursor = "default";
+      });
+    } else {
+      installButtons.forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+            try {
+              await deferredPrompt.userChoice;
+            } catch (_) {}
+            deferredPrompt = null;
+            return;
+          }
+          steps.innerHTML = stepsHTML;
+          if (typeof dialog.showModal === "function") {
+            dialog.showModal();
+          } else {
+            alert("Abra o menu do navegador e escolha 'Adicionar à tela inicial'.");
+          }
+        });
+      });
+    }
+
+    document.querySelectorAll("[data-close]").forEach((btn) => {
+      btn.addEventListener("click", () => dialog.close());
+    });
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    /* ============================================================
+       CTA fixo no mobile
+       ============================================================ */
+    const sticky = document.querySelector(".sticky");
+    const hero = document.querySelector(".hero");
+    if (sticky && hero && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        ([entry]) => sticky.classList.toggle("is-on", !entry.isIntersecting),
+        { threshold: 0.05 }
+      );
+      observer.observe(hero);
+    }
+
+    /* ============================================================
+       Service worker (PWA)
+       ============================================================ */
+    if ("serviceWorker" in navigator &&
+        (location.protocol === "https:" || location.hostname === "localhost")) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/q/sw.js").catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

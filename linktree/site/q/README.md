@@ -43,7 +43,9 @@ A página está com `noindex,follow`. Se quiser que ela apareça no Google, remo
 
 ## Chaveiro
 
-- URL sugerida para gravar nas 200 tags: `https://SEU-DOMINIO/q/` (com barra no final).
+- **URL de produção:** `https://dracarolinamartins.vercel.app/q`
+- **URL para gravar nas 200 tags:** `https://dracarolinamartins.vercel.app/q` (39 caracteres)
+- Funciona com ou sem barra no final; o `<base href="/q/">` resolve os assets nos dois casos.
 - Uma URL para todas as tags; não precisa de slug por unidade.
 - Grave com NFC Tools depois que o domínio estiver no ar.
 - Teste 3 tags em iPhone e Android antes de gravar o lote.

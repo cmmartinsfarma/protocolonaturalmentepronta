@@ -67,7 +67,6 @@
     button { font: inherit; color: inherit; }
     ::selection { background: var(--oxblood); color: var(--cream); }
     :focus-visible { outline: 2px solid var(--oxblood); outline-offset: 3px; }
-    .about :focus-visible { outline-color: var(--cream); }
     section[id] { scroll-margin-top: 24px; }
 
     .wrap { width: var(--wrap); margin-inline: auto; }
@@ -434,58 +433,169 @@
       color: var(--ink-soft);
     }
 
-    /* About (dark) */
-    .about {
+    /* Shortcuts */
+    .shortcuts {
+      background: linear-gradient(180deg, rgba(176, 138, 79, .045), transparent 42%);
+    }
+    .shortcuts__toolbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .shortcuts__count {
+      margin: 0;
+      font-size: .7rem; font-weight: 500;
+      letter-spacing: .13em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .shortcuts__empty {
+      display: grid; justify-items: center;
+      gap: 12px;
+      padding: clamp(32px, 6vw, 54px) 24px;
+      border: 1px dashed var(--line-strong);
+      text-align: center;
+      background: rgba(176, 138, 79, .05);
+    }
+    .shortcuts__empty[hidden] { display: none; }
+    .shortcuts__star { font-size: 1.6rem; color: var(--gold); line-height: 1; }
+    .shortcuts__empty p {
+      margin: 0;
+      max-width: 40ch;
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      line-height: 1.25;
+    }
+    .shortcuts__suggestions {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 8px; margin-top: 8px;
+    }
+    .shortcuts__suggestions button {
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--line-strong);
+      background: transparent;
+      font-size: .71rem; font-weight: 500;
+      letter-spacing: .04em;
+      cursor: pointer;
+      transition: border-color .2s var(--ease), background .2s var(--ease);
+    }
+    .shortcuts__suggestions button:hover {
+      border-color: var(--oxblood);
+      background: rgba(126, 42, 48, .05);
+    }
+    .shortcuts__list {
+      list-style: none;
+      margin: 0; padding: 0;
+      border-top: 1px solid var(--line-strong);
+    }
+    .shortcuts__list[hidden] { display: none; }
+    .shortcut {
+      display: flex; align-items: stretch;
+      gap: 8px;
+      border-bottom: 1px solid var(--line);
+      transition: background .2s var(--ease);
+    }
+    .shortcut:hover { background: rgba(176, 138, 79, .06); }
+    .shortcut__main {
+      display: flex; align-items: center; gap: 14px;
+      flex: 1; min-width: 0;
+      padding: 14px 6px;
+    }
+    .shortcut__avatar {
+      flex: 0 0 auto;
+      display: grid; place-items: center;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--avatar, var(--oxblood));
+      color: var(--cream);
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .shortcut__text {
+      display: grid; min-width: 0;
+      gap: 1px;
+    }
+    .shortcut__text strong {
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      font-size: .93rem; font-weight: 500;
+      color: var(--ink);
+    }
+    .shortcut__text small {
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+      font-size: .68rem; letter-spacing: .03em;
+      color: var(--ink-soft);
+    }
+    .shortcut__arrow {
+      margin-left: auto;
+      color: var(--ink-soft);
+      font-size: .9rem;
+    }
+    .shortcut__actions {
+      display: flex; align-items: center;
+      gap: 2px;
+      padding-right: 4px;
+    }
+    .icon-btn {
+      display: grid; place-items: center;
+      width: 38px; height: 38px;
+      border: 0; background: transparent;
+      color: var(--ink-soft);
+      cursor: pointer;
+      transition: color .2s var(--ease), background .2s var(--ease);
+    }
+    .icon-btn:hover { color: var(--oxblood); background: rgba(126, 42, 48, .06); }
+    .icon-btn svg { width: 17px; height: 17px; }
+    .shortcuts__backup {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+      font-size: .68rem;
+      color: var(--ink-soft);
+    }
+    .shortcuts__backup button {
+      padding: 0;
+      border: 0; border-bottom: 1px solid var(--line-strong);
+      background: transparent;
+      color: var(--ink-soft);
+      font-size: .68rem;
+      cursor: pointer;
+    }
+    .shortcuts__backup button:hover { border-color: var(--ink); color: var(--ink); }
+    .shortcuts__backup span { margin-left: auto; }
+
+    /* Sponsor strip */
+    .sponsor-strip {
+      padding: 26px 0;
       background: var(--oxblood);
       color: var(--cream);
-      border-top: 0;
     }
-    .about .num { color: var(--gold); }
-    .about .section__head p { color: rgba(255, 248, 243, .72); }
-    .about__grid {
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: clamp(32px, 6vw, 76px);
-      align-items: start;
+    .sponsor-strip__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
     }
-    .about blockquote {
+    .sponsor-strip p {
       margin: 0;
       font-family: var(--serif);
-      font-size: clamp(1.75rem, 3.3vw, 2.75rem);
-      font-weight: 400;
-      line-height: 1.14;
-      letter-spacing: -.015em;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.2;
     }
-    .about cite {
+    .sponsor-strip p span {
       display: block;
-      margin-top: 18px;
-      font-style: normal;
-      font-size: .68rem;
-      font-weight: 500;
-      letter-spacing: .16em;
-      text-transform: uppercase;
+      margin-top: 4px;
+      font-family: var(--sans);
+      font-size: .62rem; font-weight: 500;
+      letter-spacing: .14em; text-transform: uppercase;
       color: rgba(255, 248, 243, .66);
     }
-    .about__bio p {
-      margin: 0 0 14px;
-      font-size: .95rem;
-      line-height: 1.75;
-      color: rgba(255, 248, 243, .8);
-    }
-    .about__sig {
-      width: 148px; height: auto;
-      margin: 22px 0 24px;
-      filter: brightness(0) invert(1);
-      opacity: .88;
-    }
-    .link-cream {
+    .sponsor-strip a {
       display: inline-flex; align-items: center; gap: 9px;
       padding-bottom: 4px;
       border-bottom: 1px solid rgba(255, 248, 243, .5);
-      font-size: .72rem; font-weight: 600;
+      font-size: .7rem; font-weight: 600;
       letter-spacing: .1em; text-transform: uppercase;
     }
-    .link-cream:hover { border-color: var(--cream); }
+    .sponsor-strip a:hover { border-color: var(--cream); }
 
     /* Night */
     .night__grid {
@@ -726,6 +836,43 @@
       font-size: .7rem;
       color: var(--ink-soft);
     }
+    .dialog__card label {
+      display: grid;
+      gap: 7px;
+      margin-top: 16px;
+      font-size: .64rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .dialog__card input {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 0;
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1rem;
+      letter-spacing: normal;
+      text-transform: none;
+    }
+    .dialog__card input:focus {
+      outline: none;
+      border-color: var(--oxblood);
+      box-shadow: 0 0 0 2px rgba(126, 42, 48, .12);
+    }
+    .form-error {
+      margin: 12px 0 0;
+      font-size: .78rem;
+      color: var(--oxblood);
+    }
+    .form-actions {
+      display: flex; justify-content: flex-end;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .form-actions .btn--ghost { min-height: 44px; }
 
     /* ============================================================
        Motion
@@ -756,7 +903,7 @@
        ============================================================ */
     @media (max-width: 920px) {
       .hero { min-height: 0; }
-      .hero__grid, .about__grid, .night__grid { grid-template-columns: 1fr; }
+      .hero__grid, .night__grid { grid-template-columns: 1fr; }
       .hero__art { width: min(78vw, 340px); }
       .care__grid { grid-template-columns: 1fr; gap: 26px; }
       .coupon { grid-template-columns: 1fr; }
@@ -767,7 +914,10 @@
       .coupon__stub .btn { width: 100%; }
       .keep__card { grid-template-columns: 1fr; }
       .keep__mark { font-size: 2.6rem; }
-      .about__sig { margin-top: 16px; }
+      .shortcuts__toolbar { align-items: stretch; }
+      .shortcuts__toolbar .btn { width: 100%; }
+      .shortcuts__backup span { margin-left: 0; width: 100%; }
+      .sponsor-strip__inner { align-items: flex-start; }
     }
     @media (max-width: 720px) {
       :root { --wrap: calc(100vw - 36px); }
@@ -789,6 +939,7 @@
       .sticky { display: block; }
       .footer__grid { flex-direction: column; }
       .footer__links { gap: 16px; }
+      .footer { padding-bottom: calc(54px + 78px); }
     }
     @media (max-width: 420px) {
       .hero h1 { font-size: 2.55rem; }
@@ -916,28 +1067,39 @@
       </div>
     </section>
 
-    <!-- CAROLINA -->
-    <section class="section about" id="carolina" aria-labelledby="titulo-carolina">
+    <!-- ATALHOS -->
+    <section class="section shortcuts" id="atalhos" aria-labelledby="titulo-atalhos">
       <div class="wrap">
         <header class="section__head">
           <span class="num">III</span>
-          <h2 id="titulo-carolina">A Carolina</h2>
-          <p>Ciência e individualidade no cuidado da pele, com resultado natural e sem excessos.</p>
+          <h2 id="titulo-atalhos">Seus atalhos</h2>
+          <p>Um espaço seu. Salve os links que você usa todos os dias e encontre tudo em um toque.</p>
         </header>
 
-        <div class="about__grid">
-          <div>
-            <blockquote>“Beleza de verdade vem de uma pele saudável, que parece sua desde sempre.”</blockquote>
-            <cite>Dra. Carolina Martins</cite>
+        <div class="shortcuts__toolbar">
+          <p class="shortcuts__count" id="shortcuts-count">0 atalhos salvos</p>
+          <button class="btn btn--primary btn--sm" type="button" data-add-shortcut>
+            Adicionar atalho
+          </button>
+        </div>
+
+        <div class="shortcuts__empty" id="shortcuts-empty">
+          <span class="shortcuts__star" aria-hidden="true">✦</span>
+          <p>Nenhum atalho ainda.<br>Comece com o que você mais usa.</p>
+          <div class="shortcuts__suggestions">
+            <button type="button" data-suggest data-title="WhatsApp da Carolina" data-url="https://wa.me/5516992133717">WhatsApp</button>
+            <button type="button" data-suggest data-title="Instagram da Carolina" data-url="https://www.instagram.com/dracarolmmartins/">Instagram</button>
+            <button type="button" data-suggest data-title="Site da Carolina" data-url="https://www.naturalmentepronta.com.br/">Site</button>
           </div>
-          <div class="about__bio">
-            <p>Farmacêutica esteta (CRF 125.459), especializada em gerenciamento de pele e harmonização facial natural.</p>
-            <p>Atende em Ribeirão Preto e São Joaquim da Barra, com um olhar clínico que começa pela escuta e termina no espelho.</p>
-            <img class="about__sig" src="assets/logo.png" width="916" height="277" alt="" aria-hidden="true">
-            <a class="link-cream" href="https://www.naturalmentepronta.com.br/" target="_blank" rel="noopener">
-              Conhecer o trabalho <span aria-hidden="true">→</span>
-            </a>
-          </div>
+        </div>
+
+        <ul class="shortcuts__list" id="shortcuts-list" hidden></ul>
+
+        <div class="shortcuts__backup">
+          <button type="button" data-export-shortcuts data-event="backup_export">Exportar backup</button>
+          <button type="button" data-import-shortcuts>Importar backup</button>
+          <input type="file" id="shortcuts-import" accept="application/json" hidden>
+          <span>Ficam só neste aparelho.</span>
         </div>
       </div>
     </section>
@@ -992,12 +1154,24 @@
     </section>
   </main>
 
+  <section class="sponsor-strip" aria-label="Patrocínio">
+    <div class="wrap sponsor-strip__inner">
+      <p>
+        Dra. Carolina Martins
+        <span>Patrocínio · Farmacêutica Esteta · CRF 125.459</span>
+      </p>
+      <a href="https://www.naturalmentepronta.com.br/" target="_blank" rel="noopener">
+        Conheça o trabalho <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="wrap">
       <div class="footer__grid">
         <div>
-          <p><strong>Dra. Carolina Martins</strong><br>Farmacêutica Esteta · CRF 125.459</p>
-          <p>Ribeirão Preto · São Joaquim da Barra</p>
+          <p><strong>Atendimento</strong><br>Ribeirão Preto · São Joaquim da Barra</p>
+          <p>Com hora marcada.</p>
         </div>
         <div class="footer__links">
           <a href="https://www.instagram.com/dracarolmmartins/" target="_blank" rel="noopener">Instagram</a>
@@ -1030,6 +1204,26 @@
       <div id="install-steps"></div>
       <p class="dialog__note">Depois de adicionar, a página abre como um app, sem precisar do chaveiro.</p>
     </div>
+  </dialog>
+
+  <dialog id="shortcut-dialog" aria-labelledby="shortcut-dialog-title">
+    <form class="dialog__card" id="shortcut-form" novalidate>
+      <div class="dialog__head">
+        <h2 id="shortcut-dialog-title">Adicionar atalho</h2>
+        <button class="dialog__close" type="button" data-close-shortcut aria-label="Fechar">×</button>
+      </div>
+      <label for="shortcut-name">Título
+        <input id="shortcut-name" name="name" type="text" maxlength="60" placeholder="Ex.: Farmácia" autocomplete="off">
+      </label>
+      <label for="shortcut-url">Link
+        <input id="shortcut-url" name="url" type="url" inputmode="url" placeholder="https://..." autocomplete="off" required>
+      </label>
+      <p class="form-error" id="shortcut-error" role="alert" hidden></p>
+      <div class="form-actions">
+        <button class="btn btn--ghost" type="button" data-close-shortcut>Cancelar</button>
+        <button class="btn btn--primary" type="submit">Salvar</button>
+      </div>
+    </form>
   </dialog>
 
   <script>
@@ -1160,6 +1354,301 @@
       );
       observer.observe(hero);
     }
+
+    /* ============================================================
+       Atalhos pessoais
+       ============================================================ */
+    const SHORTCUTS_KEY = "qn:atalhos:v1";
+    const shortcutDialog = document.getElementById("shortcut-dialog");
+    const shortcutForm = document.getElementById("shortcut-form");
+    const shortcutName = document.getElementById("shortcut-name");
+    const shortcutUrl = document.getElementById("shortcut-url");
+    const shortcutError = document.getElementById("shortcut-error");
+    const shortcutTitle = document.getElementById("shortcut-dialog-title");
+    const shortcutsList = document.getElementById("shortcuts-list");
+    const shortcutsEmpty = document.getElementById("shortcuts-empty");
+    const shortcutsCount = document.getElementById("shortcuts-count");
+    const importInput = document.getElementById("shortcuts-import");
+
+    const AVATAR_COLORS = ["#7E2A30", "#B08A4F", "#5F4B44", "#8C5A5E", "#6B5B3E"];
+    let shortcuts = [];
+    let editingId = null;
+
+    function loadShortcuts() {
+      try {
+        const raw = localStorage.getItem(SHORTCUTS_KEY);
+        if (!raw) return [];
+        const data = JSON.parse(raw);
+        if (!data || !Array.isArray(data.items)) return [];
+        return data.items.filter(
+          (item) => item &&
+            typeof item.title === "string" &&
+            typeof item.url === "string" &&
+            /^https?:\/\//i.test(item.url)
+        );
+      } catch (_) {
+        return [];
+      }
+    }
+
+    function persistShortcuts() {
+      try {
+        localStorage.setItem(SHORTCUTS_KEY, JSON.stringify({ v: 1, items: shortcuts }));
+      } catch (_) {
+        // Modo privado ou storage cheio: segue em memória nesta visita.
+      }
+      renderShortcuts();
+    }
+
+    function normalizeUrl(value) {
+      let raw = String(value || "").trim();
+      if (!raw) return null;
+      if (!/^https?:\/\//i.test(raw)) raw = "https://" + raw;
+      try {
+        const url = new URL(raw);
+        if (url.protocol !== "http:" && url.protocol !== "https:") return null;
+        return url.href;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function hostLabel(url) {
+      try {
+        return new URL(url).hostname.replace(/^www\./, "");
+      } catch (_) {
+        return url;
+      }
+    }
+
+    function avatarLetter(item) {
+      const base = (item.title || hostLabel(item.url) || "?").trim();
+      return (Array.from(base)[0] || "?").toUpperCase();
+    }
+
+    function avatarColor(item) {
+      const base = hostLabel(item.url) || item.title || "";
+      let sum = 0;
+      for (let i = 0; i < base.length; i++) sum += base.charCodeAt(i);
+      return AVATAR_COLORS[sum % AVATAR_COLORS.length];
+    }
+
+    function iconPath(path) {
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("fill", "none");
+      svg.setAttribute("stroke", "currentColor");
+      svg.setAttribute("stroke-width", "1.6");
+      svg.setAttribute("stroke-linecap", "round");
+      svg.setAttribute("stroke-linejoin", "round");
+      svg.setAttribute("aria-hidden", "true");
+      const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      p.setAttribute("d", path);
+      svg.appendChild(p);
+      return svg;
+    }
+
+    function renderShortcuts() {
+      shortcutsList.innerHTML = "";
+      const hasItems = shortcuts.length > 0;
+      shortcutsEmpty.hidden = hasItems;
+      shortcutsList.hidden = !hasItems;
+      shortcutsCount.textContent =
+        `${shortcuts.length} ${shortcuts.length === 1 ? "atalho salvo" : "atalhos salvos"}`;
+
+      shortcuts.forEach((item) => {
+        const li = document.createElement("li");
+        li.className = "shortcut";
+
+        const link = document.createElement("a");
+        link.className = "shortcut__main";
+        link.href = item.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.addEventListener("click", () => track("shortcut_open"));
+
+        const avatar = document.createElement("span");
+        avatar.className = "shortcut__avatar";
+        avatar.style.setProperty("--avatar", avatarColor(item));
+        avatar.setAttribute("aria-hidden", "true");
+        avatar.textContent = avatarLetter(item);
+
+        const text = document.createElement("span");
+        text.className = "shortcut__text";
+        const strong = document.createElement("strong");
+        strong.textContent = item.title;
+        const small = document.createElement("small");
+        small.textContent = hostLabel(item.url);
+        text.append(strong, small);
+
+        const arrow = document.createElement("span");
+        arrow.className = "shortcut__arrow";
+        arrow.setAttribute("aria-hidden", "true");
+        arrow.textContent = "→";
+
+        link.append(avatar, text, arrow);
+
+        const actions = document.createElement("div");
+        actions.className = "shortcut__actions";
+
+        const edit = document.createElement("button");
+        edit.type = "button";
+        edit.className = "icon-btn";
+        edit.setAttribute("aria-label", `Editar ${item.title}`);
+        edit.appendChild(iconPath("M4 20h4l10-10a2.8 2.8 0 0 0-4-4L4 16v4Zm9.5-13.5 4 4"));
+        edit.addEventListener("click", () => openShortcutDialog(item));
+
+        const del = document.createElement("button");
+        del.type = "button";
+        del.className = "icon-btn";
+        del.setAttribute("aria-label", `Excluir ${item.title}`);
+        del.appendChild(iconPath("M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13"));
+        del.addEventListener("click", () => {
+          if (!confirm(`Excluir "${item.title}"?`)) return;
+          shortcuts = shortcuts.filter((s) => s.id !== item.id);
+          track("shortcut_delete");
+          persistShortcuts();
+        });
+
+        actions.append(edit, del);
+        li.append(link, actions);
+        shortcutsList.appendChild(li);
+      });
+    }
+
+    function openShortcutDialog(item) {
+      editingId = item ? item.id : null;
+      shortcutTitle.textContent = item ? "Editar atalho" : "Adicionar atalho";
+      shortcutName.value = item ? item.title : "";
+      shortcutUrl.value = item ? item.url : "";
+      shortcutError.hidden = true;
+      shortcutError.textContent = "";
+      shortcutDialog.showModal();
+      shortcutName.focus();
+    }
+
+    function closeShortcutDialog() {
+      shortcutDialog.close();
+      editingId = null;
+      shortcutForm.reset();
+      shortcutError.hidden = true;
+      shortcutError.textContent = "";
+    }
+
+    shortcutForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const normalized = normalizeUrl(shortcutUrl.value);
+      if (!normalized) {
+        shortcutError.textContent = "Informe um link válido, começando com http:// ou https://.";
+        shortcutError.hidden = false;
+        shortcutUrl.focus();
+        return;
+      }
+
+      const title = (shortcutName.value.trim() || hostLabel(normalized)).slice(0, 60);
+
+      if (editingId) {
+        const item = shortcuts.find((s) => s.id === editingId);
+        if (item) {
+          item.title = title;
+          item.url = normalized;
+        }
+        track("shortcut_edit");
+      } else {
+        shortcuts.push({
+          id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random()),
+          title,
+          url: normalized
+        });
+        track("shortcut_add");
+      }
+
+      persistShortcuts();
+      closeShortcutDialog();
+    });
+
+    document.querySelectorAll("[data-add-shortcut]").forEach((btn) => {
+      btn.addEventListener("click", () => openShortcutDialog(null));
+    });
+
+    document.querySelectorAll("[data-suggest]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const normalized = normalizeUrl(btn.dataset.url);
+        if (!normalized) return;
+        shortcuts.push({
+          id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random()),
+          title: (btn.dataset.title || hostLabel(normalized)).slice(0, 60),
+          url: normalized
+        });
+        track("shortcut_add");
+        persistShortcuts();
+      });
+    });
+
+    document.querySelectorAll("[data-close-shortcut]").forEach((btn) => {
+      btn.addEventListener("click", closeShortcutDialog);
+    });
+    shortcutDialog.addEventListener("click", (event) => {
+      if (event.target === shortcutDialog) closeShortcutDialog();
+    });
+
+    document.querySelectorAll("[data-export-shortcuts]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (!shortcuts.length) return;
+        const blob = new Blob(
+          [JSON.stringify({ v: 1, items: shortcuts }, null, 2)],
+          { type: "application/json" }
+        );
+        const link = document.createElement("a");
+        const objectUrl = URL.createObjectURL(blob);
+        link.href = objectUrl;
+        link.download = "meus-atalhos-quebra-nozes.json";
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+      });
+    });
+
+    document.querySelectorAll("[data-import-shortcuts]").forEach((btn) => {
+      btn.addEventListener("click", () => importInput.click());
+    });
+
+    importInput.addEventListener("change", () => {
+      const file = importInput.files && importInput.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const data = JSON.parse(String(reader.result));
+          const items = Array.isArray(data) ? data : data.items;
+          if (!Array.isArray(items)) throw new Error("formato inválido");
+          const existing = new Set(shortcuts.map((s) => s.url));
+          let added = 0;
+          items.forEach((item) => {
+            if (!item || typeof item.title !== "string" || typeof item.url !== "string") return;
+            const normalized = normalizeUrl(item.url);
+            if (!normalized || existing.has(normalized)) return;
+            shortcuts.push({
+              id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random()),
+              title: (item.title.trim() || hostLabel(normalized)).slice(0, 60),
+              url: normalized
+            });
+            existing.add(normalized);
+            added++;
+          });
+          persistShortcuts();
+          if (added > 0) track("backup_import");
+          else alert("Nenhum atalho novo encontrado no arquivo.");
+        } catch (_) {
+          alert("Não consegui ler esse arquivo. Use um backup exportado por esta página.");
+        } finally {
+          importInput.value = "";
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    shortcuts = loadShortcuts();
+    renderShortcuts();
 
     /* ============================================================
        Service worker (PWA)

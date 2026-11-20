@@ -36,10 +36,22 @@ const CONFIG = {
 - **Logo oficial do evento:** substituir o bloco `.sponsor` no topo pelo logo, quando existir.
 - **Teatro e endereço:** não foram informados; a seção "A noite" mostra só data e sessões.
 - **Fotos oficiais:** o quadro `Fotos oficiais · em breve` é o espaço reservado. Quando a galeria existir, troque por uma imagem/link.
-- **Mensagem da Dra.:** ainda não incluída. Pode entrar como texto ou vídeo curto na seção "A Carolina".
+- **Mensagem da Dra.:** a seção biográfica foi removida para enxugar a página. Se quiser, a mensagem entra como link/vídeo na faixa de patrocínio, que já leva ao site.
 - **Oferta:** validar o percentual e as regras com a clínica.
 
 A página está com `noindex,follow`. Se quiser que ela apareça no Google, remova essa meta no `<head>`.
+
+## Atalhos pessoais
+
+A seção **Seus atalhos** é funcional e local:
+
+- Adicionar, editar e excluir links.
+- Sugestões iniciais de WhatsApp, Instagram e site.
+- Dados em `localStorage`, chave `qn:atalhos:v1`. Nada vai para servidor.
+- Exportar backup em `meus-atalhos-quebra-nozes.json` e importar em outro aparelho.
+- Para zerar: limpar os dados do site no navegador ou rodar `localStorage.removeItem("qn:atalhos:v1")` no console.
+
+O avatar é gerado pela inicial do título, sem chamada a serviço de favicon.
 
 ## Chaveiro
 
@@ -53,12 +65,14 @@ A página está com `noindex,follow`. Se quiser que ela apareça no Google, remo
 ## Deploy
 
 A página é estática e funciona em qualquer host. Em Vercel, o diretório `q/` vira `/q/`.
-Se quiser `/q` sem barra, configure `cleanUrls`/`trailingSlash` no host.
+O `<base href="/q/">` faz `/q` e `/q/` funcionarem igual; não precisa mexer em `trailingSlash`.
 
 O PWA (instalar na tela inicial) exige HTTPS. Em `localhost` o service worker também funciona.
 
 ## Analytics
 
 O script da Vercel Analytics está incluído (`/_vercel/insights/script.js`).
-Eventos: `cta_hero`, `cta_coupon`, `cta_sticky`, `cta_footer`, `add_home`.
+Eventos: `cta_hero`, `cta_coupon`, `cta_sticky`, `cta_footer`, `add_home`,
+`shortcut_add`, `shortcut_edit`, `shortcut_open`, `shortcut_delete`,
+`backup_export`, `backup_import`.
 Fora da Vercel, o script simplesmente não carrega e nada quebra.

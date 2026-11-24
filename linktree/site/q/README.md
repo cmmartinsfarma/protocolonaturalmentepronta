@@ -34,7 +34,7 @@ const CONFIG = {
 
 ## Identidade visual
 
-A página segue o cartaz do evento: azul-meia-noite, veludo bordô, dourado e papel pergaminho, com serifa clássica, molduras finas e o título "O Quebra-Nozes" no cabeçalho.
+A página segue o cartaz do evento: azul-meia-noite, veludo bordô, dourado e papel pergaminho (marfim quente, sem o rosado anterior), com serifa clássica, molduras finas e o título "O Quebra-Nozes" no cabeçalho.
 
 ## Placeholders para completar
 

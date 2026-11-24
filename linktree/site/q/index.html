@@ -50,8 +50,8 @@
        Tokens
        ============================================================ */
     :root {
-      --paper: #F4F1EC;
-      --paper-2: #EBE6DE;
+      --paper: #F2EDE1;
+      --paper-2: #E9E2D2;
       --ink: #211B18;
       --ink-soft: #61564E;
       --oxblood: #6A1A23;
@@ -162,7 +162,7 @@
       position: absolute; z-index: 0;
       inset: auto -18% -38% 26%;
       height: 84%;
-      background: radial-gradient(ellipse at 58% 58%, rgba(126, 42, 48, .13), transparent 66%);
+      background: radial-gradient(ellipse at 58% 58%, rgba(176, 138, 79, .14), transparent 66%);
       pointer-events: none;
     }
     .hero::after {
@@ -273,7 +273,7 @@
       padding: 9px;
       border: 1px solid var(--gold);
       border-radius: 50% 50% 2px 2px / 38% 38% 2px 2px;
-      background: linear-gradient(180deg, rgba(176, 138, 79, .12), rgba(126, 42, 48, .05));
+      background: linear-gradient(180deg, rgba(176, 138, 79, .12), rgba(176, 138, 79, .04));
       box-shadow: 0 34px 80px -44px rgba(33, 27, 24, .55);
     }
     .arch img {
@@ -364,7 +364,7 @@
       position: relative; overflow: hidden;
       display: grid;
       grid-template-columns: 1.32fr .88fr;
-      background: linear-gradient(135deg, #FBF8F3, #F0E9DF);
+      background: linear-gradient(135deg, #F9F4E9, #EDE4D3);
       border: 1px solid var(--line-strong);
     }
     .coupon::before {
@@ -803,7 +803,7 @@
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
       display: none;
       padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
-      background: rgba(244, 241, 236, .94);
+      background: rgba(242, 237, 225, .94);
       border-top: 1px solid var(--line);
       backdrop-filter: blur(12px);
       transform: translateY(110%);
@@ -1047,14 +1047,14 @@
     .hero::before {
       background:
         radial-gradient(ellipse at 72% 38%, rgba(176, 138, 79, .16), transparent 55%),
-        radial-gradient(ellipse at 20% 80%, rgba(126, 42, 48, .10), transparent 60%);
+        radial-gradient(ellipse at 20% 80%, rgba(176, 138, 79, .06), transparent 60%);
     }
     .arch::after {
       content: "";
       position: absolute;
       inset: 9px;
       border-radius: 50% 50% 0 0 / 38% 38% 0 0;
-      background: linear-gradient(180deg, transparent 52%, rgba(126, 42, 48, .16) 100%);
+      background: linear-gradient(180deg, transparent 52%, rgba(33, 27, 24, .10) 100%);
       pointer-events: none;
     }
     .seal {
@@ -1076,7 +1076,7 @@
     .program-band {
       border-top: 1px solid var(--line-strong);
       border-bottom: 1px solid var(--line-strong);
-      background: #F5F0E6;
+      background: #EFE8D8;
     }
     .program-band__grid {
       display: grid;
@@ -1094,7 +1094,7 @@
       left: 0; top: 50%;
       transform: translate(-50%, -50%);
       padding: 2px;
-      background: #F5F0E6;
+      background: #EFE8D8;
       color: var(--gold);
       font-size: .6rem;
       line-height: 1;

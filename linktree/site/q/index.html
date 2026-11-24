@@ -266,6 +266,9 @@
       justify-self: center;
       width: min(100%, 390px);
     }
+    .hero__frame {
+      position: relative;
+    }
     .arch {
       position: relative;
       padding: 9px;
@@ -283,6 +286,16 @@
       border-radius: 50% 50% 0 0 / 38% 38% 0 0;
       filter: saturate(.92) contrast(1.02);
     }
+    .arch::after {
+      content: "";
+      position: absolute; inset: 9px;
+      border-radius: 50% 50% 0 0 / 38% 38% 0 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at 50% 18%,
+        transparent 38%,
+        rgba(92, 16, 28, .42) 100%);
+      mix-blend-mode: multiply;
+    }
     .arch__star {
       position: absolute; top: -17px; left: 50%;
       transform: translateX(-50%);
@@ -298,10 +311,11 @@
       display: grid; place-content: center;
       text-align: center;
       border-radius: 50%;
-      background: var(--oxblood);
+      background: var(--burgundy);
       color: var(--cream);
-      border: 1px solid rgba(255, 248, 243, .35);
-      box-shadow: 0 16px 34px -14px rgba(95, 31, 36, .65);
+      border: 1px solid rgba(176, 138, 79, .6);
+      box-shadow: inset 0 0 0 4px rgba(255, 248, 243, .07),
+                  0 16px 34px -14px rgba(44, 4, 10, .7);
       transform: rotate(-8deg);
     }
     .seal strong {
@@ -1934,16 +1948,18 @@
         </div>
 
         <div class="hero__art">
-          <div class="arch">
-            <span class="arch__star" aria-hidden="true">✦</span>
-            <img src="assets/carolina.webp" width="800" height="1000"
-                 fetchpriority="high" decoding="async"
-                 alt="Dra. Carolina Martins, farmacêutica esteta, sorrindo">
+          <div class="hero__frame">
+            <div class="arch">
+              <span class="arch__star" aria-hidden="true">✦</span>
+              <img src="assets/carolina-duotone.webp" width="800" height="1000"
+                   fetchpriority="high" decoding="async"
+                   alt="Dra. Carolina Martins, farmacêutica esteta, sorrindo">
+            </div>
+            <button class="seal" type="button" data-seal aria-label="Ver o presente de 10% na primeira limpeza">
+              <strong><span data-bind="desconto">10%</span></strong>
+              <span>off</span>
+            </button>
           </div>
-          <button class="seal" type="button" data-seal aria-label="Ver o presente de 10% na primeira limpeza">
-            <strong><span data-bind="desconto">10%</span></strong>
-            <span>off</span>
-          </button>
           <p class="art-caption">Dra. Carolina Martins · patrocinadora</p>
         </div>
       </div>

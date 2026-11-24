@@ -77,6 +77,10 @@ A primeira visita da sessão abre com uma cortina de veludo bordô e o título d
 - `?overture=1` força a abertura e `?overture=0` desliga, para testar;
 - roda num script próprio, logo após a cortina, para não depender do restante do JavaScript.
 
+## Retrato
+
+O hero usa `assets/carolina-duotone.webp`: o retrato original (`assets/carolina.webp`) convertido para duotone bordô/dourado, para o blazer rosa não competir com a identidade do evento. O original continua no repositório para reversão. O selo de 10% acompanha o tom, em bordô profundo com fio dourado.
+
 ## Mascote
 
 O mascote usa o Quebra-Nozes fotorrealista em `assets/nutcracker-ultra.webp`, gerado a partir da descrição do personagem e recortado com fundo transparente. `assets/nutcracker.svg` fica como versão vetorial de reserva.

@@ -67,6 +67,16 @@ O avatar é gerado pela inicial do título, sem chamada a serviço de favicon.
 - O modo app esconde hero, programa, oferta, noite e faixa de patrocínio; mostra atalhos, a faixa de 10% e o rodapé.
 - A navegação normal em `/q/` continua sendo a página completa do evento.
 
+## Abertura de cortina
+
+A primeira visita da sessão abre com uma cortina de veludo bordô e o título do festival em dourado. A cortina se abre sozinha em ~1,8s (ou com um toque), e o hero entra logo depois.
+
+- aparece uma vez por sessão (`sessionStorage["qn:overture"] = "v1"`);
+- nunca aparece no modo app (`?app=1`);
+- desligada com `prefers-reduced-motion`;
+- `?overture=1` força a abertura e `?overture=0` desliga, para testar;
+- roda num script próprio, logo após a cortina, para não depender do restante do JavaScript.
+
 ## Mascote
 
 O mascote usa o Quebra-Nozes fotorrealista em `assets/nutcracker-ultra.webp`, gerado a partir da descrição do personagem e recortado com fundo transparente. `assets/nutcracker.svg` fica como versão vetorial de reserva.

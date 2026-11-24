@@ -5,7 +5,7 @@
   <base href="/q/">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Quebra-Nozes 2026 · Dra. Carolina Martins</title>
-  <meta name="description" content="Uma lembrança do Quebra-Nozes 2026 e um presente da Dra. Carolina Martins: 10% na sua primeira limpeza de pele.">
+  <meta name="description" content="Uma lembrança do Quebra-Nozes 2026 e um presente da Dra. Carolina Martins para convidados selecionados: 10% na sua primeira limpeza de pele.">
   <meta name="theme-color" content="#7E2A30">
   <meta name="apple-mobile-web-app-title" content="Quebra-Nozes">
   <meta name="mobile-web-app-capable" content="yes">
@@ -150,6 +150,16 @@
       gap: clamp(36px, 6vw, 84px);
       align-items: center;
     }
+    .event-partner {
+      display: flex; align-items: center; gap: 12px;
+      margin: 0 0 16px;
+    }
+    .event-partner span {
+      font-size: .58rem; font-weight: 600;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .event-partner img { width: 120px; height: auto; }
     .kicker {
       display: inline-flex; align-items: center; gap: 10px;
       margin: 0;
@@ -926,6 +936,8 @@
       .sponsor { font-size: .58rem; }
       .sponsor span { letter-spacing: .12em; }
       .hero { padding-top: 34px; }
+      .event-partner { margin-bottom: 12px; }
+      .event-partner img { width: 92px; }
       .hero h1 { margin-top: 16px; }
       .actions { gap: 10px; }
       .actions .btn { width: 100%; }
@@ -969,10 +981,14 @@
     <section class="hero" aria-labelledby="titulo">
       <div class="wrap hero__grid">
         <div class="hero__copy">
+          <div class="event-partner">
+            <span>Realização</span>
+            <img src="assets/liberte-dance-studio.png" width="408" height="270" alt="Liberté Dance Studio">
+          </div>
           <p class="kicker">12 de dezembro de 2026 · 17h e 20h</p>
           <h1 id="titulo">Uma <em>noite</em><br>para lembrar.<br>Um <em>cuidado</em><br>para continuar.</h1>
           <p class="lede">
-            A Dra. Carolina Martins patrocina o Quebra-Nozes 2026 e deixa um presente para quem esteve lá:
+            A Dra. Carolina Martins patrocina o Quebra-Nozes 2026 e deixa um presente para alguns convidados selecionados:
             <strong><span data-bind="desconto">10%</span> na sua primeira limpeza de pele</strong>.
           </p>
           <div class="actions">

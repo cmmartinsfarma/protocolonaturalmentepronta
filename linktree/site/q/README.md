@@ -30,10 +30,11 @@ const CONFIG = {
 
 - Trocar `10%` por `20%` atualiza a página e a mensagem do WhatsApp.
 - A data de `eventoFim` ativa o estado pós-evento ("Obrigada por essa noite").
+- A oferta é dirigida a "alguns convidados selecionados"; ajuste esse texto no hero se a regra mudar.
 
 ## Placeholders para completar
 
-- **Logo oficial do evento:** substituir o bloco `.sponsor` no topo pelo logo, quando existir.
+- **Logo da escola:** já incluído em `assets/liberte-dance-studio.png`, com fundo transparente e recorte. Aparece na hero com o rótulo "Realização".
 - **Teatro e endereço:** não foram informados; a seção "A noite" mostra só data e sessões.
 - **Fotos oficiais:** o quadro `Fotos oficiais · em breve` é o espaço reservado. Quando a galeria existir, troque por uma imagem/link.
 - **Mensagem da Dra.:** a seção biográfica foi removida para enxugar a página. Se quiser, a mensagem entra como link/vídeo na faixa de patrocínio, que já leva ao site.

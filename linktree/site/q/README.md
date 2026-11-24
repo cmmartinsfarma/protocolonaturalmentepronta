@@ -60,10 +60,9 @@ O avatar é gerado pela inicial do título, sem chamada a serviço de favicon.
 
 ## Mascote
 
-O Quebra-Nozes é um SVG autoral inline (`assets/nutcracker.svg` é a versão fonte). Ele acompanha o scroll:
+O mascote usa o Quebra-Nozes fotorrealista em `assets/nutcracker-ultra.webp`, gerado a partir da descrição do personagem e recortado com fundo transparente. `assets/nutcracker.svg` fica como versão vetorial de reserva.
 
-- mensagem e pose mudam por seção (boas-vindas, oferta, atalhos, noite, despedida);
-- braços e queixo animados, com tilt suave;
+- mensagem e inclinação mudam por seção (boas-vindas, oferta, atalhos, noite, despedida);
 - em telas até 1200px ele aparece por ~3,6s a cada seção e some; no desktop fica no canto;
 - respeita `prefers-reduced-motion` e fica oculto para leitores de tela (`aria-hidden`).
 

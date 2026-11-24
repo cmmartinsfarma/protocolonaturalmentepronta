@@ -994,7 +994,7 @@
       color: var(--oxblood);
     }
     .hero__install {
-      display: none;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
       min-height: 44px;
@@ -1074,7 +1074,7 @@
       color: var(--oxblood);
     }
     .program-band__cell--school img {
-      width: 104px; height: auto;
+      width: 140px; height: auto;
       margin-top: 2px;
     }
 
@@ -1145,6 +1145,47 @@
       filter: brightness(0) invert(1);
       pointer-events: none;
       z-index: 1;
+    }
+    .night__credit {
+      position: relative;
+      display: grid;
+      justify-items: center;
+      align-content: center;
+      gap: 14px;
+      min-height: 270px;
+      padding: 28px;
+      border: 1px solid rgba(176, 138, 79, .45);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 248, 243, .18), transparent 55%),
+        linear-gradient(160deg, #211817 0%, #4A2628 55%, #7E2A30 100%);
+      text-align: center;
+      box-shadow: 0 30px 70px -30px rgba(0, 0, 0, .65);
+    }
+    .night__credit::before {
+      content: "✦";
+      position: absolute;
+      top: 14px; left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 248, 243, .55);
+      font-size: .85rem;
+      line-height: 1;
+    }
+    .night__credit span {
+      font-size: .7rem; font-weight: 500;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: rgba(255, 248, 243, .6);
+    }
+    .night__credit img {
+      width: min(72%, 220px);
+      height: auto;
+      filter: brightness(0) invert(1);
+      opacity: .95;
+    }
+    .night__credit p {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: .95rem;
+      color: rgba(255, 248, 243, .7);
     }
     .night h2 { color: var(--cream); }
     .night .section__head p { color: rgba(255, 248, 243, .66); }
@@ -1374,35 +1415,6 @@
       </div>
     </section>
 
-    <!-- CUIDADO -->
-    <section class="section care" id="cuidado" aria-labelledby="titulo-cuidado">
-      <div class="wrap">
-        <header class="section__head">
-          <span class="num">II</span>
-          <h2 id="titulo-cuidado">O cuidado</h2>
-          <p>Uma pele bem cuidada começa pelo básico — e pelo que faz sentido para você.</p>
-        </header>
-
-        <div class="care__grid">
-          <article class="care__item">
-            <span>01</span>
-            <h3>Avaliação</h3>
-            <p>Escuta, leitura da pele e indicação individual antes de qualquer procedimento.</p>
-          </article>
-          <article class="care__item">
-            <span>02</span>
-            <h3>Limpeza</h3>
-            <p>Remoção de impurezas com técnica e sem agressão à barreira da pele.</p>
-          </article>
-          <article class="care__item">
-            <span>03</span>
-            <h3>Próximo passo</h3>
-            <p>Se você quiser seguir, o plano é desenhado para a sua pele e o seu tempo.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- ATALHOS -->
     <section class="section shortcuts" id="atalhos" aria-labelledby="titulo-atalhos">
       <div class="wrap">
@@ -1442,7 +1454,6 @@
 
     <!-- A NOITE -->
     <section class="section night" id="noite" aria-labelledby="titulo-noite">
-      <img class="night__watermark" src="assets/liberte-dance-studio.png" width="408" height="270" alt="" aria-hidden="true" decoding="async">
       <div class="wrap">
         <header class="section__head">
           <span class="num">IV</span>
@@ -1458,34 +1469,15 @@
               <li><strong>20h</strong><span>segunda sessão</span></li>
             </ul>
             <p class="night__text">
-              <span data-before>As fotos oficiais chegam aqui depois do espetáculo. Volte a este chaveiro para reviver a noite.</span>
-              <span data-after>Obrigada por essa noite. As fotos oficiais chegam em breve — volte a este chaveiro para reviver o espetáculo.</span>
+              <span data-before>Obrigada por estar aqui.</span>
+              <span data-after>Obrigada por essa noite.</span>
             </p>
           </div>
-          <div>
-            <div class="photo" role="img" aria-label="Espaço reservado para as fotos oficiais do espetáculo">
-              <span>Fotos oficiais</span>
-              <small>em breve</small>
-            </div>
-            <p class="photo-caption">O arquivo da noite está sendo preparado. Este é o lugar.</p>
+          <div class="night__credit">
+            <span>Realização</span>
+            <img src="assets/liberte-dance-studio.png" width="408" height="270" alt="Liberté Dance Studio">
+            <p>Quebra-Nozes 2026</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GUARDAR -->
-    <section class="section keep" id="guardar" aria-labelledby="titulo-guardar">
-      <div class="wrap">
-        <div class="keep__card">
-          <div class="keep__mark" aria-hidden="true">✦</div>
-          <div>
-            <h2 id="titulo-guardar">Guarde esta página</h2>
-            <p>Este chaveiro é seu. Deixe a lembrança na tela inicial do celular e volte quando quiser.</p>
-            <p class="keep__hint">A oferta fica aqui até 31 de janeiro de 2027.</p>
-          </div>
-          <button class="btn btn--primary" type="button" data-install data-event="add_home">
-            Adicionar à tela inicial
-          </button>
         </div>
       </div>
     </section>
@@ -1519,7 +1511,7 @@
         </div>
       </div>
       <p class="footer__legal">
-        Esta página não coleta dados pessoais. As imagens do espetáculo serão publicadas apenas com autorização.
+        Esta página não coleta dados pessoais.
       </p>
     </div>
   </footer>

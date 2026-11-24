@@ -32,10 +32,14 @@ const CONFIG = {
 - A data de `eventoFim` ativa o estado pós-evento ("Obrigada por essa noite").
 - A oferta é dirigida a "alguns convidados selecionados"; ajuste esse texto no hero se a regra mudar.
 
+## Identidade visual
+
+A página segue o cartaz do evento: azul-meia-noite, veludo bordô, dourado e papel pergaminho, com serifa clássica, molduras finas e o título "O Quebra-Nozes" no cabeçalho.
+
 ## Placeholders para completar
 
 - **Logo da escola:** já incluído em `assets/liberte-dance-studio.png`, com fundo transparente e recorte. Aparece na faixa de programa e como crédito grande na seção "A noite".
-- **Teatro e endereço:** não foram informados; a seção "A noite" mostra só data e sessões.
+- **Teatro:** o cartaz atualizado informa **Teatro Pedro II · Ribeirão Preto**. O endereço completo ainda não foi informado.
 - **Fotos:** não haverá galeria pós-apresentação. A seção "A noite" é uma lembrança com o crédito da escola, sem imagens do espetáculo.
 - **Mensagem da Dra.:** a seção biográfica foi removida para enxugar a página. Se quiser, a mensagem entra como link/vídeo na faixa de patrocínio, que já leva ao site.
 - **Oferta:** validar o percentual e as regras com a clínica.

@@ -34,6 +34,7 @@
       --ink-soft: #61564E;
       --oxblood: #7E2A30;
       --oxblood-deep: #5F1F24;
+      --burgundy: #5C101C;
       --rose: #C9B6B0;
       --gold: #B08A4F;
       --cream: #FFF8F3;
@@ -97,18 +98,26 @@
       gap: 24px;
     }
     .brand img { width: 148px; height: auto; }
-    .sponsor {
+    .event-title {
       margin: 0; text-align: right;
-      font-size: .68rem; line-height: 1.8;
-      letter-spacing: .15em; text-transform: uppercase;
-      color: var(--ink-soft);
+      line-height: 1.1;
     }
-    .sponsor span {
+    .event-title span {
       display: block;
+      margin-bottom: 4px;
+      font-size: .6rem; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase;
       color: var(--oxblood);
-      font-weight: 600;
     }
-    .sponsor::before {
+    .event-title strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: .01em;
+      color: var(--ink);
+    }
+    .event-title::before {
       content: "";
       display: block;
       width: 30px; height: 1px;
@@ -924,8 +933,8 @@
       :root { --wrap: calc(100vw - 36px); }
       .top { padding: 16px 0; }
       .brand img { width: 122px; }
-      .sponsor { font-size: .58rem; }
-      .sponsor span { letter-spacing: .12em; }
+      .event-title span { font-size: .55rem; letter-spacing: .16em; }
+      .event-title strong { font-size: 1.1rem; }
       .hero { padding-top: 34px; }
       .hero h1 { margin-top: 16px; }
       .actions { gap: 10px; }
@@ -1043,17 +1052,36 @@
     .program-band {
       border-top: 1px solid var(--line-strong);
       border-bottom: 1px solid var(--line-strong);
-      background: rgba(176, 138, 79, .05);
+      background: #F5F0E6;
     }
     .program-band__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }
     .program-band__cell {
+      position: relative;
       padding: 18px clamp(14px, 3vw, 30px);
       border-left: 1px solid var(--line);
     }
     .program-band__cell:first-child { border-left: 0; padding-left: 0; }
+    .program-band__cell:nth-child(2)::before {
+      content: "◆";
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 2px;
+      background: #F5F0E6;
+      color: var(--gold);
+      font-size: .6rem;
+      line-height: 1;
+    }
+    .program-band__cell small {
+      display: block;
+      margin-top: 5px;
+      font-size: .75rem;
+      line-height: 1.4;
+      color: var(--ink-soft);
+    }
     .program-band__cell span {
       display: block;
       margin-bottom: 6px;
@@ -1122,16 +1150,16 @@
       overflow: hidden;
       border-top: 0;
       background:
-        radial-gradient(ellipse at 50% -10%, rgba(255, 248, 243, .18), transparent 55%),
-        radial-gradient(ellipse at 80% 100%, rgba(126, 42, 48, .28), transparent 55%),
-        linear-gradient(180deg, #1B1412 0%, #241716 48%, #341B1B 100%);
+        radial-gradient(ellipse at 50% -10%, rgba(255, 248, 243, .16), transparent 55%),
+        radial-gradient(ellipse at 80% 100%, rgba(92, 16, 28, .32), transparent 55%),
+        linear-gradient(180deg, #0B1722 0%, #101E2C 55%, #1C1A24 100%);
       color: var(--cream);
     }
     .night::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 70%, rgba(27, 20, 18, .6));
+      background: linear-gradient(180deg, transparent 70%, rgba(8, 15, 24, .6));
       pointer-events: none;
       z-index: 0;
     }
@@ -1154,12 +1182,20 @@
       gap: 14px;
       min-height: 270px;
       padding: 28px;
-      border: 1px solid rgba(176, 138, 79, .45);
+      border: 1px solid var(--gold);
       background:
-        radial-gradient(ellipse at 50% 0%, rgba(255, 248, 243, .18), transparent 55%),
-        linear-gradient(160deg, #211817 0%, #4A2628 55%, #7E2A30 100%);
+        radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, .6), transparent 60%),
+        linear-gradient(135deg, #FBF3E2 0%, #F1E2C6 100%);
       text-align: center;
-      box-shadow: 0 30px 70px -30px rgba(0, 0, 0, .65);
+      box-shadow: 0 30px 70px -30px rgba(0, 0, 0, .7),
+                  inset 0 0 0 7px rgba(176, 138, 79, .12);
+    }
+    .night__credit::after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border: 1px solid rgba(176, 138, 79, .45);
+      pointer-events: none;
     }
     .night__credit::before {
       content: "✦";
@@ -1171,21 +1207,19 @@
       line-height: 1;
     }
     .night__credit span {
-      font-size: .7rem; font-weight: 500;
+      font-size: .7rem; font-weight: 600;
       letter-spacing: .2em; text-transform: uppercase;
-      color: rgba(255, 248, 243, .6);
+      color: var(--burgundy);
     }
     .night__credit img {
       width: min(72%, 220px);
       height: auto;
-      filter: brightness(0) invert(1);
-      opacity: .95;
     }
     .night__credit p {
       margin: 0;
       font-family: var(--serif);
       font-size: .95rem;
-      color: rgba(255, 248, 243, .7);
+      color: var(--ink-soft);
     }
     .night h2 { color: var(--cream); }
     .night .section__head p { color: rgba(255, 248, 243, .66); }
@@ -1251,7 +1285,10 @@
     .shortcut__text strong { font-family: var(--serif); font-size: 1.08rem; font-weight: 500; }
 
     /* Patrocínio */
-    .sponsor-strip { border-top: 1px solid rgba(176, 138, 79, .5); }
+    .sponsor-strip {
+      background: var(--burgundy);
+      border-top: 1px solid rgba(176, 138, 79, .5);
+    }
 
     /* Movimento */
     @media (prefers-reduced-motion: no-preference) {
@@ -1310,10 +1347,10 @@
       <a class="brand" href="https://www.naturalmentepronta.com.br/" aria-label="Dra. Carolina Martins — site oficial">
         <img src="assets/logo.png" width="916" height="277" alt="Carolina Martins, farmacêutica esteta">
       </a>
-      <p class="sponsor">
-        <span>Patrocínio oficial</span>
-        Quebra-Nozes 2026
-      </p>
+      <div class="event-title">
+        <span>Festival 2026</span>
+        <strong>O Quebra-Nozes</strong>
+      </div>
     </div>
   </header>
 
@@ -1335,7 +1372,7 @@
             </a>
             <a class="btn btn--ghost" href="#presente">Ver o que está incluído</a>
           </div>
-          <p class="hero__meta">12 de dezembro · 17h e 20h</p>
+          <p class="hero__meta">12 de dezembro · 17h e 20h · Teatro Pedro II</p>
           <p class="fine">
             Apresente seu chaveiro na clínica · válido até <span data-bind="validade">31 de janeiro de 2027</span>
           </p>
@@ -1366,6 +1403,7 @@
         <div class="program-band__cell">
           <span>Data</span>
           <strong>12 · <em>dezembro</em> · 2026</strong>
+          <small>Teatro Pedro II · Ribeirão Preto</small>
         </div>
         <div class="program-band__cell">
           <span>Sessões</span>
@@ -1476,7 +1514,7 @@
           <div class="night__credit">
             <span>Realização</span>
             <img src="assets/liberte-dance-studio.png" width="408" height="270" alt="Liberté Dance Studio">
-            <p>Quebra-Nozes 2026</p>
+            <p>5 anos · Quebra-Nozes 2026</p>
           </div>
         </div>
       </div>

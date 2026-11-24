@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Quebra-Nozes 2026 · Dra. Carolina Martins</title>
   <meta name="description" content="Uma lembrança do Quebra-Nozes 2026 e um presente da Dra. Carolina Martins para convidados selecionados: 10% na sua primeira limpeza de pele.">
-  <meta name="theme-color" content="#7E2A30">
+  <meta name="theme-color" content="#5C101C">
   <meta name="apple-mobile-web-app-title" content="Quebra-Nozes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -54,10 +54,9 @@
       --paper-2: #EBE6DE;
       --ink: #211B18;
       --ink-soft: #61564E;
-      --oxblood: #7E2A30;
-      --oxblood-deep: #5F1F24;
+      --oxblood: #6A1A23;
+      --oxblood-deep: #4C0D16;
       --burgundy: #5C101C;
-      --rose: #C9B6B0;
       --gold: #B08A4F;
       --cream: #FFF8F3;
       --line: color-mix(in oklab, var(--ink) 15%, transparent);
@@ -284,17 +283,6 @@
       object-fit: cover;
       object-position: 50% 28%;
       border-radius: 50% 50% 0 0 / 38% 38% 0 0;
-      filter: saturate(.92) contrast(1.02);
-    }
-    .arch::after {
-      content: "";
-      position: absolute; inset: 9px;
-      border-radius: 50% 50% 0 0 / 38% 38% 0 0;
-      pointer-events: none;
-      background: radial-gradient(ellipse at 50% 18%,
-        transparent 38%,
-        rgba(92, 16, 28, .42) 100%);
-      mix-blend-mode: multiply;
     }
     .arch__star {
       position: absolute; top: -17px; left: 50%;
@@ -427,7 +415,7 @@
       gap: 8px;
       padding: clamp(24px, 4vw, 38px);
       border-left: 1px dashed var(--line-strong);
-      background: rgba(126, 42, 48, .045);
+      background: rgba(176, 138, 79, .055);
     }
     .coupon__stub p {
       margin: 0;
@@ -1951,7 +1939,7 @@
           <div class="hero__frame">
             <div class="arch">
               <span class="arch__star" aria-hidden="true">✦</span>
-              <img src="assets/carolina-duotone.webp" width="800" height="1000"
+              <img src="assets/carolina.webp" width="800" height="1000"
                    fetchpriority="high" decoding="async"
                    alt="Dra. Carolina Martins, farmacêutica esteta, sorrindo">
             </div>
@@ -2337,7 +2325,7 @@
     const shortcutsCount = document.getElementById("shortcuts-count");
     const importInput = document.getElementById("shortcuts-import");
 
-    const AVATAR_COLORS = ["#7E2A30", "#B08A4F", "#5F4B44", "#8C5A5E", "#6B5B3E"];
+    const AVATAR_COLORS = ["#5C101C", "#B08A4F", "#5F4B44", "#7A3B36", "#6B5B3E"];
     let shortcuts = [];
     let editingId = null;
     let lastAddedId = null;

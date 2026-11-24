@@ -79,7 +79,7 @@ A primeira visita da sessão abre com uma cortina de veludo bordô e o título d
 
 ## Retrato
 
-O hero usa `assets/carolina-duotone.webp`: o retrato original (`assets/carolina.webp`) convertido para duotone bordô/dourado, para o blazer rosa não competir com a identidade do evento. O original continua no repositório para reversão. O selo de 10% acompanha o tom, em bordô profundo com fio dourado.
+O hero usa o retrato original em `assets/carolina.webp`, sem tratamento de cor. Os acentos da página (títulos, CTA e selo) usam o bordô profundo do evento, em vez do rosé anterior; o selo de 10% tem fio dourado e fica no arco, sem cobrir a legenda.
 
 ## Mascote
 

@@ -10,6 +10,17 @@
   <meta name="apple-mobile-web-app-title" content="Quebra-Nozes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <script>
+    (() => {
+      const standalone =
+        window.matchMedia("(display-mode: standalone)").matches ||
+        navigator.standalone === true;
+      const params = new URLSearchParams(location.search);
+      const app = !params.has("full") && (params.get("app") === "1" || standalone);
+      document.documentElement.classList.toggle("is-app", app);
+      document.documentElement.classList.toggle("is-standalone", standalone);
+    })();
+  </script>
   <meta name="robots" content="noindex,follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Quebra-Nozes 2026 · Dra. Carolina Martins">
@@ -1338,6 +1349,95 @@
     }
 
     /* ============================================================
+       Modo app (PWA instalada)
+       ============================================================ */
+    .app-bar, .app-offer, .app-return { display: none; }
+
+    .is-app .hero,
+    .is-app .program-band,
+    .is-app .gift,
+    .is-app .night,
+    .is-app .sponsor-strip { display: none; }
+
+    .is-app .app-bar {
+      display: block;
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .app-bar__inner {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 18px; flex-wrap: wrap;
+      padding: clamp(20px, 3vw, 30px) 0 clamp(16px, 2.5vw, 22px);
+    }
+    .app-bar__title {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+    .app-bar__sub {
+      max-width: 52ch;
+      margin: 8px 0 0;
+      font-size: .9rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+    .app-bar__event {
+      display: inline-flex; align-items: center; gap: 8px;
+      min-height: 44px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--line-strong);
+      font-size: .7rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--oxblood);
+    }
+    .app-bar__event:hover { border-color: var(--oxblood); }
+
+    .is-app .shortcuts {
+      border-top: 0;
+      padding-top: clamp(18px, 3vw, 28px);
+    }
+    .is-app .shortcuts .section__head { display: none; }
+    .is-app .app-offer {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+      margin-top: 22px;
+      padding: 14px 16px;
+      border: 1px solid var(--line-strong);
+      background: rgba(176, 138, 79, .06);
+      font-size: .78rem;
+      color: var(--ink-soft);
+    }
+    .app-offer strong {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--oxblood);
+    }
+    .app-offer > span:last-child {
+      font-size: .68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--oxblood);
+      white-space: nowrap;
+    }
+    .is-app .mascot { display: none; }
+    .is-app .sticky { transform: none; }
+    .is-standalone .hero__install { display: none; }
+    .is-standalone:not(.is-app) .app-return {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 7px;
+      font-size: .62rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--oxblood);
+    }
+    @media (max-width: 720px) {
+      .app-bar__inner { align-items: flex-start; }
+      .app-bar__event { min-height: 40px; }
+      .app-offer > span:last-child { width: 100%; }
+    }
+
+    /* ============================================================
        Mascote Quebra-Nozes
        ============================================================ */
     .mascot {
@@ -1463,6 +1563,7 @@
       <div class="event-title">
         <span>Festival 2026</span>
         <strong>O Quebra-Nozes</strong>
+        <a class="app-return" href="./?app=1">Meus atalhos <span aria-hidden="true">←</span></a>
       </div>
     </div>
   </header>
@@ -1566,6 +1667,17 @@
       </div>
     </section>
 
+    <!-- MODO APP -->
+    <div class="app-bar">
+      <div class="wrap app-bar__inner">
+        <div>
+          <h1 class="app-bar__title">Seus atalhos</h1>
+          <p class="app-bar__sub">Um espaço só seu. Guarde os links que você usa todos os dias e abra tudo em um toque.</p>
+        </div>
+        <a class="app-bar__event" href="./?full=1">Ver a lembrança <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
     <!-- ATALHOS -->
     <section class="section shortcuts" id="atalhos" aria-labelledby="titulo-atalhos">
       <div class="wrap">
@@ -1600,6 +1712,11 @@
           <input type="file" id="shortcuts-import" accept="application/json" hidden>
           <span>Seus atalhos ficam só neste aparelho.</span>
         </div>
+
+        <a class="app-offer" href="./?full=1#presente">
+          <span><strong><span data-bind="desconto">10%</span></strong> na sua primeira limpeza</span>
+          <span>Ver o presente <span aria-hidden="true">→</span></span>
+        </a>
       </div>
     </section>
 

@@ -58,6 +58,15 @@ A seção **Seus atalhos** é funcional e local:
 
 O avatar é gerado pela inicial do título, sem chamada a serviço de favicon.
 
+## Modo app (PWA)
+
+- A PWA instalada abre em `?app=1`, direto em **“Seus atalhos”**.
+- O link **“Ver a lembrança”** abre `?full=1`, a página completa do evento.
+- Na página completa instalada, aparece **“Meus atalhos”** no cabeçalho para voltar.
+- `manifest.shortcuts` (Android, long-press do ícone): **Meus atalhos**, **Ver o presente**, **A noite**.
+- O modo app esconde hero, programa, oferta, noite e faixa de patrocínio; mostra atalhos, a faixa de 10% e o rodapé.
+- A navegação normal em `/q/` continua sendo a página completa do evento.
+
 ## Mascote
 
 O mascote usa o Quebra-Nozes fotorrealista em `assets/nutcracker-ultra.webp`, gerado a partir da descrição do personagem e recortado com fundo transparente. `assets/nutcracker.svg` fica como versão vetorial de reserva.

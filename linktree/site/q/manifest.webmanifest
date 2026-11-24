@@ -3,7 +3,7 @@
   "short_name": "Quebra-Nozes",
   "description": "Uma lembrança do Quebra-Nozes 2026 e um presente da Dra. Carolina Martins.",
   "lang": "pt-BR",
-  "start_url": "./",
+  "start_url": "./?app=1",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
@@ -21,6 +21,47 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Meus atalhos",
+      "short_name": "Atalhos",
+      "description": "Seus links em um toque",
+      "url": "./?app=1#atalhos",
+      "icons": [
+        {
+          "src": "assets/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Ver o presente",
+      "short_name": "Presente",
+      "description": "10% na primeira limpeza de pele",
+      "url": "./?full=1#presente",
+      "icons": [
+        {
+          "src": "assets/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "A noite",
+      "short_name": "A noite",
+      "description": "A lembrança do Quebra-Nozes 2026",
+      "url": "./?full=1#noite",
+      "icons": [
+        {
+          "src": "assets/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }

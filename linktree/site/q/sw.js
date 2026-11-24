@@ -1,5 +1,5 @@
 /* Quebra-Nozes 2026 — cache mínimo da lembrança */
-const CACHE = "qn-2026-v1";
+const CACHE = "qn-2026-v2";
 const ASSETS = [
   "./",
   "./index.html",

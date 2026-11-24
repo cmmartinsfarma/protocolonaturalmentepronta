@@ -58,6 +58,15 @@ A seção **Seus atalhos** é funcional e local:
 
 O avatar é gerado pela inicial do título, sem chamada a serviço de favicon.
 
+## Mascote
+
+O Quebra-Nozes é um SVG autoral inline (`assets/nutcracker.svg` é a versão fonte). Ele acompanha o scroll:
+
+- mensagem e pose mudam por seção (boas-vindas, oferta, atalhos, noite, despedida);
+- braços e queixo animados, com tilt suave;
+- em telas até 1200px ele aparece por ~3,6s a cada seção e some; no desktop fica no canto;
+- respeita `prefers-reduced-motion` e fica oculto para leitores de tela (`aria-hidden`).
+
 ## Mobile
 
 O mobile é a superfície principal (toque NFC). A página prioriza:

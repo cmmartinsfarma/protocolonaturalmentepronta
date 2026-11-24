@@ -54,6 +54,17 @@ A seção **Seus atalhos** é funcional e local:
 
 O avatar é gerado pela inicial do título, sem chamada a serviço de favicon.
 
+## Mobile
+
+O mobile é a superfície principal (toque NFC). A página prioriza:
+
+- CTA, oferta e data na primeira dobra.
+- Link "Adicionar à tela inicial" já no hero.
+- Faixa de programa em duas colunas.
+- Alvos de toque de 44px nos atalhos, sugestões, diálogo e links secundários.
+- Sticky de agendamento acessível e com `safe-area`.
+- Retrato reduzido para encurtar o primeiro scroll.
+
 ## Chaveiro
 
 - **URL de produção:** `https://dracarolinamartins.vercel.app/q`

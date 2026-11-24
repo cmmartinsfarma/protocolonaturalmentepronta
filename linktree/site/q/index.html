@@ -884,6 +884,7 @@
       .hero__copy > *:nth-child(3) { animation-delay: .16s; }
       .hero__copy > *:nth-child(4) { animation-delay: .22s; }
       .hero__copy > *:nth-child(5) { animation-delay: .28s; }
+      .hero__copy > *:nth-child(6) { animation-delay: .34s; }
       .hero__art { animation: rise 1.05s .12s var(--ease) both; }
       @keyframes rise {
         from { opacity: 0; transform: translateY(18px); }
@@ -992,6 +993,23 @@
       letter-spacing: .16em; text-transform: uppercase;
       color: var(--oxblood);
     }
+    .hero__install {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      margin-top: 8px;
+      padding: 0;
+      border: 0;
+      border-bottom: 1px solid var(--line-strong);
+      background: transparent;
+      color: var(--ink-soft);
+      font-family: var(--sans);
+      font-size: .72rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      cursor: pointer;
+    }
+    .hero__install:hover { color: var(--ink); border-color: var(--ink); }
     .hero__copy { position: relative; }
     .hero::before {
       background:
@@ -1151,6 +1169,9 @@
     }
     .photo-caption { color: rgba(255, 248, 243, .55); }
 
+    /* Mobile: área segura do PWA */
+    .top { padding-top: calc(20px + env(safe-area-inset-top)); }
+
     /* Legibilidade */
     .sponsor { font-size: .72rem; }
     .art-caption { font-size: .72rem; }
@@ -1218,10 +1239,24 @@
     @media (max-width: 720px) {
       .section h2 { font-size: 2.4rem; max-width: none; }
       .hero h1 { font-size: 2.55rem; margin-top: 0; }
+      .hero__art { width: min(66vw, 300px); }
+      .hero__install { display: inline-flex; }
       .coupon__stub::before, .coupon__stub::after { display: none; }
       .night__date { font-size: 2.5rem; }
-      .seal { width: 96px; height: 96px; }
-      .seal strong { font-size: 1.9rem; }
+      .seal { width: 84px; height: 84px; }
+      .seal strong { font-size: 1.65rem; }
+      .seal span { font-size: .7rem; }
+      .icon-btn { width: 44px; height: 44px; }
+      .shortcuts__suggestions button { min-height: 44px; }
+      .dialog__close { width: 44px; height: 44px; }
+      .shortcuts__backup button { padding: 10px 0; }
+      .footer__links a { padding-block: 8px; }
+      .sponsor-strip a { padding-block: 10px; }
+      .dialog__card { max-height: 90dvh; overflow-y: auto; }
+      .program-band__grid { grid-template-columns: 1fr 1fr; }
+      .program-band__cell { border-top: 0; border-left: 0; padding: 14px 0; }
+      .program-band__cell:nth-child(2) { border-left: 1px solid var(--line); padding-left: 16px; }
+      .program-band__cell--school { grid-column: 1 / -1; border-top: 1px solid var(--line); }
     }
   </style>
 </head>
@@ -1263,12 +1298,16 @@
           <p class="fine">
             Apresente seu chaveiro na clínica · válido até <span data-bind="validade">31 de janeiro de 2027</span>
           </p>
+          <button class="hero__install" type="button" data-install data-event="add_home">
+            Adicionar à tela inicial <span aria-hidden="true">→</span>
+          </button>
         </div>
 
         <div class="hero__art">
           <div class="arch">
             <span class="arch__star" aria-hidden="true">✦</span>
             <img src="assets/carolina.webp" width="800" height="1000"
+                 fetchpriority="high" decoding="async"
                  alt="Dra. Carolina Martins, farmacêutica esteta, sorrindo">
           </div>
           <div class="seal" aria-hidden="true">
@@ -1403,7 +1442,7 @@
 
     <!-- A NOITE -->
     <section class="section night" id="noite" aria-labelledby="titulo-noite">
-      <img class="night__watermark" src="assets/liberte-dance-studio.png" alt="" aria-hidden="true">
+      <img class="night__watermark" src="assets/liberte-dance-studio.png" width="408" height="270" alt="" aria-hidden="true" decoding="async">
       <div class="wrap">
         <header class="section__head">
           <span class="num">IV</span>
@@ -1485,10 +1524,10 @@
     </div>
   </footer>
 
-  <div class="sticky" aria-hidden="true">
+  <div class="sticky">
     <a class="btn btn--primary" data-wa data-event="cta_sticky"
        href="https://wa.me/5516992133717?text=Ol%C3%A1!%20Estive%20no%20Quebra-Nozes%20e%20quero%20usar%20os%2010%25%20na%20limpeza%20de%20pele."
-       target="_blank" rel="noopener" tabindex="-1">
+       target="_blank" rel="noopener">
       Agendar minha limpeza
     </a>
   </div>

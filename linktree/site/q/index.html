@@ -1349,6 +1349,98 @@
     }
 
     /* ============================================================
+       Fio dourado + micro-experiências de palco
+       ============================================================ */
+    .progress {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 2px; z-index: 70;
+      pointer-events: none;
+      background: color-mix(in oklab, var(--ink) 10%, transparent);
+    }
+    .progress span {
+      display: block; height: 100%;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .12s linear;
+    }
+
+    .seal {
+      appearance: none;
+      -webkit-appearance: none;
+      padding: 0;
+      cursor: pointer;
+      font: inherit;
+      transition: transform .3s var(--ease);
+    }
+    .seal:hover { transform: rotate(-8deg) scale(1.03); }
+    .seal:focus-visible { outline-color: var(--cream); }
+    .seal.is-pressed { animation: sealPop .55s var(--ease); }
+    @keyframes sealPop {
+      0% { transform: rotate(-8deg) scale(1); }
+      40% { transform: rotate(-2deg) scale(1.08); }
+      100% { transform: rotate(-8deg) scale(1); }
+    }
+
+    .night__spot {
+      position: absolute; inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .5s var(--ease);
+      background: radial-gradient(520px circle at var(--spot-x, 50%) var(--spot-y, 24%),
+        rgba(255, 248, 243, .14), transparent 65%);
+    }
+    @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+      .night:hover .night__spot { opacity: 1; }
+    }
+    .night__curtain {
+      position: absolute; top: 0; bottom: 0;
+      width: 50.4%;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(90deg,
+          #36060B 0 12px,
+          #5A1018 12px 24px,
+          #2A0408 24px 36px);
+      box-shadow: inset 0 0 110px rgba(0, 0, 0, .6);
+      transition: transform 1.25s cubic-bezier(.7, 0, .2, 1), opacity 1.25s;
+      will-change: transform;
+    }
+    .night__curtain--left {
+      left: 0;
+      border-right: 1px solid var(--gold);
+      transform: translateX(-101%);
+      opacity: 0;
+    }
+    .night__curtain--right {
+      right: 0;
+      border-left: 1px solid var(--gold);
+      transform: translateX(101%);
+      opacity: 0;
+    }
+    .night.is-curtained .night__curtain--left {
+      transform: none;
+      opacity: 1;
+    }
+    .night.is-curtained .night__curtain--right {
+      transform: none;
+      opacity: 1;
+    }
+
+    .shortcut--new { animation: shortcutIn .5s var(--ease) both; }
+    @keyframes shortcutIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .is-app .progress { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .night__curtain, .night__spot { display: none; }
+    }
+
+    /* ============================================================
        Modo app (PWA instalada)
        ============================================================ */
     .app-bar, .app-offer, .app-return { display: none; }
@@ -1553,6 +1645,7 @@
 </head>
 <body>
   <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
   <div class="grain" aria-hidden="true"></div>
 
   <header class="top">
@@ -1602,10 +1695,10 @@
                  fetchpriority="high" decoding="async"
                  alt="Dra. Carolina Martins, farmacêutica esteta, sorrindo">
           </div>
-          <div class="seal" aria-hidden="true">
+          <button class="seal" type="button" data-seal aria-label="Ver o presente de 10% na primeira limpeza">
             <strong><span data-bind="desconto">10%</span></strong>
             <span>off</span>
-          </div>
+          </button>
           <p class="art-caption">Dra. Carolina Martins · patrocinadora</p>
         </div>
       </div>
@@ -1722,6 +1815,9 @@
 
     <!-- A NOITE -->
     <section class="section night" id="noite" aria-labelledby="titulo-noite">
+      <div class="night__spot" aria-hidden="true"></div>
+      <div class="night__curtain night__curtain--left" aria-hidden="true"></div>
+      <div class="night__curtain night__curtain--right" aria-hidden="true"></div>
       <div class="wrap">
         <header class="section__head">
           <span class="num">IV</span>
@@ -1875,6 +1971,11 @@
         if (window.va) window.va("event", { name });
       } catch (_) {}
     }
+    function haptic(ms = 8) {
+      try {
+        if (navigator.vibrate) navigator.vibrate(ms);
+      } catch (_) {}
+    }
     document.querySelectorAll("[data-event]").forEach((el) => {
       el.addEventListener("click", () => track(el.dataset.event));
     });
@@ -1978,6 +2079,7 @@
     const AVATAR_COLORS = ["#7E2A30", "#B08A4F", "#5F4B44", "#8C5A5E", "#6B5B3E"];
     let shortcuts = [];
     let editingId = null;
+    let lastAddedId = null;
 
     function loadShortcuts() {
       try {
@@ -2064,6 +2166,10 @@
       shortcuts.forEach((item) => {
         const li = document.createElement("li");
         li.className = "shortcut";
+        if (item.id === lastAddedId) {
+          li.classList.add("shortcut--new");
+          lastAddedId = null;
+        }
 
         const link = document.createElement("a");
         link.className = "shortcut__main";
@@ -2112,6 +2218,7 @@
           if (!confirm(`Excluir "${item.title}"?`)) return;
           shortcuts = shortcuts.filter((s) => s.id !== item.id);
           track("shortcut_delete");
+          haptic(6);
           persistShortcuts();
         });
 
@@ -2165,6 +2272,8 @@
           title,
           url: normalized
         });
+        lastAddedId = shortcuts[shortcuts.length - 1].id;
+        haptic(10);
         track("shortcut_add");
       }
 
@@ -2185,6 +2294,8 @@
           title: (btn.dataset.title || hostLabel(normalized)).slice(0, 60),
           url: normalized
         });
+        lastAddedId = shortcuts[shortcuts.length - 1].id;
+        haptic(10);
         track("shortcut_add");
         persistShortcuts();
       });
@@ -2268,7 +2379,7 @@
         { el: document.querySelector(".hero"), text: "Boa noite!", tilt: -4, left: 4, right: -4 },
         { el: document.getElementById("presente"), text: "10% para você", tilt: 3, left: 6, right: -55 },
         { el: document.getElementById("atalhos"), text: "Guarde seus atalhos", tilt: -2, left: 38, right: -6 },
-        { el: document.getElementById("noite"), text: "5 anos de história", tilt: 2, left: 24, right: -24 },
+        { el: document.getElementById("noite"), text: "5 anos de história", tilt: 8, left: 24, right: -24 },
         { el: document.querySelector(".sponsor-strip"), text: "Até a próxima!", tilt: -3, left: 6, right: -60 }
       ].filter((state) => state.el);
 
@@ -2330,6 +2441,75 @@
       window.addEventListener("resize", update);
       update();
     })();
+
+    /* ============================================================
+       Fio dourado de progresso
+       ============================================================ */
+    const progressFill = document.querySelector(".progress span");
+    if (progressFill) {
+      const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const value = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+        progressFill.style.transform = `scaleX(${value})`;
+      };
+      let progressFrame = 0;
+      window.addEventListener("scroll", () => {
+        if (progressFrame) return;
+        progressFrame = requestAnimationFrame(() => {
+          progressFrame = 0;
+          updateProgress();
+        });
+      }, { passive: true });
+      window.addEventListener("resize", updateProgress);
+      updateProgress();
+    }
+
+    /* ============================================================
+       Selo 10% → presente
+       ============================================================ */
+    document.querySelectorAll("[data-seal]").forEach((button) => {
+      button.addEventListener("click", () => {
+        haptic(10);
+        button.classList.remove("is-pressed");
+        void button.offsetWidth;
+        button.classList.add("is-pressed");
+        const target = document.getElementById("presente");
+        if (!target) return;
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      });
+    });
+
+    /* ============================================================
+       Cortina + spot do palco
+       ============================================================ */
+    const nightStage = document.querySelector(".night");
+    if (nightStage) {
+      nightStage.classList.add("is-curtained");
+      if ("IntersectionObserver" in window) {
+        const curtainObserver = new IntersectionObserver(([entry]) => {
+          if (!entry.isIntersecting) return;
+          nightStage.classList.remove("is-curtained");
+          curtainObserver.disconnect();
+        }, { threshold: 0.25 });
+        curtainObserver.observe(nightStage);
+      } else {
+        nightStage.classList.remove("is-curtained");
+      }
+
+      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        let spotFrame = 0;
+        nightStage.addEventListener("pointermove", (event) => {
+          if (spotFrame) return;
+          spotFrame = requestAnimationFrame(() => {
+            spotFrame = 0;
+            const rect = nightStage.getBoundingClientRect();
+            nightStage.style.setProperty("--spot-x", `${((event.clientX - rect.left) / rect.width) * 100}%`);
+            nightStage.style.setProperty("--spot-y", `${((event.clientY - rect.top) / rect.height) * 100}%`);
+          });
+        }, { passive: true });
+      }
+    }
 
     /* ============================================================
        Service worker (PWA)

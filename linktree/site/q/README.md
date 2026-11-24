@@ -53,7 +53,7 @@ A seção **Seus atalhos** é funcional e local:
 - Adicionar, editar e excluir links.
 - Sugestões iniciais de WhatsApp, Instagram e site.
 - Dados em `localStorage`, chave `qn:atalhos:v1`. Nada vai para servidor.
-- Exportar backup em `meus-atalhos-quebra-nozes.json` e importar em outro aparelho.
+- Exportar backup em `meus-atalhos-quebra-nozes.json` e importar em outro aparelho; os botões aparecem depois do primeiro atalho salvo.
 - Para zerar: limpar os dados do site no navegador ou rodar `localStorage.removeItem("qn:atalhos:v1")` no console.
 
 O avatar é gerado pela inicial do título, sem chamada a serviço de favicon.
@@ -86,7 +86,8 @@ O hero usa o retrato original em `assets/carolina.webp`, sem tratamento de cor. 
 O mascote usa o Quebra-Nozes fotorrealista em `assets/nutcracker-ultra.webp`, gerado a partir da descrição do personagem e recortado com fundo transparente. `assets/nutcracker.svg` fica como versão vetorial de reserva.
 
 - mensagem e inclinação mudam por seção (boas-vindas, oferta, atalhos, noite, despedida);
-- em telas até 1200px ele aparece por ~3,6s a cada seção e some; no desktop fica no canto;
+- no desktop, a mensagem aparece como uma nota de papel ao lado do boneco;
+- em telas até 1200px ele aparece por ~3,6s a cada seção e some; no celular fica só o boneco, sem balão, para não cobrir o texto;
 - respeita `prefers-reduced-motion` e fica oculto para leitores de tela (`aria-hidden`).
 
 ## Mobile

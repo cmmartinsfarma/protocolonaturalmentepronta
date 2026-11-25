@@ -2724,10 +2724,16 @@
     document.querySelectorAll("[data-share]").forEach((button) => {
       button.addEventListener("click", async () => {
         haptic(8);
+        const shareUrl = (() => {
+          const url = new URL(location.href);
+          url.search = "";
+          url.hash = "";
+          return url.href;
+        })();
         const data = {
           title: document.title,
           text: "Quebra-Nozes 2026 · Dra. Carolina Martins",
-          url: location.href,
+          url: shareUrl,
         };
         try {
           if (navigator.share) {
@@ -2736,7 +2742,7 @@
             return;
           }
           if (navigator.clipboard) {
-            await navigator.clipboard.writeText(location.href);
+            await navigator.clipboard.writeText(shareUrl);
             const original = button.textContent;
             button.textContent = "Link copiado";
             window.setTimeout(() => {
@@ -2745,7 +2751,7 @@
             track("share_page");
             return;
           }
-          window.prompt("Copie o link:", location.href);
+          window.prompt("Copie o link:", shareUrl);
         } catch (_) {}
       });
     });

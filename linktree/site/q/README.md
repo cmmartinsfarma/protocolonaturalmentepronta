@@ -79,13 +79,15 @@ A primeira visita da sessão abre com uma cortina de veludo bordô e o título d
 
 ## Snow Fall (Originkit)
 
-A seção **“A noite”** recebe o componente **Snow Fall** da Originkit, um canvas de neve com o preset devolvido pelo MCP.
+O site recebe o componente **Snow Fall** da Originkit, um canvas de neve com o preset devolvido pelo MCP.
 
 - fonte original em `originkit/snowfall.tsx` (sem alterações);
-- bundle em `assets/snowfall.js`, carregado só quando a seção se aproxima;
-- monta ao entrar na tela e desmonta ao sair, para não gastar CPU;
+- camada fixa em todo o site, em dourado `#D2AE6C`, porque o branco desapareceria no pergaminho;
+- 500 flocos no desktop e 240 no celular, com opacidade 20–65%; bundle em `assets/snowfall.js`, carregado depois que a página fica ociosa;
 - não roda no modo app nem com `prefers-reduced-motion`;
 - detalhes de build e atribuição em `originkit/README.md`.
+
+As seções também ganharam marcadores **Ato I–III** e a faixa de programa virou **“Programa de sala”**, fechando o fio teatral da página.
 
 ## Retrato
 

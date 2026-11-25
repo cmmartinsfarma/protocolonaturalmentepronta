@@ -1,11 +1,11 @@
 /* Quebra-Nozes 2026 — cache mínimo da lembrança */
-const CACHE = "qn-2026-v9";
+const CACHE = "qn-2026-v10";
 const ASSETS = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
   "./assets/carolina.webp",
-  "./assets/logo.png",
+  "./assets/logo.png?v=2",
   "./assets/icon-180.png",
   "./assets/icon-192.png",
   "./assets/icon-512.png"

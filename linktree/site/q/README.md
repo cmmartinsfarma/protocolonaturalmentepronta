@@ -38,10 +38,10 @@ A página segue o cartaz do evento: azul-meia-noite, veludo bordô, dourado e pa
 
 ## Placeholders para completar
 
-- **Logo da escola:** já incluído em `assets/liberte-dance-studio.png`, com fundo transparente e recorte. Aparece na faixa de programa e como crédito grande na seção "A noite".
+- **Logo da escola:** já incluído em `assets/liberte-dance-studio.png`, com fundo transparente e recorte. Aparece em destaque no cartão do finale.
 - **Teatro:** o cartaz atualizado informa **Teatro Pedro II · Ribeirão Preto**. O endereço completo ainda não foi informado.
-- **Fotos:** não haverá galeria pós-apresentação. A seção "A noite" é uma lembrança com o crédito da escola, sem imagens do espetáculo.
-- **Mensagem da Dra.:** a seção biográfica foi removida para enxugar a página. Se quiser, a mensagem entra como link/vídeo na faixa de patrocínio, que já leva ao site.
+- **Fotos:** não haverá galeria pós-apresentação. O finale traz o crédito da escola, sem imagens do espetáculo.
+- **Mensagem da Dra.:** a seção biográfica foi removida para enxugar a página. Há espaço para um vídeo curto no hero (boas-vindas + oferta), com o retrato atual como capa; falta definir o roteiro e receber o arquivo.
 - **Oferta:** validar o percentual e as regras com a clínica.
 
 A página está com `noindex,follow`. Se quiser que ela apareça no Google, remova essa meta no `<head>`.
@@ -51,7 +51,8 @@ A página está com `noindex,follow`. Se quiser que ela apareça no Google, remo
 A seção **Seus atalhos** é funcional e local:
 
 - Adicionar, editar e excluir links.
-- Sugestões iniciais de WhatsApp, Instagram e site.
+- Instruções curtas de uso no topo da seção e sugestões iniciais de WhatsApp, Instagram, site e ligação.
+- Compartilhar a página e instalar como app.
 - Dados em `localStorage`, chave `qn:atalhos:v1`. Nada vai para servidor.
 - Exportar backup em `meus-atalhos-quebra-nozes.json` e importar em outro aparelho; os botões aparecem depois do primeiro atalho salvo.
 - Para zerar: limpar os dados do site no navegador ou rodar `localStorage.removeItem("qn:atalhos:v1")` no console.
@@ -63,8 +64,8 @@ O avatar é gerado pela inicial do título, sem chamada a serviço de favicon.
 - A PWA instalada abre em `?app=1`, direto em **“Seus atalhos”**.
 - O link **“Ver a lembrança”** abre `?full=1`, a página completa do evento.
 - Na página completa instalada, aparece **“Meus atalhos”** no cabeçalho para voltar.
-- `manifest.shortcuts` (Android, long-press do ícone): **Meus atalhos**, **Ver o presente**, **A noite**.
-- O modo app esconde hero, programa, oferta, noite e faixa de patrocínio; mostra atalhos, a faixa de 10% e o rodapé.
+- `manifest.shortcuts` (Android, long-press do ícone): **Meus atalhos**, **Ver o presente**, **Realização**.
+- O modo app esconde hero, programa, oferta e finale; mostra atalhos, a faixa de 10% e o rodapé.
 - A navegação normal em `/q/` continua sendo a página completa do evento.
 
 ## Abertura de cortina
@@ -87,17 +88,17 @@ O site recebe o componente **Snow Fall** da Originkit, um canvas de neve com o p
 - não roda no modo app nem com `prefers-reduced-motion`;
 - detalhes de build e atribuição em `originkit/README.md`.
 
-A faixa de programa virou **“Programa de sala”**; os marcadores de ato foram retirados.
+A faixa de programa ficou só com data e sessões; o rótulo “Programa de sala” e os marcadores de ato saíram.
 
 ## Retrato
 
-O hero usa o retrato original em `assets/carolina.webp`, sem tratamento de cor. Os acentos da página (títulos, CTA e selo) usam o bordô profundo do evento, em vez do rosé anterior; o selo de 10% tem fio dourado e fica no arco, sem cobrir a legenda.
+O hero usa o retrato original em `assets/carolina.webp`, sem tratamento de cor. Os acentos da página (títulos, CTA e selo) usam o bordô profundo do evento, em vez do rosé anterior; o selo de 10% tem fio dourado e fica no arco.
 
 ## Mascote
 
 O mascote usa o Quebra-Nozes fotorrealista em `assets/nutcracker-ultra.webp`, gerado a partir da descrição do personagem e recortado com fundo transparente. `assets/nutcracker.svg` fica como versão vetorial de reserva.
 
-- mensagem e inclinação mudam por seção (boas-vindas, oferta, atalhos, noite, despedida);
+- mensagem e inclinação mudam por seção (boas-vindas, oferta, atalhos, finale);
 - no desktop, a mensagem aparece como uma nota de papel ao lado do boneco;
 - em telas até 1200px ele aparece por ~3,6s a cada seção e some; no celular fica só o boneco, sem balão, para não cobrir o texto;
 - respeita `prefers-reduced-motion` e fica oculto para leitores de tela (`aria-hidden`).
@@ -106,13 +107,13 @@ O mascote usa o Quebra-Nozes fotorrealista em `assets/nutcracker-ultra.webp`, ge
 
 O mobile é a superfície principal (toque NFC). A página prioriza:
 
-- CTA e oferta na primeira dobra; data e sessões no programa de sala, logo abaixo.
+- CTA e oferta na primeira dobra; data e sessões na faixa de programa, logo abaixo.
 - Link "Adicionar à tela inicial" já no hero.
 - Faixa de programa em duas colunas.
 - Alvos de toque de 44px nos atalhos, sugestões, diálogo e links secundários.
 - Sticky de agendamento acessível e com `safe-area`.
 - Retrato reduzido para encurtar o primeiro scroll.
-- Fluxo enxuto: oferta → atalhos → noite → patrocínio. "O cuidado" e o card "Guarde esta página" foram removidos; a instalação fica no hero.
+- Fluxo enxuto: oferta → atalhos → finale → rodapé. "O cuidado" e o card "Guarde esta página" foram removidos; a instalação fica no hero.
 
 ## Chaveiro
 

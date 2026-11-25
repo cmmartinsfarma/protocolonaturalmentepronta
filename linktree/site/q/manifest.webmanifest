@@ -51,10 +51,10 @@
       ]
     },
     {
-      "name": "A noite",
-      "short_name": "A noite",
-      "description": "A lembrança do Quebra-Nozes 2026",
-      "url": "./?full=1#noite",
+      "name": "Realização",
+      "short_name": "Realização",
+      "description": "A escola e o patrocínio",
+      "url": "./?full=1#finale",
       "icons": [
         {
           "src": "assets/icon-192.png",

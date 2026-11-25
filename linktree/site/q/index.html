@@ -212,6 +212,8 @@
       font-style: italic;
       color: var(--oxblood);
     }
+    .hero__line { display: block; }
+    .hero__line--right { text-align: right; }
     .lede {
       max-width: 46ch;
       margin: 0;
@@ -506,6 +508,32 @@
       letter-spacing: .13em; text-transform: uppercase;
       color: var(--ink-soft);
     }
+    .shortcuts__hint {
+      margin: -18px 0 18px;
+      font-size: .72rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+    .is-app .shortcuts__hint { margin-top: 0; }
+    .shortcuts__label {
+      font-family: var(--sans);
+      font-size: .58rem; font-weight: 600;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .shortcuts__extras {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      margin-top: 14px;
+    }
+    .shortcuts__extras button {
+      padding: 0;
+      border: 0; border-bottom: 1px solid var(--line-strong);
+      background: transparent;
+      color: var(--ink-soft);
+      font-size: .68rem;
+      cursor: pointer;
+    }
+    .shortcuts__extras button:hover { color: var(--ink); border-color: var(--ink); }
     .shortcuts__empty {
       display: grid; justify-items: center;
       gap: 12px;
@@ -807,14 +835,26 @@
     .footer strong { color: var(--ink); font-weight: 600; }
     .footer__links {
       display: flex;
-      gap: 20px;
+      gap: 10px;
       flex-wrap: wrap;
     }
     .footer__links a {
-      border-bottom: 1px solid var(--line-strong);
-      padding-bottom: 2px;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      color: var(--ink-soft);
+      transition: color .2s var(--ease), border-color .2s var(--ease),
+                  background .2s var(--ease);
     }
-    .footer__links a:hover { border-color: var(--ink); }
+    .footer__links a:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(176, 138, 79, .06);
+    }
+    .footer__links svg { width: 20px; height: 20px; }
     .footer__legal {
       margin-top: 26px !important;
       padding-top: 18px;
@@ -964,6 +1004,7 @@
        ============================================================ */
     @media (max-width: 920px) {
       .hero { min-height: 0; }
+      .hero::after { display: none; }
       .hero__grid, .night__grid { grid-template-columns: 1fr; }
       .hero__art { width: min(78vw, 340px); }
       .care__grid { grid-template-columns: 1fr; gap: 26px; }
@@ -1113,7 +1154,7 @@
     }
     .program-band__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
     .program-band__cell {
       position: relative;
@@ -1276,6 +1317,70 @@
       font-size: .95rem;
       color: var(--ink-soft);
     }
+
+    /* Finale — realização e patrocínio */
+    .finale {
+      padding-bottom: clamp(40px, 6vw, 72px);
+    }
+    .finale__glow {
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at 50% 0%, rgba(176, 138, 79, .18), transparent 60%);
+    }
+    .finale .wrap { position: relative; z-index: 2; }
+    .finale__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+    }
+    .finale__kicker {
+      display: block;
+      margin-bottom: 10px;
+      font-size: .58rem; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .finale__sponsor h2 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.6vw, 3rem);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--cream);
+    }
+    .finale__sponsor p {
+      margin: 0 0 20px;
+      font-size: .72rem;
+      letter-spacing: .06em;
+      color: rgba(255, 248, 243, .68);
+    }
+    .finale__link {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(255, 248, 243, .5);
+      font-size: .68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+    }
+    .finale__link:hover { border-color: var(--cream); }
+    .finale__school {
+      width: 100%;
+      max-width: 440px;
+      justify-self: end;
+    }
+    .finale__thanks {
+      margin: clamp(30px, 5vw, 48px) 0 0;
+      text-align: center;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: rgba(255, 248, 243, .75);
+    }
+    @media (max-width: 920px) {
+      .finale__grid { grid-template-columns: 1fr; gap: 30px; }
+      .finale__school { max-width: 420px; justify-self: center; }
+    }
+    .is-app .finale { display: none; }
     .night h2 { color: var(--cream); }
     .night .section__head p { color: rgba(255, 248, 243, .66); }
     .night .section__head h2::after { background: var(--gold); }
@@ -1381,9 +1486,9 @@
       .seal span { font-size: .7rem; }
       .icon-btn { width: 44px; height: 44px; }
       .shortcuts__suggestions button { min-height: 44px; }
+      .shortcuts__suggestions { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
       .dialog__close { width: 44px; height: 44px; }
       .shortcuts__backup button { padding: 10px 0; }
-      .footer__links a { padding-block: 8px; }
       .sponsor-strip a { padding-block: 10px; }
       .dialog__card { max-height: 90dvh; overflow-y: auto; }
       .program-band__grid { grid-template-columns: 1fr 1fr; }
@@ -1708,6 +1813,7 @@
     .is-app .mascot { display: none; }
     .is-app .sticky { transform: none; }
     .is-standalone .hero__install { display: none; }
+    .is-standalone .shortcuts__extras [data-install] { display: none; }
     .is-standalone:not(.is-app) .app-return {
       display: inline-flex; align-items: center; gap: 6px;
       margin-top: 7px;
@@ -1903,7 +2009,10 @@
     <section class="hero" aria-labelledby="titulo">
       <div class="wrap hero__grid">
         <div class="hero__copy">
-          <h1 id="titulo">Uma <em>noite</em><br>para guardar.<br>Um <em>cuidado</em><br>para continuar.</h1>
+          <h1 id="titulo">
+            <span class="hero__line">Uma <em>noite</em><br>para guardar.</span>
+            <span class="hero__line hero__line--right">Um <em>cuidado</em><br>para continuar.</span>
+          </h1>
           <p class="lede">
             A Dra. Carolina Martins patrocina o Quebra-Nozes 2026 e reservou
             <strong><span data-bind="desconto">10%</span> na sua primeira limpeza de pele</strong>.
@@ -1939,9 +2048,6 @@
 
     <!-- PROGRAMA -->
     <section class="program-band" aria-label="Programa da noite">
-      <div class="wrap">
-        <p class="program-band__kicker">Programa de sala</p>
-      </div>
       <div class="wrap program-band__grid">
         <div class="program-band__cell">
           <span>Data</span>
@@ -1951,10 +2057,6 @@
         <div class="program-band__cell">
           <span>Sessões</span>
           <strong>17h <em>&amp;</em> 20h</strong>
-        </div>
-        <div class="program-band__cell program-band__cell--school">
-          <span>Realização</span>
-          <img src="assets/liberte-dance-studio.png" width="408" height="270" alt="Liberté Dance Studio">
         </div>
       </div>
     </section>
@@ -1997,7 +2099,7 @@
       <div class="wrap app-bar__inner">
         <div>
           <h1 class="app-bar__title">Seus atalhos</h1>
-          <p class="app-bar__sub">Seus links em um toque.</p>
+          <p class="app-bar__sub">Seu porta-links. Salve o que usa todos os dias.</p>
         </div>
         <a class="app-bar__event" href="./?full=1">Ver a lembrança <span aria-hidden="true">→</span></a>
       </div>
@@ -2009,8 +2111,10 @@
         <header class="section__head">
           <span class="num">II</span>
           <h2 id="titulo-atalhos">Seus atalhos</h2>
-          <p>Guarde os links que você usa todos os dias.</p>
+          <p>Seu porta-links: salve o WhatsApp, o Instagram, o site da clínica e o que mais usar.</p>
         </header>
+
+        <p class="shortcuts__hint">Cole o link, dê um nome e pronto. Fica salvo só neste aparelho.</p>
 
         <div class="shortcuts__toolbar">
           <p class="shortcuts__count" id="shortcuts-count">0 atalhos salvos</p>
@@ -2022,14 +2126,21 @@
         <div class="shortcuts__empty" id="shortcuts-empty">
           <span class="shortcuts__star" aria-hidden="true">✦</span>
           <p>Ainda não há atalhos.</p>
+          <span class="shortcuts__label">Comece com:</span>
           <div class="shortcuts__suggestions">
             <button type="button" data-suggest data-title="WhatsApp da Carolina" data-url="https://wa.me/5516992133717">WhatsApp</button>
             <button type="button" data-suggest data-title="Instagram da Carolina" data-url="https://www.instagram.com/dracarolmmartins/">Instagram</button>
             <button type="button" data-suggest data-title="Site da Carolina" data-url="https://www.naturalmentepronta.com.br/">Site</button>
+            <button type="button" data-suggest data-title="Ligar para a clínica" data-url="tel:+5516992133717">Ligar</button>
           </div>
         </div>
 
         <ul class="shortcuts__list" id="shortcuts-list" hidden></ul>
+
+        <div class="shortcuts__extras">
+          <button type="button" data-share>Compartilhar página</button>
+          <button type="button" data-install data-event="add_home_shortcuts">Instalar como app</button>
+        </div>
 
         <div class="shortcuts__backup">
           <button type="button" data-export-shortcuts data-event="backup_export">Exportar backup</button>
@@ -2045,45 +2156,30 @@
       </div>
     </section>
 
-    <!-- A NOITE -->
-    <section class="section night" id="noite" aria-labelledby="titulo-noite">
-      <div class="night__spot" aria-hidden="true"></div>
-      <div class="night__curtain night__curtain--left" aria-hidden="true"></div>
-      <div class="night__curtain night__curtain--right" aria-hidden="true"></div>
-      <div class="wrap">
-        <header class="section__head">
-          <span class="num">III</span>
-          <h2 id="titulo-noite">A noite</h2>
-          <p>Uma lembrança do Quebra-Nozes 2026, guardada neste chaveiro.</p>
-        </header>
-
-        <div class="night__grid">
-          <div>
-            <p class="night__date">Sábado,<br><em>12 de dezembro</em></p>
-            <p class="night__text">
-              <span data-before>Obrigada por estar aqui.</span>
-              <span data-after>Obrigada por essa noite.</span>
-            </p>
-          </div>
-          <div class="night__credit">
-            <span>Realização</span>
-            <img src="assets/liberte-dance-studio.png" width="408" height="270" alt="Liberté Dance Studio">
-            <p>Edição de 5 anos · Quebra-Nozes 2026</p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <section class="sponsor-strip" aria-label="Patrocínio">
-    <div class="wrap sponsor-strip__inner">
-      <p>
-        Dra. Carolina Martins
-        <span>Patrocinadora · Farmacêutica Esteta · CRF 125.459</span>
+  <section class="section night finale" id="finale" aria-label="Realização e patrocínio">
+    <div class="finale__glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="finale__grid">
+        <div class="finale__sponsor">
+          <span class="finale__kicker">Patrocínio</span>
+          <h2>Dra. Carolina Martins</h2>
+          <p>Farmacêutica esteta · CRF 125.459</p>
+          <a class="finale__link" href="https://www.naturalmentepronta.com.br/" target="_blank" rel="noopener">
+            Conheça o trabalho <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="night__credit finale__school">
+          <span>Realização</span>
+          <img src="assets/liberte-dance-studio.png" width="408" height="270" alt="Liberté Dance Studio">
+          <p>Edição de 5 anos · Quebra-Nozes 2026</p>
+        </div>
+      </div>
+      <p class="finale__thanks">
+        <span data-before>Obrigada por estar aqui.</span>
+        <span data-after>Obrigada por essa noite.</span>
       </p>
-      <a href="https://www.naturalmentepronta.com.br/" target="_blank" rel="noopener">
-        Conheça o trabalho <span aria-hidden="true">→</span>
-      </a>
     </div>
   </section>
 
@@ -2095,11 +2191,30 @@
           <p>Atendimento com hora marcada.</p>
         </div>
         <div class="footer__links">
-          <a href="https://www.instagram.com/dracarolmmartins/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.naturalmentepronta.com.br/" target="_blank" rel="noopener">Site oficial</a>
+          <a href="https://www.instagram.com/dracarolmmartins/" target="_blank" rel="noopener"
+             aria-label="Instagram da Dra. Carolina Martins" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"></circle>
+            </svg>
+          </a>
+          <a href="https://www.naturalmentepronta.com.br/" target="_blank" rel="noopener"
+             aria-label="Site oficial da Dra. Carolina Martins" title="Site oficial">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M3 12h18"></path>
+              <path d="M12 3c2.6 2.8 4 5.8 4 9s-1.4 6.2-4 9c-2.6-2.8-4-5.8-4-9s1.4-6.2 4-9z"></path>
+            </svg>
+          </a>
           <a data-wa data-event="cta_footer"
              href="https://wa.me/5516992133717?text=Ol%C3%A1!%20Estive%20no%20Quebra-Nozes%20e%20quero%20usar%20os%2010%25%20na%20minha%20primeira%20limpeza%20de%20pele."
-             target="_blank" rel="noopener">WhatsApp</a>
+             target="_blank" rel="noopener"
+             aria-label="WhatsApp da clínica" title="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+            </svg>
+          </a>
         </div>
       </div>
       <p class="footer__legal">
@@ -2145,7 +2260,7 @@
         <input id="shortcut-name" name="name" type="text" maxlength="60" placeholder="Ex.: Farmácia" autocomplete="off">
       </label>
       <label for="shortcut-url">Link
-        <input id="shortcut-url" name="url" type="url" inputmode="url" placeholder="https://..." autocomplete="off" required>
+        <input id="shortcut-url" name="url" type="text" inputmode="url" placeholder="https://..." autocomplete="off" required>
       </label>
       <p class="form-error" id="shortcut-error" role="alert" hidden></p>
       <div class="form-actions">
@@ -2339,6 +2454,13 @@
     function normalizeUrl(value) {
       let raw = String(value || "").trim();
       if (!raw) return null;
+      if (/^(tel|mailto):/i.test(raw)) {
+        try {
+          const url = new URL(raw);
+          if (url.protocol === "tel:" || url.protocol === "mailto:") return url.href;
+        } catch (_) {}
+        return null;
+      }
       if (!/^https?:\/\//i.test(raw)) raw = "https://" + raw;
       try {
         const url = new URL(raw);
@@ -2350,6 +2472,8 @@
     }
 
     function hostLabel(url) {
+      if (/^tel:/i.test(url)) return "Telefone";
+      if (/^mailto:/i.test(url)) return "E-mail";
       try {
         return new URL(url).hostname.replace(/^www\./, "");
       } catch (_) {
@@ -2597,6 +2721,35 @@
     shortcuts = loadShortcuts();
     renderShortcuts();
 
+    document.querySelectorAll("[data-share]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        haptic(8);
+        const data = {
+          title: document.title,
+          text: "Quebra-Nozes 2026 · Dra. Carolina Martins",
+          url: location.href,
+        };
+        try {
+          if (navigator.share) {
+            await navigator.share(data);
+            track("share_page");
+            return;
+          }
+          if (navigator.clipboard) {
+            await navigator.clipboard.writeText(location.href);
+            const original = button.textContent;
+            button.textContent = "Link copiado";
+            window.setTimeout(() => {
+              button.textContent = original;
+            }, 1800);
+            track("share_page");
+            return;
+          }
+          window.prompt("Copie o link:", location.href);
+        } catch (_) {}
+      });
+    });
+
     /* ============================================================
        Mascote Quebra-Nozes
        ============================================================ */
@@ -2607,11 +2760,10 @@
       if (!bubble) return;
 
       const states = [
-        { el: document.querySelector(".hero"), text: "Boa noite!", tilt: -4, left: 4, right: -4 },
-        { el: document.getElementById("presente"), text: "10% para você", tilt: 3, left: 6, right: -55 },
-        { el: document.getElementById("atalhos"), text: "Guarde seus atalhos", tilt: -2, left: 38, right: -6 },
-        { el: document.getElementById("noite"), text: "5 anos de história", tilt: 8, left: 24, right: -24 },
-        { el: document.querySelector(".sponsor-strip"), text: "Até a próxima!", tilt: -3, left: 6, right: -60 }
+        { el: document.querySelector(".hero"), text: "Boa noite. A casa é sua.", tilt: -4, left: 4, right: -4 },
+        { el: document.getElementById("presente"), text: "A Dra. deixou um presente.", tilt: 3, left: 6, right: -55 },
+        { el: document.getElementById("atalhos"), text: "Seus links, a um toque.", tilt: -2, left: 38, right: -6 },
+        { el: document.getElementById("finale"), text: "Até a próxima.", tilt: 8, left: 24, right: -24 }
       ].filter((state) => state.el);
 
       let current = -1;
@@ -2715,7 +2867,7 @@
        Cortina + spot do palco
        ============================================================ */
     const nightStage = document.querySelector(".night");
-    if (nightStage) {
+    if (nightStage && nightStage.querySelector(".night__spot")) {
       nightStage.classList.add("is-curtained");
       if ("IntersectionObserver" in window) {
         const curtainObserver = new IntersectionObserver(([entry]) => {

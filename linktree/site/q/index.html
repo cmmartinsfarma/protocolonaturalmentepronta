@@ -3186,6 +3186,90 @@
         animation: none;
       }
     }
+
+    /* ============================================================
+       Hero em composição: foto entre as frases (mobile e tablet)
+       ============================================================ */
+    @media (max-width: 1023.98px) {
+      .hero__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) clamp(76px, 23vw, 340px) minmax(0, 1fr);
+        grid-template-areas:
+          "left art right"
+          "lede lede lede"
+          "cta cta cta";
+        align-items: center;
+        column-gap: 10px;
+        row-gap: clamp(18px, 2.4vw, 28px);
+      }
+
+      .hero__copy {
+        display: contents;
+      }
+
+      .hero h1 {
+        display: contents;
+        font-size: clamp(1.05rem, 5.2vw, 3.4rem);
+        line-height: 1.04;
+      }
+
+      .hero__line:first-child {
+        grid-area: left;
+        text-align: right;
+      }
+
+      .hero__line--right {
+        grid-area: right;
+        text-align: left;
+      }
+
+      .hero__line {
+        white-space: nowrap;
+      }
+
+      .hero__art {
+        grid-area: art;
+        width: 100%;
+        margin: 0;
+      }
+
+      .hero__art .arch {
+        padding: clamp(5px, .9vw, 10px);
+      }
+
+      .hero__art .arch__star {
+        top: -10px;
+        padding: 0 6px;
+        font-size: .65rem;
+      }
+
+      .lede {
+        grid-area: lede;
+        justify-self: center;
+        max-width: 42ch;
+        text-align: center;
+      }
+
+      .actions {
+        grid-area: cta;
+        justify-content: center;
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 1023.98px) and (prefers-reduced-motion: no-preference) {
+      html:not(.has-overture) .hero__line {
+        animation: rise .85s var(--ease) both;
+      }
+
+      html:not(.has-overture) .hero__line:first-child {
+        animation-delay: .04s;
+      }
+
+      html:not(.has-overture) .hero__line--right {
+        animation-delay: .1s;
+      }
+    }
   </style>
 </head>
 
@@ -3264,7 +3348,7 @@
           </h1>
           <p class="lede">
             A Dra. Carolina Martins patrocina o Quebra-Nozes 2026 e reservou
-            <strong><span data-bind="desconto">10%</span> na sua primeira limpeza de pele</strong>.
+            <strong>um presente pra você</strong>!
           </p>
           <div class="actions">
             <a class="btn btn--primary" href="#presente">

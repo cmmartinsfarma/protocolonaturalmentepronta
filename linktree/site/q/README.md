@@ -30,7 +30,7 @@ const CONFIG = {
 
 - Trocar `10%` por `20%` atualiza a página e a mensagem do WhatsApp.
 - A data de `eventoFim` ativa o estado pós-evento ("Obrigada por essa noite").
-- A oferta é dirigida a "alguns convidados selecionados"; ajuste esse texto no hero se a regra mudar.
+- A oferta é apresentada como um presente da Dra. Carolina Martins; o cupom detalha a validade e a apresentação do chaveiro.
 
 ## Identidade visual
 
@@ -106,7 +106,7 @@ O mascote usa o Quebra-Nozes fotorrealista em `assets/nutcracker-ultra.webp`, ge
 
 O mobile é a superfície principal (toque NFC). A página prioriza:
 
-- CTA, oferta e data na primeira dobra.
+- CTA e oferta na primeira dobra; data e sessões no programa de sala, logo abaixo.
 - Link "Adicionar à tela inicial" já no hero.
 - Faixa de programa em duas colunas.
 - Alvos de toque de 44px nos atalhos, sugestões, diálogo e links secundários.

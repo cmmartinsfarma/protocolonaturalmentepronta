@@ -1548,6 +1548,11 @@
       background: radial-gradient(520px circle at var(--spot-x, 50%) var(--spot-y, 24%),
         rgba(255, 248, 243, .14), transparent 65%);
     }
+    .night__snow {
+      position: absolute; inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
     @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
       .night:hover .night__spot { opacity: 1; }
     }
@@ -2019,6 +2024,7 @@
     <!-- A NOITE -->
     <section class="section night" id="noite" aria-labelledby="titulo-noite">
       <div class="night__spot" aria-hidden="true"></div>
+      <div class="night__snow" data-snowfall aria-hidden="true"></div>
       <div class="night__curtain night__curtain--left" aria-hidden="true"></div>
       <div class="night__curtain night__curtain--right" aria-hidden="true"></div>
       <div class="wrap">
@@ -2725,6 +2731,71 @@
         navigator.serviceWorker.register("/q/sw.js").catch(() => {});
       });
     }
+  </script>
+
+  <script>
+    /* Originkit Snow Fall — carregado perto da seção "A noite". */
+    (() => {
+      const host = document.querySelector("[data-snowfall]");
+      if (!host) return;
+      if (document.documentElement.classList.contains("is-app")) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      let loading = false;
+      let api = null;
+      let mounted = false;
+
+      const sync = (visible) => {
+        if (!api) return;
+        if (visible && !mounted) {
+          api.mount(host);
+          mounted = true;
+        } else if (!visible && mounted) {
+          api.unmount();
+          mounted = false;
+        }
+      };
+
+      const load = () => {
+        if (loading || api) return;
+        loading = true;
+        const script = document.createElement("script");
+        script.src = "assets/snowfall.js?v=1";
+        script.async = true;
+        script.onload = () => {
+          api = window.OriginkitSnowfall || null;
+          if (!api) return;
+          if (!("IntersectionObserver" in window)) {
+            sync(true);
+            return;
+          }
+          const observer = new IntersectionObserver(
+            (entries) => sync(entries[0].isIntersecting),
+            { threshold: 0 }
+          );
+          observer.observe(host);
+        };
+        script.onerror = () => {
+          loading = false;
+        };
+        document.head.appendChild(script);
+      };
+
+      if (!("IntersectionObserver" in window)) {
+        load();
+        return;
+      }
+
+      const loader = new IntersectionObserver(
+        (entries) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          loader.disconnect();
+          load();
+        },
+        { rootMargin: "400px 0px" }
+      );
+      loader.observe(host);
+    })();
   </script>
 </body>
 </html>

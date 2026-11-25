@@ -77,6 +77,16 @@ A primeira visita da sessão abre com uma cortina de veludo bordô e o título d
 - `?overture=1` força a abertura e `?overture=0` desliga, para testar;
 - roda num script próprio, logo após a cortina, para não depender do restante do JavaScript.
 
+## Snow Fall (Originkit)
+
+A seção **“A noite”** recebe o componente **Snow Fall** da Originkit, um canvas de neve com o preset devolvido pelo MCP.
+
+- fonte original em `originkit/snowfall.tsx` (sem alterações);
+- bundle em `assets/snowfall.js`, carregado só quando a seção se aproxima;
+- monta ao entrar na tela e desmonta ao sair, para não gastar CPU;
+- não roda no modo app nem com `prefers-reduced-motion`;
+- detalhes de build e atribuição em `originkit/README.md`.
+
 ## Retrato
 
 O hero usa o retrato original em `assets/carolina.webp`, sem tratamento de cor. Os acentos da página (títulos, CTA e selo) usam o bordô profundo do evento, em vez do rosé anterior; o selo de 10% tem fio dourado e fica no arco, sem cobrir a legenda.

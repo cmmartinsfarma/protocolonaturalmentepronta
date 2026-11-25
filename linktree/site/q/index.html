@@ -1690,6 +1690,71 @@
       min-width: 0;
     }
 
+    /* Desktop: a foto entra entre as duas frases do título */
+    @media (min-width: 1024px) {
+      .hero__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) clamp(240px, 25vw, 360px) minmax(0, 1fr);
+        grid-template-areas:
+          "left art right"
+          "lede lede lede"
+          "cta cta cta";
+        align-items: center;
+        column-gap: clamp(24px, 3vw, 56px);
+        row-gap: clamp(22px, 3vw, 34px);
+      }
+
+      .hero__copy {
+        display: contents;
+      }
+
+      .hero h1 {
+        display: contents;
+      }
+
+      .hero__line:first-child {
+        grid-area: left;
+        text-align: right;
+      }
+
+      .hero__line--right {
+        grid-area: right;
+        text-align: left;
+      }
+
+      .hero__art {
+        grid-area: art;
+        width: 100%;
+      }
+
+      .lede {
+        grid-area: lede;
+        justify-self: center;
+        max-width: 54ch;
+        text-align: center;
+      }
+
+      .actions {
+        grid-area: cta;
+        justify-content: center;
+        margin: 0;
+      }
+    }
+
+    @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+      html:not(.has-overture) .hero__line {
+        animation: rise .85s var(--ease) both;
+      }
+
+      html:not(.has-overture) .hero__line:first-child {
+        animation-delay: .04s;
+      }
+
+      html:not(.has-overture) .hero__line--right {
+        animation-delay: .1s;
+      }
+    }
+
     .hero::before {
       background:
         radial-gradient(ellipse at 72% 38%, rgba(176, 138, 79, .16), transparent 55%),

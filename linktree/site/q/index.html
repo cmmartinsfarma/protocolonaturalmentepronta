@@ -276,9 +276,6 @@
       justify-self: center;
       width: min(100%, 390px);
     }
-    .hero__frame {
-      position: relative;
-    }
     .arch {
       position: relative;
       padding: 12px;
@@ -2025,16 +2022,11 @@
         </div>
 
         <div class="hero__art">
-          <div class="hero__frame">
-            <div class="arch">
-              <span class="arch__star" aria-hidden="true">✦</span>
-              <img src="assets/carolina.webp" width="800" height="1000"
-                   fetchpriority="high" decoding="async"
-                   alt="Dra. Carolina Martins, farmacêutica esteta, sorrindo">
-            </div>
-            <button class="seal" type="button" data-seal aria-label="Ver o presente de 10% na primeira limpeza">
-              <strong><span data-bind="desconto">10%</span></strong>
-            </button>
+          <div class="arch">
+            <span class="arch__star" aria-hidden="true">✦</span>
+            <img src="assets/carolina.webp" width="800" height="1000"
+                 fetchpriority="high" decoding="async"
+                 alt="Dra. Carolina Martins, farmacêutica esteta, sorrindo">
           </div>
         </div>
       </div>
@@ -2846,22 +2838,6 @@
       window.addEventListener("resize", updateProgress);
       updateProgress();
     }
-
-    /* ============================================================
-       Selo 10% → presente
-       ============================================================ */
-    document.querySelectorAll("[data-seal]").forEach((button) => {
-      button.addEventListener("click", () => {
-        haptic(10);
-        button.classList.remove("is-pressed");
-        void button.offsetWidth;
-        button.classList.add("is-pressed");
-        const target = document.getElementById("presente");
-        if (!target) return;
-        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-      });
-    });
 
     /* ============================================================
        Cortina + spot do palco

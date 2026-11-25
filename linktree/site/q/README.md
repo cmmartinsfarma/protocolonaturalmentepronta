@@ -92,7 +92,7 @@ A faixa de programa ficou só com data e sessões; o rótulo “Programa de sala
 
 ## Retrato
 
-O hero usa o retrato original em `assets/carolina.webp`, sem tratamento de cor. Os acentos da página (títulos, CTA e selo) usam o bordô profundo do evento, em vez do rosé anterior; o selo de 10% tem fio dourado e fica no arco.
+O hero usa o retrato original em `assets/carolina.webp`, sem tratamento de cor. Os acentos da página (títulos e CTA) usam o bordô profundo do evento, em vez do rosé anterior; o retrato fica limpo no arco, sem selo sobreposto.
 
 ## Mascote
 

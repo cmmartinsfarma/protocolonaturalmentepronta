@@ -2018,16 +2018,10 @@
             <strong><span data-bind="desconto">10%</span> na sua primeira limpeza de pele</strong>.
           </p>
           <div class="actions">
-            <a class="btn btn--primary" data-wa data-event="cta_hero"
-               href="https://wa.me/5516992133717?text=Ol%C3%A1!%20Estive%20no%20Quebra-Nozes%20e%20quero%20usar%20os%2010%25%20na%20minha%20primeira%20limpeza%20de%20pele."
-               target="_blank" rel="noopener">
-              Agendar minha limpeza <span aria-hidden="true">→</span>
+            <a class="btn btn--primary" href="#presente">
+              Ver o presente <span aria-hidden="true">→</span>
             </a>
-            <a class="btn btn--ghost" href="#presente">Ver o presente</a>
           </div>
-          <button class="hero__install" type="button" data-install data-event="add_home">
-            Adicionar à tela inicial <span aria-hidden="true">→</span>
-          </button>
         </div>
 
         <div class="hero__art">
@@ -2435,7 +2429,7 @@
           (item) => item &&
             typeof item.title === "string" &&
             typeof item.url === "string" &&
-            /^https?:\/\//i.test(item.url)
+            /^(https?:\/\/|tel:|mailto:)/i.test(item.url)
         );
       } catch (_) {
         return [];
@@ -2606,7 +2600,7 @@
       event.preventDefault();
       const normalized = normalizeUrl(shortcutUrl.value);
       if (!normalized) {
-        shortcutError.textContent = "Informe um link válido, começando com http:// ou https://.";
+        shortcutError.textContent = "Informe um link válido (https://, tel: ou mailto:).";
         shortcutError.hidden = false;
         shortcutUrl.focus();
         return;

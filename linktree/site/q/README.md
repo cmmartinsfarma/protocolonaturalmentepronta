@@ -107,8 +107,9 @@ O mascote usa o Quebra-Nozes fotorrealista em `assets/nutcracker-ultra.webp`, ge
 
 O mobile é a superfície principal (toque NFC). A página prioriza:
 
-- CTA e oferta na primeira dobra; data e sessões na faixa de programa, logo abaixo.
-- Link "Adicionar à tela inicial" já no hero.
+- Um único CTA no hero, “Ver o presente”; o agendamento fica no cupom e no sticky.
+- Instalação como app pelos atalhos (e pelo diálogo do navegador).
+- Data e sessões na faixa de programa, logo abaixo.
 - Faixa de programa em duas colunas.
 - Alvos de toque de 44px nos atalhos, sugestões, diálogo e links secundários.
 - Sticky de agendamento acessível e com `safe-area`.
@@ -134,7 +135,7 @@ O PWA (instalar na tela inicial) exige HTTPS. Em `localhost` o service worker ta
 ## Analytics
 
 O script da Vercel Analytics está incluído (`/_vercel/insights/script.js`).
-Eventos: `cta_hero`, `cta_coupon`, `cta_sticky`, `cta_footer`, `add_home`,
+Eventos: `cta_coupon`, `cta_sticky`, `cta_footer`, `add_home_shortcuts`, `share_page`,
 `shortcut_add`, `shortcut_edit`, `shortcut_open`, `shortcut_delete`,
 `backup_export`, `backup_import`.
 Fora da Vercel, o script simplesmente não carrega e nada quebra.

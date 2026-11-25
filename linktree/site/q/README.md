@@ -81,13 +81,13 @@ A primeira visita da sessão abre com uma cortina de veludo bordô e o título d
 
 O site recebe o componente **Snow Fall** da Originkit, um canvas de neve com o preset devolvido pelo MCP.
 
-- fonte original em `originkit/snowfall.tsx` (sem alterações);
+- fonte original em `originkit/snowfall.tsx` (sem alterações); a página usa a variante `originkit/snowfall-flakes.tsx`, derivada dela, que desenha flocos de 6 braços em vez de pontos e adiciona rotação;
 - camada fixa em todo o site, em dourado `#D2AE6C`, porque o branco desapareceria no pergaminho;
-- 500 flocos no desktop e 240 no celular, com opacidade 20–65%; bundle em `assets/snowfall.js`, carregado depois que a página fica ociosa;
+- 360 flocos no desktop e 180 no celular, tamanho 2–4,5 e opacidade 20–60%; bundle em `assets/snowfall.js`, carregado depois que a página fica ociosa;
 - não roda no modo app nem com `prefers-reduced-motion`;
 - detalhes de build e atribuição em `originkit/README.md`.
 
-As seções também ganharam marcadores **Ato I–III** e a faixa de programa virou **“Programa de sala”**, fechando o fio teatral da página.
+A faixa de programa virou **“Programa de sala”**; os marcadores de ato foram retirados.
 
 ## Retrato
 

@@ -1014,19 +1014,7 @@
     p { text-wrap: pretty; }
 
     .section__head { display: block; }
-    .num {
-      display: block;
-      margin: 0 0 10px;
-      padding: 0;
-      font-size: 1.05rem;
-      line-height: 1;
-    }
-    .num::before {
-      display: inline-block;
-      margin: 0 7px 0 0;
-      vertical-align: .12em;
-    }
-    .night .num::before { color: var(--gold); }
+    .num { display: none; }
     .section h2 {
       max-width: 22ch;
       margin: 0 0 14px;
@@ -2778,7 +2766,7 @@
         if (loading) return;
         loading = true;
         const script = document.createElement("script");
-        script.src = "assets/snowfall.js?v=3";
+        script.src = "assets/snowfall.js?v=4";
         script.async = true;
         script.onload = () => {
           const api = window.OriginkitSnowfall;
